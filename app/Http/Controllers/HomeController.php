@@ -20,8 +20,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = products::all();
-        return view('front/welcome',compact('products'));
+        /*$products = products::all();*/
+        return view('front/welcome'/*,compact('products')*/);
     }
 
 
