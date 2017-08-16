@@ -37,6 +37,7 @@ Route::get('/checkout-review','HomeController@checkoutReview');
 Route::get('/checkout-complete','HomeController@checkoutComplete');
 
 #admin Routes
+/* Routes to the admin page */
 Route::group(['namespace' => 'Admin'],function(){
 	Route::get('admin/home','HomeController@index')->name('admin.home');
 	Route::resource('admin/users','UserController');
