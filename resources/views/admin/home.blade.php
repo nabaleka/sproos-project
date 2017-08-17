@@ -1,6 +1,6 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.admin')
 
-@section('main-content')
+@section('content')
 <!-- First page row -->
 <div class="row">
     <div class="col-lg-3 col-xs-6">

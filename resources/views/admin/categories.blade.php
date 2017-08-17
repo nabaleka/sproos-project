@@ -1,8 +1,7 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.admin')
 
-@section('main-content')
-	<!-- Content Wrapper. Contains page content -->
-	<div class="content-wrapper">
+@section('content')
+
 	  <!-- Content Header (Page header) -->
 	  <section class="content-header">
 	    <h1>
@@ -62,6 +61,5 @@
 	    <!-- ./row -->
 	  </section>
 	  <!-- /.content -->
-	</div>
-	<!-- /.content-wrapper -->
+
 @endsection

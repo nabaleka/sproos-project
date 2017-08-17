@@ -15,10 +15,12 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /*
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
+    */
     public function index()
     {
          $products = products::all();
@@ -32,7 +34,6 @@ class ProductsController extends Controller
      */
     public function create()
     {
-
            $subcategories =subcategories::all();
            $categories =categories::all();
         return view('admin.products',compact('categories','subcategories'));

@@ -1,12 +1,11 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.admin')
 
-@section('headSection')
+@section('style')
 <link rel="stylesheet" href="{{ asset('admin/plugins/datatables/dataTables.bootstrap.css') }}">
 @endsection
 
-@section('main-content')
+@section('content')
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
@@ -62,6 +61,7 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @if(isset($products))
                         @foreach ($products as $product)
                           <tr>
                             <td>{{ $loop->index + 1 }}</td>
@@ -96,6 +96,8 @@
                         
                           </tr>
                         @endforeach
+
+                        @endif
                         </tbody>
                        
                       </table>
@@ -113,7 +115,7 @@
 
   </section>
   <!-- /.content -->
-</div>
+
 <!-- /.content-wrapper -->
 @endsection
 @section('footerSection')
