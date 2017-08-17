@@ -39,12 +39,12 @@
     
     .toolbar .search{
         color : #fff;
-        border: 1px solid #fff;
+        border: 2px solid #fff;
     }
     
     .toolbar .cart{
         color : #fff;
-        border: 1px solid #fff;
+        border: 2px solid #fff;
     }
     
     .hero-slider > .owl-carousel.dots-inside .owl-dots{
@@ -94,7 +94,7 @@
 
       .breadcrumbs > li{
         color:#efefef;
-      }
+      } 
 
       .page-title h1, .page-title h2, .page-title h3{
         color:#fff;
