@@ -29,6 +29,149 @@
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
     <style>
 
+    .topbar{
+        background-color:#fff;
+    }
+    
+    .navbar{
+        background-color : #ee2956;
+    }
+    
+    .toolbar .search{
+        color : #fff;
+        border: 1px solid #fff;
+    }
+    
+    .toolbar .cart{
+        color : #fff;
+        border: 1px solid #fff;
+    }
+    
+    .hero-slider > .owl-carousel.dots-inside .owl-dots{
+        background-color : transparent;
+    }
+
+      .site-menu > ul > li> a{
+        color:#fff;
+        letter-spacing:2px;
+      }
+
+      .site-menu ul > li.active > a{
+        color:#444;
+      }
+      .site-menu > ul > li.active > a{
+        border-top-color: #ed2e56;
+      }
+
+      .btn-primary{
+        background-color:#ed2e56;
+      }
+      .offcanvas-menu ul li.back-btn > a {
+          background-color: #444;
+          color: #000;
+      }
+
+      .offcanvas-header{
+        background-color:#444;
+      }
+
+      .offcanvas-menu ul li.has-children .sub-menu-toggle:hover{
+        background-color:#444;
+      }
+
+      .topbar .topbar-column a:not(.social-button), .topbar .topbar-column span, .topbar .topbar-column p{
+        color:#000;
+      }
+
+      .page-title{
+        color:#fff;
+        background-color:#ed2e56;
+      }
+
+      .breadcrumbs > li > a{
+        color:#fff;
+      }
+
+      .breadcrumbs > li{
+        color:#efefef;
+      }
+
+      .page-title h1, .page-title h2, .page-title h3{
+        color:#fff;
+      }
+
+      .site-footer{
+        background-color:#ed2e56;
+      }
+
+      .list-group-item.active{
+        background-color:#ed2e56;
+        border-color:#444;
+      }
+
+      .badge.badge-primary{
+        background-color:#ed2e56;
+      }
+
+      .custom-control .custom-control-input:checked ~ .custom-control-indicator{
+        background-color:#ed2e56;
+      }
+      
+      .widget-light-skin .widget-title{
+        color:#fff;
+      }
+
+      .btn-outline-primary{
+        border-color:#ed2e56;
+        color:#ed2e56;
+      }
+
+      .btn-outline-primary:hover{
+        background-color:#ed2e56;
+        color:#fff;
+      }
+
+      .checkout-steps > a.active{
+        background-color:#ed2e56;
+      }
+
+      .angle{
+        display:hidden;
+      }
+      
+      .offcanvas-toggle:hover{
+        color:#ed2e56;
+      }
+
+     .offcanvas-menu ul li a:hover{
+      color:#ededed;
+     }
+
+     .offcanvas-container{
+       background-color:#ed2e56;
+       letter-spacing:3px;
+     }
+
+     .offcanvas-menu ul li.active > a{
+       color:#fff;
+     }
+     
+     .market-button.mb-light-skin{
+         background-color : #fff;
+     }
+     
+     .market-button.mb-light-skin .mb-title{
+         color : #ee2956;
+     }
+     
+     .market-button.mb-light-skin .mb-subtitle{
+         color : #000;
+     }
+     
+     .widget-light-skin.widget-categories ul > li::before, .widget-light-skin.widget-links ul > li::before {
+	color: rgba(231, 231, 232,.7);
+}
+    /*
       .site-menu > ul > li> a{
         color:#ed2e56;
         letter-spacing:2px;
@@ -133,7 +276,7 @@
 
      .offcanvas-menu ul li.active > a{
        color:#fff;
-     }
+     }*/
 
     </style>
     <!-- Modernizr-->
