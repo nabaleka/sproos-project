@@ -36,6 +36,12 @@ Route::get('/checkout-payment','HomeController@checkoutPayment');
 Route::get('/checkout-review','HomeController@checkoutReview');
 Route::get('/checkout-complete','HomeController@checkoutComplete');
 
+#sitepages
+Route::get('/about','HomeController@about');
+Route::get('/terms','HomeController@terms');
+
+
+
 #admin Routes
 /* Routes to the admin page */
 Route::group(['namespace' => 'Admin'],function(){

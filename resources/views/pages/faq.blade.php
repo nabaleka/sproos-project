@@ -28,62 +28,148 @@
           <div class="col-lg-9 col-md-8">
             <div class="accordion" id="accordion" role="tablist">
               <div class="card">
-                <div class="card-header" role="tab">
-                  <h6><a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">What payment methods do you accept?</a></h6>
-                </div>
-                <div class="collapse show" id="collapseOne" role="tabpanel">
-                  <div class="card-block">
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, harum. Asperiores mollitia sed ullam quae blanditiis explicabo, reprehenderit sint rerum, labore, fugit obcaecati laboriosam nulla voluptatem inventore nobis esse nemo.</p>
+                  <div class="card-header" role="tab">
+                    <h6><a href="#collapseOne" data-toggle="collapse" data-parent="#accordion"> Do I need an account to shop on Sproos?</a></h6>
+                  </div>
+                  <div class="collapse show" id="collapseOne" role="tabpanel">
+                    <div class="card-block">
+                      <p> You do not need an account to shop on Sproos, however you do need an account sell on Sproos.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+
               <div class="card">
                 <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseTwo" data-toggle="collapse" data-parent="#accordion">How long will delivery take?</a></h6>
+                  <h6><a class="collapsed" href="#collapseTwo" data-toggle="collapse" data-parent="#accordion">2.	How do I place an order?</a></h6>
                 </div>
                 <div class="collapse" id="collapseTwo" role="tabpanel">
-                  <div class="card-block">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+                  <div class="card-block">Shopping on Sproos is easy! Once you have found the product you want to buy, just follow the steps -below:
+•	Add the product to your cart,
+•	Click on'cart' in the top right corner,
+•	Register/Login into your account by entering your email and password,
+•	Enter your shipping/billing information,
+•	Choose your preferred payment option,
+•	Click on 'Confirm order' to proceed to the payment portal and complete your order.
+Once your order is placed, we will either automatically confirm it by notifying you via email, or we will call    you for confirmation in case we need more details. Please note that this confirmation is a mandatory step before we ship your order. In case you have a doubt about whether the confirmation was done or not, do not hesitate to contact our Customer Service Call Center at 0715-725 418/sproosplace@gmail.com a few hours after your order placement.
+</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseThree" data-toggle="collapse" data-parent="#accordion">Do you ship internationally?</a></h6>
+                  <h6><a class="collapsed" href="#collapseThree" data-toggle="collapse" data-parent="#accordion">How do I pay on Sproos?</a></h6>
                 </div>
                 <div class="collapse" id="collapseThree" role="tabpanel">
-                  <div class="card-block">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+                  <div class="card-block">You can choose from the different payment methods available on Sproos. Please find below the list of available payment methods:
+•	Cash On Delivery (easy and simple at your doorstep)
+•	Credit/Debit Card
+•	Mobile Money
+You can find the payment methods during the final step of checkout in detail. Do not hesitate to contact our Customer Service for more information.
+</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseFour" data-toggle="collapse" data-parent="#accordion">Do I need an account to place an order?</a></h6>
+                  <h6><a class="collapsed" href="#collapseFour" data-toggle="collapse" data-parent="#accordion">Are there any hidden costs or charges if I order from Sproos</a></h6>
                 </div>
                 <div class="collapse" id="collapseFour" role="tabpanel">
-                  <div class="card-block">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+                  <div class="card-block">There are no hidden costs or charges when you order from Sproos. All costs are 100% visible at the end of the checkout process.</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseFive" data-toggle="collapse" data-parent="#accordion">Do you have discounts for returning customers?</a></h6>
+                  <h6><a class="collapsed" href="#collapseFive" data-toggle="collapse" data-parent="#accordion">How can I track my order?</a></h6>
                 </div>
                 <div class="collapse" id="collapseFive" role="tabpanel">
-                  <div class="card-block">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+                  <div class="card-block">Once you place your order and have any questions on the delivery, contact our customer service team via telephone (0715) 725 418 or email: sproosplace@gmail.com</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseSix" data-toggle="collapse" data-parent="#accordion">How can I track my order?</a></h6>
+                  <h6><a class="collapsed" href="#collapseSix" data-toggle="collapse" data-parent="#accordion">Are the prices on Sproos negotiable?</a></h6>
                 </div>
                 <div class="collapse" id="collapseSix" role="tabpanel">
-                  <div class="card-block">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+                  <div class="card-block">Prices on Sproos are not negotiable. Sproos has thousands of sellers which offer you the best prices and deals.</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseSeven" data-toggle="collapse" data-parent="#accordion">What are the product refund conditions?</a></h6>
+                  <h6><a class="collapsed" href="#collapseSeven" data-toggle="collapse" data-parent="#accordion">7.	Are all products on Sproos new and unused?</a></h6>
                 </div>
                 <div class="collapse" id="collapseSeven" role="tabpanel">
-                  <div class="card-block">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+                  <div class="card-block">No Sproos offers a wide selection of both new and second hand items.</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab">
+                  <h6><a class="collapsed" href="#collaps8" data-toggle="collapse" data-parent="#accordion">8.	Why do I see different prices for the same product?</a></h6>
+                </div>
+                <div class="collapse" id="collapse8" role="tabpanel">
+                  <div class="card-block">Our products are offered by different sellers. This allows you to choose your preferred offer. If a product is sold by different sellers, you will find the alternative prices of other sellers in the product page.</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab">
+                  <h6><a class="collapsed" href="#collapse9" data-toggle="collapse" data-parent="#accordion">9.	How do I know my order has been confirmed?</a></h6>
+                </div>
+                <div class="collapse" id="collapseSeven" role="tabpanel">
+                  <div class="card-block">Once your order is placed, we will either automatically confirm it by notifying you via email, or we will call you for confirmation in case we need more details. Please note that this confirmation is a mandatory step before we ship your order. In case you have a doubt about whether the confirmation was done or not, do not hesitate to contact our Customer Service Call Center at 0715-725 418 sproosplace@gmail.com a few hours after your order placement.</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab">
+                  <h6><a class="collapsed" href="#collapse10" data-toggle="collapse" data-parent="#accordion">10.	How do I cancel my order?</a></h6>
+                </div>
+                <div class="collapse" id="collapse10" role="tabpanel">
+                  <div class="card-block">If you have not already received the email information that your order was shipped, you can simply cancel your order by getting in touch with our Customer Service Center.
+If your order has already been shipped you will not be able to cancel it, but be able to return it (Check out our Return Policy for detailed information. CLICK HERE.
+</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab">
+                  <h6><a class="collapsed" href="#collapse11" data-toggle="collapse" data-parent="#accordion">11.	What is cash on delivery?</a></h6>
+                </div>
+                <div class="collapse" id="collapse11" role="tabpanel">
+                  <div class="card-block">You can pay Cash On Delivery to the delivery agent upon receipt of your order.
+Note: Gift cards or vouchers cannot be used to make CoD payments.
+</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab">
+                  <h6><a class="collapsed" href="#collaps12" data-toggle="collapse" data-parent="#accordion">12.	How do I return a product?</a></h6>
+                </div>
+                <div class="collapse" id="collapse12" role="tabpanel">
+                  <div class="card-block">Do you need to return a product? Check our Returns & Refunds Policy.</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab">
+                  <h6><a class="collapsed" href="#collapse13" data-toggle="collapse" data-parent="#accordion">13.	How much time do I have to return a product on Sproos?</a></h6>
+                </div>
+                <div class="collapse" id="collapse13" role="tabpanel">
+                  <div class="card-block">All items purchased on Sproos for return need to be reported within 48hours of receiving the product. The products need to be returned within a period of 7 days from delivery date.
+Please note: Once product is received you have to notify us within 48hours by calling our Customer Service or by emailing us a completed return form which can be downloaded CLICK HERE.
+Past this time window, unfortunately we cannot accept returns. 
+</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab">
+                  <h6><a class="collapsed" href="#collapse14" data-toggle="collapse" data-parent="#accordion">14.	If I am receiving a refund, how do I get my reimbursement?</a></h6>
+                </div>
+                <div class="collapse" id="collapse14" role="tabpanel">
+                  <div class="card-block">Refund process begins after we received your complaint within 48hours of delivery.
+You can choose any of the refund methods below, depending on the payment method utilized when placing the order.
+                Refund methods available according to payment methods.
+</div>
                 </div>
               </div>
             </div>
