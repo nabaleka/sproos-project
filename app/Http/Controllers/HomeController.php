@@ -77,4 +77,11 @@ class HomeController extends Controller
      public function profile(){
         return view ('front.accounts.account-profile');
     }
+    public function about(){
+        return view ('pages.about');
+    }
+    public function terms(){
+        return view ('pages.term-of-use');
+    }
+
 }
