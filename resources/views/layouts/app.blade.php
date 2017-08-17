@@ -578,7 +578,7 @@
             <div class="search"><i class="icon-search"></i></div>
             <div class="account"><a href="/account-orders"></a><i class="icon-head"></i>
               <ul class="toolbar-dropdown">
-                <li class="sub-menu-title"><span>Hello,</span> Daniel Adams</li>
+                <li class="sub-menu-title"><span>Hello,</span></li>
                   <li><a href="/account-profile">My Profile</a></li>
                   <li><a href="/account-orders">Orders List</a></li>
                 <li class="sub-menu-separator"></li>

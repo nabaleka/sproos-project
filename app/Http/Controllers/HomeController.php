@@ -83,5 +83,8 @@ class HomeController extends Controller
     public function terms(){
         return view ('pages.term-of-use');
     }
+    public function soon(){
+        return view ('front.comming-soon');
+    }
 
 }
