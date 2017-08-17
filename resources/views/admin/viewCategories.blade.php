@@ -1,11 +1,8 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.admin')
 
-@section('headSection')
-<link rel="stylesheet" href="{{ asset('admin/plugins/datatables/dataTables.bootstrap.css') }}">
-@endsection
-@section('main-content')
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+
+@section('content')
+
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
@@ -93,15 +90,4 @@
 
   </section>
   <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-@endsection
-@section('footerSection')
-<script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable();
-  });
-</script>
 @endsection
