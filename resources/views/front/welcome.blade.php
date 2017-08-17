@@ -135,17 +135,19 @@
 
       <!-- Check if there is a product -->
         @if(count($products) > 0)
+           
       <!-- Featured Products Carousel-->
       <section class="container padding-top-3x padding-bottom-3x">
         <h3 class="text-center mb-30">Featured Products</h3>
         <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;margin&quot;: 30, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;576&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;991&quot;:{&quot;items&quot;:4},&quot;1200&quot;:{&quot;items&quot;:4}} }">
 
-        
+          @foreach ($products as $product)
         <!-- Loop through -->
           <div class="grid-item">
             <div class="product-card">
-              <div class="product-badge text-danger">22% Off</div><a class="product-thumb" href="shop-single.html"></a>
-              <h3 class="product-title"><a href="shop-single/["></a></h3>
+              <div class="product-badge text-danger">22% Off</div><a class="product-thumb" href="shop-single.html"><img src="/storage/products/{{$product->image}}" height="100px" width="150px" /></a>
+    
+              <h3 class="product-title"><a href="shop-single/[">{{ $product->name }}</a></h3>
               <h4 class="product-price">
                 <del>Ksh4445.95</del>
               </h4>
@@ -155,7 +157,7 @@
               </div>
             </div>
           </div>
-
+@endforeach
           <!-- Product-->
           @endif
       
