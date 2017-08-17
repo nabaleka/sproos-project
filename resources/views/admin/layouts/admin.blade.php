@@ -260,7 +260,7 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="active"><a href="/admin/home"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li><a href="#"><i class="fa fa-bar-chart"></i> <span>Stats</span></a></li>
         <!-- Admin -->
         <li class="treeview">
@@ -276,14 +276,14 @@ desired effect
         </li>
       <!-- Shipping-->
         <li class="treeview">
-          <a href="#"><i class="fa fa-truck"></i> <span>Orders</span>
+          <a href="/admin/orders"><i class="fa fa-truck"></i> <span>Orders</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">New</a></li>
-            <li><a href="#">Stats</a></li>
+            <li><a href="admin/invoices">Invoices</a></li>
+            <li><a href="/admin/orders">View Orders</a></li>
             <li><a href="#">Summary</a></li>
           </ul>
         </li>
@@ -309,8 +309,8 @@ desired effect
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Add</a></li>
-            <li><a href="#">View All</a></li>
+            <li><a href="/admin/products">View All</a></li>
+            <li><a href="/admin/category">Categories</a></li>
           </ul>
         </li>
       </ul>
@@ -321,19 +321,7 @@ desired effect
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
-
-    <!-- Main content -->
+      <!-- Main content -->
     <section class="content container-fluid">
         @yield('content')
     </section>
