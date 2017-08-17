@@ -25,11 +25,10 @@
               <section class="widget widget-links widget-light-skin">
                 <h3 class="widget-title">About Us</h3>
                 <ul>
-                  <li><a href="#">Careers</a></li>
-                  <li><a href="#">About Unishop</a></li>
-                  <li><a href="#">Our Story</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Our Blog</a></li>
+                  <li><a href="/soon">Careers</a></li>
+                  <li><a href="/about">About Sproos</a></li>
+                  <li><a href="/soon">Our Story</a></li>
+                  <li><a href="/soon">Our Blog</a></li>
                 </ul>
               </section>
             </div>
@@ -38,12 +37,12 @@
               <section class="widget widget-links widget-light-skin">
                 <h3 class="widget-title">Account &amp; Shipping Info</h3>
                 <ul>
-                  <li><a href="/profile">Your Account</a></li>
-                  <li><a href="#">Shipping Rates & Policies</a></li>
-                  <li><a href="#">Refunds & Replacements</a></li>
-                  <li><a href="#">Taxes</a></li>
-                  <li><a href="#">Delivery Info</a></li>
-                  <li><a href="#">Affiliate Program</a></li>
+                  <li><a href="/account-profile">Your Account</a></li>
+                  <li><a href="/faq">Shipping Rates & Policies</a></li>
+                  <li><a href="/faq">Refunds & Replacements</a></li>
+                  <li><a href="/faq">Taxes</a></li>
+                  <li><a href="/faq">Delivery Info</a></li>
+                  <li><a href="/faq">Affiliate Program</a></li>
                 </ul>
               </section>
             </div>

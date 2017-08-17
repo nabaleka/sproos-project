@@ -40,6 +40,9 @@ Route::get('/checkout-complete','HomeController@checkoutComplete');
 Route::get('/about','HomeController@about');
 Route::get('/terms','HomeController@terms');
 
+#no available content
+Route::get('/soon','HomeController@soon');
+
 
 
 #admin Routes
