@@ -51,15 +51,28 @@ class ProductsController extends Controller
             'name'=>'required',
             'price'=>'required',
             'slug' => 'required',
-            'image' => 'required',
+            'image' => 'image|nullable|max:1999',
             ]);
-        if ($request->hasFile('image')) {
-            $imageName = $request->image->store('public');
-        }else{
-            return 'No';
+        //handle file upload
+        if($request->hasFile('image')){
+        //get file name with extention
+        $filenameWithExt=$request->file('image')->getClientOriginalName();
+        //get just file name
+        $filename=pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+        //get just extention
+        $extension=$request->file('image')->getClientOriginalExtension();
+
+        //filename to store
+        $fileNameToStore=$filename.'_'.time().'.'.$extension;
+        //upload image
+        $path=$request->file('image')->storeAs('public/products',$fileNameToStore);
+        }
+        else{
+            $fileNameToStore='noimage.jpg';
         }
         $products = new products;
-        $products->image = $imageName;
+        $products->image=$fileNameToStore;
         $products->name = $request->name;
         $products->price = $request->price;
         $products->slug = $request->slug;
