@@ -519,6 +519,7 @@
           <li><a href="#"><span>More</span></a>
             <ul class="sub-menu">
                 <li><a href="/about">About Us</a></li>
+                <li><a href="/terms">Terms of use</a></li>
                 <li><a href="/contacts-us">Contacts</a></li>
                 <li><a href="/faq">Help / FAQ</a></li>
             </ul>
