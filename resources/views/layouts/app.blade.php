@@ -200,7 +200,7 @@
      }
 
      .img-thumbnail {
-       border : 1px solid #ed2e56;
+       border : 1px solid #ee2956;
      }
      
      .widget-light-skin.widget-categories ul > li::before, .widget-light-skin.widget-links ul > li::before {
