@@ -593,7 +593,7 @@
       <!-- Main Navigation-->
       <nav class="site-menu">
         <ul>
-          <li class="active"><a href="/shop-list"><span>Home</span></a>
+          <li class="active"><a href="/"><span>Home</span></a>
           </li>
           <li><a href="/shop-grid"><span>Shop</span></a>
             <!--ul class="sub-menu">
