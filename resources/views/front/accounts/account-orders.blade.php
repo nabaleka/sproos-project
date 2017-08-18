@@ -34,12 +34,7 @@
         </div>
     </aside>
         <!-- Account navigation -->
-        <nav class="list-group">
-            <a class="list-group-item justify-content-between" href="/account-orders"><span><i class="icon-bag"></i>Orders</span><span class="badge badge-primary badge-pill">6</span></a>
-            <a class="list-group-item active" href="account-profile"><i class="icon-head"></i>Profile</a><a class="list-group-item" href="/account-address"><i class="icon-map"></i>Addresses</a>
-            <a class="list-group-item justify-content-between" href="#"><span><i class="icon-heart"></i>Favourites</span><span class="badge badge-primary badge-pill">3</span></a>
-            <a class="list-group-item justify-content-between" href="#"><span><i class="icon-tag"></i>My Shop</span><span class="badge badge-primary badge-pill">4</span></a>  
-        </nav>
+        <nav class="list-group"><a class="list-group-item justify-content-between active" href="account-orders"><span><i class="icon-bag"></i>Orders</span><span class="badge badge-primary badge-pill">6</span></a><a class="list-group-item" href="account-profile"><i class="icon-head"></i>Profile</a><a class="list-group-item" href="#"><i class="icon-map"></i>Addresses</a><a class="list-group-item justify-content-between" href="#"><span><i class="icon-heart"></i>Wishlist</span><span class="badge badge-primary badge-pill">3</span></a></nav>
         </div>
     <div class="col-lg-8">
     <div class="padding-top-2x mt-2 hidden-lg-up"></div>
@@ -58,25 +53,25 @@
             <td><span class="text-medium">78A643CD409</span></td>
             <td>August 08, 2017</td>
             <td><span class="text-danger">Canceled</span></td>
-            <td><span class="text-medium">$760.50</span></td>
+            <td><span class="text-medium">Ksh 1,760.50</span></td>
             </tr>
             <tr>
             <td><span class="text-medium">34VB5540K83</span></td>
             <td>July 21, 2017</td>
             <td><span class="text-info">In Progress</span></td>
-            <td><span class="text-medium">$315.20</span></td>
+            <td><span class="text-medium">Ksh 1,315.20</span></td>
             </tr>
             <tr>
             <td><span class="text-medium">112P45A90V2</span></td>
             <td>June 15, 2017</td>
             <td><span class="text-warning">Delayed</span></td>
-            <td><span class="text-medium">$1,264.00</span></td>
+            <td><span class="text-medium">Ksh 1,264.00</span></td>
             </tr>
             <tr>
             <td><span class="text-medium">28BA67U0981</span></td>
             <td>May 19, 2017</td>
             <td><span class="text-success">Delivered</span></td>
-            <td><span class="text-medium">$198.35</span></td>
+            <td><span class="text-medium">Ksh 1,198.35</span></td>
             </tr>
             <tr>
             <td><span class="text-medium">502TR872W2</span></td>
@@ -88,7 +83,7 @@
             <td><span class="text-medium">47H76G09F33</span></td>
             <td>March 30, 2017</td>
             <td><span class="text-success">Delivered</span></td>
-            <td><span class="text-medium">$86.40</span></td>
+            <td><span class="text-medium">Ksh 1,086.40</span></td>
             </tr>
         </tbody>
         </table>

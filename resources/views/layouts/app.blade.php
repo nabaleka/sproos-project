@@ -12,7 +12,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Sproos</title>
 
     <!-- Styles -->
      <!-- Favicon and Apple Icons-->
@@ -200,7 +200,11 @@
      }
 
      .img-thumbnail {
-       border : 1px solid #ed2e56;
+       border : 1px solid #ee2956;
+     }
+
+     .list-group-item.active{
+       border-color : #e1e7ec;
      }
      
      .widget-light-skin.widget-categories ul > li::before, .widget-light-skin.widget-links ul > li::before {
@@ -552,7 +556,7 @@
     </div>
     <!-- Topbar-->
     <div class="topbar">
-      <div class="topbar-column"><a class="hidden-md-down" href="mailto:support@sproos.co.ke"><i class="icon-mail"></i>&nbsp; support@sproos.co.ke</a><a class="hidden-md-down" href="tel:#"><i class="icon-bell"></i>&nbsp; 00 00 000 000</a><a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a><a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a><a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a><a class="social-button sb-pinterest shape-none sb-dark" href="#" target="_blank"><i class="socicon-pinterest"></i></a>
+      <div class="topbar-column"><a class="hidden-md-down" href="mailto:sproosplace@gmail.com"><i class="icon-mail"></i>&nbsp;sproosplace@gmail.com</a><a class="hidden-md-down" href="tel:#"><i class="icon-bell"></i>&nbsp; (+254)715-725-418</a><a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a><a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a><a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a><a class="social-button sb-pinterest shape-none sb-dark" href="#" target="_blank"><i class="socicon-pinterest"></i></a>
       </div>
       <div class="topbar-column"><a class="hidden-md-down" href="#"><i class="icon-download"></i>&nbsp; Get mobile app</a>
         <div class="lang-currency-switcher-wrap">
@@ -596,7 +600,7 @@
           <li class="active"><a href="/"><span>Home</span></a>
           </li>
           <li><a href="/shop-grid"><span>Shop</span></a>
-            <ul class="sub-menu">
+            <!--ul class="sub-menu">
                 <li><a href="/shop-categories">Shop Categories</a></li>
               <li class="has-children"><a href="/shop-grid"><span>New</span></a>
                 <ul class="sub-menu">
@@ -623,7 +627,7 @@
                     <li><a href="/checkout-complete">Complete</a></li>
                 </ul>
               </li>
-            </ul>
+            </ul-->
           </li>
           <!--
           <li class="has-megamenu"><a href="#"><span>Mega Menu</span></a>
@@ -763,8 +767,32 @@
                 <li><a href="#"> <i class="icon-unlock"></i>Logout</a></li>
               </ul>
             </div>
+<<<<<<< HEAD
             @include('inc.cart')
             
+=======
+            <div class="cart"><a href="/cart"></a><i class="icon-bag"></i><span class="count">3</span><span class="subtotal">Ksh 4,289.68</span>
+              <div class="toolbar-dropdown">
+                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="img/cart-dropdown/01.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Unionbay Park</a><span class="dropdown-product-details">1 x Ksh 943.90</span></div>
+                </div>
+                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="img/cart-dropdown/02.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Daily Fabric Cap</a><span class="dropdown-product-details">2 x Ksh 924.89</span></div>
+                </div>
+                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="shop-single.html"><img src="img/cart-dropdown/03.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="shop-single.html">Haan Crossbody</a><span class="dropdown-product-details">1 x Ksh 1,200.00</span></div>
+                </div>
+                <div class="toolbar-dropdown-group">
+                  <div class="column"><span class="text-lg">Total:</span></div>
+                  <div class="column text-right"><span class="text-lg text-medium">Ksh 3,289.68&nbsp;</span></div>
+                </div>
+                <div class="toolbar-dropdown-group">
+                  <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="/cart">View Cart</a></div>
+                  <div class="column"><a class="btn btn-sm btn-block btn-success" href="/checkout-address">Checkout</a></div>
+                </div>
+              </div>
+            </div>
+>>>>>>> 549ff48eadd1497bd56a7e235f181f813b49a667
           </div>
         </div>
       </div>
