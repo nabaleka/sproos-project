@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
       <!-- Main Slider-->
-      <section class="hero-slider" style="background-image: url(img/hero-slider/main-bg.jpg);">
+      <section class="hero-slider" style="background-image: url(img/hero-slider/sproos-banner.png);">
         <div class="owl-carousel large-controls dots-inside" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000 }">
           <div class="item">
             <div class="container padding-top-3x">
