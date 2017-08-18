@@ -28,7 +28,9 @@
     <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
     <style>
-
+    .offcanvas-toggle{
+      color : #fff;
+    }
     .topbar{
         background-color:#fff;
     }
@@ -39,12 +41,17 @@
     
     .toolbar .search{
         color : #fff;
-        border: 2px solid #fff;
+        border: 1px solid #fff;
+    }
+
+    .toolbar .account{
+      color : #fff;
+      border: 1px solid #fff;
     }
     
     .toolbar .cart{
         color : #fff;
-        border: 2px solid #fff;
+        border: 1px solid #fff;
     }
     
     .hero-slider > .owl-carousel.dots-inside .owl-dots{
@@ -166,6 +173,30 @@
      
      .market-button.mb-light-skin .mb-subtitle{
          color : #000;
+     }
+
+     .btn-success {
+      background-color: rgba(0,0,0,0.3);
+     }
+
+     .sb-light-skin.shape-circle{
+      border-color: rgba(255,255,255,0.72);
+     }
+
+     .shop-view > a {
+      border : 1px solid #ee2956;
+     }
+
+     .shop-view > a span{
+       background-color : #ee2956;
+     }
+
+     .shop-view > a span::before {
+       background-color : #ee2956;
+     }
+
+     .shop-view > a span::after{
+       background-color : #ee2956;
      }
      
      .widget-light-skin.widget-categories ul > li::before, .widget-light-skin.widget-links ul > li::before {
