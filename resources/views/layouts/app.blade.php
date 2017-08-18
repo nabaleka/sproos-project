@@ -182,6 +182,22 @@
      .sb-light-skin.shape-circle{
       border-color: rgba(255,255,255,0.72);
      }
+
+     .shop-view > a {
+      border : 1px solid #ee2956;
+     }
+
+     .shop-view > a span{
+       background-color : #ee2956;
+     }
+
+     .shop-view > a span::before {
+       background-color : #ee2956;
+     }
+
+     .shop-view > a span::after{
+       background-color : #ee2956;
+     }
      
      .widget-light-skin.widget-categories ul > li::before, .widget-light-skin.widget-links ul > li::before {
 	color: rgba(231, 231, 232,.7);
