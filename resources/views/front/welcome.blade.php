@@ -144,14 +144,14 @@
         <!-- Loop through -->
           <div class="grid-item">
             <div class="product-card">
-              <div class="product-badge text-danger">22% Off</div><a class="product-thumb" href="/shop-single{{$product->id}}"><img src="/storage/products/{{$product->image}}" height="100px" width="150px" /></a>
-              <h3 class="product-title"><a href="shop-single/["></a></h3>
+              <div class="product-badge text-danger">22% Off</div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="/storage/products/{{$product->image}}" height="100px" width="150px" /></a>
+              <h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3>
               <h4 class="product-price">
                 <del>{{$product->price}}</del>
               </h4>
               <div class="product-buttons">
                 <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-                <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
+                <a href="{{'/add-to-cart'}}/<?php echo $product->id?>" class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</a>
               </div>
             </div>
           </div>

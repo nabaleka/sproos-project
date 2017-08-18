@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Admin\products;
+use Gloudemans\Shoppingcart\Facades\Cart; // for cart lib
 
 class HomeController extends Controller
 {
@@ -20,8 +21,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
+        $cartItems = Cart::content();
         $products = products::all();
-        return view('front.welcome')->with('products', $products);
+        return view('front/welcome',compact('products'),compact('cartItems'));
     }
 
 
@@ -32,20 +35,23 @@ class HomeController extends Controller
     
 
     public function accountProfile(){
-        return view ('front.accounts.account-profile');
+        $products = products::all();
+        return view ('front.accounts.account-profile')->with('products', $products);
     }
 
     public function shopGrid(){
-        return view ('front.shop.shop-grid');
+        $cartItems = Cart::content();
+        $products = products::all();
+        return view ('front.shop.shop-grid',compact('cartItems'))->with('products', $products);
     }
 
     public function shopList(){
-        return view ('front.shop.shop-list');
+        $cartItems = Cart::content();
+        $products = products::all();
+        return view ('front.shop.shop-list',compact('cartItems'))->with('products', $products);
     }
 
-    public function cart(){
-        return view ('front.checkout.cart');
-    }
+  
 
     public function checkoutAddress(){
         return view ('front.checkout.checkout-address');
@@ -86,5 +92,30 @@ class HomeController extends Controller
     public function soon(){
         return view ('front.comming-soon');
     }
-
+    public function add_cart($id){
+        $products = products::find($id); // get prodcut by id
+       Cart::add(array(
+'id' => $products->id,
+'name' => $products->name,
+'qty' => 1,
+'price' => $products->price,
+'options' => array('img' => $products->image),
+));
+       
+         return back();
+    }
+    public function destroy($id){
+        Cart::remove($id);
+        return back(); // will keep same page
+    }
+    public function cart(){
+        $cartItems = Cart::content();
+       return view ('front.checkout.cart',compact('cartItems'));
+   }
+   public function shopSingle($id)
+   {
+   $cartItems = Cart::content();
+   $products = products::find($id); // get prodcut by id
+       return view('front.shop.shop-single',compact('products'),compact('cartItems'));
+   }
 }
