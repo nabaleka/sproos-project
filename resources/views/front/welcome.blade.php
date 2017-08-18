@@ -56,7 +56,7 @@
                 </div></a>
               <div class="card-block text-center">
                 <h4 class="card-title">Used</h4>
-                <p class="text-muted">Starting from $1.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
+                <p class="text-muted">Starting from Ksh 100.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@
                 </div></a>
               <div class="card-block text-center">
                 <h4 class="card-title">Brand New</h4>
-                <p class="text-muted">Starting from $56.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
+                <p class="text-muted">Starting from Ksh 956.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
                 </div></a>
               <div class="card-block text-center">
                 <h4 class="card-title">African</h4>
-                <p class="text-muted">Starting from $27.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
+                <p class="text-muted">Starting from Ksh 927.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
               </div>
             </div>
           </div>
@@ -173,21 +173,21 @@
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/01.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Oakley Kickback</a></h4><span class="entry-meta">$155.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Oakley Kickback</a></h4><span class="entry-meta">Ksh 1,155.00</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/03.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Vented Straw Fedora</a></h4><span class="entry-meta">$49.50</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Vented Straw Fedora</a></h4><span class="entry-meta">Ksh 949.50</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/04.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Big Wordmark Tote</a></h4><span class="entry-meta">$29.99</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Big Wordmark Tote</a></h4><span class="entry-meta">Ksh 929.99</span>
                 </div>
               </div>
             </div>
@@ -199,21 +199,21 @@
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/05.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Union Park</a></h4><span class="entry-meta">$49.99</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Union Park</a></h4><span class="entry-meta">Ksh 949.99</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/06.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Cole Haan Crossbody</a></h4><span class="entry-meta">$200.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Cole Haan Crossbody</a></h4><span class="entry-meta">Ksh 2,200.00</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/07.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Skagen Holst Watch</a></h4><span class="entry-meta">$145.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Skagen Holst Watch</a></h4><span class="entry-meta">Ksh 1,145.00</span>
                 </div>
               </div>
             </div>
@@ -225,21 +225,21 @@
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/08.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Jordan's City Hoodie</a></h4><span class="entry-meta">$65.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Jordan's City Hoodie</a></h4><span class="entry-meta">Ksh 965.00</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/09.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Palace Shell Track Jacket</a></h4><span class="entry-meta">$36.99</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Palace Shell Track Jacket</a></h4><span class="entry-meta">Ksh 936.99</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/10.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Off the Shoulder Top</a></h4><span class="entry-meta">$128.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Off the Shoulder Top</a></h4><span class="entry-meta">Ksh 1,128.00</span>
                 </div>
               </div>
             </div>

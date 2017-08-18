@@ -26,7 +26,7 @@
           <div class="col-lg-4">
             <aside class="user-info-wrapper">
               <div class="user-cover" style="background-image: url(img/account/user-cover-img.jpg);">
-                <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div>
+                <div class="info-label" data-toggle="tooltip" title="You currently have 0 Reward Points to spend"><i class="icon-medal"></i>0 points</div>
               </div>
               <div class="user-info">
                 <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="img/account/user-ava.jpg" alt="User"></div>

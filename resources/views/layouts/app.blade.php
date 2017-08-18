@@ -202,6 +202,10 @@
      .img-thumbnail {
        border : 1px solid #ee2956;
      }
+
+     .list-group-item.active{
+       border-color : #e1e7ec;
+     }
      
      .widget-light-skin.widget-categories ul > li::before, .widget-light-skin.widget-links ul > li::before {
 	color: rgba(231, 231, 232,.7);
