@@ -759,6 +759,7 @@
     @yield('content')
 
     </div>
+    @include('inc.footer')
 
     <!-- Back To Top Button--><a class="scroll-to-top-btn" href="#"><i class="icon-arrow-up"></i></a>
     <!-- Backdrop-->
