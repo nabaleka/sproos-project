@@ -593,10 +593,10 @@
       <!-- Main Navigation-->
       <nav class="site-menu">
         <ul>
-          <li class="active"><a href="/"><span>Home</span></a>
+          <li class="active"><a href="/shop-list"><span>Home</span></a>
           </li>
           <li><a href="/shop-grid"><span>Shop</span></a>
-            <ul class="sub-menu">
+            <!--ul class="sub-menu">
                 <li><a href="/shop-categories">Shop Categories</a></li>
               <li class="has-children"><a href="/shop-grid"><span>New</span></a>
                 <ul class="sub-menu">
@@ -623,7 +623,7 @@
                     <li><a href="/checkout-complete">Complete</a></li>
                 </ul>
               </li>
-            </ul>
+            </ul-->
           </li>
           <!--
           <li class="has-megamenu"><a href="#"><span>Mega Menu</span></a>
