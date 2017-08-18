@@ -45,7 +45,7 @@
           <!-- Product-->
           <div class="grid-item">
             <div class="product-card">
-              <div class="product-badge text-danger">50% Off</div><a class="product-thumb" href="/shop-single/{{$products->id}}"><img href="/shop-single/{{$product->id}}" src="/storage/products/{{$product->image}}" height="100px" width="150px" /></a>
+              <div class="product-badge text-danger">50% Off</div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="/storage/products/{{$product->image}}" height="100px" width="150px" /></a>
               <h3 class="product-title"><a  href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3>
               <h4 class="product-price">
                 <del>Ksh. 9999.99</del> Ksh. {{$product->price}}
