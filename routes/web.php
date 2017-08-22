@@ -42,6 +42,7 @@ Route::get('/shop-single/{id}','HomeController@shopSingle');
 #sitepages
 Route::get('/about','HomeController@about');
 Route::get('/terms','HomeController@terms');
+Route::get('/contacts-us','HomeController@contact');
 
 #no available content
 Route::get('/soon','HomeController@soon');

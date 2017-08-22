@@ -97,11 +97,19 @@ class HomeController extends Controller
         $products = products::all();
         return view ('front.faq',compact('cartItems'))->with('products', $products);
     }
+
      public function profile(){
          $cartItems = Cart::content();
         $products = products::all();
         return view ('front.accounts.account-profile',compact('cartItems'))->with('products', $products);
     }
+
+    public function contact(){
+        $cartItems = Cart::content();
+       $products = products::all();
+       return view ('pages.contact',compact('cartItems'))->with('products', $products);
+   }
+
     public function about(){
         $cartItems = Cart::content();
         $products = products::all();
