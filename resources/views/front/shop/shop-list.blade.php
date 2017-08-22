@@ -86,7 +86,7 @@
 
             <div class="product-card product-list"><a class="product-thumb" href="/shop-single/{{$product->id}}">
 
-                <div class="product-badge text-danger">50% Off</div><img href="/shop-single/{{$product->id}}" src="/storage/products/{{$product->image}}" height="100px" width="150px" /></a>
+                <div class="product-badge text-danger">50% Off</div><img href="/shop-single/{{$product->id}}" src="{{ Storage::url($product->image) }}" height="100px" width="150px" /></a>
 
               <div class="product-info">
 

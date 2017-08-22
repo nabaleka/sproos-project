@@ -147,7 +147,7 @@
         <!-- Loop through -->
           <div class="grid-item">
             <div class="product-card">
-              <div class="product-badge text-danger"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src= {{Storage::url('products/'.$product->image)}} height="100px" width="150px" /></a>
+              <div class="product-badge text-danger"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src= {{Storage::url($product->image)}} height="100px" width="150px" /></a>
               <h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3>
               <h4 class="product-price">
                 Ksh. {{$product->price}}

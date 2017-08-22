@@ -200,7 +200,7 @@ class ProductsController extends Controller
 
         if ($request->hasFile('image')) {
 
-            $imageName = $request->image->store('public');
+            $imageName = $request->image->store('products');
 
         }else{
 
