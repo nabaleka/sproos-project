@@ -33,17 +33,17 @@
                 <div class="gallery-item"><a href="img/shop/single/05.jpg" data-hash="five" data-size="1000x667"></a></div>
               </div>
               <div class="product-carousel owl-carousel">
-                <div data-hash="one"><img src="/storage/products/{{$products->image}}" height="100px" width="150px" /></div>
-                <div data-hash="two"><img src="/storage/products/{{$products->image}}" height="100px" width="150px" /></div>
-                <div data-hash="three"><img src="/storage/products/{{$products->image}}" height="100px" width="150px" /></div>
-                <div data-hash="four"><img src="/storage/products/{{$products->image}}" height="100px" width="150px" /></div>
+                <div data-hash="one"><img src="{{ Storage::url($products->image) }}" height="100%" width="100%" /></div>
+                <div data-hash="two"><img src="{{ Storage::url($products->image) }}"  height="100%" width="100%" /></div>
+                <div data-hash="three"><img src="{{ Storage::url($products->image) }}"  height="100%" width="100%" /></div>
+                <div data-hash="four"><img src="{{ Storage::url($products->image) }}"  height="100%" width="100%" /></div>
 
               </div>
               <ul class="product-thumbnails">
-                <li class="active"><a href="#one"><img src="/storage/products/{{$products->image}}" height="100px" width="150px" /></a></li>
-                <li><a href="#two"><img src="/storage/products/{{$products->image}}" height="100px" width="150px" /></a></li>
-                <li><a href="#three"><img src="/storage/products/{{$products->image}}" height="100px" width="150px" /></a></li>
-                <li><a href="#four"><img src="/storage/products/{{$products->image}}" height="100px" width="150px" /></a></li>
+                <li class="active"><a href="#one"><img src="{{ Storage::url($products->image) }}" height="100px" width="150px" /></a></li>
+                <li><a href="#two"><img src="{{ Storage::url($products->image) }}" height="100px" width="150px" /></a></li>
+                <li><a href="#three"><img src="{{ Storage::url($products->image) }}" height="100px" width="150px" /></a></li>
+                <li><a href="#four"><img src="{{ Storage::url($products->image) }}" height="100px" width="150px" /></a></li>
 
               </ul>
             </div>
