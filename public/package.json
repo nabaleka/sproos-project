@@ -1,0 +1,27 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youngtoo/sproos-project.git"
+  },
+  "keywords": [
+    "E",
+    "commerce",
+    "app"
+  ],
+  "author": "Ian Too",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youngtoo/sproos-project/issues"
+  },
+  "homepage": "https://github.com/youngtoo/sproos-project#readme"
+}

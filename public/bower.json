@@ -6,7 +6,7 @@
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/youngtoo/sproos-project",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -15,6 +15,12 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.2.1"
-  }
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.7.0",
+    "chart.js": "^2.6.0",
+    "ionicons-min": "^2.0.1",
+    "jquery-slimscroll": "^1.3.8",
+    "bootstrap": "^3.3.7"
+  },
+  "private": true
 }
