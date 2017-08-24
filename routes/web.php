@@ -73,3 +73,7 @@ Route::group(['namespace' => 'Admin'],function(){
 	//admin Auth post Routes
 	Route::post('admin-login', 'Auth\LoginController@login');
 });
+
+Route::get('/redirect/{provider}', 'SocialAuthController@redirect');
+Route::get('/callback/{provider}', 'SocialAuthController@callback');
+

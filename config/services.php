@@ -35,4 +35,15 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id'=> env('CLIENT_ID'),
+        'client_secret' => env('CLIENT_SECRET'),
+        'redirect' => 'http://localhost:8000/callback/facebook',
+    ],
+    'twitter' => [
+        'client_id'=> env('TWITTER_CONSUMER_ID'),
+        'client_secret' => env('TWITTER_CONSUMER_SECRET'),
+        'redirect' => 'http://localhost:8000/callback/twitter',
+    ],
+
 ];
