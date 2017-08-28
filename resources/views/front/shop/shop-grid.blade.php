@@ -76,7 +76,8 @@
 
         </div>
 
-        <!-- Products Grid-->
+        <!-- Products Grid grid
+        -->
 
         <div class="isotope-grid cols-4 mb-2">
 
