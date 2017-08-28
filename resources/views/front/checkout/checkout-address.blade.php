@@ -60,7 +60,7 @@
         <div class="col-sm-6">
         <div class="form-group">
             <label for="checkout-fn">First Name</label>
-            <input class="form-control" type="text" id="checkout-fn" required="" name="firstName"  value="{{ Auth::user()->name }}">
+            <input class="form-control" type="text" id="checkout-fn" required="" name="firstName"  value="">
         </div>
         </div>
         <div class="col-sm-6">
@@ -74,7 +74,7 @@
         <div class="col-sm-6">
         <div class="form-group">
             <label for="checkout-email">E-mail Address</label>
-            <input class="form-control" type="email" id="checkout-email" required="" name="email"  value="{{ Auth::user()->email }}">
+            <input class="form-control" type="email" id="checkout-email" required="" name="email"  value="">
         </div>
         </div>
         <div class="col-sm-6">
