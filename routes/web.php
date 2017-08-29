@@ -34,7 +34,7 @@ Route::get('/delete_cart/{id}', 'HomeController@destroy');
 
 #checkout routes
 
-Route::get('/checkout-address','HomeController@checkoutAddress');
+Route::get('/checkout-address','CheckoutController@checkoutAddress');
 Route::get('/checkout-shipping','HomeController@checkoutShipping');
 Route::get('/checkout-payment','HomeController@checkoutPayment');
 Route::get('/checkout-review','HomeController@checkoutReview');
