@@ -168,7 +168,7 @@
       <section class="container padding-top-3x padding-bottom-2x">
         <div class="row">
           <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="img/services/01.png" alt="Shipping">
-            <h6>Free Worldwide Shipping</h6>
+            <h6>Shipping Tips</h6>
             <p class="text-muted margin-bottom-none">Free shipping for selected orders.</p>
           </div>
           <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="img/services/02.png" alt="Money Back">
