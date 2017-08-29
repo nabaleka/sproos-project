@@ -7,16 +7,15 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Sproos Homepage Manage
+      Sproos Homepage Manager
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i>Administrator</a></li>
       <li><a href="#">Manage</a></li>
-      <li class="active">Home Page</li>
+      <li class="active">Home Pages</li>
     </ol>
   </section>
 
-  <!-- Main content -->
   <!-- Main content -->
     <section class="content">
 
@@ -75,7 +74,7 @@
     <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-        Catogories</a>
+        Categories</a>
       </h4>
     </div>
     <div id="collapse4" class="panel-collapse collapse">
