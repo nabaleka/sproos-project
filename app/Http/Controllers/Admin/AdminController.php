@@ -24,6 +24,31 @@ class AdminController extends Controller
         # - top banner
         # - categories
         # - top sellers
+        return('Manage your sites');
+    }
+
+    public function sellers(){
+        #Manage site sellers
+        #top sellers
+        #All sellers
+        return view('admin/sellers');
+    }
+
+    public function revenue(){
+        #manage site revenue from products and sellers
+        return ('Manage the site revenue');
+
+    }
+
+    public function homePage(){
+        #manage the site homepage
+        return ('Manage the homepage ');
+    }
+
+    public function featuredProducts(){
+        #manage the featured products
+        return ('Manageyour featured products');
+
     }
 
     # Featured page

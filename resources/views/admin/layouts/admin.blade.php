@@ -524,9 +524,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <ul class="treeview-menu">
 
-            <li><a href="/admin/roles">Roles</a></li>
+            <li><a href="#">Featured Products</a></li>
 
-            <li><a href="/">Show</a></li>
+            <li><a href="/admin/sellers">Sellers</a></li>
+
+            <li><a href="#">Home Page</a></li>
+
+            <li><a href="#">Categories</a></li>
+
+            <li><a href="#">Revenue</a></li>
+
+            <li><a href="/admin/roles">Roles</a></li>
 
           </ul>
 

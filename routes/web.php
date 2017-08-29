@@ -75,8 +75,10 @@ Route::group(['namespace' => 'Admin'],function(){
 	//admin Auth post Routes
 	Route::post('admin-login', 'Auth\LoginController@login');
 
-	Route::get('admin/stats','HomeController@stats');
+	Route::get('admin/sellers','AdminController@sellers');
+
 });
+
 
 
 Route::post('/checkout', 'CheckoutController@store')->name('checkout');
