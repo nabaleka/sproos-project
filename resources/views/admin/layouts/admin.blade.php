@@ -16,7 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Admin | Sproos | Administrator</title>
+  <title>Sproos | Administrator</title>
 
   <!-- Tell the browser to be responsive to screen width -->
 
@@ -24,6 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
 
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/logo/favicon.png') }}">
   <!-- Font Awesome -->
 
   <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
@@ -62,11 +63,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Google Font -->
 
-  @yield('style')
-
-  <link rel="stylesheet"
-
-        href=" {{ url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic') }}">
+  <link rel="stylesheet" href="{{ asset('adminscript/plugins/select2/select2.min.css') }}">
+  <link rel="stylesheet" href=" {{ url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic') }}">
 
 </head>
 
@@ -446,23 +444,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
   <!-- Main Footer -->
-
-  <footer class="main-footer">
-
-    <!-- To the right -->
-
-    <div class="pull-right hidden-xs">
-
-      Manage your online bussiness here
-
-    </div>
-
-    <!-- Default to the left -->
-
-    <strong>Copyright &copy; 2017 <a href="#">Sproos</a>.</strong> All rights reserved.
-
-  </footer>
-
+@include('admin.includes.admin-footer')
 
 
   <!-- Control Sidebar -->
@@ -624,87 +606,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <!-- REQUIRED JS SCRIPTS -->
-
-<script>
-
-var ctx = document.getElementById("myChart").getContext('2d');
-
-var myChart = new Chart(ctx, {
-
-    type: 'bar',
-
-    data: {
-
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-
-        datasets: [{
-
-            label: '# of Votes',
-
-            data: [12, 19, 3, 5, 2, 3],
-
-            backgroundColor: [
-
-                'rgba(255, 99, 132, 0.2)',
-
-                'rgba(54, 162, 235, 0.2)',
-
-                'rgba(255, 206, 86, 0.2)',
-
-                'rgba(75, 192, 192, 0.2)',
-
-                'rgba(153, 102, 255, 0.2)',
-
-                'rgba(255, 159, 64, 0.2)'
-
-            ],
-
-            borderColor: [
-
-                'rgba(255,99,132,1)',
-
-                'rgba(54, 162, 235, 1)',
-
-                'rgba(255, 206, 86, 1)',
-
-                'rgba(75, 192, 192, 1)',
-
-                'rgba(153, 102, 255, 1)',
-
-                'rgba(255, 159, 64, 1)'
-
-            ],
-
-            borderWidth: 1
-
-        }]
-
-    },
-
-    options: {
-
-        scales: {
-
-            yAxes: [{
-
-                ticks: {
-
-                    beginAtZero:true
-
-                }
-
-            }]
-
-        }
-
-    }
-
-});
-
-</script>
-
-
-
 <!-- jQuery 3 -->
 
 <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>

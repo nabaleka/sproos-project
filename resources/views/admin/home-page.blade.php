@@ -1,8 +1,5 @@
 @extends('admin.layouts.admin')
 
-@section('style')
-<link rel="stylesheet" href="{{ asset('adminscript/plugins/select2/select2.min.css') }}">
-@endsection
 @section('content')
   <!-- Content Header (Page header) -->
   <section class="content-header">
