@@ -530,7 +530,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <li><a href="/admin/home-page">Home Page</a></li>
 
-            <li><a href="#">Categories</a></li>
+            <li><a href="/admin/category">Categories</a></li>
 
             <li><a href="#">Revenue</a></li>
 
@@ -664,8 +664,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="treeview-menu">
 
             <li><a href="/admin/products">View All</a></li>
-
-            <li><a href="/admin/category">Categories</a></li>
 
           </ul>
 
