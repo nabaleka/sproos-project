@@ -83,7 +83,7 @@
     </div>
     <div id="collapse4" class="panel-collapse collapse">
       <div class="panel-body">Manage categories that will show up in your homepage</div><!-- Panel body-->
-      <a class="btn btn-pimary" href="">Add</a>
+      <a class="btn btn-pimary" href="/admin/category/create">Add</a>
     </div> <!--Collapse panel -->
   </div>
 </div> 
