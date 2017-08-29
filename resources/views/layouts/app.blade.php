@@ -58,7 +58,9 @@
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
 
     <style>
-    
+    img{
+      width : 100%;
+    }
     .site-menu > ul > li > a {
       letter-spacing:3px;
     }
