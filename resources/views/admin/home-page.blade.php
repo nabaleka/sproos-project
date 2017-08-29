@@ -45,6 +45,8 @@
     </div>
     <div id="collapse1" class="panel-collapse collapse in">
       <div class="panel-body">Manage your home page banners. Quality is key!</div>
+
+      <button class="btn btn-pimary">Add</button>
     </div>
   </div>
   <div class="panel panel-default">
@@ -55,7 +57,8 @@
       </h4>
     </div>
     <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body">YOu can feature a product here. Earn from this.</div>
+      <div class="panel-body">You can feature a product here. Earn from this.</div>
+      <button class="btn btn-pimary">Add</button>
     </div>
   </div>
   <div class="panel panel-default">
@@ -67,6 +70,7 @@
     </div>
     <div id="collapse3" class="panel-collapse collapse">
       <div class="panel-body">Here, add top sellers bases on sales</div><!-- Panel body-->
+      <button class="btn btn-pimary">Add</button>
     </div> <!--Collapse panel -->
   </div>
 
@@ -79,6 +83,7 @@
     </div>
     <div id="collapse4" class="panel-collapse collapse">
       <div class="panel-body">Manage categories that will show up in your homepage</div><!-- Panel body-->
+      <a class="btn btn-pimary" href="">Add</a>
     </div> <!--Collapse panel -->
   </div>
 </div> 
