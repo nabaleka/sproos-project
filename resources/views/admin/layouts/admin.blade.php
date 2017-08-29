@@ -528,7 +528,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <li><a href="/admin/sellers">Sellers</a></li>
 
-            <li><a href="#">Home Page</a></li>
+            <li><a href="/admin/home-page">Home Page</a></li>
 
             <li><a href="#">Categories</a></li>
 
@@ -1008,6 +1008,10 @@ var myChart = new Chart(ctx, {
       $(".textarea").wysihtml5();
 
     });
+  
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+  })
 
 </script>
 

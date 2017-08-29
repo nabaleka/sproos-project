@@ -42,7 +42,8 @@ class AdminController extends Controller
 
     public function homePage(){
         #manage the site homepage
-        return ('Manage the homepage ');
+        #by default, returns to admin homepage settings
+        return view('admin/home-page');
     }
 
     public function featuredProducts(){
