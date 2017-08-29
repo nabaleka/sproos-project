@@ -72,13 +72,13 @@
   </div>
 
     <div class="panel panel-default">
-    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
         Catogories</a>
       </h4>
     </div>
-    <div id="collapse3" class="panel-collapse collapse">
+    <div id="collapse4" class="panel-collapse collapse">
       <div class="panel-body">Manage categories that will show up in your homepage</div><!-- Panel body-->
     </div> <!--Collapse panel -->
   </div>
