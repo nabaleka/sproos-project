@@ -15,13 +15,11 @@ class CheckoutController extends Controller
      public function checkoutAddress(){
      	
         // check for user login
-        if (Auth::user()) {
+       
         $cartItems = Cart::content();
         $products = products::all();
         return view ('front.checkout.checkout-address', compact('cartItems'))->with('products', $products);
-        } else {
-            return redirect('login');
-        }
+       
     
         
     }
