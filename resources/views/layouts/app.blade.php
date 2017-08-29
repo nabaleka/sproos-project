@@ -58,6 +58,24 @@
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
 
     <style>
+
+.row .product-card,
+.row .product-thumb {
+  flex:1 0 auto;
+  flex-direction:column;
+}
+.product-text {
+  flex-grow:1
+}
+.flex-row img {
+  height:auto;
+  width:100%
+}
+.owl-carousel .owl-dots .owl-dot{
+  background : #ee2659;
+  
+}
+
     img{
       width : 100%;
     }
