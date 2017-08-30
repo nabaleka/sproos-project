@@ -48,7 +48,7 @@ class AdminController extends Controller
 
     public function featuredProducts(){
         #manage the featured products
-        return ('Manageyour featured products');
+        return view('admin/featured-products');
 
     }
 
