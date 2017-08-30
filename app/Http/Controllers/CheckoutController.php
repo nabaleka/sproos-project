@@ -73,12 +73,11 @@ class CheckoutController extends Controller
       
       }
     
-    }
      public function shipping(Request $request){
        $shipping=$request->shipping;
        Session::put('shipping_method', $shipping);
       return redirect('checkout-review');
-           }
+    }
 
     public function checkoutReview(){
         $cartItems = Cart::content();

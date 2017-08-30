@@ -16,15 +16,17 @@
 
   <!-- Main content -->
     <section class="content">
-        <div class="container">
+   
 
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-sm-12">
 
-            <h1>Upload Multiple Images using dropzone.js and Laravel</h1>
+        <h4>Upload Multiple banner images</h4>
 
-            {!! Form::open([ 'route' => [ 'dropzone.store' ], 'files' => true, 'enctype' => 'multipart/form-data', 'class' => 'dropzone', 'id' => 'image-upload' ]) !!}
+        <form action="/admin/dropzone/store" enctype="multipart/form-data" class="dropzone" method="post" id="image-upload">
+
+            <div class="preview"></div>
 
             <div>
 
@@ -32,13 +34,12 @@
 
             </div>
 
-            {!! Form::close() !!}
+        </form>
 
         </div>
 
     </div>
 
-</div>
 
 
 <script type="text/javascript">

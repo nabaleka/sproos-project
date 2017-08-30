@@ -35,6 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Theme style -->
 
+
   <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
 
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -59,8 +60,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <![endif]-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
-
- 
+<style>
+  .dropzone .dz-preview .dz-error-message {
+      top: 150px!important;
+  }
+</style>
 
   <!-- Google Font -->
 
