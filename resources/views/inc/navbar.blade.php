@@ -56,6 +56,9 @@
             </ul>
 
           </li>
+
+          <li><a href="/register"><span>REGISTER</span></a></li>
+          <li><a href="/login"><span>LOG IN</span></a></li>
         </ul>
 
       </nav>
