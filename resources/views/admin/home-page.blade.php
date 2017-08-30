@@ -105,9 +105,11 @@
       </h4>
     </div>
     <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body">Manage your home page banners. Quality is key!</div>
-
-      <button class="btn btn-pimary">Add</button>
+      <div class="panel-body">Manage your home page banners. Quality is key!
+        <div>
+          <a href="/admin/dropzone" class="btn btn-danger">Add a banner</a>
+        </div>
+      </div>
     </div>
   </div>
   <div class="panel panel-default">
