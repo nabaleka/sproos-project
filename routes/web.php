@@ -81,6 +81,10 @@ Route::group(['namespace' => 'Admin'],function(){
 
 	Route::get('admin/featured-products','AdminController@featuredProducts');
 
+	Route::get('admin/dropzone', 'DropzoneController@dropzone');
+	
+	Route::post('admin/dropzone/store', ['as'=>'dropzone.store','uses'=>'DropzoneController@dropzoneStore']);
+
 });
 
 
