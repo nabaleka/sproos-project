@@ -26,10 +26,8 @@
               <section class="widget widget-links widget-light-skin">
                 <h3 class="widget-title">About Us</h3>
                 <ul>
-                  <li><a href="/soon">Careers</a></li>
                   <li><a href="/about">About Sproos</a></li>
                   <li><a href="/soon">Our Story</a></li>
-                  <li><a href="/soon">Our Blog</a></li>
                 </ul>
               </section>
             </div>
@@ -74,6 +72,6 @@
             </div>
           </div-->
           <!-- Copyright-->
-          <p class="footer-copyright">© All rights reserved. &nbsp;<i class="icon-heart text-danger"></i><a href="http://rokaux.com/" target="_blank"> &nbsp;by Sproos.co.ke</a></p>
+          <p class="footer-copyright">© All rights reserved. &nbsp;<i class="icon-heart text-danger"></i><span> &nbsp;by sproos.co.ke</span></p>
         </div>
       </footer>
