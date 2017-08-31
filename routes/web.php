@@ -92,3 +92,8 @@ Route::group(['namespace' => 'Admin'],function(){
 Route::post('/checkout', 'CheckoutController@store')->name('checkout');
 Route::post('/shipping', 'CheckoutController@shipping')->name('shipping');
 
+
+/** Seller routes**/ 
+Route::group(['namespace' => 'Seller'],function(){
+	Route::get('seller','SellerController@index')->name('seller');
+});

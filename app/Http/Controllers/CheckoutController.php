@@ -43,12 +43,12 @@ class CheckoutController extends Controller
     }
     public function store(Request $request){
         $this->validate($request, [
-              'firstName' => 'required|min:5|max:35',
-              'lastName' => 'required|min:5|max:35',
+              'firstName' => 'required',
+              'lastName' => 'required',
               'phoneNumber' => 'required|min:10|max:16',
               'email' => 'required|',
               'city' => 'required|min:5|max:25',
-              'county' => 'required']);
+              'country' => 'required']);
            $cartItems = Cart::content();
           foreach ($cartItems as $cartItem) {
             $userid=Auth::user()->id;

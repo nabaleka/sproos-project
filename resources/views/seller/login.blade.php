@@ -56,7 +56,7 @@
 
   <div class="login-logo">
 
-    <a href="../../index2.html"><b>Admin</b> Sproos</a>
+    <a href="../../index2.html"><b>Seller</b> Sproos</a>
 
   </div>
 
