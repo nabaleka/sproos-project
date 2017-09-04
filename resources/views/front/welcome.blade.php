@@ -1,10 +1,57 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+<style>
+
+.carousel .carousel-item {
+  height: 100%;
+}
+.carousel .carousel-item > *:first-child {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: inherit;
+}
+
+</style>
 @extends('layouts.app')
 @section('content')
       <!-- Main Slider-->
       <section class="hero-slider" style="min-height:100%;">
       <div>
         <img src="img/hero-slider/sproos-banner.png" style="width:100%;">
+        
+        {{-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        
+        
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            @foreach( $banner as $banners )
+                                <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                            @endforeach
+                        </ol>
+        
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            @foreach( $banner as $banners )
+                                <div class="item {{ $loop->first ? ' active' : '' }}" >
+                                    <img src="{{ $banners->photo }}" alt="{{ $banners->id }}">
+                                </div>
+                            @endforeach
+                        </div>
+        
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+        </div>--}}
       </div>
 
       </section>
@@ -61,8 +108,8 @@
       @foreach($products as $product)
         <!-- Loop through -->
     
-          <div class="grid-item">
-            <div class="product-card">
+          <div class="grid-item equal-heights">
+            <div class="product-card equal-heights">
               <div class="product-badge text-danger"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{Storage::url($product->image)}}" height="100px" width="150px" /></a>
               <h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3>
               <h4 class="product-price">

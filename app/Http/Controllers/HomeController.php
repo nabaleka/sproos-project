@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +25,8 @@ class HomeController extends Controller
     {
         $cartItems = Cart::content();
         $products = products::all();
-        return view('front/welcome',compact('products'),compact('cartItems'));
+        $banner = Banner::all();
+        return view('front/welcome',compact('products'),compact('cartItems'))->with('banner',$banner);
     }
 
 
