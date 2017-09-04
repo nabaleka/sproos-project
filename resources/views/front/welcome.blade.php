@@ -2,12 +2,20 @@
 @extends('layouts.app')
 @section('content')
       <!-- Main Slider-->
+<!--check banner 
+the first image
+
+ -->
       <section class="hero-slider" style="min-height:100%;">
       <div>
+      <!-- Loops -->
         <img src="img/hero-slider/sproos-banner.png" style="width:100%;">
+      <!---->
       </div>
 
       </section>
+
+
       <!-- Top Categories-->
       <section class="container padding-top-3x">
         <h3 class="text-center mb-30">Top Categories</h3>

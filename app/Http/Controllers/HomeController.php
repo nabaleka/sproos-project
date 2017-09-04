@@ -125,12 +125,12 @@ class HomeController extends Controller
     public function add_cart($id){
         $products = products::find($id); // get prodcut by id
        Cart::add(array(
-'id' => $products->id,
-'name' => $products->name,
-'qty' => 1,
-'price' => $products->price,
-'options' => array('img' => $products->image),
-));
+            'id' => $products->id,
+            'name' => $products->name,
+            'qty' => 1,
+            'price' => $products->price,
+            'options' => array('img' => $products->image),
+            ));
        
          return back();
     }

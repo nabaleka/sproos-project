@@ -16,7 +16,7 @@
                 <div class="icon">
                     <i class="fa fa-cart-arrow-down"></i>
                 </div>
-            <a href="/admin/products" class="small-box-footer">View Products <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/seller/products" class="small-box-footer">View Products <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 <!-- ./col -->
