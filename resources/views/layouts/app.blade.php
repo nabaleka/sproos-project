@@ -75,7 +75,10 @@
   background : #ee2659;
   
 }
-
+    
+    .element{
+      margin right : 29.5px;
+    }
     img{
       width : 100%;
     }
@@ -1002,6 +1005,8 @@
     </div>
 
     @include('inc.navbar')
+    @include('includes.search')
+
 
     <!-- Off-Canvas Wrapper-->
 
