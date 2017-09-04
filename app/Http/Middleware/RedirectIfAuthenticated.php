@@ -23,6 +23,11 @@ class RedirectIfAuthenticated
                         return redirect('admin/home');
                     }
                 break;
+            case 'seller':
+                if (Auth::guard($guard)->check()) {
+                    return redirect('seller');
+                }
+            break;
             
             default:
                     if (Auth::guard($guard)->check()) {

@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Seller extends Authenticatable
 {
     use Notifiable;
 
@@ -26,16 +26,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function socialProfile()
-    {
-        return $this->hasOne(SocialLoginProfile::class);
-    }
-
-    public function orders(){
-        return $this->hasMany(Orders::class);
-    }
-     public function payments(){
-        return $this->hasOne(payments::class);
-    }
 }

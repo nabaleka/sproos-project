@@ -20,9 +20,16 @@
 </div>
 </div>
 <!-- Page Content-->
-@if(Auth::guest())
+
+
 <div class="container padding-bottom-3x mb-2">
-    <h4>Your Email Address</h4>
+<div class="row">
+    <!-- Checkout Adress-->
+    <div class="col-xl-9 col-lg-8">
+    <div class="checkout-steps"><a href="/checkout-review">4. Review</a><a href="/checkout-payment"><!--span class="angle"></span-->3. Payment</a><a href="/checkout-shipping"><!--span class="angle"></span-->2. Shipping</a><a class="active" href="/checkout-address"><!--span class="angle"></span-->1. Address</a></div>
+{{--
+ @if(Auth::guest())
+<h4>Your Email Address</h4>
     <hr class="padding-bottom-1x">
 
     <p>
@@ -41,15 +48,11 @@
             </div>
 
     </form>
-</div>
+    <hr class="padding-bottom-1x">
+@endif --}}
 
-@endif
-
-<div class="container padding-bottom-3x mb-2">
-<div class="row">
-    <!-- Checkout Adress-->
-    <div class="col-xl-9 col-lg-8">
-    <div class="checkout-steps"><a href="/checkout-review">4. Review</a><a href="/checkout-payment"><!--span class="angle"></span-->3. Payment</a><a href="/checkout-shipping"><!--span class="angle"></span-->2. Shipping</a><a class="active" href="/checkout-address"><!--span class="angle"></span-->1. Address</a></div>
+    
+    
     <h4>Billing Address</h4>
     @include('includes.messages')
     <hr class="padding-bottom-1x">

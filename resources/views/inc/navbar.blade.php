@@ -6,11 +6,34 @@
 
       <!-- Search-->
 
-      <form class="site-search" method="get">
+      <form class="site-search" method="get" action="/search" id="search" onsubmit="checkform(this)">
 
-        <input type="text" name="site_search" placeholder="Type to search...">
+        <input type="text" name="site_search" placeholder="Type to search and press Enter">
 
-        <div class="search-tools"><span class="clear-search">Clear</span><span class="close-search"><i class="icon-cross"></i></span></div>
+        <div class="search-tools">
+        <script>
+          function checkform(form) {
+              // get all the inputs within the submitted form
+              var inputs = form.getElementsByTagName('site_search');
+              for (var i = 0; i < inputs.length; i++) {
+                  // only validate the inputs that have the required attribute
+                  if(inputs[i].value == ""){
+                      // found an empty field that is required
+                      alert("Please fill all required fields");
+                      return false;
+                  }
+              }
+              return true;
+          }
+
+          function search(){
+            var x = document.getElementById("search").submit();
+          }
+        </script>
+          <span class="clear-search" onclick="search();">SEARCH <i class="icon-search"></i></span>
+          <span class="close-search"><i class="icon-cross"></i></span>
+        </div>
+    
 
       </form>
 

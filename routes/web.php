@@ -37,8 +37,9 @@ Route::get('/delete_cart/{id}', 'HomeController@destroy');
 Route::get('/checkout-address','CheckoutController@checkoutAddress');
 Route::get('/checkout-shipping','HomeController@checkoutShipping');
 Route::get('/checkout-payment','HomeController@checkoutPayment');
-Route::get('/checkout-review','HomeController@checkoutReview');
 Route::get('/checkout-complete','HomeController@checkoutComplete');
+Route::get('/checkout-payment','PaymentsController@payment');
+Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review');
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 
@@ -92,3 +93,16 @@ Route::group(['namespace' => 'Admin'],function(){
 Route::post('/checkout', 'CheckoutController@store')->name('checkout');
 Route::post('/shipping', 'CheckoutController@shipping')->name('shipping');
 
+
+/** Seller routes**/ 
+Route::group(['namespace' => 'Seller'],function(){
+	Route::get('seller','SellerController@index')->name('seller');
+	Route::get('seller-login', 'Auth\LoginController@showLoginForm')->name('seller.login');
+	//admin Auth post Routes
+	Route::post('seller-login', 'Auth\LoginController@login');
+});
+
+
+Route::resource('seller/products','Admin\ProductsController');
+
+Route::get('/search','SearchController@index')->name('search');

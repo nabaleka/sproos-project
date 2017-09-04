@@ -6,7 +6,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use App\products;
 use Illuminate\Database\Eloquent\Model;
 
-class Orders extends Model {
+class Payments extends Model {
    
 
     public function user(){
