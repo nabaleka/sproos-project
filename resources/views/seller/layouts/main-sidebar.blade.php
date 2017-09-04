@@ -14,7 +14,7 @@
 
         <div class="pull-left image">
 
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="" class="img-circle" alt="">
 
         </div>
 
@@ -98,6 +98,7 @@
           </a>
 
           <ul class="treeview-menu">
+            <li><a href="/seller/products">Feature Product</a></li>
 
             <li><a href="#">Feature Product</a></li>
 

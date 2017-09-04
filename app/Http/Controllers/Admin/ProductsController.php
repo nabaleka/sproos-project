@@ -38,7 +38,7 @@ class ProductsController extends Controller
 
     {
 
-        $this->middleware('auth:admin');
+        $this->middleware('auth:seller');
 
     }
 

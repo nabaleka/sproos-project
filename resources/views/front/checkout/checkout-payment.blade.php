@@ -146,6 +146,9 @@
             <div class="card-block">
 
             <p>Pesapal - Payments</p>
+           <?php 
+             echo $iframe;
+           ?>
            
 
             </div>

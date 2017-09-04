@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Model\Admin\products;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use App\Model\order;
+#use App\Model\order;
+use App\Orders;
 use App\Address; // for cart lib
 
 class CheckoutController extends Controller
@@ -42,6 +43,8 @@ class CheckoutController extends Controller
         return view ('front.checkout.checkout-payment',compact('cartItems'))->with('products', $products);
     }
     public function store(Request $request){
+        $cartItems = Cart::content();
+        
         $this->validate($request, [
               'firstName' => 'required',
               'lastName' => 'required',
@@ -49,10 +52,10 @@ class CheckoutController extends Controller
               'email' => 'required|',
               'city' => 'required|min:5|max:25',
               'country' => 'required']);
-           $cartItems = Cart::content();
-          foreach ($cartItems as $cartItem) {
-            $userid=Auth::user()->id;
-          $orders=new orders;
+        
+        foreach ($cartItems as $cartItem) {
+        $userid = Auth::user()->id;
+          $orders=new Orders;
           $orders->user_id = $userid;
           $orders->status= 'pending';
           $orders->qty = $cartItem->qty;
@@ -66,17 +69,17 @@ class CheckoutController extends Controller
           $orders->county = $request->county;
           $orders->save();
           
-          }
+         }
          
-          return redirect('checkout-shipping');
-         
+          return redirect('checkout-shipping',compact('cartItems'))->with('products', $products);
       
       }
     
      public function shipping(Request $request){
+        $cartItems = Cart::content();
        $shipping=$request->shipping;
        Session::put('shipping_method', $shipping);
-      return redirect('checkout-review');
+      return redirect('checkout-review' ,compact('cartItems'))->with('products', $products);
     }
 
     public function checkoutReview(){

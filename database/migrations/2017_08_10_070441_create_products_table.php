@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('slug',200);
             $table->double('price',15,8);
             $table->text('description');
+            $table->integer('seller_id');
             $table->timestamps();
         });
     }

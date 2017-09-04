@@ -72,7 +72,7 @@
 
     
 
-    <form action="{{ route('admin.login') }}" method="post">
+    <form action="{{ route('seller.login') }}" method="post">
 
     {{ csrf_field() }}
 
