@@ -48,7 +48,8 @@
 
   <![endif]-->
 
-  <style>
+
+</head><style>
          b{
            color : #ee2956;
          }
@@ -74,8 +75,6 @@
          }
   
   </style>
-
-</head>
 
 <body class="hold-transition login-page">
 

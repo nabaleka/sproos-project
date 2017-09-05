@@ -47,13 +47,40 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
   <![endif]-->
+  
+  <style>
+         b{
+           color : #ee2956;
+         }
+         .login-box{
+           background : #fff;
+         }
+         .form-control {
+	          border-radius: 20px;
+	          box-shadow: none;
+	          border-color: #ee2956;
+
+         }
+         .btn.btn-flat {
+            border-radius : 20px;
+         }
+         .glyphicon{
+            color : #ee2956;
+         }
+         .btn-primary{
+           background : transparent;
+           border-color : #ee2956;
+           color : #ee2956;
+         }
+  
+  </style>
 
 </head>
 
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="/seller"><b>Sproos</b>Seller</a>
+    <a href="/seller">Sproos<b>Seller</b></a>
   </div>
 
   <div class="register-box-body">
