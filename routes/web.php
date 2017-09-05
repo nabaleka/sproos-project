@@ -66,7 +66,7 @@ Route::group(['namespace' => 'Admin'],function(){
 	// Invoices Routes
 	Route::resource('admin/invoices','InvoicesController');
 	// Orders Routes
-	Route::resource('admin/orders','OrdersController');
+	#Route::resource('admin/orders','OrdersController');
 	// Category Routes
 	Route::resource('admin/category','CategoryController');
     // Subcategory Routes

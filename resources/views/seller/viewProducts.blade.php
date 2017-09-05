@@ -67,7 +67,7 @@
                         @foreach ($products as $product)
                           <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td><img src="{{ Storage::url($product->image) }}" height="100px" width="150px" />
+                            <td><img src="{{ Storage::disk('uploads')->url($product->image) }}" max-height="100px" width="100%" />
                             
                             </td>
                             <td>{{ $product->name }}</td>

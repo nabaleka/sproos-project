@@ -14,7 +14,7 @@
 
         <div class="pull-left image">
 
-          <img src="" class="img-circle" alt="">
+          <img src="{{ asset('uploads/profile/no-image.jpg') }}" class="img-circle" alt="">
 
         </div>
 
@@ -77,9 +77,9 @@
 
           <ul class="treeview-menu">
 
-            <li><a href="#">Add</a></li>
+            <li><a href="{{route('products.create') }}">Add</a></li>
 
-            <li><a href="#">View All</a></li>
+            <li><a href="{{route('products.index') }}">View All</a></li>
 
           </ul>
         
