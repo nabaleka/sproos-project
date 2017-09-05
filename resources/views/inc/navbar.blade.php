@@ -1,5 +1,20 @@
     <!-- Navbar-->
-
+<style>
+       .site-search .search-tools{
+         top : 27px;
+       }
+       .custom-select{
+         border-radius : 22px;
+         border-color : #ee2956;
+       }
+       .clear-search {
+         border-radius: 22px;
+         border-color : #ee2956;
+         padding : 4px 15px;
+         color : #ee2956;
+       }
+      
+</style>
     <!-- Remove ".navbar-sticky" class to make navigation bar scrollable with the page.-->
 
     <header class="navbar navbar-sticky" style="margin-bottom:0;">
@@ -30,7 +45,13 @@
             var x = document.getElementById("search").submit();
           }
         </script>
-          <span class="clear-search" onclick="search();">SEARCH <i class="icon-search"></i></span>
+        <select class=" custom-select">
+<option selected>African</option>
+<option value="1">Men</option>
+<option value="2">Women</option>
+<option value="3">Kids</option>
+</select>
+          <span class="clear-search" onclick="search();"><a class="btn btn-outline-primary btn-sm">SEARCH </a></span>
           <span class="close-search"><i class="icon-cross"></i></span>
         </div>
     
@@ -79,9 +100,17 @@
             </ul>
 
           </li>
-
+          @if(Auth::guest())
           <li><a href="/register"><span>REGISTER</span></a></li>
-          <li><a href="/login"><span>LOG IN</span></a></li>
+          <li><a href=""><span>Login</span></a>
+            <ul class="sub-menu">
+                <li><a href="/seller-login">Seller</a></li>
+                <li><a href="/login">Buyer</a></li>
+
+            </ul>
+
+          </li>
+          @endif
         </ul>
 
       </nav>

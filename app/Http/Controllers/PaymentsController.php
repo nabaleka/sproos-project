@@ -9,8 +9,11 @@ use App\Payment;
 use App\Orders;
 use DB;
 use Pesapal;
+<<<<<<< HEAD
 use Gloudemans\Shoppingcart\Facades\Cart;
 
+=======
+>>>>>>> a418c30298790808458ccad91c24f31aef92e689
 class PaymentsController extends Controller
 {
     public function payment(){//initiates payment
@@ -22,7 +25,11 @@ class PaymentsController extends Controller
         $orders -> save();
 
         $details = array(
+<<<<<<< HEAD
         'amount' =>$orders ->total_price,
+=======
+        'amount' =>$orders ->amount,
+>>>>>>> a418c30298790808458ccad91c24f31aef92e689
         'description' => 'Test Transaction',
          'type' => 'MERCHANT',
          'first_name' => 'joseph',
@@ -35,8 +42,12 @@ class PaymentsController extends Controller
        );
        $iframe=Pesapal::makePayment($details);
        $orders = DB::table('orders')->where('user_id',Auth::user()->id)->get();
+<<<<<<< HEAD
        $cartItems = Cart::content();
        return view('front.checkout.checkout-payment', compact('iframe','orders','cartItems'));
+=======
+       return view('front.checkout.checkout-payment', compact('iframe','orders'));
+>>>>>>> a418c30298790808458ccad91c24f31aef92e689
     }
     public function paymentsuccess(Request $request)//just tells u payment has gone thru..but not confirmed
     {

@@ -12,7 +12,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'tax' => 21,
+=======
+    'tax' => 10,
+>>>>>>> a418c30298790808458ccad91c24f31aef92e689
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +30,11 @@ return [
 
     'database' => [
 
+<<<<<<< HEAD
         'connection' => null,
+=======
+        'connection' => env('DB_CONNECTION', 'mysql'),
+>>>>>>> a418c30298790808458ccad91c24f31aef92e689
 
         'table' => 'shoppingcart',
 

@@ -14,14 +14,11 @@
 
         <div class="pull-left image">
 
-          <img src="" class="img-circle" alt="">
+          <img src="{{ asset('uploads/profile/no-image.jpg') }}" class="img-circle" alt="">
 
         </div>
 
         <div class="pull-left info">
-
-          <p>Seller</p>
-
           <!-- Status -->
 
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
@@ -60,13 +57,19 @@
 
       <ul class="sidebar-menu" data-widget="tree">
 
-        <li class="header">Seller</li>
+        <li class="header">
+        @if(Auth::guard('seller'))
+          <p>{{ Auth::guard('seller')->user()->email }}</p>
+        @else
+          <p>Seller</p>
+        @endif
+        </li>
 
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="/admin/home"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="/seller"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
         <li class="treeview">
-          <a href="/admin/stats"><i class="fa fa-area-chart"></i> <span>My Products</span>
+          <a href=""><i class="fa fa-area-chart"></i> <span>Products</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -74,11 +77,9 @@
 
           <ul class="treeview-menu">
 
-            <li><a href="#">Summary</a></li>
+            <li><a href="{{route('products.create') }}">Add</a></li>
 
-            <li><a href="#">New Product</a></li>
-
-            <li><a href="#">View All</a></li>
+            <li><a href="{{route('products.index') }}">View All</a></li>
 
           </ul>
         
@@ -113,78 +114,29 @@
         </li>
 
       <!-- Orders-->
-        <li class="treeview">
-
-          <a href="/admin/orders"><i class="fa fa-money"></i> <span>Orders</span>
-
-            <span class="pull-right-container">
-
-                <i class="fa fa-angle-left pull-right"></i>
-
-              </span>
-
-          </a>
-
-          <ul class="treeview-menu">
-
-            <li><a href="admin/invoices">Summary</a></li>
-
-            <li><a href="/admin/orders">View Orders</a></li>
-
-            <li><a href="#">Manage</a></li>
-
-          </ul>
-
-        </li>
-
+      <li><a href=""><i class="fa fa-dashboard"></i> <span>Orders</span></a></li>
         <!-- Revenue -->
         <li class="treeview">
 
           <a href="#"><i class="fa fa-bar-chart"></i> <span>Revenue</span>
 
             <span class="pull-right-container">
-
                 <i class="fa fa-angle-left pull-right"></i>
-
               </span>
-
           </a>
-
           <ul class="treeview-menu">
 
             <li><a href="#">Summary</a></li>
 
             <li><a href="#">Sales</a></li>
 
-            <li><a href="#">Commission</a></li>
-
           </ul>
 
         </li>
 
-        <!-- Email -->
+        <!-- Account -->
+        <li><a href="/seller-account"><i class="fa fa-gear"></i> <span>Account</span></a></li>
 
-        <li class="treeview">
-
-          <a href="#"><i class="fa fa-envelope-o"></i> <span>Messages</span>
-
-            <span class="pull-right-container">
-
-                <i class="fa fa-angle-left pull-right"></i>
-
-              </span>
-
-          </a>
-
-          <ul class="treeview-menu">
-
-            <li><a href="#">Inbox</a></li>
-
-            <li><a href="#">Sent</a></li>
-
-          </ul>
-
-        </li>
 
       </ul>
 

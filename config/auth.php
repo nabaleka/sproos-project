@@ -79,8 +79,8 @@ return [
         ],
        
          'admins' => [
-             'driver' => 'database',
-             'table' => 'admins',
+             'driver' => 'eloquent',
+             'model' => App\Admin::class,
          ],
 
          'seller' => [
@@ -111,10 +111,16 @@ return [
             'expire' => 60,
         ],
 
-        'users' => [
+        'sellers' => [
             'provider' => 'seller',
             'table' => 'password_resets',
             'expire' => 15,
+        ],
+
+        'admin' => [
+            'provider' => 'admin',
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
         
         

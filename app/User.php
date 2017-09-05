@@ -31,11 +31,4 @@ class User extends Authenticatable
     {
         return $this->hasOne(SocialLoginProfile::class);
     }
-
-    public function orders(){
-        return $this->hasMany(Orders::class);
-    }
-     public function payments(){
-        return $this->hasOne(payments::class);
-    }
 }

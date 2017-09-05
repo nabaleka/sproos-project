@@ -44,7 +44,11 @@
 
     <div class="col-xl-9 col-lg-8">
 
-    <div class="checkout-steps"><a class="active" href="/checkout-review">4. Review</a><a class="completed" href="/checkout-payment"><span class="step-indicator icon-circle-check"></span><!--span class="angle"></span-->3. Payment</a><a class="completed" href="/checkout-shipping"><span class="step-indicator icon-circle-check"></span><!--span class="angle"></span-->2. Shipping</a><a class="completed" href="/checkout-address"><span class="step-indicator icon-circle-check"></span><!--span class="angle"></span-->1. Address</a></div>
+    <div class="checkout-steps">
+    <a class="active" href="#">3. Review</a>
+    <a class="completed" href="/checkout-payment"><span class="step-indicator icon-circle-check"></span><!--span class="angle"></span-->2. Payment</a>
+    <a class="completed" href="/checkout-shipping"><span class="step-indicator icon-circle-check"></span><!--span class="angle"></span-->1. Shipping</a>
+    </div>
 
     <h4>Review Your Order</h4>
 

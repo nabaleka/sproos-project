@@ -48,6 +48,34 @@
 
   <![endif]-->
 
+
+  <style>
+         b{
+           color : #ee2956;
+         }
+         .login-box{
+           background : #fff;
+         }
+         .form-control {
+	          border-radius: 20px;
+	          box-shadow: none;
+	          border-color: #ee2956;
+
+         }
+         .btn.btn-flat {
+            border-radius : 20px;
+         }
+         .glyphicon{
+            color : #ee2956;
+         }
+         .btn-primary{
+           background : transparent;
+           border-color : #ee2956;
+           color : #ee2956;
+         }
+  
+  </style>
+
 </head>
 
 <body class="hold-transition login-page">

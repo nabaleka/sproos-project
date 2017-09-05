@@ -12,6 +12,11 @@ use App\Model\address;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
      public function accountProfile(){
         $cartItems = Cart::content();
         $products = products::all();
