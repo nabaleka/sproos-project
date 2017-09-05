@@ -19,9 +19,11 @@
         </div>
 
         <div class="pull-left info">
-
+        @if(Auth::guard('seller'))
+          <p>{{ Auth::guard('seller')->user()->email }}</p>
+        @else
           <p>Seller</p>
-
+        @endif
           <!-- Status -->
 
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
@@ -63,10 +65,10 @@
         <li class="header">Seller</li>
 
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="/admin/home"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="active"><a href="/seller"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
         <li class="treeview">
-          <a href="/admin/stats"><i class="fa fa-area-chart"></i> <span>My Products</span>
+          <a href=""><i class="fa fa-area-chart"></i> <span>My Products</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>

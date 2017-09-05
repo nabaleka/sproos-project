@@ -1,6 +1,5 @@
 
 @extends('layouts.app')
-@extends('seach.php')
 @section('content')
 <!-- Page Title-->
 <div class="page-title">

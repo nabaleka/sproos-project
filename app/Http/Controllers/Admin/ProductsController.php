@@ -13,6 +13,7 @@ use App\Model\Admin\subcategories;
 use App\Model\Admin\categories;
 
 use App\Model\Admin\products;
+use App\Seller;
 
 use App\Http\Controllers\Controller;
 
@@ -50,7 +51,7 @@ class ProductsController extends Controller
 
          $products = products::all();
 
-       return view('admin.viewProducts',compact('products'));
+       return view('seller.viewProducts',compact('products'));
 
     }
 
@@ -74,7 +75,7 @@ class ProductsController extends Controller
 
            $categories =categories::all();
 
-        return view('admin.products',compact('categories','subcategories'));
+        return view('seller.products',compact('categories','subcategories'));
 
     }
 
@@ -162,7 +163,7 @@ class ProductsController extends Controller
 
             $categories =categories::all();
 
-            return view('admin.editProducts',compact('subcategories','categories','products'));
+            return view('seller.editProducts',compact('subcategories','categories','products'));
 
     }
 

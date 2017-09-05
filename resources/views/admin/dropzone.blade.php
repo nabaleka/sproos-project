@@ -1,4 +1,4 @@
-@extends('admin.layouts.admin')
+@extends('seller.layouts.seller')
 
 @section('content')
   <!-- Content Header (Page header) -->
@@ -24,17 +24,9 @@
 
         <h4>Upload Multiple banner images</h4>
 
-        <form action="/admin/dropzone/store" enctype="multipart/form-data" class="dropzone" method="post" id="image-upload">
 
-            <div class="preview"></div>
+        <p>Upload a banner image for your home page.</p>
 
-            <div>
-
-                <h3>Upload Multiple Image By Click On Box</h3>
-
-            </div>
-
-        </form>
 
         </div>
 

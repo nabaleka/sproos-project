@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Banner;
+
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
@@ -25,8 +25,7 @@ class HomeController extends Controller
     {
         $cartItems = Cart::content();
         $products = products::all();
-        $banner = Banner::all();
-        return view('front/welcome',compact('products'),compact('cartItems'))->with('banner',$banner);
+        return view('front/welcome',compact('products'),compact('cartItems'));
     }
 
 
@@ -126,12 +125,12 @@ class HomeController extends Controller
     public function add_cart($id){
         $products = products::find($id); // get prodcut by id
        Cart::add(array(
-'id' => $products->id,
-'name' => $products->name,
-'qty' => 1,
-'price' => $products->price,
-'options' => array('img' => $products->image),
-));
+            'id' => $products->id,
+            'name' => $products->name,
+            'qty' => 1,
+            'price' => $products->price,
+            'options' => array('img' => $products->image),
+            ));
        
          return back();
     }
