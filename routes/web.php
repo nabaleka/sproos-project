@@ -34,23 +34,12 @@ Route::get('/delete_cart/{id}', 'HomeController@destroy');
 
 #checkout routes
 
-<<<<<<< HEAD
 #Route::get('/checkout-address','CheckoutController@checkoutAddress');
 Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth');;
 Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth');;
 Route::get('/checkout-complete','HomeController@checkoutComplete')->middleware('auth');;
 Route::get('/checkout-payment','PaymentsController@payment');
 Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth');;
-=======
-Route::get('/checkout-address','CheckoutController@checkoutAddress');
-Route::get('/checkout-shipping','CheckoutController@checkoutShipping');
-Route::get('/checkout-payment','HomeController@checkoutPayment');
-Route::get('/checkout-complete','HomeController@checkoutComplete');
-Route::get('/checkout-payment','PaymentsController@payment');
-Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review');
-Route::get('/checkout-payment','PaymentsController@payment');
-
->>>>>>> 174c3946f7e4755de97e1b9aef34f80f60bf88a7
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 
