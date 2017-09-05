@@ -81,9 +81,9 @@ public function getCancel()
     // Curse and humiliate the user for cancelling this most sacred payment (yours)
 	return view('checkout.cancel');
 }
-Customize Paypal payment page
+//Customize Paypal payment page
 
-First we need to create a new WebProfile for obtain the id, then in the future we can simply set this id to the payment object.
+//First we need to create a new WebProfile for obtain the id, then in the future we can simply set this id to the payment object.
 
 public function createWebProfile(){
 
