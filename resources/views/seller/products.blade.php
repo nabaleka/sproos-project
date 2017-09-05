@@ -49,19 +49,44 @@
                   <input type="text" class="form-control" id="slug" name="price" placeholder="price">
                 </div>
               </div>
+
+               <div class="form-group">
+                  <label for="price">Stock</label>
+                  <input type="number" class="form-control" id="slug" name="stock" placeholder="Enter stock" step="3">
+                </div>
+              </div>
+
               <div class="col-lg-6">
                             <br>
                               <div class="form-group">
                                 <div class="pull-right">
-                                  <label for="image">Product image</label>
+                                  <label for="image">image three</label>
                                   <input type="file" name="image" id="image">
                                 </div>
-                                <div class="checkbox pull-left">
-                                  <label>
-                                    <input type="checkbox" name="status" value="1"> Publish
-                                  </label>
+
+                               <div class="form-group">
+                                <div class="pull-right">
+                                  <label for="image">image four</label>
+                                  <input type="file" name="image" id="image">
                                 </div>
+                                
+ <br>
+                               <div class="form-group">
+                                <div class="pull-right">
+                                  <label for="image">image three</label>
+                                  <input type="file" name="image" id="image">
+                                </div>
+                               
+                                 <br>
                               </div>
+                               <div class="form-group">
+                                <div class="pull-right">
+                                  <label for="image">image two</label>
+                                  <input type="file" name="image" id="image">
+                                </div>
+                               
+                              </div>
+
                               <br>
                               <div class="form-group" style="margin-top:18px;">
                                 <label>Select Category</label>
@@ -71,14 +96,7 @@
                                 @endforeach
                                 </select>
                               </div>
-                              <div class="form-group" style="margin-top:18px;">
-                                <label>Select Type</label>
-                                <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="categories[]">
-                                  @foreach ($subcategories as $subcategory)
-                                    <option value="{{ $subcategory->id }}">{{ $subcategory->title }}</option>
-                                  @endforeach
-                                </select>
-                              </div>
+                              
                               
                             </div>
             </div>
