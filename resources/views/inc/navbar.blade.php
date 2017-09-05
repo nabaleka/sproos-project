@@ -1,13 +1,17 @@
     <!-- Navbar-->
 <style>
+       .site-search .search-tools{
+         top : 27px;
+       }
        .custom-select{
          border-radius : 22px;
+         border-color : #ee2956;
        }
-       .clear-search h5{
+       .clear-search {
          border-radius: 22px;
-         background : #ee2956;
+         border-color : #ee2956;
          padding : 4px 15px;
-         color : #fff;
+         color : #ee2956;
        }
       
 </style>
@@ -42,12 +46,12 @@
           }
         </script>
         <select class=" custom-select">
-<option selected>Open this select menu</option>
-<option value="1">One</option>
-<option value="2">Two</option>
-<option value="3">Three</option>
+<option selected>African</option>
+<option value="1">Men</option>
+<option value="2">Women</option>
+<option value="3">Kids</option>
 </select>
-          <span class="clear-search" onclick="search();"><h5>SEARCH </h5></span>
+          <span class="clear-search" onclick="search();"><a class="btn btn-outline-primary btn-sm">SEARCH </a></span>
           <span class="close-search"><i class="icon-cross"></i></span>
         </div>
     

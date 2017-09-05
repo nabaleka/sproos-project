@@ -1002,11 +1002,6 @@
     </div>
 
     @include('inc.navbar')
-<<<<<<< HEAD
- {{--@include('includes.search')--}}
-
-=======
->>>>>>> ca614ce3c2ee17e74c75c64e3fcb04f57c842143
 
     <!-- Off-Canvas Wrapper-->
 
