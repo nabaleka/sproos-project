@@ -45,6 +45,10 @@ class LoginController extends Controller
 
 
     use AuthenticatesUsers;
+    public function __construct()
+    {
+        $this->middleware('guest:seller');
+    }
 
 
 
@@ -58,7 +62,7 @@ class LoginController extends Controller
 
      */
 
-    protected $redirectTo = 'seller';
+    protected $redirectTo = '/seller';
 
 
 
@@ -95,24 +99,6 @@ class LoginController extends Controller
         }
 
         return $this->sendFailedLoginResponse($request);
-
-    }
-
-  
-
-    public function __construct()
-
-    {
-
-        $this->middleware('guest:seller')->except('logout');
-
-    }
-
-    protected function guard()
-
-    {
-
-        return Auth::guard('seller');
 
     }
 

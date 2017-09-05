@@ -79,9 +79,17 @@
             </ul>
 
           </li>
-
+          @if(Auth::guest())
           <li><a href="/register"><span>REGISTER</span></a></li>
-          <li><a href="/login"><span>LOG IN</span></a></li>
+          <li><a href=""><span>Login</span></a>
+            <ul class="sub-menu">
+                <li><a href="/seller-login">Seller</a></li>
+                <li><a href="/login">Buyer</a></li>
+
+            </ul>
+
+          </li>
+          @endif
         </ul>
 
       </nav>

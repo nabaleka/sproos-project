@@ -18,16 +18,16 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 #account routes
 Route::get('/create', 'HomeController@login');
-Route::get('/account-profile', 'HomeController@accountProfile');
-Route::get('/account-orders','HomeController@accountOrders');
-Route::get('/account-address','HomeController@accountAddress');
+Route::get('/account-profile', 'HomeController@accountProfile')->middleware('auth');
+Route::get('/account-orders','HomeController@accountOrders')->middleware('auth');
+Route::get('/account-address','HomeController@accountAddress')->middleware('auth');;
 Route::get('/faq','HomeController@faq');
 Route::get('/home', 'HomeController@index')->name('home');
 
 #shop routes
 Route::get('/shop-list','HomeController@shopList');
 Route::get('/shop-grid','HomeController@shopGrid');
-Route::get('/cart','HomeController@cart');
+Route::get('/cart','HomeController@cart')->middleware('auth');;
 Route::get('/categories', 'HomeController@allCategories');
 Route::get('/add-to-cart/{id}', 'HomeController@add_cart');
 Route::get('/delete_cart/{id}', 'HomeController@destroy');
@@ -35,11 +35,11 @@ Route::get('/delete_cart/{id}', 'HomeController@destroy');
 #checkout routes
 
 Route::get('/checkout-address','CheckoutController@checkoutAddress');
-Route::get('/checkout-shipping','HomeController@checkoutShipping');
-Route::get('/checkout-payment','HomeController@checkoutPayment');
-Route::get('/checkout-complete','HomeController@checkoutComplete');
+Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth');;
+Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth');;
+Route::get('/checkout-complete','HomeController@checkoutComplete')->middleware('auth');;
 Route::get('/checkout-payment','PaymentsController@payment');
-Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review');
+Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth');;
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 
@@ -100,9 +100,17 @@ Route::group(['namespace' => 'Seller'],function(){
 	Route::get('seller-login', 'Auth\LoginController@showLoginForm')->name('seller.login');
 	//admin Auth post Routes
 	Route::post('seller-login', 'Auth\LoginController@login');
+	Route::get('seller-register', 'Auth\SellerRegisterController@showRegistrationForm');
+	Route::post('seller-register', 'Auth\SellerRegisterController@register');
 });
 
 
 Route::resource('seller/products','Admin\ProductsController');
 
 Route::get('/search','SearchController@index')->name('search');
+
+Route::get('login/{provider}', 'SocialAuthController@auth')
+->where(['provider' => 'facebook|google|twitter']);
+
+Route::get('login/{provider}/callback', 'SocialAuthController@login')
+->where(['provider' => 'facebook|google|twitter']);

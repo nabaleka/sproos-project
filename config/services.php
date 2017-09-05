@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/callback',
+        'redirect' => 'http://localhost:8000/login/facebook/callback',
     ],
 	
     'google' => [
@@ -50,7 +50,7 @@ return [
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
-        'redirect' => 'http://127.0.0.1:8000/callback',
+        'redirect' => 'http://127.0.0.1:8000/login/twitter/callback',
     ],
 
 

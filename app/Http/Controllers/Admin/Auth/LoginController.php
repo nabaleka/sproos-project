@@ -58,8 +58,16 @@ class LoginController extends Controller
 
      */
 
-    protected $redirectTo = 'admin';
+    protected $redirectTo = '/admin';
 
+    public function __construct()
+    
+        {
+    
+            $this->middleware('guest:admin');
+    
+        }
+    
 
 
     /**
@@ -95,24 +103,6 @@ class LoginController extends Controller
         }
 
         return $this->sendFailedLoginResponse($request);
-
-    }
-
-  
-
-    public function __construct()
-
-    {
-
-        $this->middleware('guest:admin')->except('logout');
-
-    }
-
-    protected function guard()
-
-    {
-
-        return Auth::guard('admin');
 
     }
 
