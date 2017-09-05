@@ -1005,7 +1005,7 @@
     </div>
 
     @include('inc.navbar')
-    @include('includes.search')
+ {{--@include('includes.search')--}}
 
 
     <!-- Off-Canvas Wrapper-->
