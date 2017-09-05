@@ -34,7 +34,7 @@ Route::get('/delete_cart/{id}', 'HomeController@destroy');
 
 #checkout routes
 
-Route::get('/checkout-address','CheckoutController@checkoutAddress');
+#Route::get('/checkout-address','CheckoutController@checkoutAddress');
 Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth');;
 Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth');;
 Route::get('/checkout-complete','HomeController@checkoutComplete')->middleware('auth');;
@@ -62,7 +62,7 @@ Route::group(['namespace' => 'Admin'],function(){
 	// Permission Routes
 	Route::resource('admin/permissions','PermissionController');
 	// Products Routes
-	Route::resource('admin/products','ProductsController');
+	#Route::resource('admin/products','ProductsController');
 	// Invoices Routes
 	Route::resource('admin/invoices','InvoicesController');
 	// Orders Routes
@@ -103,10 +103,8 @@ Route::group(['namespace' => 'Seller'],function(){
 	Route::get('seller-register', 'Auth\SellerRegisterController@showRegistrationForm');
 	Route::post('seller-register', 'Auth\SellerRegisterController@register');
 	Route::get('seller-account', 'SellerController@account')->name('seller.account');
+	Route::resource('seller/products','ProductsController');
 });
-
-
-Route::resource('seller/products','Admin\ProductsController');
 
 Route::get('/search','SearchController@index')->name('search');
 
