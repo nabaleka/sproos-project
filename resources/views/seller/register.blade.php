@@ -8,7 +8,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Sproos Admin | Log in</title>
+  <title>Sproos Seller | Register</title>
 
   <!-- Tell the browser to be responsive to screen width -->
 

@@ -238,7 +238,7 @@
 
               <!-- The user image in the navbar-->
 
-              <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="user-image" alt="">
+              <img src="{{ asset('uploads/profile/no-image.jpg') }}" class="user-image" alt="">
 
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
 
@@ -258,7 +258,7 @@
 
               <li class="user-header">
 
-                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                <img src="{{ asset('uploads/profile/no-image.jpg') }}" class="img-circle" alt="User Image">
 
 
 
