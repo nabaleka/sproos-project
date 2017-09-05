@@ -52,8 +52,7 @@
          b{
            color : #ee2956;
          }
-         .login-box{
-           background : #fff;
+         
          }
          .form-control {
 	          border-radius: 20px;
@@ -79,11 +78,12 @@
 
 <body class="hold-transition register-page">
 <div class="register-box">
+  
+
+  <div class="register-box-body">
   <div class="register-logo">
     <a href="/seller">Sproos<b>Seller</b></a>
   </div>
-
-  <div class="register-box-body">
     <p class="login-box-msg"><span style="color:red;">*</span>Register as a Sproos seller. <br>Fill in your correct details.</p>
 
     <form action="{{url('/seller-register')}}" method="post">
@@ -129,7 +129,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register Me</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
         </div>
         <!-- /.col -->
       </div>

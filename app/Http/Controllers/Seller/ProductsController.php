@@ -37,7 +37,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        
         $subcategories =subcategories::all();
         $categories =categories::all();
         return view('seller.products',compact('categories','subcategories'));
