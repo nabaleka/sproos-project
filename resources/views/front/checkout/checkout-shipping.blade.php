@@ -178,47 +178,39 @@
 
         <!-- Order Summary Widget-->
 
+        @foreach($orders as $order)
         <section class="widget widget-order-summary">
-
         <h3 class="widget-title">Order Summary</h3>
-
         <table class="table">
-
             <tr>
-
-            <td>Cart Subtotal:</td>
-
-            <td class="text-medium">Kshs. {{Cart::total()}}</td>
-
+            <td>Cart sub total:</td>
+            <td class="text-medium">KShs. <?php echo $order->price ?></td>
             </tr>
-
             <tr>
-
             <td>Shipping:</td>
-
             <td class="text-medium">Kshs. {{ Session::get('shipping_method')}}</td>
-
             </tr>
-
             <tr>
-
             <td>Estimated tax:</td>
-
-            <td class="text-medium">16% V.A.T ( {{ Cart::total() * 0.16}} )</td>
-
+            <td class="text-medium">KShs. {{Cart::tax()}}</td>
             </tr>
-
             <tr>
-
             <td></td>
-
-            <td class="text-lg text-medium">Kshs. {{ (Cart::total()) + (Session::get('shipping_method'))}} </td>
-
+            <td class="text-lg text-medium">KShs. {{$order->total_price}} </td>
             </tr>
-
         </table>
-
         </section>
+        <!-- Featured Products Widget-->
+        <section class="widget widget-featured-products">
+        <h3 class="widget-title">You Might be Interested</h3>
+        <!-- Entry-->
+        <div class="entry">
+            <div class="entry-thumb"><a href="#"><img src="img/shop/widget/01.jpg" alt="Product"></a></div>
+            <div class="entry-content">
+            <h4 class="entry-title"><a href="#"></a></h4><span class="entry-meta">Ksh. 155.00</span>
+            </div>
+        </div>
+@endforeach
 
         <!-- Featured Products Widget-->
 

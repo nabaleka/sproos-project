@@ -69,7 +69,7 @@
         </div>
         <div class="shopping-cart-footer">
           <div class="column"><a class="btn btn-outline-secondary" href="/shop-grid"><i class="icon-arrow-left"></i>&nbsp;Back to Shopping</a></div>
-          <div class="column"><a class="btn btn-primary" href="#">Update Cart</a><a class="btn btn-success" href="/checkout-address">Checkout</a></div>
+          <div class="column"><a class="btn btn-primary" href="#">Update Cart</a><a class="btn btn-success" href="/checkout-shipping">Checkout</a></div>
         </div>
 
           

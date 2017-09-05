@@ -165,6 +165,8 @@ return [
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Knox\Pesapal\PesapalServiceProvider::class,
+        Netshell\Paypal\PaypalServiceProvider::class,
+
 
 
         /*
@@ -232,6 +234,7 @@ return [
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Pesapal' => Knox\Pesapal\Facades\Pesapal::class,
+        'Paypal' => Netshell\Paypal\Facades\Paypal::class,
         
 
     ],

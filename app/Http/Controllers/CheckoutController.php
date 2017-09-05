@@ -9,7 +9,8 @@ use App\Model\Admin\products;
 use Gloudemans\Shoppingcart\Facades\Cart;
 #use App\Model\order;
 use App\Orders;
-use App\Address; // for cart lib
+use App\Address; 
+use DB;
 
 class CheckoutController extends Controller
 {
@@ -18,8 +19,9 @@ class CheckoutController extends Controller
         // check for user login
        
         $cartItems = Cart::content();
+        $orders = DB::table('orders')->where('user_id',Auth::user()->id)->get();
         $products = products::all();
-        return view ('front.checkout.checkout-address', compact('cartItems'))->with('products', $products);
+        return view ('front.checkout.checkout-address', compact('cartItems','orders'));
        
     
         
@@ -33,8 +35,8 @@ class CheckoutController extends Controller
 
     public function checkoutShipping(){
         $cartItems = Cart::content();
-        $products = products::all();
-        return view ('front.checkout.checkout-shipping',compact('cartItems'))->with('products', $products);
+        $orders = DB::table('orders')->where('user_id',Auth::user()->id)->get();
+        return view ('front.checkout.checkout-shipping', compact('cartItems','orders'));
     }
 
     public function checkoutPayment(){

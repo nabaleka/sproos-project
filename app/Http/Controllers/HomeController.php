@@ -139,10 +139,7 @@ class HomeController extends Controller
         Cart::remove($id);
         return back(); // will keep same page
     }
-    public function cart(){
-        $cartItems = Cart::content();
-       return view ('front.checkout.cart',compact('cartItems'));
-   }
+    
    public function shopSingle($id)
    {
    $cartItems = Cart::content();

@@ -27,29 +27,7 @@
     <!-- Checkout Adress-->
     <div class="col-xl-9 col-lg-8">
     <div class="checkout-steps"><a href="/checkout-review">4. Review</a><a href="/checkout-payment"><!--span class="angle"></span-->3. Payment</a><a href="/checkout-shipping"><!--span class="angle"></span-->2. Shipping</a><a class="active" href="/checkout-address"><!--span class="angle"></span-->1. Address</a></div>
-{{--
- @if(Auth::guest())
-<h4>Your Email Address</h4>
-    <hr class="padding-bottom-1x">
 
-    <p>
-        Lets check your email address.
-    </p>
-    <form action="" method="POST">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-           <div class="col-sm-6">
-            <div class="form-group">
-                <label for="checkout-email">E-mail Address</label>
-                <input class="form-control" placeholder="Your email Address" type="email" id="checkout-email" required="" name="email"  value="{{ old('email') }}">
-            </div>
-            </div>
-            <div class="col-sm-6">
-            <div class="column"><button type="submit" class="btn btn-primary"><span class="hidden-xs-down">Check &nbsp;</span><i class="icon-arrow-right"></i></button></div>
-            </div>
-
-    </form>
-    <hr class="padding-bottom-1x">
-@endif --}}
 
     
     
@@ -142,17 +120,20 @@
     </div>
     </div>
     </form>
-    <!-- Sidebar          -->
+    <!-- Sidebar  
+            -->
+            
     <div class="col-xl-3 col-lg-4">
     <aside class="sidebar">
         <div class="padding-top-2x hidden-lg-up"></div>
         <!-- Order Summary Widget-->
+         @foreach($orders as $order)
         <section class="widget widget-order-summary">
         <h3 class="widget-title">Order Summary</h3>
         <table class="table">
             <tr>
-            <td>Cart Subtotal:</td>
-            <td class="text-medium">KShs. {{Cart::subtotal() }}</td>
+            <td>Cart sub total:</td>
+            <td class="text-medium">KShs. <?php echo $order->price ?></td>
             </tr>
             <tr>
             <td>Shipping:</td>
@@ -160,11 +141,11 @@
             </tr>
             <tr>
             <td>Estimated tax:</td>
-            <td class="text-medium">KShs. {{Cart::subtotal() * 1.16 }}</td>
+            <td class="text-medium">KShs. {{Cart::tax()}}</td>
             </tr>
             <tr>
             <td></td>
-            <td class="text-lg text-medium">KShs. {{Cart::total()+ Session::get('shipping_method')}} </td>
+            <td class="text-lg text-medium">KShs. {{$order->total_price}} </td>
             </tr>
         </table>
         </section>
@@ -178,7 +159,7 @@
             <h4 class="entry-title"><a href="#"></a></h4><span class="entry-meta">Ksh. 155.00</span>
             </div>
         </div>
-
+@endforeach
         </section>
     </aside>
     </div>
