@@ -102,6 +102,7 @@ Route::group(['namespace' => 'Seller'],function(){
 	Route::post('seller-login', 'Auth\LoginController@login');
 	Route::get('seller-register', 'Auth\SellerRegisterController@showRegistrationForm');
 	Route::post('seller-register', 'Auth\SellerRegisterController@register');
+	Route::get('seller-account', 'SellerController@account')->name('seller.account');
 });
 
 

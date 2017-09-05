@@ -17,4 +17,10 @@ class SellerController extends Controller
 
         return view('seller.home');
     }
+
+    public function account()
+    {
+        //Show the account page
+        return view('seller.account');
+    }
 }
