@@ -45,7 +45,7 @@ class LoginController extends Controller
 
 
     use AuthenticatesUsers;
-    
+
     public function __construct()
     {
         $this->middleware('guest:seller');
@@ -77,7 +77,7 @@ class LoginController extends Controller
 
      */
 
-   
+
 
      public function showLoginForm()
 
@@ -90,18 +90,32 @@ class LoginController extends Controller
     public function login(Request $request)
 
     {
+      //Validate
+       $this->validate($request , [
+           'email'=>'required|email',
+           'password'=>'required|min:6'
 
-        $this->validateLogin($request);
+       ]);
 
-        if ($this->attemptLogin($request)) {
+       //Attempt
+       if( Auth::guard('seller')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
+           //if successful redirect
+           return redirect()->intended( route('seller'));
+       }
 
-            return $this->sendLoginResponse($request);
+       return redirect()->back()->withInput($request->only('email','remember'));
+   #}
 
-        }
+        #$this->validateLogin($request);
 
-        return $this->sendFailedLoginResponse($request);
+        #if ($this->attemptLogin($request)) {
+
+            #return $this->sendLoginResponse($request);
+
+        #}
+
+        #return $this->sendFailedLoginResponse($request);
 
     }
 
 }
-

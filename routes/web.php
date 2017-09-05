@@ -27,34 +27,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 #shop routes
 Route::get('/shop-list','HomeController@shopList');
 Route::get('/shop-grid','HomeController@shopGrid');
-<<<<<<< HEAD
 Route::get('/cart','CartController@cart');
-=======
-Route::get('/cart','HomeController@cart')->middleware('auth');;
->>>>>>> a418c30298790808458ccad91c24f31aef92e689
 Route::get('/categories', 'HomeController@allCategories');
 Route::get('/add-to-cart/{id}', 'HomeController@add_cart');
 Route::get('/delete_cart/{id}', 'HomeController@destroy');
 
 #checkout routes
 
-<<<<<<< HEAD
-Route::get('/checkout-address','CheckoutController@checkoutAddress');
-Route::get('/checkout-shipping','CheckoutController@checkoutShipping');
-Route::get('/checkout-payment','HomeController@checkoutPayment');
-Route::get('/checkout-complete','HomeController@checkoutComplete');
-Route::get('/checkout-payment','PaymentsController@payment');
-Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review');
-Route::get('/checkout-payment','PaymentsController@payment');
-
-=======
 #Route::get('/checkout-address','CheckoutController@checkoutAddress');
 Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth');;
 Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth');;
 Route::get('/checkout-complete','HomeController@checkoutComplete')->middleware('auth');;
 Route::get('/checkout-payment','PaymentsController@payment');
 Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth');;
->>>>>>> a418c30298790808458ccad91c24f31aef92e689
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 

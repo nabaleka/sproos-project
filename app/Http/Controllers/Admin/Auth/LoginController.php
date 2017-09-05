@@ -61,13 +61,13 @@ class LoginController extends Controller
     protected $redirectTo = '/admin';
 
     public function __construct()
-    
+
         {
-    
+
             $this->middleware('guest:admin');
-    
+
         }
-    
+
 
 
     /**
@@ -80,7 +80,7 @@ class LoginController extends Controller
 
      */
 
-   
+
 
      public function showLoginForm()
 
@@ -94,17 +94,20 @@ class LoginController extends Controller
 
     {
 
-        $this->validateLogin($request);
+      //Validate
+       $this->validate($request , [
+           'email'=>'required|email',
+           'password'=>'required|min:6',
+       ]);
 
-        if ($this->attemptLogin($request)) {
+       //Attempt
+       if( Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
+           //if successful redirect
+           return redirect()->intended(route('admin'));
+       }
 
-            return $this->sendLoginResponse($request);
-
-        }
-
-        return $this->sendFailedLoginResponse($request);
+       return redirect()->back()->withInput($request->only('email','remember'));
 
     }
 
 }
-
