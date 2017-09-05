@@ -78,7 +78,7 @@
 
                       <h4>
 
-                        Support Team
+                        Sproos Admin
 
                         <small><i class="fa fa-clock-o"></i> 5 mins</small>
 
@@ -86,7 +86,7 @@
 
                       <!-- The message -->
 
-                      <p>Checkout spams!</p>
+                      <p>Welcome!</p>
 
                     </a>
 
@@ -138,7 +138,7 @@
 
                     <a href="#">
 
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                      <i class="fa fa-users text-aqua"></i> No buyers
 
                     </a>
 
@@ -157,7 +157,6 @@
           </li>
 
           <!-- Tasks Menu -->
-
           <li class="dropdown tasks-menu">
 
             <!-- Menu Toggle Button -->
@@ -166,13 +165,13 @@
 
               <i class="fa fa-flag-o"></i>
 
-              <span class="label label-danger">9</span>
+              <span class="label label-danger">0</span>
 
             </a>
 
             <ul class="dropdown-menu">
 
-              <li class="header">You have 9 tasks</li>
+              <li class="header">You have no tasks</li>
 
               <li>
 
@@ -188,7 +187,7 @@
 
                       <h3>
 
-                        Design some buttons
+                        Sell a product
 
                         <small class="pull-right">20%</small>
 
@@ -231,7 +230,6 @@
           </li>
 
           <!-- User Account Menu -->
-
           <li class="dropdown user user-menu">
 
             <!-- Menu Toggle Button -->
@@ -240,11 +238,17 @@
 
               <!-- The user image in the navbar-->
 
-              <img src="" class="user-image" alt="">
+              <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="user-image" alt="">
 
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
 
-              <span class="hidden-xs">Seller</span>
+              <span class="hidden-xs">
+                  @if(Auth::guard('seller'))
+                    {{ Auth::guard('seller')->user()->name }}
+                  @else
+                    Sproos Seller
+                  @endif
+              </span>
 
             </a>
 
@@ -254,16 +258,17 @@
 
               <li class="user-header">
 
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
 
 
                 <p>
 
-                  Admin Name
-
-                  <small>Member since Nov. 2017</small>
-
+                  @if(Auth::guard('seller'))
+                    <p>{{ Auth::guard('seller')->user()->name }}</p>
+                  @else
+                    <p>Seller</p>
+                  @endif
                 </p>
 
               </li>
