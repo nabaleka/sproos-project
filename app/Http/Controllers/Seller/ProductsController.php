@@ -124,7 +124,7 @@ if ($request->hasFile('image4'))
         $products->description = $request->description;
         $products->save();
         
-        return redirect(route('products.index'));
+        return redirect(route('banners.index'));
     }
 
     /**

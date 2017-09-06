@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use App\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BannerController extends Controller
 {
@@ -15,6 +16,8 @@ class BannerController extends Controller
     public function index()
     {
         //
+        $banner = Banner::all();
+        return view('admin.dropzone',compact('banner'));
     }
 
     /**
@@ -35,7 +38,33 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            
+            'banner' => 'image|nullable|max:1999|required',
+            ]);
+            
+        //handle file upload
+        if ($request->hasFile('banner')) 
+        {
+           
+           //Upload a copy to another folder
+           $imageName = Storage::disk('uploads')->putFile('banners/',$request->file('banner'));
+           ##$url = Storage::disk('uploads')->url('file1.jpg');
+        }
+
+        else
+        {
+            return 'Please select image';
+        }
+
+        //Create the product
+        $banner = new Banner;
+        $banner->banner = $imageName;
+        
+        $banner->save();
+        
+        return redirect(route('banner.index'));
+
     }
 
     /**

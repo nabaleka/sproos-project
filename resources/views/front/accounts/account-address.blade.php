@@ -30,11 +30,11 @@
               </div>
               <div class="user-info">
                 <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="img/account/user-ava.jpg" alt="User"></div>
-                <div class="user-data">
+                <<div class="user-data">
                 @if (Auth::guest())
                 <h4>Please login first</h4>
                 @else
-                  <h4>{{Auth::guard('buyer')->user()->first_name}}</h4><span>Joined {{Auth::guard('seller')->user()->created_at}}</span>
+                  <h4>{{Auth::guard('buyer')->user()->first_name}}</h4><span>Joined {{Auth::user()->created_at}}</span>
                   @endif
                 </div>
               </div>

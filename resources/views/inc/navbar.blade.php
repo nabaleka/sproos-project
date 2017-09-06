@@ -127,7 +127,7 @@
             
 
             <div class="account"><a href="/account-orders"></a><i class="icon-head"></i>
-            @if(Auth::guest())
+            @if(Auth::guard('buyer')->guest())
              <ul class="toolbar-dropdown">
 
                 <li class="sub-menu-title"><span>Need an account?</span></li>
@@ -146,10 +146,10 @@
                   <li><a href="/account-orders">Orders List</a></li>
 
                 <li class="sub-menu-separator"></li>
-                <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> <i class="icon-unlock"></i>Logout</a></li>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> <i class="icon-unlock"></i>Logout</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form></li>
               </ul>
-                @endif
+              @endif
             </div>
         
 

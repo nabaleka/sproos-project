@@ -20,6 +20,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/register', 'Auth\BuyerRegisterController@showRegistrationForm')->name('register');
 Route::post('/register', 'Auth\BuyerRegisterController@register');
 Route::get('/login', 'Auth\BuyerLoginController@showLoginForm')->name('login');
+Route::post('/logout', 'Auth\BuyerLoginController@logout')->name('logout');
 Route::post('/login', 'Auth\BuyerLoginController@login');
 Route::get('/account-profile', 'HomeController@accountProfile')->middleware('auth:buyer');
 Route::get('/account-orders','HomeController@accountOrders')->middleware('auth:buyer');
@@ -82,13 +83,13 @@ Route::group(['namespace' => 'Admin'],function(){
 
 	Route::get('admin/sellers','AdminController@sellers');
 
-	Route::get('admin/home-page','AdminController@homePage');
+	Route::get('admin/home-page','AdminController@homePage')->name('homepage-manager');
 
 	Route::get('admin/featured-products','AdminController@featuredProducts');
 
-	Route::get('admin/dropzone', 'DropzoneController@dropzone');
+	#Route::get('admin/dropzone', 'DropzoneController@dropzone')->name('dropzone');
 	
-	Route::post('admin/dropzone/store', ['as'=>'dropzone.store','uses'=>'DropzoneController@dropzoneStore']);
+	Route::resource('admin/banner','BannerController');
 
 });
 

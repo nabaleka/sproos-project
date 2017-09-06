@@ -31,7 +31,7 @@ class RedirectIfAuthenticated
 
             case 'buyer':
             if (Auth::guard($guard)->check()) {
-                return redirect('/');
+                return redirect('/account-profile');
             }
         break;
             

@@ -29,8 +29,11 @@
 <!-- small box -->
 <div class="small-box bg-red">
 <div class="inner">
-<h3> 0 </h3>
-
+    <?php $count = 0; ?>
+    @foreach($seller as $sellers)
+        <?php $count = $count + 1 ?>
+    @endforeach
+        <h3>{{ $count }}</h3>
 <p>Sellers</p>
 </div>
 <div class="icon">
@@ -45,9 +48,12 @@
 <!-- small box -->
 <div class="small-box bg-yellow">
 <div class="inner">
-<h3>44</h3>
-
-<p>User Registrations</p>
+<?php $count = 0; ?>
+    @foreach($seller as $sellers)
+        <?php $count = $count + 1 ?>
+    @endforeach
+        <h3>{{ $count }}</h3>
+<p>Register Users</p>
 </div>
 <div class="icon">
 <i class="fa fa-user"></i>

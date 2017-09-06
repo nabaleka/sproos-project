@@ -1,4 +1,4 @@
-@extends('seller.layouts.seller')
+@extends('admin.layouts.admin')
 
 @section('content')
   <!-- Content Header (Page header) -->
@@ -27,7 +27,20 @@
 
         <p>Upload a banner image for your home page.</p>
 
-
+        @if(count($banner) < 1)
+          <p>You have no banner</p>
+        
+        @else
+        you have {{ count($banner)}} banners
+        @endif
+        <div>
+        <form action="{{ route('banner.store')}}" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+            Select image to upload:
+            <input type="file" class="jumbotron" name="banner" id="banner">
+            <input type="submit" class="btn btn-default" value="Upload Image" name="submit">
+        </form>
+        </div>
         </div>
 
     </div>
