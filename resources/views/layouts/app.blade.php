@@ -686,11 +686,11 @@
         <h3 class="offcanvas-title">Shop by Categories</h3>
 
       </div>
-  
+    {{-- Load cateories dynamically --}}
       <nav class="offcanvas-menu">
 
         <ul class="menu">
-
+<!--
           <li class="has-children"><span><a href="#">Men</a><span class="sub-menu-toggle"></span></span>
 
             <ul class="offcanvas-submenu">
@@ -738,7 +738,10 @@
             </ul>
 
           </li>
-
+-->
+        @foreach($categories as $category)
+         <li><span><a href="">{{ $category->title}}</a></span></li>
+        @endforeach
 
         </ul>
 

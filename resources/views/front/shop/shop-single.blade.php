@@ -34,16 +34,16 @@
               </div>
               <div class="product-carousel owl-carousel">
                 <div data-hash="one"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></div>
-                <div data-hash="two"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></div>
-                <div data-hash="three"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></div>
-                <div data-hash="four"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></div>
+                <div data-hash="two"><img src="{{Storage::url($products->image2)}}" height="100px" width="150px" /></div>
+                <div data-hash="three"><img src="{{Storage::url($products->image3)}}" height="100px" width="150px" /></div>
+                <div data-hash="four"><img src="{{Storage::url($products->image4)}}" height="100px" width="150px" /></div>
 
               </div>
               <ul class="product-thumbnails">
                 <li class="active"><a href="#one"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></a></li>
-                <li><a href="#two"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></a></li>
-                <li><a href="#three"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></a></li>
-                <li><a href="#four"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></a></li>
+                <li><a href="#two"><img src="{{Storage::url($products->image2)}}" height="100px" width="150px" /></a></li>
+                <li><a href="#three"><img src="{{Storage::url($products->image3)}}" height="100px" width="150px" /></a></li>
+                <li><a href="#four"><img src="{{Storage::url($products->image4)}}" height="100px" width="150px" /></a></li>
 
               </ul>
             </div>

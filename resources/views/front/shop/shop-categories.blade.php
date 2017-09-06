@@ -184,39 +184,13 @@
 
               <section class="widget widget-categories">
 
-                <h3 class="widget-title">Popular Brands</h3>
+                <h3 class="widget-title">Categories</h3>
 
                 <ul>
-
-                  <li><a href="#">Adidas</a><span>(254)</span></li>
-
-                  <li><a href="#">Bilabong</a><span>(39)</span></li>
-
-                  <li><a href="#">Brooks</a><span>(205)</span></li>
-
-                  <li><a href="#">Calvin Klein</a><span>(128)</span></li>
-
-                  <li><a href="#">Cole Haan</a><span>(104)</span></li>
-
-                  <li><a href="#">Columbia</a><span>(217)</span></li>
-
-                  <li><a href="#">New Balance</a><span>(95)</span></li>
-
-                  <li><a href="#">Nike</a><span>(310)</span></li>
-
-                  <li><a href="#">Nine West</a><span>(134)</span></li>
-
-                  <li><a href="#">Oakley</a><span>(73)</span></li>
-
-                  <li><a href="#">Puma</a><span>(446)</span></li>
-
-                  <li><a href="#">Scechers</a><span>(87)</span></li>
-
-                  <li><a href="#">Tommy Bahama</a><span>(42)</span></li>
-
-                  <li><a href="#">Tommy Hilfiger</a><span>(289)</span></li>
-
-                  <li><a href="#">Valentino</a><span>(68)</span></li>
+                @foreach($categories as $category)
+                <li><a href="#">{{ $category->title }}</a></li>
+                @endforeach
+                  
 
                 </ul>
 
