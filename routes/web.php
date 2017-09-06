@@ -76,7 +76,7 @@ Route::group(['namespace' => 'Admin'],function(){
     // Subcategory Routes
 	Route::resource('admin/subcategories','subcategoryController');
 	//admin Auth request Routes
-	Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin');
+	Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin.login');
 	//admin Auth post Routes
 	Route::post('admin-login', 'Auth\LoginController@login');
 
