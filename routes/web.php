@@ -13,8 +13,6 @@
 
 
 #tobi
-Auth::routes();
-
 Route::get('/', 'HomeController@index')->name('home');
 #account routes
 Route::get('/create', 'HomeController@login');
