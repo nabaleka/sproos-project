@@ -68,7 +68,7 @@
                 <div class="form-group">
                   <label for="account-city">City</label>
                   <select class="form-control" id="account-city">
-                    <option>Choose city</option>
+                    <option>Nairobi</option>
                     <option>Amsterdam</option>
                     <option>Berlin</option>
                     <option>Geneve</option>

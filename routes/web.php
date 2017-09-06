@@ -17,6 +17,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 #account routes
+Route::get('/register', 'Auth\BuyerRegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\BuyerRegisterController@register');
 Route::get('/login', 'Auth\BuyerLoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\BuyerLoginController@login');
 Route::get('/account-profile', 'HomeController@accountProfile')->middleware('auth:buyer');
