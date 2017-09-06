@@ -8,16 +8,18 @@ the first image
 -->
       <section class="hero-slider" style="min-height:100%;">
       <div>
-      <!-- Loops -->
-        <img src="img/hero-slider/sproos-banner.png" style="width:100%;">
-      <!---->
+      <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: false, &quot;autoplay&quot;: true, &quot;loop&quot;: true }">
+            <img src="img/hero-slider/sproos-banner.png" alt="Image">
+            <img src="img/hero-slider/sproos-banner.png" alt="Image">
+            <img src="img/hero-slider/sproos-banner.png" alt="Image">
+      </div>
       </div>
 
       </section>
 
 
       <!-- Top Categories-->
-      <section class="container padding-top-3x">
+      <section class="container padding-top-1x">
         <h3 class="text-center mb-30">Our Categories</h3>
         <div class="row">
 
