@@ -28,12 +28,18 @@ class RedirectIfAuthenticated
                     return redirect('/seller');
                 }
             break;
+
+            case 'buyer':
+            if (Auth::guard($guard)->check()) {
+                return redirect('/');
+            }
+        break;
             
-            default:
-                    if (Auth::guard($guard)->check()) {
-                        return redirect('/');
-                    }
-                break;
+        default:
+                if (Auth::guard($guard)->check()) {
+                    return redirect('/');
+                }
+            break;
         }
         return $next($request);
     }

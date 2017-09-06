@@ -17,10 +17,11 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 #account routes
-Route::get('/create', 'HomeController@login');
-Route::get('/account-profile', 'HomeController@accountProfile')->middleware('auth');
-Route::get('/account-orders','HomeController@accountOrders')->middleware('auth');
-Route::get('/account-address','HomeController@accountAddress')->middleware('auth');;
+Route::get('/login', 'Auth\BuyerLoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\BuyerLoginController@login');
+Route::get('/account-profile', 'HomeController@accountProfile')->middleware('auth:buyer');
+Route::get('/account-orders','HomeController@accountOrders')->middleware('auth:buyer');
+Route::get('/account-address','HomeController@accountAddress')->middleware('auth:buyer');;
 Route::get('/faq','HomeController@faq');
 Route::get('/terms','HomeController@terms');
 Route::get('/home', 'HomeController@index')->name('home');
@@ -36,11 +37,11 @@ Route::get('/delete_cart/{id}', 'HomeController@destroy');
 #checkout routes
 
 #Route::get('/checkout-address','CheckoutController@checkoutAddress');
-Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth');;
-Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth');;
-Route::get('/checkout-complete','HomeController@checkoutComplete')->middleware('auth');;
+Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth:buyer');;
+Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth:buyer');;
+Route::get('/checkout-complete','HomeController@checkoutComplete')->middleware('auth:buyer');;
 Route::get('/checkout-payment','PaymentsController@payment');
-Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth');;
+Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');;
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 
@@ -73,7 +74,7 @@ Route::group(['namespace' => 'Admin'],function(){
     // Subcategory Routes
 	Route::resource('admin/subcategories','subcategoryController');
 	//admin Auth request Routes
-	Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+	Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin');
 	//admin Auth post Routes
 	Route::post('admin-login', 'Auth\LoginController@login');
 

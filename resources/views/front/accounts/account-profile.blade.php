@@ -34,7 +34,7 @@
                 @if (Auth::guest())
                 <h4>Please login first</h4>
                 @else
-                  <h4>{{Auth::user()->name}}</h4><span>Joined {{Auth::user()->created_at}}</span>
+                  <h4>{{Auth::guard('buyer')->user()->first_name}}</h4><span>Joined {{Auth::user()->created_at}}</span>
                   @endif
                 </div>
               </div>
@@ -54,22 +54,28 @@
               @else
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="account-fn">Your Name</label>
-                  <input class="form-control" type="text" id="account-fn" value="{{Auth::user()->name}}" required>
+                  <label for="first_name">First Name</label>
+                  <input class="form-control" type="text" id="first_name" value="{{Auth::guard('buyer')->user()->first_name}}" required>
                 </div>
               </div>
+
               <div class="col-md-6">
+                <div class="form-group">
+                  <label for="account-fn">Your Name</label>
+                  <input class="form-control" type="text" id="last_name" value="{{Auth::guard('buyer')->user()->last_name}}" required>
+                </div>
               </div>
+
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="account-email">E-mail Address</label>
-                  <input class="form-control" type="email" id="account-email" value="{{Auth::user()->email}}" disabled>
+                  <input class="form-control" type="email" id="account-email" value="{{Auth::guard('buyer')->user()->email}}" disabled>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="account-phone">Phone Number</label>
-                  <input class="form-control" type="text" id="account-phone" value="+7(805) 348 95 72" required>
+                  <label for="phonenumber">Phone Number</label>
+                  <input class="form-control" type="text" id="phonenumber" value="{{Auth::guard('buyer')->user()->phonenumber}}" required>
                 </div>
               </div>
               @endif

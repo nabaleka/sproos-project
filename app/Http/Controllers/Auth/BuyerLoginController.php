@@ -2,13 +2,13 @@
 
 
 
-namespace App\Http\Controllers\Admin\Auth;
+namespace App\Http\Controllers\Auth;
 
 
 
 use App\Http\Controllers\Controller;
 
-use App\Admin;
+use App\User;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-class LoginController extends Controller
+class BuyerLoginController extends Controller
 
 {
 
@@ -46,6 +46,11 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    public function __construct()
+    {
+        $this->middleware('guest:buyer');
+    }
+
 
 
     /**
@@ -58,15 +63,7 @@ class LoginController extends Controller
 
      */
 
-    protected $redirectTo = '/admin';
-
-    public function __construct()
-
-        {
-
-            $this->middleware('guest:admin');
-
-        }
+    protected $redirectTo = '/account-profile';
 
 
 
@@ -86,27 +83,38 @@ class LoginController extends Controller
 
     {
 
-        return view('admin.login');
+        return view('auth.login');
 
     }
 
     public function login(Request $request)
 
     {
-
       //Validate
        $this->validate($request , [
            'email'=>'required|email',
-           'password'=>'required|min:6',
+           'password'=>'required|min:6'
+
        ]);
 
        //Attempt
-       if( Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
+       if( Auth::guard('buyer')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
            //if successful redirect
-           return redirect()->intended(route('admin'));
+           return redirect()->intended( route('account-profile'));
        }
 
        return redirect()->back()->withInput($request->only('email','remember'));
+   #}
+
+        #$this->validateLogin($request);
+
+        #if ($this->attemptLogin($request)) {
+
+            #return $this->sendLoginResponse($request);
+
+        #}
+
+        #return $this->sendFailedLoginResponse($request);
 
     }
 

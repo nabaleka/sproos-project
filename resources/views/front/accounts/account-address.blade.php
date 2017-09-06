@@ -34,7 +34,7 @@
                 @if (Auth::guest())
                 <h4>Please login first</h4>
                 @else
-                  <h4>{{Auth::user()->name}}</h4><span>Joined {{Auth::user()->created_at}}</span>
+                  <h4>{{Auth::guard('buyer')->user()->first_name}}</h4><span>Joined {{Auth::guard('seller')->user()->created_at}}</span>
                   @endif
                 </div>
               </div>
@@ -58,12 +58,9 @@
                   <label for="account-country">Country</label>
                   <select class="form-control" id="account-country">
                     <option>Choose country</option>
-                    <option>Australia</option>
-                    <option>Canada</option>
-                    <option>France</option>
-                    <option>Germany</option>
-                    <option>Switzerland</option>
-                    <option selected>United States</option>
+                    <option>Uganda</option>
+                    <option>Tanzania</option>
+                    <option selected>Kenya</option>
                   </select>
                 </div>
               </div>
