@@ -32,6 +32,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font -->
   <link rel="stylesheet"
         href=" {{ url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic') }}">
+
+      <style>
+         .skin-red .main-header .logo{
+           background : #ee2956;
+         }
+      </style>
 </head>
 <!--
 BODY TAG OPTIONS:

@@ -55,7 +55,7 @@ Route::get('admin', 'Admin\Auth\LoginController@showLoginForm');
 #admin Routes
 /* Routes to the admin page */
 Route::group(['namespace' => 'Admin'],function(){
-	Route::get('admin/home','HomeController@index')->name('admin.home');
+	Route::get('admin/home','HomeController@index')->name('admin');
 	Route::resource('admin/users','UserController');
 	// Roles Routes
 	Route::resource('admin/roles','RoleController');

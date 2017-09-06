@@ -2,6 +2,16 @@
 
 @section('content')
 
+<style>
+   .site-menu ul>li:hover>a{
+    color: #ee2956;
+    letter-spacing: 2px;
+    background : #fff;
+    
+}
+
+</style>
+
     <!-- Navbar-->
 
     <!-- Remove ".navbar-sticky" class to make navigation bar scrollable with the page.-->

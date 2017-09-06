@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use App\Products;
+use App\Banner;
 use Gloudemans\Shoppingcart\Facades\Cart; // for cart lib
 
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
     {
         $cartItems = Cart::content();
         $products = Products::all();
-        return view('front/welcome',compact('products'),compact('cartItems'));
+        $banners = Banner::all();
+        return view('front/welcome',compact('products'),compact('cartItems'))->with('banners',$banners);
     }
 
 
