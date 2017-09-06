@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Seller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Products;
 use App\Model\Admin\subcategories;
@@ -56,7 +57,11 @@ class ProductsController extends Controller
             'name'=>'required',
             'price'=>'required',
             'slug' => 'required',
-            'image' => 'image|nullable|max:1999',
+            'stock' => 'required',
+            'image' => 'image|nullable|max:1999|required',
+            'image2' => 'image|nullable|max:1999|required|required|required',
+            'image3' => 'image|nullable|max:1999|required|required',
+            'image4' => 'image|nullable|max:1999|required',
             ]);
             
         //handle file upload
@@ -72,11 +77,48 @@ class ProductsController extends Controller
             return 'Please select image';
         }
 
+if ($request->hasFile('image4')) 
+        {
+           $imageName4= $request->file('image4')->store('public/products');
+           //Upload a copy to another folder
+           Storage::disk('uploads')->putFile('products/',$request->file('image4'));
+           ##$url = Storage::disk('uploads')->url('file1.jpg');
+        }
+        else
+        {
+            return 'Please select image';
+        }
+        if ($request->hasFile('image2')) 
+        {
+           $imageName2 = $request->file('image2')->store('public/products');
+           //Upload a copy to another folder
+           Storage::disk('uploads')->putFile('products/',$request->file('image2'));
+           ##$url = Storage::disk('uploads')->url('file1.jpg');
+        }
+        else
+        {
+            return 'Please select image';
+        }
+        if ($request->hasFile('image3')) 
+        {
+           $imageName3 = $request->file('image3')->store('public/products');
+           //Upload a copy to another folder
+           Storage::disk('uploads')->putFile('products/',$request->file('image3'));
+           ##$url = Storage::disk('uploads')->url('file1.jpg');
+        }
+        else
+        {
+            return 'Please select image';
+        }
         //Create the product
         $products = new Products;
-        $products->image=$imageName;
-        $products->seller_id= $request->seller_id;
+        $products->image =$imageName;
+        $products->image2=$imageName2;
+        $products->image3 =$imageName3;
+        $products->image4= $imageName4;
+        $products->seller_id= Auth::guard('seller')->user()->id;
         $products->name = $request->name;
+        $products->stock = $request->stock;
         $products->price = $request->price;
         $products->slug = $request->slug;
         $products->description = $request->description;
@@ -130,7 +172,7 @@ class ProductsController extends Controller
             ]);
 
         if ($request->hasFile('image')) {
-            $imageName = $request->image->store('public/products');
+            $imageName= $request->image->store('public/products');
             //Upload a copy to another folder
             Storage::disk('uploads')->putFile('products/',$request->file('image'));
             ##$url = Storage::disk('uploads')->url('file1.jpg');
@@ -139,14 +181,17 @@ class ProductsController extends Controller
         }
 
         $products = Products::find($id);
-        $products->image = $imageName;
-        $products->seller_id= $request->seller_id;
+        $products->image =$imageName;
+        $products->image2 =$imageName2;
+        $products->image3 =$imageName3;
+        $products->image4= $imageName4;
+        $products->seller_id= 1;
         $products->name = $request->name;
         $products->price = $request->price;
         $products->description = $request->description;
         $products->slug = $request->slug;
+        $products->stock= $request->stock;
         $products->categories()->sync($request->categories);
-        $products->subcategories()->sync($request->subcategories);
         $products->save();
 
         return redirect(route('products.index'));

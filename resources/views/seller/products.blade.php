@@ -61,20 +61,19 @@
                               <div class="form-group">
                                 <div class="pull-right">
                                   <label for="image">image three</label>
-                                  <input type="file" name="image" id="image">
+                                  <input type="file" name="image3" id="image">
                                 </div>
 
                                <div class="form-group">
                                 <div class="pull-right">
-                                  <label for="image">image four</label>
+                                  <label for="image">image one</label>
                                   <input type="file" name="image" id="image">
-                                </div>
-                                
- <br>
+                                </div> 
+                               <br>
                                <div class="form-group">
                                 <div class="pull-right">
-                                  <label for="image">image three</label>
-                                  <input type="file" name="image" id="image">
+                                  <label for="image">image four</label>
+                                  <input type="file" name="image4" id="image">
                                 </div>
                                
                                  <br>
@@ -82,11 +81,9 @@
                                <div class="form-group">
                                 <div class="pull-right">
                                   <label for="image">image two</label>
-                                  <input type="file" name="image" id="image">
+                                  <input type="file" name="image2" id="image">
                                 </div>
-                               
                               </div>
-
                               <br>
                               <div class="form-group" style="margin-top:18px;">
                                 <label>Select Category</label>

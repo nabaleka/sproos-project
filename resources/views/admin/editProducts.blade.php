@@ -74,7 +74,7 @@
 
                   <label for="title">Product name</label>
 
-                  <input type="text" class="form-control" id="title" name="title" value="{{ $products->product_name }}"placeholder="Title">
+                  <input type="text" class="form-control" id="title" name="name" value="{{ $products->name }}" placeholder="Title">
 
                 </div>
 
@@ -97,29 +97,32 @@
               <div class="col-lg-6">
 
                             <br>
-
                               <div class="form-group">
-
                                 <div class="pull-right">
+                                  <label for="image">image three</label>
+                                  <input type="file" name="image3" id="image">
+                                </div>
 
-                                  <label for="image">Product image</label>
-
+                               <div class="form-group">
+                                <div class="pull-right">
+                                  <label for="image">image one</label>
                                   <input type="file" name="image" id="image">
-
+                                </div> 
+                               <br>
+                               <div class="form-group">
+                                <div class="pull-right">
+                                  <label for="image">image four</label>
+                                  <input type="file" name="image4" id="image">
                                 </div>
-
-                                <div class="checkbox pull-left">
-
-                                  <label>
-
-                                    <input type="checkbox" name="status" value="1"> Publish
-
-                                  </label>
-
-                                </div>
-
+                               
+                                 <br>
                               </div>
-
+                               <div class="form-group">
+                                <div class="pull-right">
+                                  <label for="image">image two</label>
+                                  <input type="file" name="image2" id="image">
+                                </div>
+                              </div>
                               <br>
 
                               <div class="form-group" style="margin-top:18px;">
