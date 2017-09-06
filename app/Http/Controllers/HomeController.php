@@ -117,7 +117,7 @@ class HomeController extends Controller
     public function terms(){
         $cartItems = Cart::content();
         $products = Products::all();
-        return view ('pages.term-of-use',compact('cartItems'))->with('products', $products);
+        return view ('front.terms',compact('cartItems'))->with('products', $products);
     }
     public function soon(){
         return view ('front.comming-soon');

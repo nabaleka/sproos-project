@@ -22,6 +22,7 @@ Route::get('/account-profile', 'HomeController@accountProfile')->middleware('aut
 Route::get('/account-orders','HomeController@accountOrders')->middleware('auth');
 Route::get('/account-address','HomeController@accountAddress')->middleware('auth');;
 Route::get('/faq','HomeController@faq');
+Route::get('/terms','HomeController@terms');
 Route::get('/home', 'HomeController@index')->name('home');
 
 #shop routes
