@@ -451,225 +451,26 @@
 
 }
 
-    /*
 
-      .site-menu > ul > li> a{
+body{
 
-        color:#ed2e56;
-
-        letter-spacing:2px;
-
-      }
-
-
-
-      .site-menu ul > li.active > a{
-
-        color:#444;
-
-      }
-
-      .site-menu > ul > li.active > a{
-
-        border-top-color: #ed2e56;
-
-      }
-
-
-
-      .btn-primary{
-
-        background-color:#ed2e56;
-
-      }
-
-      .offcanvas-menu ul li.back-btn > a {
-
-          background-color: #444;
-
-          color: #fff;
-
-      }
-
-
-
-      .offcanvas-header{
-
-        background-color:#444;
-
-      }
-
-
-
-      .offcanvas-menu ul li.has-children .sub-menu-toggle:hover{
-
-        background-color:#444;
-
-      }
-
-
-
-
-
-      .topbar .topbar-column a:not(.social-button), .topbar .topbar-column span, .topbar .topbar-column p{
-
-        color:#ed2e56
-
-      }
-
-
-
-      .page-title{
-
-        color:#fff;
-
-        background-color:#ed2e56;
-
-      }
-
-
-
-      .breadcrumbs > li > a{
-
-        color:#fff;
-
-      }
-
-
-
-      .breadcrumbs > li{
-
-        color:#efefef;
-
-      }
-
-
-
-      .page-title h1, .page-title h2, .page-title h3{
-
-        color:#fff;
-
-      }
-
-
-
-      .site-footer{
-
-        background-color:#ed2e56;
-
-      }
-
-
-
-      .list-group-item.active{
-
-        background-color:#ed2e56;
-
-        border-color:#444;
-
-      }
-
-
-
-      .badge.badge-primary{
-
-        background-color:#ed2e56;
-
-      }
-
-
-
-      .custom-control .custom-control-input:checked ~ .custom-control-indicator{
-
-        background-color:#ed2e56;
-
-      }
-
-      
-
-      .widget-light-skin .widget-title{
-
-        color:#fff;
-
-      }
-
-
-
-      .btn-outline-primary{
-
-        border-color:#ed2e56;
-
-        color:#ed2e56;
-
-      }
-
-
-
-      .btn-outline-primary:hover{
-
-        background-color:#ed2e56;
-
-        color:#fff;
-
-      }
-
-
-
-      .checkout-steps > a.active{
-
-        background-color:#ed2e56;
-
-      }
-
-
-
-      .angle{
-
-        display:hidden;
-
-      }
-
-      
-
-      .offcanvas-toggle:hover{
-
-        color:#ed2e56;
-
-      }
-
-
-
-     .offcanvas-menu ul li a:hover{
-
-      color:#ededed;
-
-     }
-
-
-
-     .offcanvas-container{
-
-       background-color:#ed2e56;
-
-       letter-spacing:3px;
-
-     }
-
-
-
-     .offcanvas-menu ul li.active > a{
-
-       color:#fff;
-
-     }*/
+  display:none;
+}
 
 
 
     </style>
 
     <!-- Modernizr-->
+     <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
 
-    <script src="{{ asset('js/modernizr.min.js') }}"></script>
+    <!-- Styles -->
+        <script>
+        $( document ).ready(function() {
+            $("body").show('slow').fadeIn(10000).delay(3000);
+        });
+    </script>
+
 
     
 
@@ -688,57 +489,7 @@
       </div>
     {{-- Load cateories dynamically --}}
       <nav class="offcanvas-menu">
-
         <ul class="menu">
-<!--
-          <li class="has-children"><span><a href="#">Men</a><span class="sub-menu-toggle"></span></span>
-
-            <ul class="offcanvas-submenu">
-
-              <li><a href="#">Sneakers</a></li>
-
-              <li><a href="#">Loafers</a></li>
-
-              <li><a href="#">Accesories</a></li>
-
-              <li><a href="#">Sandals</a></li>
-
-              <li><a href="#">View All</a></li>
-
-            </ul>
-
-          </li>
-
-          <li class="has-children"><span><a href="#">Women</a><span class="sub-menu-toggle"></span></span>
-
-            <ul class="offcanvas-submenu">
-
-              <li><a href="#">Sandals</a></li>
-
-              <li><a href="#">Heels</a></li>
-              
-              <li><a href="#">Accessories</a></li>
-
-              <li><a href="#">View All</a></li>
-
-            </ul>
-
-          </li>
-
-          <li class="has-children"><span><a href="#">African Wear </a><span class="sub-menu-toggle"></span></span>
-
-            <ul class="offcanvas-submenu">
-
-              <li><a href="#">Material</a></li>
-
-              <li><a href="#">Designer</a></li>
-
-              <li><a href="#">View All</a></li>
-
-            </ul>
-
-          </li>
--->
         @foreach($categories as $category)
          <li><span><a href="">{{ $category->title}}</a></span></li>
         @endforeach
@@ -958,7 +709,14 @@
 
     <div class="topbar">
 
-      <div class="topbar-column"><a class="hidden-md-down" href="mailto:sproosplace@gmail.com"><i class="icon-mail"></i>&nbsp;sproosplace@gmail.com</a><a class="hidden-md-down" href="tel:#"><i class="icon-bell"></i>&nbsp; (+254)715-725-418</a><a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a><a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a><a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a><a class="social-button sb-pinterest shape-none sb-dark" href="#" target="_blank"><i class="socicon-pinterest"></i></a>
+      <div class="topbar-column">
+      <a class="hidden-md-down" href="mailto:info@sproos.com"><i class="icon-mail"></i>&nbsp;info@sproos.com</a>
+      <a class="hidden-md-down" href="tel:#"><i class="icon-bell"></i>&nbsp; (+254)715-725-418</a>
+
+      <a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a>
+      <a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a>
+      <a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a>
+      <a class="social-button sb-whatsapp shape-none sb-dark" href="#" target="_blank"><i class="socicon-whatsapp"></i></a>
 
       </div>
 
@@ -1031,14 +789,17 @@
 
 
     <!-- Scripts -->
+    
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    
 
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
 
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/modernizr.min.js') }}"></script>
     <script src="{{ asset('js/vendor.min.js') }}"></script>
-
     <script src="{{ asset('js/scripts.min.js') }}"></script>
+
 
 </body>
 

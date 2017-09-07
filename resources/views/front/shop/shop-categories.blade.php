@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- Page Title-->
+      <div class="page-title">
+        <div class="container">
+          <div class="column">
+            <h1>Shop Categories</h1>
+          </div>
+          <div class="column">
+            <ul class="breadcrumbs">
+              <li><a href="/">Home</a>
+              </li>
+              <li class="separator">&nbsp;</li>
+              <li>Shop Categories</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
 <!-- Page Content-->
 
@@ -13,162 +29,17 @@
           <div class="col-xl-9 col-lg-8 push-xl-3 push-lg-4">
 
             <!-- Promo banner-->
-
-            <div class="alert alert-image-bg alert-dismissible fade show text-center mb-3" style="background-image: url(img/banners/alert-bg.jpg);"><span class="alert-close text-white" data-dismiss="alert"></span>
-
-              <div class="h3 text-medium text-white padding-top-1x padding-bottom-1x"><i class="icon-clock" style="font-size: 33px; margin-top: -5px;"></i>&nbsp;&nbsp;Check our Limited Offers. Save up to 50%&nbsp;&nbsp;&nbsp;
-
-                <div class="mt-3 hidden-xl-up"></div><a class="btn btn-primary" href="#">View Offers</a>
-
-              </div>
-
-            </div>
-
             <div class="row">
 
-              <div class="col-sm-6">
-
-                <div class="card mb-30"><a class="card-img-tiles" href="/shop-list">
-
-                    <div class="inner">
-
-                      <div class="main-img"><img src="img/shop/categories/01.jpg" alt="Category"></div>
-
-                      <div class="thumblist"><img src="img/shop/categories/02.jpg" alt="Category"><img src="img/shop/categories/03.jpg" alt="Category"></div>
-
-                    </div></a>
-
-                  <div class="card-block text-center">
-
-                    <h4 class="card-title">Clothing</h4>
-
-                    <p class="text-muted">Starting from $49.99</p><a class="btn btn-outline-primary btn-sm" href="/shop-list">View Products</a>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-6">
-
-                <div class="card mb-30"><a class="card-img-tiles" href="/shop-list">
-
-                    <div class="inner">
-
-                      <div class="main-img"><img src="img/shop/categories/04.jpg" alt="Category"></div>
-
-                      <div class="thumblist"><img src="img/shop/categories/05.jpg" alt="Category"><img src="img/shop/categories/06.jpg" alt="Category"></div>
-
-                    </div></a>
-
-                  <div class="card-block text-center">
-
-                    <h4 class="card-title">Shoes</h4>
-
-                    <p class="text-muted">Starting from $56.00</p><a class="btn btn-outline-primary btn-sm" href="/shop-list">View Products</a>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-6">
-
-                <div class="card mb-30"><a class="card-img-tiles" href="/shop-list">
-
-                    <div class="inner">
-
-                      <div class="main-img"><img src="img/shop/categories/07.jpg" alt="Category"></div>
-
-                      <div class="thumblist"><img src="img/shop/categories/08.jpg" alt="Category"><img src="img/shop/categories/09.jpg" alt="Category"></div>
-
-                    </div></a>
-
-                  <div class="card-block text-center">
-
-                    <h4 class="card-title">Bags</h4>
-
-                    <p class="text-muted">Starting from $27.00</p><a class="btn btn-outline-primary btn-sm" href="/shop-list">View Products</a>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-6">
-
-                <div class="card mb-30"><a class="card-img-tiles" href="/shop-list">
-
-                    <div class="inner">
-
-                      <div class="main-img"><img src="img/shop/categories/10.jpg" alt="Category"></div>
-
-                      <div class="thumblist"><img src="img/shop/categories/11.jpg" alt="Category"><img src="img/shop/categories/12.jpg" alt="Category"></div>
-
-                    </div></a>
-
-                  <div class="card-block text-center">
-
-                    <h4 class="card-title">Hats</h4>
-
-                    <p class="text-muted">Starting from $14.50</p><a class="btn btn-outline-primary btn-sm" href="/shop-list">View Products</a>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-6">
-
-                <div class="card mb-30"><a class="card-img-tiles" href="/shop-list">
-
-                    <div class="inner">
-
-                      <div class="main-img"><img src="img/shop/categories/13.jpg" alt="Category"></div>
-
-                      <div class="thumblist"><img src="img/shop/categories/14.jpg" alt="Category"><img src="img/shop/categories/15.jpg" alt="Category"></div>
-
-                    </div></a>
-
-                  <div class="card-block text-center">
-
-                    <h4 class="card-title">Sunglasses</h4>
-
-                    <p class="text-muted">Starting from $35.99</p><a class="btn btn-outline-primary btn-sm" href="/shop-list">View Products</a>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-6">
-
-                <div class="card mb-30"><a class="card-img-tiles" href="/shop-list">
-
-                    <div class="inner">
-
-                      <div class="main-img"><img src="img/shop/categories/16.jpg" alt="Category"></div>
-
-                      <div class="thumblist"><img src="img/shop/categories/17.jpg" alt="Category"><img src="img/shop/categories/18.jpg" alt="Category"></div>
-
-                    </div></a>
-
-                  <div class="card-block text-center">
-
-                    <h4 class="card-title">Watches</h4>
-
-                    <p class="text-muted">Starting from $79.99</p><a class="btn btn-outline-primary btn-sm" href="/shop-list">View Products</a>
-
-                  </div>
-
-                </div>
-
-              </div>
+            <h6 class="text-muted text-normal text-uppercase padding-top-2x mt-2">All Categories</h6>
+            <hr class="margin-bottom-1x">
+            <div class="gallery-wrapper isotope-grid cols-3">
+              <div class="gutter-sizer"></div>
+              <div class="grid-sizer"></div>
+              @foreach($products as $product)
+              <div class="grid-item gallery-item"><a href="{{ asset('uploads/'.$product->image ) }}" data-size="1000x1000"><img src="../img/gallery/th07.jpg" alt="Image"></a><span class="caption">T-Shirt Collection</span></div>
+              @endforeach
+            </div>
 
             </div>
 

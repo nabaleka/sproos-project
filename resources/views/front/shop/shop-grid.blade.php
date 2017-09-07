@@ -92,7 +92,7 @@
 
             <div class="product-card">
 
-              <div class="product-badge text-danger"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{ asset(Storage::url($product->image)) }}" height="100px" width="150px" /></a>
+              <div class="product-badge text-danger"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
 
       
 

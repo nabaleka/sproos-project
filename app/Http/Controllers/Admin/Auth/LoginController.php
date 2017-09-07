@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 use App\Admin;
 
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
@@ -64,7 +65,7 @@ class LoginController extends Controller
 
         {
 
-            $this->middleware('guest:admin');
+            $this->middleware('guest:admin',['except' => ['logoutAdmin']]);
 
         }
 
@@ -107,6 +108,13 @@ class LoginController extends Controller
        }
 
        return redirect()->back()->withInput($request->only('email','remember'));
+
+    }
+
+    public function logoutAdmin(){
+      
+        Auth::guard('admin')->logout();
+        return redirect(route('admin.login'));
 
     }
 

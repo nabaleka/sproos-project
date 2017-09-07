@@ -70,9 +70,9 @@
               <tr>
                 <td>
                  
-                  <div class="product-item"><a class="product-thumb" href="shop-single.html"><img src="/storage/products/{{$cartItem->options->img}}" height="100px" width="150px" /></a>
+                  <div class="product-item"><a class="product-thumb" href="/shop-single/{{$cartItem->id}}"><img src="{{Storage::url($cartItem->options->img) }}" height="100px" width="150px" /></a>
                     <div class="product-info">
-                      <h4 class="product-title"><a href="shop-single.html">Ksh{{$cartItem->price}}</a></h4><span><em>Size:</em> -</span><span><em>Color:</em> Turquoise</span>
+                      <h4 class="product-title"><a href="/shop-single/{{$cartItem->id}}">Ksh{{$cartItem->price}}</a></h4><span><em>Size:</em> -</span><span><em>Color:</em> Turquoise</span>
                     </div>
                   </div>
                 </td>

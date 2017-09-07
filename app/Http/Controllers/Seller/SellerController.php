@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Seller;
-
+use App\Model\admin\categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,8 +14,8 @@ class SellerController extends Controller
 	}
     //
     public function index(){
-
-        return view('seller.home');
+        $categories = categories::all();
+        return view('seller.home', compact('categories'));
     }
 
     public function account()

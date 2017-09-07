@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+
 use App\Model\Admin\products;
 use Gloudemans\Shoppingcart\Facades\Cart;
 #use App\Model\order;
@@ -35,7 +36,7 @@ class CheckoutController extends Controller
 
     public function checkoutShipping(){
         $cartItems = Cart::content();
-        $orders = DB::table('orders')->where('user_id',Auth::user()->id)->get();
+        $orders = DB::table('orders')->where('user_id',Auth::guard('buyer')->user()->id)->get();
         return view ('front.checkout.checkout-shipping', compact('cartItems','orders'));
     }
 

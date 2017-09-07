@@ -64,9 +64,9 @@
 
             <th>Shipping method</th>
 
-            <th>Delivery time</th>
+            <th>--</th>
 
-            <th>Handling fee</th>
+            <th>--</th>
 
             <th></th>
 
@@ -76,46 +76,7 @@
 
         <tbody>
 
-            <tr>
-            <form method="POST" action="{{ route('shipping') }}">
-             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <td class="align-middle"><span class="text-medium">Courier</span><br><span class="text-muted text-sm">Anywhere</span></td>
-
-            <td class="align-middle">2 - 5 days</td>
-
-            <td class="align-middle"> Kshs. 2500 (Varies)</td>
-
-            <td class="align-middle">
-
-                <label class="custom-control custom-radio">
-
-                <input class="custom-control-input" type="radio" name="shipping" value="2,500.00" checked><span class="custom-control-indicator"></span>
-
-                </label>
-
-            </td>
-
-            
-
-            <tr>
-
-            <td class="align-middle"><span class="text-medium">Local Pickup from store</span><br><span class="text-muted text-sm">All Addresses(default zone)</span></td>
-
-            <td class="align-middle">&mdash;</td>
-
-            <td class="align-middle">Kshs. 1500.00</td>
-
-            <td class="align-middle">
-
-                <label class="custom-control custom-radio">
-
-                <input class="custom-control-input" type="radio" name="shipping" value="1,500.00" ><span class="custom-control-indicator"></span>
-
-                </label>
-
-            </td>
-
-            </tr>
+           
 
             <tr>
 
@@ -140,7 +101,7 @@
 
             <td class="align-middle">&mdash;</td>
 
-            <td class="align-middle">Ksh. 2400</td>
+            <td class="align-middle">&mdash;</td>
 
             <td class="align-middle">
 
@@ -164,14 +125,14 @@
 
     <div class="checkout-footer margin-top-1x">
 
-        <div class="column"><a class="btn btn-outline-secondary" href="/checkout-address"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back</span></a></div>
+        
 
-       <div class="column"><button type="submit" name="submit" class="btn btn-primary"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></button></div>
+       <div class="column"><a href="/checkout-payment" class="btn btn-primary"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
+
+    </div>
 
     </div>
 
-    </div>
-</form>
     <!-- Sidebar          -->
 
     <div class="col-xl-3 col-lg-4">
@@ -182,13 +143,13 @@
 
         <!-- Order Summary Widget-->
 
-        @foreach($orders as $order)
+        @foreach($cartItems as $cartItem)
         <section class="widget widget-order-summary">
         <h3 class="widget-title">Order Summary</h3>
         <table class="table">
             <tr>
             <td>Cart sub total:</td>
-            <td class="text-medium">KShs. <?php echo $order->price ?></td>
+            <td class="text-medium">KShs. <?php echo $cartItem->price ?></td>
             </tr>
             <tr>
             <td>Shipping:</td>
@@ -200,7 +161,7 @@
             </tr>
             <tr>
             <td></td>
-            <td class="text-lg text-medium">KShs. {{$order->total_price}} </td>
+            <td class="text-lg text-medium">KShs. {{$cartItem->total}} </td>
             </tr>
         </table>
         </section>

@@ -20,10 +20,10 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/register', 'Auth\BuyerRegisterController@showRegistrationForm')->name('register');
 Route::post('/register', 'Auth\BuyerRegisterController@register');
 Route::get('/login', 'Auth\BuyerLoginController@showLoginForm')->name('login');
-Route::post('/logout', 'Auth\BuyerLoginController@logout')->name('logout');
+Route::get('/logout', 'Auth\BuyerLoginController@buyerLogout')->name('buyer.logout');
 Route::post('/login', 'Auth\BuyerLoginController@login');
-Route::get('/account-profile', 'HomeController@accountProfile')->middleware('auth:buyer');
-Route::get('/account-orders','HomeController@accountOrders')->middleware('auth:buyer');
+Route::get('/account-profile', 'HomeController@accountProfile')->middleware('auth:buyer')->name('account');
+Route::get('/account-orders','HomeController@accountOrders')->middleware('auth:buyer')->name('orders');
 Route::get('/account-address','HomeController@accountAddress')->middleware('auth:buyer');;
 Route::get('/faq','HomeController@faq');
 Route::get('/terms','HomeController@terms');
@@ -55,7 +55,7 @@ Route::get('/terms','HomeController@terms');
 #no available content
 Route::get('/soon','HomeController@soon');
 
-Route::get('admin', 'Admin\Auth\LoginController@showLoginForm');
+Route::get('sproos/admin', 'Admin\Auth\LoginController@showLoginForm');
 
 #admin Routes
 /* Routes to the admin page */
@@ -78,6 +78,7 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::resource('admin/subcategories','subcategoryController');
 	//admin Auth request Routes
 	Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+	Route::get('admin-logout', 'Auth\LoginController@logoutAdmin')->name('admin.logout');
 	//admin Auth post Routes
 	Route::post('admin-login', 'Auth\LoginController@login');
 
@@ -86,8 +87,6 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::get('admin/home-page','AdminController@homePage')->name('homepage-manager');
 
 	Route::get('admin/featured-products','AdminController@featuredProducts');
-
-	#Route::get('admin/dropzone', 'DropzoneController@dropzone')->name('dropzone');
 	
 	Route::resource('admin/banner','BannerController');
 
@@ -105,6 +104,7 @@ Route::group(['namespace' => 'Seller'],function(){
 	Route::get('seller-login', 'Auth\LoginController@showLoginForm')->name('seller.login');
 	//admin Auth post Routes
 	Route::post('seller-login', 'Auth\LoginController@login');
+	Route::get('seller-logout', 'Auth\LoginController@logoutSeller')->name('seller.logout');
 	Route::get('seller-register', 'Auth\SellerRegisterController@showRegistrationForm');
 	Route::post('seller-register', 'Auth\SellerRegisterController@register');
 	Route::get('seller-account', 'SellerController@account')->name('seller.account');
@@ -118,3 +118,5 @@ Route::get('login/{provider}', 'SocialAuthController@auth')
 
 Route::get('login/{provider}/callback', 'SocialAuthController@login')
 ->where(['provider' => 'facebook|google|twitter']);
+
+Route::post('/search', 'HomeController@search');

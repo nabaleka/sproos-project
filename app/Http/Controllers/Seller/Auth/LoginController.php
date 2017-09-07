@@ -83,7 +83,7 @@ class LoginController extends Controller
 
     {
 
-        return view('seller.login');
+        return view('seller.login',['except'=>['logoutSeller']]);
 
     }
 
@@ -104,18 +104,12 @@ class LoginController extends Controller
        }
 
        return redirect()->back()->withInput($request->only('email','remember'));
-   #}
+    }
 
-        #$this->validateLogin($request);
-
-        #if ($this->attemptLogin($request)) {
-
-            #return $this->sendLoginResponse($request);
-
-        #}
-
-        #return $this->sendFailedLoginResponse($request);
-
+    //Function to log out the seller guard
+    public function logoutSeller(){
+        Auth::guard('seller')->logout();
+        return redirect(route('seller.login'));
     }
 
 }

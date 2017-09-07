@@ -87,7 +87,7 @@
                               <br>
                               <div class="form-group" style="margin-top:18px;">
                                 <label>Select Category</label>
-                                <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="categories[]">
+                                <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="cat_id">
                                 @foreach ($categories as $category)
                                   <option value="{{ $category->id }}">{{ $category->title }}</option>
                                 @endforeach

@@ -1,5 +1,5 @@
       <!-- Product Widgets-->
-      <section class="container padding-bottom-2x">
+      <section class="container padding-top-3x ">
         <div class="row">
           <div class="col-md-4 col-sm-6">
             <div class="widget widget-featured-products">

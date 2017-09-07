@@ -48,7 +48,7 @@ class BuyerLoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:buyer');
+        $this->middleware('guest:buyer',['except'=>['logout','buyerLogout']]);
     }
 
 
@@ -100,37 +100,23 @@ class BuyerLoginController extends Controller
        //Attempt
        if( Auth::guard('buyer')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
            //if successful redirect
-           return redirect()->intended( route('account-profile'));
+           return redirect()->intended( route('account'));
        }
 
        return redirect()->back()->withInput($request->only('email','remember'));
-   #}
-
-        #$this->validateLogin($request);
-
-        #if ($this->attemptLogin($request)) {
-
-            #return $this->sendLoginResponse($request);
-
-        #}
-
-        #return $this->sendFailedLoginResponse($request);
-
+  
     }
-
      /**
      * Log the user out of the application.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-     public function logout(Request $request)
+     public function buyerLogout()
      {
          Auth::guard('buyer')->logout();
-         Auth::guard()->logout();
-         $request->session()->flush();
-         $request->session()->regenerate();
-         return redirect()->guest(route( 'login' ));
+         //Auth::guard('web')->logout();
+         return redirect()->guest(route('login'));
      }
 
 }

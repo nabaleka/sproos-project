@@ -63,13 +63,18 @@ class ProductsController extends Controller
             'image3' => 'image|nullable|max:1999|required|required',
             'image4' => 'image|nullable|max:1999|required',
             ]);
+
+           
+            
+            
             
         //handle file upload
         if ($request->hasFile('image')) 
         {
            $imageName = $request->file('image')->store('public/products');
            //Upload a copy to another folder
-           Storage::disk('uploads')->putFile('products/',$request->file('image'));
+           $imageName = Storage::disk('uploads')->putFile('products',$request->file('image'));
+           
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
         else
@@ -79,9 +84,9 @@ class ProductsController extends Controller
 
 if ($request->hasFile('image4')) 
         {
-           $imageName4= $request->file('image4')->store('public/products');
+           $imageName4 = $request->file('image4')->store('public/products');
            //Upload a copy to another folder
-           Storage::disk('uploads')->putFile('products/',$request->file('image4'));
+           $imageName4 = Storage::disk('uploads')->putFile('products',$request->file('image4'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
         else
@@ -92,7 +97,7 @@ if ($request->hasFile('image4'))
         {
            $imageName2 = $request->file('image2')->store('public/products');
            //Upload a copy to another folder
-           Storage::disk('uploads')->putFile('products/',$request->file('image2'));
+           $imageName2 = Storage::disk('uploads')->putFile('products',$request->file('image2'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
         else
@@ -103,7 +108,7 @@ if ($request->hasFile('image4'))
         {
            $imageName3 = $request->file('image3')->store('public/products');
            //Upload a copy to another folder
-           Storage::disk('uploads')->putFile('products/',$request->file('image3'));
+           $imageName3 = Storage::disk('uploads')->putFile('products',$request->file('image3'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
         else
@@ -119,12 +124,13 @@ if ($request->hasFile('image4'))
         $products->seller_id= Auth::guard('seller')->user()->id;
         $products->name = $request->name;
         $products->stock = $request->stock;
+        $products->category_id=$request->cat_id;
         $products->price = $request->price;
         $products->slug = $request->slug;
         $products->description = $request->description;
         $products->save();
         
-        return redirect(route('banners.index'));
+        return redirect(route('products.index'));
     }
 
     /**
@@ -174,7 +180,7 @@ if ($request->hasFile('image4'))
         if ($request->hasFile('image')) {
             $imageName= $request->image->store('public/products');
             //Upload a copy to another folder
-            Storage::disk('uploads')->putFile('products/',$request->file('image'));
+            Storage::disk('uploads')->putFile('products',$request->file('image'));
             ##$url = Storage::disk('uploads')->url('file1.jpg');
         }else{
             return 'No';

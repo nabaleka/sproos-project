@@ -9,9 +9,8 @@ the first image
       <section class="hero-slider" style="min-height:100%;">
       <div>
       <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: false, &quot;autoplay&quot;: true, &quot;loop&quot;: true }">
-            <img src="img/hero-slider/sproos-banner.png" alt="Image">
-            <img src="img/hero-slider/sproos-banner.png" alt="Image">
-            <img src="img/hero-slider/sproos-banner.png" alt="Image">
+            <img src="{{ asset('uploads/banners/banner.jpg')}}" alt="Image">
+            <img src="{{ asset('uploads/banners/banner.jpg')}}" alt="Image">
       </div>
       </div>
 
@@ -24,31 +23,20 @@ the first image
         <div class="row">
 
           <!-- Load categories dynamically-->
-          <div class="col-md-4 col-sm-6">
-            <div class="card mb-30"><a class="card-img-tiles" href="/shop-grid">
-                <div class="inner">
-                 
-                </div></a>
-              <div class="card-block text-center">
-                <h4 class="card-title">Used</h4>
-                <p class="text-muted">Starting from Ksh 100.00</p><a class="btn btn-outline-primary btn-sm" href="/shop-grid">View Products</a>
-              </div>
-            </div>
-          </div>
-
+          @foreach($categories as $category)
 
           <div class="col-md-4 col-sm-6">
             <div class="card mb-30"><a class="card-img-tiles" href="/shop-grid">
                 <div class="inner">
-                  <!--div class="main-img"><img src="img/shop/categories/07.jpg" alt="Category"></div>
-                  <div class="thumblist"><img src="img/shop/categories/08.jpg" alt="Category"><img src="img/shop/categories/09.jpg" alt="Category"></div-->
                 </div></a>
               <div class="card-block text-center">
-                <h4 class="card-title">African</h4>
-                <p class="text-muted">Starting from Ksh 927.00</p><a class="btn btn-outline-primary btn-sm" href="/shop-grid">View Products</a>
+                <h4 class="card-title">{{ $category->title }}</h4>
+                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-outline-primary btn-sm" href="/shop-grid">View Products</a>
               </div>
             </div>
           </div>
+          @endforeach
+
           
         </div>
         <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/categories">All Categories</a></div>
@@ -67,7 +55,7 @@ the first image
     
           <div class="grid-item">
             <div class="product-card">
-              <div class="product-badge text-danger"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{Storage::url($product->image)}}" height="100px" width="150px" /></a>
+              <div class="product-badge text-danger"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
               <h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3>
               <h4 class="product-price">
                 Ksh. {{$product->price}}
@@ -87,11 +75,19 @@ the first image
         </div>
       </section>
 
-          
+        <!-- Product Widgets-->
+    @include('inc.product-widget')     
     <!-- Services-->
     @include('inc.services')
+    <!-- Popular Brands-->
+     <section class="bg-faded padding-top-3x padding-bottom-3x">
+        <div class="container">
+          <h3 class="text-center mb-30 pb-2">Popular Brands</h3>
+          <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: false, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:2}, &quot;470&quot;:{&quot;items&quot;:3},&quot;630&quot;:{&quot;items&quot;:4},&quot;991&quot;:{&quot;items&quot;:5},&quot;1200&quot;:{&quot;items&quot;:6}} }"><img class="d-block w-110 opacity-75 m-auto" src="img/brands/01.png" alt="Adidas"><img class="d-block w-110 opacity-75 m-auto" src="img/brands/02.png" alt="Brooks"><img class="d-block w-110 opacity-75 m-auto" src="img/brands/03.png" alt="Valentino"><img class="d-block w-110 opacity-75 m-auto" src="img/brands/04.png" alt="Nike"><img class="d-block w-110 opacity-75 m-auto" src="img/brands/05.png" alt="Puma"><img class="d-block w-110 opacity-75 m-auto" src="img/brands/06.png" alt="New Balance"><img class="d-block w-110 opacity-75 m-auto" src="img/brands/07.png" alt="Dior"></div>
+        </div>
+      </section>
     
-    <!-- Product Widgets-->
-    @include('inc.product-widget')
+    
+
      
 @endsection

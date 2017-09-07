@@ -160,7 +160,18 @@ class HomeController extends Controller
    public function shopSingle($id)
    {
    $cartItems = Cart::content();
+   $categories = categories::all();
    $products = Products::find($id); // get prodcut by id
-       return view('front.shop.shop-single',compact('products'),compact('cartItems'));
+       return view('front.shop.shop-single',compact('products','categories'),compact('cartItems'));
    }
+
+   public function search(Request $request) {
+    $search = $request->search_data;
+    if ($search == '') {
+        return view('front.home');
+    } else {
+        $Products = DB::table('products')->where('name', 'like', '%' . $search . '%');
+        return view('front.shop.shop-list', ['msg' => 'Results: ' . $search], compact('products'));
+    }
+}
 }
