@@ -39,7 +39,7 @@ the first image
 
           
         </div>
-        <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/categories">All Categories</a></div>
+        <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/shop-grid">Shop Now</a></div>
       </section>
 
 
