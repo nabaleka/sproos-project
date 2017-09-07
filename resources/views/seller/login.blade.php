@@ -153,6 +153,8 @@
 
 
     <a href="#">I forgot my password</a><br>
+    <hr>
+    <p>Or, need a sellers account? <a href="{{ route('seller.register') }}">Signup</a> here</p>
 
 
 

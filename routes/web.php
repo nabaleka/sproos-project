@@ -105,7 +105,7 @@ Route::group(['namespace' => 'Seller'],function(){
 	//admin Auth post Routes
 	Route::post('seller-login', 'Auth\LoginController@login');
 	Route::get('seller-logout', 'Auth\LoginController@logoutSeller')->name('seller.logout');
-	Route::get('seller-register', 'Auth\SellerRegisterController@showRegistrationForm');
+	Route::get('seller-register', 'Auth\SellerRegisterController@showRegistrationForm')->name('seller.register');
 	Route::post('seller-register', 'Auth\SellerRegisterController@register');
 	Route::get('seller-account', 'SellerController@account')->name('seller.account');
 	Route::resource('seller/products','ProductsController');
