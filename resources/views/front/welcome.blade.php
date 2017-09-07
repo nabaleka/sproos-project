@@ -1,10 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
       <!-- Main Slider-->
 <!--check banner 
 the first image
@@ -12,46 +9,19 @@ the first image
  -->
       <section class="hero-slider" style="min-height:100%;">
       <div>
-      <!-- Loops -->
-        <!--<img src="img/hero-slider/sproos-banner.png" style="width:100%;">-->
-
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    @foreach( $banners as $banner )
-                        <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-                    @endforeach
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    @foreach( $banners as $banner)
-                        <div class="item {{ $loop->first ? ' active' : '' }}" >
-                            <img src="{{ $banner->photo }}" alt="{{ $banner->id }}">
-                        </div>
-                    @endforeach
-                </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-</div>
-      <!---->
+      <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: false, &quot;autoplay&quot;: true, &quot;loop&quot;: true }">
+            <img src="img/hero-slider/sproos-banner.png" alt="Image">
+            <img src="img/hero-slider/sproos-banner.png" alt="Image">
+            <img src="img/hero-slider/sproos-banner.png" alt="Image">
+      </div>
       </div>
 
       </section>
 
 
       <!-- Top Categories-->
-      <section class="container padding-top-3x">
-        <h3 class="text-center mb-30">Top Categories</h3>
+      <section class="container padding-top-1x">
+        <h3 class="text-center mb-30">Our Categories</h3>
         <div class="row">
           <div class="col-md-4 col-sm-6">
             <div class="card mb-30"><a class="card-img-tiles" href="/shop-grid">

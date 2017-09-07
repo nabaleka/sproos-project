@@ -387,7 +387,13 @@
 
      }
 
+     .btn-outline-secondary{
+       border-color : #ee2956;
+     }
 
+     .form-control{
+       border-color : #ee2956;
+     }
 
      .sb-light-skin.shape-circle{
 
