@@ -15,7 +15,7 @@
           </div>
           <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="img/services/04.png" alt="Payment">
             <h6>Secure Online Payment</h6>
-            <p class="text-muted margin-bottom-none">We posess SSL / Secure Certificate</p>
+            <p class="text-muted margin-bottom-none">Secure and online Transactions</p>
           </div>
         </div>
       </section>
