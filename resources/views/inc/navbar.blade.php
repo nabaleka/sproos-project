@@ -20,38 +20,18 @@
     <header class="navbar navbar-sticky" style="margin-bottom:0;">
 
       <!-- Search-->
-
-      <form class="site-search" method="get" action="/search" id="search" onsubmit="checkform(this)">
-
-        <input type="text" name="site_search" placeholder="Type to search and press Enter">
-
+      
+<form class="site-search" method="post" action="{{ route('search') }}" id="search">
+      {{ csrf_field() }}
+        <input type="text" name="search_data" class="col-sm-8" placeholder="Type to search and press Enter">
         <div class="search-tools">
-        <script>
-          function checkform(form) {
-              // get all the inputs within the submitted form
-              var inputs = form.getElementsByTagName('site_search');
-              for (var i = 0; i < inputs.length; i++) {
-                  // only validate the inputs that have the required attribute
-                  if(inputs[i].value == ""){
-                      // found an empty field that is required
-                      alert("Please fill all required fields");
-                      return false;
-                  }
-              }
-              return true;
-          }
-
-          function search(){
-            var x = document.getElementById("search").submit();
-          }
-        </script>
-        <select class=" custom-select">
-<option selected>African</option>
-<option value="1">Men</option>
-<option value="2">Women</option>
-<option value="3">Kids</option>
-</select>
-          <span class="clear-search" onclick="search();"><a class="btn btn-outline-primary btn-sm">SEARCH </a></span>
+       
+          <select class="form-control" style="display:inline; width:150px;">
+            @foreach($categories as $category)
+            <option value='{{ $category->id }}'>{{ $category->title}}</option>
+            @endforeach
+          </select>
+          <span class="clear-search"><button class="btn btn-primary">SEARCH </button></span>
           <span class="close-search"><i class="icon-cross"></i></span>
         </div>
     
@@ -127,7 +107,7 @@
             
 
             <div class="account"><a href="/account-orders"></a><i class="icon-head"></i>
-            @if(Auth::guest())
+            @if(!Auth::guard('buyer')->check())
              <ul class="toolbar-dropdown">
 
                 <li class="sub-menu-title"><span>Need an account?</span></li>
@@ -146,8 +126,7 @@
                   <li><a href="/account-orders">Orders List</a></li>
 
                 <li class="sub-menu-separator"></li>
-                <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> <i class="icon-unlock"></i>Logout</a></li>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                <li><a href="{{ route('buyer.logout') }}"> Logout</a></li>
               </ul>
                 @endif
             </div>

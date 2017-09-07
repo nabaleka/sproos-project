@@ -58,13 +58,18 @@ class ProductsController extends Controller
             'slug' => 'required',
             'image' => 'image|nullable|max:1999',
             ]);
+
+           
+            
+            
             
         //handle file upload
         if ($request->hasFile('image')) 
         {
            $imageName = $request->file('image')->store('public/products');
            //Upload a copy to another folder
-           Storage::disk('uploads')->putFile('products/',$request->file('image'));
+           $imageName = Storage::disk('uploads')->putFile('products',$request->file('image'));
+           
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
         else
@@ -72,11 +77,46 @@ class ProductsController extends Controller
             return 'Please select image';
         }
 
+if ($request->hasFile('image4')) 
+        {
+           $imageName4 = $request->file('image4')->store('public/products');
+           //Upload a copy to another folder
+           $imageName4 = Storage::disk('uploads')->putFile('products',$request->file('image4'));
+           ##$url = Storage::disk('uploads')->url('file1.jpg');
+        }
+        else
+        {
+            return 'Please select image';
+        }
+        if ($request->hasFile('image2')) 
+        {
+           $imageName2 = $request->file('image2')->store('public/products');
+           //Upload a copy to another folder
+           $imageName2 = Storage::disk('uploads')->putFile('products',$request->file('image2'));
+           ##$url = Storage::disk('uploads')->url('file1.jpg');
+        }
+        else
+        {
+            return 'Please select image';
+        }
+        if ($request->hasFile('image3')) 
+        {
+           $imageName3 = $request->file('image3')->store('public/products');
+           //Upload a copy to another folder
+           $imageName3 = Storage::disk('uploads')->putFile('products',$request->file('image3'));
+           ##$url = Storage::disk('uploads')->url('file1.jpg');
+        }
+        else
+        {
+            return 'Please select image';
+        }
         //Create the product
         $products = new Products;
         $products->image=$imageName;
         $products->seller_id= $request->seller_id;
         $products->name = $request->name;
+        $products->stock = $request->stock;
+        $products->category_id=$request->cat_id;
         $products->price = $request->price;
         $products->slug = $request->slug;
         $products->description = $request->description;
@@ -132,7 +172,7 @@ class ProductsController extends Controller
         if ($request->hasFile('image')) {
             $imageName = $request->image->store('public/products');
             //Upload a copy to another folder
-            Storage::disk('uploads')->putFile('products/',$request->file('image'));
+            Storage::disk('uploads')->putFile('products',$request->file('image'));
             ##$url = Storage::disk('uploads')->url('file1.jpg');
         }else{
             return 'No';

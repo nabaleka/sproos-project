@@ -2,14 +2,15 @@
 
 
 
-namespace App\Http\Controllers\Admin\Auth;
+namespace App\Http\Controllers\Auth;
 
 
 
 use App\Http\Controllers\Controller;
 
-use App\admin;
-
+use App\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Model\admin\categories;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-class LoginController extends Controller
+class BuyerLoginController extends Controller
 
 {
 
@@ -47,6 +48,11 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    public function __construct()
+    {
+        $this->middleware('guest:buyer',['except'=>['logout','buyerLogout']]);
+    }
+
 
 
     /**
@@ -59,15 +65,7 @@ class LoginController extends Controller
 
      */
 
-    protected $redirectTo = '/admin';
-
-    public function __construct()
-
-        {
-
-            $this->middleware('guest:admin',['except' => ['logoutAdmin']]);
-
-        }
+    protected $redirectTo = '/account-profile';
 
 
 
@@ -86,36 +84,42 @@ class LoginController extends Controller
      public function showLoginForm()
 
     {
-
-        return view('admin.login');
+        $categories = categories::all();
+        $cartItems = Cart::content();
+        return view('auth.login',compact('categories','cartItems'));
 
     }
 
     public function login(Request $request)
 
     {
-
       //Validate
        $this->validate($request , [
            'email'=>'required|email',
-           'password'=>'required|min:6',
+           'password'=>'required|min:6'
+
        ]);
 
        //Attempt
-       if( Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
+       if( Auth::guard('buyer')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
            //if successful redirect
-           return redirect()->intended(route('admin'));
+           return redirect()->intended( route('account'));
        }
 
        return redirect()->back()->withInput($request->only('email','remember'));
-
+  
     }
-
-    public function logoutAdmin(){
-      
-        Auth::guard('admin')->logout();
-        return redirect(route('admin.login'));
-
-    }
+     /**
+     * Log the user out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+     public function buyerLogout()
+     {
+         Auth::guard('buyer')->logout();
+         //Auth::guard('web')->logout();
+         return redirect()->guest(route('login'));
+     }
 
 }

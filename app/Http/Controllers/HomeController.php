@@ -62,7 +62,8 @@ class HomeController extends Controller
     public function checkoutAddress(){
         $cartItems = Cart::content();
         $products = Products::all();
-        return view ('front.checkout.checkout-address', compact('cartItems'))->with('products', $products);
+        $categories = categories::all();
+        return view ('front.checkout.checkout-address', compact('cartItems','categories','products'));
     }
 
     public function checkoutComplete(){
@@ -92,7 +93,8 @@ class HomeController extends Controller
     public function accountAddress(){
         $cartItems = Cart::content();
         $products = Products::all();
-        return view ('front.accounts.account-address',compact('cartItems'))->with('products', $products);
+        $categories = categories::all();
+        return view ('front.accounts.account-address',compact('cartItems','categories'))->with('products', $products);
     }
 
     public function accountOrders(){

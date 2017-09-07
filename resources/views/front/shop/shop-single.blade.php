@@ -26,24 +26,24 @@
           <div class="col-md-6">
             <div class="product-gallery"><span class="product-badge text-danger"></span>
               <div class="gallery-wrapper">
-                <div class="gallery-item active"><a href="img/shop/single/01.jpg" data-hash="one" data-size="1000x667"></a></div>
-                <div class="gallery-item"><a href="img/shop/single/02.jpg" data-hash="two" data-size="1000x667"></a></div>
-                <div class="gallery-item"><a href="img/shop/single/03.jpg" data-hash="three" data-size="1000x667"></a></div>
-                <div class="gallery-item"><a href="img/shop/single/04.jpg" data-hash="four" data-size="1000x667"></a></div>
+                <div class="gallery-item active"><a href="{{asset('uploads/'.$products->image) }}" data-hash="one" data-size="1000x667"></a></div>
+                <div class="gallery-item"><a href="{{asset('uploads/'.$products->image2) }}" data-hash="two" data-size="1000x667"></a></div>
+                <div class="gallery-item"><a href="{{asset('uploads/'.$products->image3) }}" data-hash="three" data-size="1000x667"></a></div>
+                <div class="gallery-item"><a href="{{asset('uploads/'.$products->image4) }}" data-hash="four" data-size="1000x667"></a></div>
                 <div class="gallery-item"><a href="img/shop/single/05.jpg" data-hash="five" data-size="1000x667"></a></div>
               </div>
               <div class="product-carousel owl-carousel">
-                <div data-hash="one"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></div>
-                <div data-hash="two"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></div>
-                <div data-hash="three"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></div>
-                <div data-hash="four"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></div>
+                <div data-hash="one"><img src="{{asset('uploads/'.$products->image) }}" height="100px" width="150px" /></div>
+                <div data-hash="two"><img src="{{asset('uploads/'.$products->image2) }}" height="100px" width="150px" /></div>
+                <div data-hash="three"><img src="{{asset('uploads/'.$products->image3) }}" height="100px" width="150px" /></div>
+                <div data-hash="four"><img src="{{asset('uploads/'.$products->image4) }}" height="100px" width="150px" /></div>
 
               </div>
               <ul class="product-thumbnails">
-                <li class="active"><a href="#one"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></a></li>
-                <li><a href="#two"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></a></li>
-                <li><a href="#three"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></a></li>
-                <li><a href="#four"><img src="{{Storage::url($products->image)}}" height="100px" width="150px" /></a></li>
+                <li class="active"><a href="#one"><img src="{{asset('uploads/'.$products->image) }}" height="100px" width="150px" /></a></li>
+                <li><a href="#two"><img src="{{asset('uploads/'.$products->image2) }}" height="100px" width="150px" /></a></li>
+                <li><a href="#three"><img src="{{asset('uploads/'.$products->image3) }}" height="100px" width="150px" /></a></li>
+                <li><a href="#four"><img src="{{asset('uploads/'.$products->image4) }}" height="100px" width="150px" /></a></li>
 
               </ul>
             </div>

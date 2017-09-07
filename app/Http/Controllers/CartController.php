@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Admin\products;
+use App\Model\Admin\categories;
+
 use Gloudemans\Shoppingcart\Facades\Cart; // for cart lib
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -15,7 +16,7 @@ class CartController extends Controller
 
     {
 
-      $this->middleware('auth:web');
+      $this->middleware('auth:buyer');
 
           
 
@@ -24,6 +25,7 @@ class CartController extends Controller
 
     public function cart(){
         $cartItems = Cart::content();
+        $categories = categories::all();
 
 
         foreach ($cartItems as $cartItem) {
@@ -39,7 +41,7 @@ class CartController extends Controller
           
          }
           $orders = DB::table('orders')->where('user_id',Auth::user()->id)->get();
-          return view ('front.checkout.cart',compact('cartItems','orders'));
+          return view ('front.checkout.cart',compact('cartItems','orders','categories'));
    }
    
 }

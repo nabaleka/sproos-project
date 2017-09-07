@@ -14,15 +14,16 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class PaymentsController extends Controller
 {
     public function payment(){//initiates payment
-         $total_price = DB::table('orders')->where('user_id',Auth::guard('web')->id())->value('total_price');
-    	$orders  =orders::find(Auth::guard('web')->id());
+        $cartItems = Cart::content();
+        //$total_price = DB::table('orders')->where('user_id',Auth::guard('web')->id())->value('total_price');
+    	$orders  = orders::find(Auth::guard('buyer')->id());
         $orders ->transaction_id = Pesapal::random_reference();
         $orders->status = 2;
-        $orders ->total_price = $total_price;//+$shipping_cost;
+        $orders ->total_price = Cart::total();//+$shipping_cost;
         $orders -> save();
 
         $details = array(
-        'amount' =>$orders ->total_price,
+        'amount' =>Cart::total(),
         'description' => 'Test Transaction',
          'type' => 'MERCHANT',
          'first_name' => 'joseph',
@@ -34,7 +35,7 @@ class PaymentsController extends Controller
             'currency' => 'KES'
        );
        $iframe=Pesapal::makePayment($details);
-       $orders = DB::table('orders')->where('user_id',Auth::user()->id)->get();
+       $orders = DB::table('orders')->where('user_id',Auth::guard('buyer')->user()->id)->get();
        $cartItems = Cart::content();
        return view('front.checkout.checkout-payment', compact('iframe','orders','cartItems'));
     }

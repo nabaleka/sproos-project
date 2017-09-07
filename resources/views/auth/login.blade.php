@@ -1,93 +1,23 @@
-@extends('layouts.login')
-
-
+@extends('layouts.app')
 
 @section('content')
-
-<!-- Page Title-->
-    <!-- Navbar-->
-
-    <!-- Remove ".navbar-sticky" class to make navigation bar scrollable with the page.-->
-
-    <header class="navbar navbar-sticky" style="margin-bottom:0;">
-    
-          <!-- Search-->
-    
-          <form class="site-search" method="get">
-    
-            <input type="text" name="site_search" placeholder="Type to search...">
-    
-            <div class="search-tools"><span class="clear-search">Clear</span><span class="close-search"><i class="icon-cross"></i></span></div>
-    
-          </form>
-    
-          <div class="site-branding">
-    
-            <div class="inner">
-    
-              <!-- Off-Canvas Toggle (#shop-categories)--><a class="offcanvas-toggle cats-toggle" href="#shop-categories" data-toggle="offcanvas"></a>
-    
-              <!-- Off-Canvas Toggle (#mobile-menu)--><a class="offcanvas-toggle menu-toggle" href="#mobile-menu" data-toggle="offcanvas"></a>
-    
-              <!-- Site Logo--><a class="site-logo" href="/"><img src="{{ asset('img/logo/sproos-logo.png') }}" alt="Sproos"></a>
-    
-            </div>
-    
+ <!-- Page Title-->
+      <div class="page-title">
+        <div class="container">
+          <div class="column">
+            <h1>Log In</h1>
           </div>
-    
-          <!-- Main Navigation-->
-    
-          <nav class="site-menu">
-    
-            <ul>
-    
-              <li><a href="/"><span>Home</span></a>
-    
+          <div class="column">
+            <ul class="breadcrumbs">
+              <li><a href="/">Home</a>
               </li>
-    
-              <li><a href="/shop-grid"><span>Buy</span></a>
-              </li>
-    
-              <li><a href="#"><span>More</span></a>
-    
-                <ul class="sub-menu">
-    
-                    <li><a href="/about">About Us</a></li>
-    
-                    <li><a href="/terms">Terms of use</a></li>
-    
-                    <li><a href="/contacts-us">Contacts</a></li>
-    
-                    <li><a href="/faq">Help / FAQ</a></li>
-    
-                </ul>
-    
-              </li>
-    
-              <li><a href="/register"><span>REGISTER</span></a></li>
-              <li><a href="/login"><span>LOG IN</span></a></li>
+              <li class="separator">&nbsp;</li>
+              <li>Login</li>
             </ul>
-    
-          </nav>
-    
-          <!-- Toolbar-->
-    
-          <div class="toolbar">
-    
-            <div class="inner">
-    
-              <div class="tools">
-    
-                <div class="search"><i class="icon-search"></i></div>
-            
-    
-              </div>
-    
-            </div>
-    
           </div>
-    
-        </header>
+        </div>
+      </div>
+
 <div class="container-fluid" style="max-width:500px; padding:10px;">
     <div class="row">
         <div class="login-box">
@@ -96,9 +26,9 @@
                     <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
                         <div class="row margin-bottom-1x">
-                        <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block facebook-btn" href="{{ action('SocialAuthController@auth', ['provider' => 'facebook']) }}"><i class="socicon-facebook"></i>&nbsp;Facebook login</a></div>
-                        <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block twitter-btn" href="{{ action('SocialAuthController@auth', ['provider' => 'twitter']) }}"><i class="socicon-twitter"></i>&nbsp;Twitter login</a></div>
-                        <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block google-btn" href="{{ action('SocialAuthController@auth', ['provider' => 'google']) }}"></i>&nbsp;Google+ login</a></div>
+                            <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block facebook-btn" href="{{ action('SocialAuthController@auth', ['provider' => 'facebook']) }}"><i class="socicon-facebook"></i>&nbsp;Facebook</a></div>
+                            <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block twitter-btn" href="{{ action('SocialAuthController@auth', ['provider' => 'twitter']) }}"><i class="socicon-twitter"></i>&nbsp;Twitter</a></div>
+                            <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block google-btn" href="{{ action('SocialAuthController@auth', ['provider' => 'google']) }}"></i>&nbsp;Google+</a></div>
                         </div>
                         <h4 class="margin-bottom-1x">Or using form below</h4>
 

@@ -30,7 +30,7 @@
               </div>
               <div class="user-info">
                 <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="img/account/user-ava.jpg" alt="User"></div>
-                <div class="user-data">
+                <<div class="user-data">
                 @if (Auth::guest())
                 <h4>Please login first</h4>
                 @else

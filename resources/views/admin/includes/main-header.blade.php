@@ -309,12 +309,10 @@
                 </div>
 
                 <div class="pull-right">
+                
+                <a href="{{ route('admin.logout')}}" class="btn btn-default btn-flat">Sign Out</a>
 
-                  
-                  <a href="{{ route('logout') }}"  onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> <i class="icon-unlock"></i>Sign out</a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
-
-                </div>
+                  </div>
 
               </li>
 
