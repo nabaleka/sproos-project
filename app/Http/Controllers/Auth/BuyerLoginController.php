@@ -9,6 +9,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Model\admin\categories;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -82,8 +84,9 @@ class BuyerLoginController extends Controller
      public function showLoginForm()
 
     {
-
-        return view('auth.login');
+        $categories = categories::all();
+        $cartItems = Cart::content();
+        return view('auth.login',compact('categories','cartItems'));
 
     }
 
