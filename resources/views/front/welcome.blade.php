@@ -75,6 +75,20 @@ the first image
         </div>
       </section>
 
+        <section>
+                  <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
+                    <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;margin&quot;: 30, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;630&quot;:{&quot;items&quot;:2},&quot;991&quot;:{&quot;items&quot;:3},&quot;1200&quot;:{&quot;items&quot;:3}} }">
+                      <img src="../img/components/img04.jpg" alt="Image">
+                      <img src="../img/components/img05.jpg" alt="Image">
+                      <img src="../img/components/img06.jpg" alt="Image">
+                      <img src="../img/components/img10.jpg" alt="Image">
+                      <img src="../img/components/img11.jpg" alt="Image">
+                      <img src="../img/components/img12.jpg" alt="Image">                   
+                    </div>
+                   
+                  </div>
+          </section>
+
         <!-- Product Widgets-->
     @include('inc.product-widget')     
     <!-- Services-->

@@ -322,7 +322,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   })
 
 </script>
-
+<link rel="stylesheet" href="{{ asset('adminscript/plugins/datatables/dataTables.bootstrap.css') }}">
+<script src="{{ asset('adminscript/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('adminscript/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+  });
+</script>
 <script>
 
   $(document).ready(function() {
