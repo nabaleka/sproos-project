@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 use Auth;
+use App\Model\admin\categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Validator;
 
 class BuyerRegisterController extends Controller
@@ -13,7 +15,9 @@ class BuyerRegisterController extends Controller
     //shows registration form to buyer
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $cartItems = Cart::content();
+        $categories = categories::all();
+        return view('auth.register', compact('categories','cartItems'));
     }
 
   //Handles registration request for buyer

@@ -50,9 +50,10 @@ class HomeController extends Controller
     }
 
     public function shopGrid(){
+        
         $cartItems = Cart::content();
         $categories = categories::all();
-        $products = Products::all();
+        $products = DB::table('products')->paginate(3);
         return view ('front.shop.shop-grid',compact('cartItems'))->with('products', $products)->with('categories',$categories);
     }
 

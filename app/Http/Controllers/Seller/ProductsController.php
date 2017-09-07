@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Products;
+use Illuminate\Support\Facades\DB;
 use App\Model\Admin\subcategories;
 use App\Model\Admin\categories;
 use Illuminate\Support\Facades\Storage;
@@ -71,7 +72,7 @@ class ProductsController extends Controller
         //handle file upload
         if ($request->hasFile('image')) 
         {
-           $imageName = $request->file('image')->store('public/products');
+           //$imageName = $request->file('image')->store('public/products');
            //Upload a copy to another folder
            $imageName = Storage::disk('uploads')->putFile('products',$request->file('image'));
            
@@ -84,7 +85,7 @@ class ProductsController extends Controller
 
 if ($request->hasFile('image4')) 
         {
-           $imageName4 = $request->file('image4')->store('public/products');
+           //$imageName4 = $request->file('image4')->store('public/products');
            //Upload a copy to another folder
            $imageName4 = Storage::disk('uploads')->putFile('products',$request->file('image4'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
@@ -95,7 +96,7 @@ if ($request->hasFile('image4'))
         }
         if ($request->hasFile('image2')) 
         {
-           $imageName2 = $request->file('image2')->store('public/products');
+           //$imageName2 = $request->file('image2')->store('public/products');
            //Upload a copy to another folder
            $imageName2 = Storage::disk('uploads')->putFile('products',$request->file('image2'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
@@ -106,7 +107,7 @@ if ($request->hasFile('image4'))
         }
         if ($request->hasFile('image3')) 
         {
-           $imageName3 = $request->file('image3')->store('public/products');
+           //$imageName3 = $request->file('image3')->store('public/products');
            //Upload a copy to another folder
            $imageName3 = Storage::disk('uploads')->putFile('products',$request->file('image3'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
