@@ -28,6 +28,9 @@
                 <ul>
                   <li><a href="/about">About Sproos</a></li>
                   <li><a href="/soon">Our Story</a></li>
+                  <li><a href="/terms">Terms of use</a></li>
+                <li><a href="/contacts-us">Contacts</a></li>
+                <li><a href="/faq">Help / FAQ</a></li>
                 </ul>
               </section>
             </div>
