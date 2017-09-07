@@ -47,7 +47,7 @@ the first image
         @if(count($products) > 0)
            
       <!-- Featured Products Carousel-->
-      <section class="container padding-top-3x padding-bottom-3x">
+      <section class="container padding-top-1x padding-bottom-2x col-md-8 col-offset-md-2">
         <h3 class="text-center mb-30">Products</h3>
         <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;margin&quot;: 30, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;576&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;991&quot;:{&quot;items&quot;:4},&quot;1200&quot;:{&quot;items&quot;:4}} }">
       @foreach($products as $product)

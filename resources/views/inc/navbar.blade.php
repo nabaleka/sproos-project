@@ -62,7 +62,7 @@
 
           </li>
 
-          <li><a href="/shop-grid"><span>Buy</span></a>
+          <li><a href="/shop-grid"><span>SHOP NOW</span></a>
           </li>
 
           
