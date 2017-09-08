@@ -9,8 +9,15 @@ the first image
       <section class="hero-slider" style="min-height:100%;">
       <div>
       <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: false, &quot;autoplay&quot;: true, &quot;loop&quot;: true }">
+             @if(count($banner)>0)
+            @foreach($banner as $banners)
+            <img src="{{ asset('uploads/'.$banners->banner)}}" alt="Image">
+            @endforeach
+            @else
             <img src="{{ asset('uploads/banners/banner.jpg')}}" alt="Image">
-            <img src="{{ asset('uploads/banners/banner.jpg')}}" alt="Image">
+            @endif
+
+            
       </div>
       </div>
 
@@ -25,13 +32,13 @@ the first image
           <!-- Load categories dynamically-->
           @foreach($categories as $category)
 
-          <div class="col-md-4 col-sm-6">
-            <div class="card mb-30"><a class="card-img-tiles" href="/shop-grid">
+          <div class="col-md-4 col-sm-6" >
+            <div class="card  mb-30" style="background-color:#fff; background-image:url({{ 'uploads/'.$category->image }}); background-repeat: no-repeat; background-overlay:screen; background-size:cover; "><a class="card-img-tiles"  href="/shop-grid">
                 <div class="inner">
                 </div></a>
-              <div class="card-block text-center" style="background-image:url({{ 'uploads/'.$category->image }});">
+              <div class="card-block text-center cat"  >
                 <h4 class="card-title">{{ $category->title }}</h4>
-                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-outline-primary btn-sm" href="/shop-grid">Shop {{ $category->title }}</a>
+                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-outline-primary btn-sm"  href="/shop/{{ $category->id }}/category">Shop {{ $category->title }}</a>
               </div>
             </div>
           </div>
