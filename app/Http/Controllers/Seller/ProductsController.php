@@ -42,7 +42,7 @@ class ProductsController extends Controller
         
         $subcategories =subcategories::all();
         $categories =categories::all();
-        return view('seller.products',compact('categories','subcategories'));
+        return view('seller.products',compact('categories'));
     }
 
     /**
@@ -57,11 +57,13 @@ class ProductsController extends Controller
         $this->validate($request,[
             'name'=>'required',
             'price'=>'required',
-            'slug' => 'required',
+            'description'=>'required',
             'stock' => 'required',
+            'category'=>'required',
+            'slug'=>'nullable',
             'image' => 'image|nullable|max:1999|required',
-            'image2' => 'image|nullable|max:1999|required|required|required',
-            'image3' => 'image|nullable|max:1999|required|required',
+            'image2' => 'image|nullable|max:1999|required',
+            'image3' => 'image|nullable|max:1999|required',
             'image4' => 'image|nullable|max:1999|required',
             ]);
 
@@ -122,10 +124,10 @@ if ($request->hasFile('image4'))
         $products->image2=$imageName2;
         $products->image3 =$imageName3;
         $products->image4= $imageName4;
-        $products->seller_id= Auth::guard('seller')->user()->id;
+        $products->seller_id = $request->seller_id; ;
         $products->name = $request->name;
         $products->stock = $request->stock;
-        $products->category_id=$request->cat_id;
+        $products->category_id=$request->category;
         $products->price = $request->price;
         $products->slug = $request->slug;
         $products->description = $request->description;
@@ -171,28 +173,58 @@ if ($request->hasFile('image4'))
     public function update(Request $request, $id)
     {
         //
+        $products = Products::find($id);
+        //get all images to delete
+        $imagetoDelete = $products->image;
+        $imagetoDelete2 = $products->image2;
+        $imagetoDelete3 = $products->image3;    
+        $imagetoDelete4 = $products->image4;
+        
+
         $this->validate($request,[
             'name'=>'required',
             'price'=>'required',
-            'slug' => 'required',
-            'image' => 'required',
+           
             ]);
 
         if ($request->hasFile('image')) {
-            $imageName= $request->image->store('public/products');
+            //Delete previous image
+            Storage::disk('uploads')->delete($imagetoDelete);
             //Upload a copy to another folder
             Storage::disk('uploads')->putFile('products',$request->file('image'));
-            ##$url = Storage::disk('uploads')->url('file1.jpg');
-        }else{
-            return 'No';
+            # Update the database
+            $products->image = $imageName;
         }
 
-        $products = Products::find($id);
-        $products->image =$imageName;
-        $products->image2 =$imageName2;
-        $products->image3 =$imageName3;
-        $products->image4= $imageName4;
-        $products->seller_id= 1;
+        if ($request->hasFile('image2')) {
+            //Delete previous image
+            Storage::disk('uploads')->delete($imagetoDelete2);
+            //Upload a copy to another folder
+            $imageName2 = Storage::disk('uploads')->putFile('products',$request->file('image2'));
+            $products->image2 = $imageName2;
+        }
+
+        if ($request->hasFile('image3')) {
+            //Delete previous image
+            Storage::disk('uploads')->delete($imagetoDelete3);
+            //Upload a copy to another folder
+            $imageName3 = Storage::disk('uploads')->putFile('products',$request->file('image3'));
+            
+            //update the database
+            $products->image3 = $imageName3;
+        }
+
+        if ($request->hasFile('image4')) {
+            //Delete previous image
+            Storage::disk('uploads')->delete($imagetoDelete4);
+            //Upload a copy to another folder
+            $imageName4 =Storage::disk('uploads')->putFile('products',$request->file('image4'));
+            ##$url = Storage::disk('uploads')->url('file1.jpg');
+            $products->image4 = $imageName4;
+        }      
+        
+        
+        $products->seller_id = Auth::id();
         $products->name = $request->name;
         $products->price = $request->price;
         $products->description = $request->description;
@@ -212,8 +244,25 @@ if ($request->hasFile('image4'))
      */
     public function destroy($id)
     {
-        //
+        
+        //delete from folder in uploads
+        $product = Products::findOrFail($id);
+
+        //get all images to delete
+        $imagetoDelete = $product->image;
+        $imagetoDelete2 = $product->image2;
+        $imagetoDelete3 = $product->image3;    
+        $imagetoDelete4 = $product->image4;
+
+        //delete them individually
+        Storage::disk('uploads')->delete($imagetoDelete);
+        Storage::disk('uploads')->delete($imagetoDelete2);
+        Storage::disk('uploads')->delete($imagetoDelete3);
+        Storage::disk('uploads')->delete($imagetoDelete4);
+
+        //delete from database
         Products::where('id',$id)->delete();
-        return redirect()->back();
+
+        return redirect(route('products.index'));
     }
 }

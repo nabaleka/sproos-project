@@ -85,10 +85,12 @@ class HomeController extends Controller
         $onecategory = categories::findOrFail($category_id);
 
         //Find products with $category id
-        
+        //$products = DB::table('products')->where('category_id', '=', 100)->get();
+        $products = DB::table('products')->where('category_id', '=', $category_id)->paginate(12);
+
 
         $cartItems = Cart::content();
-        $products = Products::all();
+        //$products = Products::all();
         return view('front.shop.shop-single-category', compact('cartItems','categories','products','onecategory'));
     }
 

@@ -119,7 +119,7 @@
 
          </div>
 
-     
+         {{ $products->links() }}
       </div>
 
       

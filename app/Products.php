@@ -9,4 +9,12 @@ class Products extends Model
     //
     protected $table = 'products';
 
+    /**
+     * Get the seller that owns the product.
+     */
+     public function seller()
+     {
+         return $this->belongsTo('App\Seller');
+     }
+
 }

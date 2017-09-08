@@ -72,8 +72,8 @@
                             </td>
                             <td>{{ $product->name }}</td>
                              <td>{{ $product->price }}</td>
-                              <td> Seller</td>
-                              <td>35 </td>
+                              <td> {{$product->seller_id}}</td>
+                              <td>{{$product->stock}}</td>
                             <td>{{ $product->description }}</td>
                             <td>{{ $product->created_at }}</td>
 

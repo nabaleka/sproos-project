@@ -265,7 +265,7 @@
                 <p>
 
                   @if(Auth::guard('seller'))
-                    <p>{{ Auth::guard('seller')->user()->name }}</p>
+                    <p>{{ Auth::guard('seller')->user()->first_name }}</p>
                   @else
                     <p>Seller</p>
                   @endif

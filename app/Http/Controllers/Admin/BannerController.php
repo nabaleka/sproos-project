@@ -120,7 +120,7 @@ class BannerController extends Controller
         $imageName = $banner->image;    
         Banner::where('id',$id)->delete();
         /* Delete the image from storage */
-        Storage::disk('uploads')->delete('banners/'.$imageName);
+        Storage::disk('uploads')->delete($imageName);
         return redirect()->back();
     }
 }

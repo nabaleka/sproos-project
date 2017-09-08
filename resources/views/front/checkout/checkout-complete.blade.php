@@ -8,7 +8,7 @@
           </div>
           <div class="column">
             <ul class="breadcrumbs">
-              <li><a href="index.html">Home</a>
+              <li><a href="/">Home</a>
               </li>
               <li class="separator">&nbsp;</li>
               <li>Checkout Complete!</li>
@@ -26,7 +26,7 @@
             <p class="card-text">You will be receiving an email shortly with confirmation of your order. 
               <u>You can now:</u>
             </p>
-            <div class="padding-top-1x padding-bottom-1x"><a class="btn btn-outline-secondary" href="shop-grid-ls.html">Go Back Shopping</a><a class="btn btn-outline-primary" href="#"><i class="icon-location"></i>&nbsp;Track order</a></div>
+            <div class="padding-top-1x padding-bottom-1x"><a class="btn btn-outline-secondary" href="shop-grid">Go Back Shopping</a><a class="btn btn-outline-primary" href="#"><i class="icon-location"></i>&nbsp;Track order</a></div>
           </div>
         </div>
       </div>
