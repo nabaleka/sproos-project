@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\admin\categories;
 
 class AdminController extends Controller
 {
@@ -41,9 +42,10 @@ class AdminController extends Controller
     }
 
     public function homePage(){
+        $categories = categories::all();
         #manage the site homepage
         #by default, returns to admin homepage settings
-        return view('admin/home-page');
+        return view('admin/home-page',compact('categories'));
     }
 
     public function featuredProducts(){

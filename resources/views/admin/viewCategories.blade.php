@@ -33,7 +33,7 @@
       <div class="box-body">
         <div class="box">
                     <div class="box-header">
-                      <h3 class="box-title">Product Categories Available</h3>
+                      <h3 class="box-title">You have {{ $categories->count() }} categories available</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

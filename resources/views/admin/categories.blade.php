@@ -22,7 +22,7 @@
 	        <!-- general form elements -->
 	        <div class="box box-primary">
 	          <div class="box-header with-border">
-	            <h3 class="box-title">Your Categories.</h3>
+	            <h3 class="box-title">You have {{ $categories->count() }} categories</h3>
 	          </div>
 	    		@include('includes.messages')      
 	          <!-- /.box-header -->

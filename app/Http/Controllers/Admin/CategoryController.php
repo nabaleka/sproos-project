@@ -29,7 +29,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories');
+        $categories = categories::all();
+        return view('admin.categories',compact('categories'));
     }
     /**
      * Store a newly created resource in storage.

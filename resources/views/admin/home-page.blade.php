@@ -12,74 +12,8 @@
       <li class="active">Home Pages</li>
     </ol>
   </section>
-
   <!-- Main content -->
     <section class="content">
-<!-- Home page info -->
-     <!-- Info boxes -->
-      <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Banners</span>
-              <span class="info-box-number">2</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-bar-chart"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Featured Products</span>
-              <span class="info-box-number">10</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-                <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-envelope"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Top Sellers</span>
-              <span class="info-box-number"> 10</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="fa fa-flag"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Categories present</span>
-              <span class="info-box-number">2,000</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-<!-- -->
-
-
-
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -105,7 +39,58 @@
       </h4>
     </div>
     <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body">Manage your home page banners. Quality is key!
+      <div class="panel-body">
+      <p>Manage your home page banners. Quality is key!</p>
+      <div>
+        <div class="col-md-6">
+          <div class="box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Carousel</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="http://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
+
+                    <div class="carousel-caption">
+                      First Slide
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
+
+                    <div class="carousel-caption">
+                      Second Slide
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
+
+                    <div class="carousel-caption">
+                      Third Slide
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                  <span class="fa fa-angle-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                  <span class="fa fa-angle-right"></span>
+                </a>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
         <div>
           <a href="{{ route('banner.index')}}" class="btn btn-danger">Add a banner</a>
         </div>
@@ -152,9 +137,26 @@
       </h4>
     </div>
     <div id="collapse4" class="panel-collapse collapse">
-      <div class="panel-body">Manage categories that will show up in your homepage
-    <div>
-        <button class="btn btn-success">Add</button>
+
+      <div class="panel-body">
+      Manage categories that will show up in your homepage
+        <div class="row">
+        <div class="col-sm-4">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Categories</span>
+                <span class="info-box-number">{{ $categories->count() }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        </div>
+          <div>
+          <a href="/admin/category" class="btn btn-success">Add</a>
+          </div>
     </div>
       </div><!-- Panel body-->
     </div> <!--Collapse panel -->
