@@ -247,7 +247,7 @@
 
       .site-footer{
 
-        background-color:#ed2e56;
+        background-color:#ee2956;
 
       }
 
@@ -513,170 +513,24 @@ body{
           <li class="has-children"><span><a href="/shop-grid"><span>Categories</span></a><span class="sub-menu-toggle"></span></span>
 
             <ul class="offcanvas-submenu">
-
-                <li><a href="/shop-categories">Shop Categories</a></li>
-
-              <li class="has-children"><span><a href="shop-grid-ls.html"><span>Shop Grid</span></a><span class="sub-menu-toggle"></span></span>
-
-                <ul class="offcanvas-submenu">
-
-                    <li><a href="shop-grid-ls.html">Grid Left Sidebar</a></li>
-
-                    <li><a href="shop-grid-rs.html">Grid Right Sidebar</a></li>
-
-                    <li><a href="shop-grid-ns.html">Grid No Sidebar</a></li>
-
-                </ul>
-
-              </li>
-
-              <li class="has-children"><span><a href="/shop-list"><span>Shop List</span></a><span class="sub-menu-toggle"></span></span>
-
-                <ul class="offcanvas-submenu">
-
-                    <li><a href="/shop-grid">List Left Sidebar</a></li>
-
-                    <li><a href="shop-list-rs.html">List Right Sidebar</a></li>
-
-                    <li><a href="shop-list-ns.html">List No Sidebar</a></li>
-
-                </ul>
-
-              </li>
-
-                <li><a href="/shop-single">Single Product</a></li>
-
-                <li><a href="/cart">Cart</a></li>
-
-                <li><a href="/account-checkout">Checkout</a></li>
-
+              @foreach($categories as $category)
+              <li><span><a href="/shop-list"><span>{{ $category->title}}</span></a><span></span></span></li>
+              @endforeach
             </ul>
 
           </li>
 
-          <li class="has-children"><span><a href="/shop-categories">Buy</a><span class="sub-menu-toggle"></span></span>
+          <li><span><a href="/shop-grid">SHop Now</a></span></li>
 
+          <li class="has-children"><span><a href="/account-profile"><span>My Account</span></a><span class="sub-menu-toggle"></span></span>
+          
             <ul class="offcanvas-submenu">
-
-              <li class="has-children"><span><a href="#">Men's Shoes</a><span class="sub-menu-toggle"></span></span>
-
-                <ul class="offcanvas-submenu">
-
-                  <li><a href="#">Sneakers</a></li>
-
-                  <li><a href="#">Loafers</a></li>
-
-                  <li><a href="#">Boat Shoes</a></li>
-
-                  <li><a href="#">Sandals</a></li>
-
-                  <li><a href="#">View All</a></li>
-
-                </ul>
-
-              </li>
-
-              <li class="has-children"><span><a href="#">Women's Shoes</a><span class="sub-menu-toggle"></span></span>
-
-                <ul class="offcanvas-submenu">
-
-                  <li><a href="#">Sandals</a></li>
-
-                  <li><a href="#">Flats</a></li>
-
-                  <li><a href="#">Sneakers</a></li>
-
-                  <li><a href="#">Heels</a></li>
-
-                  <li><a href="#">View All</a></li>
-
-                </ul>
-
-              </li>
-
-              <li class="has-children"><span><a href="#">Men's Clothing</a><span class="sub-menu-toggle"></span></span>
-
-                <ul class="offcanvas-submenu">
-
-                  <li><a href="#">Shirts &amp; Tops</a></li>
-
-                  <li><a href="#">Pants</a></li>
-
-                  <li><a href="#">Jackets</a></li>
-
-                  <li><a href="#">View All</a></li>
-
-                </ul>
-
-              </li>
-
-              <li class="has-children"><span><a href="#">Women's Clothing</a><span class="sub-menu-toggle"></span></span>
-
-                <ul class="offcanvas-submenu">
-
-                  <li><a href="#">Dresses</a></li>
-
-                  <li><a href="#">Shirts &amp; Tops</a></li>
-
-                  <li><a href="#">Shorts</a></li>
-
-                  <li><a href="#">Swimwear</a></li>
-
-                  <li><a href="#">View All</a></li>
-
-                </ul>
-
-              </li>
-
-              <li class="has-children"><span><a href="#">Bags</a><span class="sub-menu-toggle"></span></span>
-
-                <ul class="offcanvas-submenu">
-
-                  <li><a href="#">Handbags</a></li>
-
-                  <li><a href="#">Backpacks</a></li>
-
-                  <li><a href="#">Luggage</a></li>
-
-                  <li><a href="#">Wallets</a></li>
-
-                  <li><a href="#">View All</a></li>
-
-                </ul>
-
-              </li>
-
-              <li class="has-children"><span><a href="#">Accessories</a><span class="sub-menu-toggle"></span></span>
-
-                <ul class="offcanvas-submenu">
-
-                  <li><a href="#">Sunglasses</a></li>
-
-                  <li><a href="#">Hats</a></li>
-
-                  <li><a href="#">Watches</a></li>
-
-                  <li><a href="#">Jewelry</a></li>
-
-                  <li><a href="#">Belts</a></li>
-
-                  <li><a href="#">View All</a></li>
-
-                </ul>
-
-              </li>
-
-            </ul>
-
-          </li>
-
-          <li class="has-children"><span><a href="/account-profile"><span>Account</span></a><span class="sub-menu-toggle"></span></span>
-
-            <ul class="offcanvas-submenu">
+               
                 @if(Auth::guest())
+
                 <li><a href="/login">Login / Register</a></li>
-                
-                
+                <li><a href="/seller">Seller</a></li>
+
                 @else
 
                 <li><a href="/account-orders">Orders List</a></li>
@@ -687,17 +541,20 @@ body{
 
                 @endif
 
-                
-
             </ul>
 
           </li>
+          
+          <li><span><a href="/contact-us">Contact Us</a></span></li>
 
-          <li></i><a href="/faq"><span>FAQ / Help</span></a></li>
+          <li></i><a href="#"><span>Seller Guide</span></a></li>
 
           <li></i><a href="#"><span>Return Policy</span></a></li>
 
-          <li></i><a href="#"><span>Seller Guide</span></a></li>
+          <li></i><a href="#"><span>Share App</span></a></li>
+
+          <li></i><a href="/faq"><span>FAQ / Help</span></a></li>
+          
 
         </ul>
 
