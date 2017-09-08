@@ -20,7 +20,7 @@
 
     <div class="row">
 
-        <div class="col-sm-12">
+        <div class="col-sm-6">
 
         <h4>Upload Multiple banner images</h4>
 
@@ -37,8 +37,16 @@
         <form action="{{ route('banner.store')}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
             Select image to upload:
-            <input type="file" class="jumbotron" name="banner" id="banner">
-            <input type="submit" class="btn btn-default" value="Upload Image" name="submit">
+            <input type="file" class="btn btn-default" name="banner" id="banner" >
+            <hr>
+            @if(isset($message))
+              <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4><i class="icon fa fa-ban"></i>Banner Upload!</h4>
+                {{$message}}
+              </div>
+            @endif
+            <input type="submit" value="Upload Image" name="submit" class="btn btn-default">
         </form>
         </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Banner;
+use Illuminate\Routing\Redirector;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,11 +14,13 @@ class BannerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $message;
     public function index()
     {
         //
+        $message="";
         $banner = Banner::all();
-        return view('admin.dropzone',compact('banner'));
+        return view('admin.dropzone',compact('banner','message'));
     }
 
     /**
@@ -44,17 +47,21 @@ class BannerController extends Controller
             ]);
             
         //handle file upload
+
+        $success = "image uploaded successfully!";
+        $fail = "you need an image!";
         if ($request->hasFile('banner')) 
         {
            
            //Upload a copy to another folder
-           $imageName = Storage::disk('uploads')->putFile('banners/',$request->file('banner'));
+           $imageName = Storage::disk('uploads')->putFile('banners',$request->file('banner'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
 
         else
         {
-            return 'Please select image';
+            $message = $fail;
+            return redirect()->route('banner.index',['message'=>$message]);
         }
 
         //Create the product
@@ -62,8 +69,9 @@ class BannerController extends Controller
         $banner->banner = $imageName;
         
         $banner->save();
+        $message = $success;
         
-        return redirect(route('banner.index'));
+        return redirect()->route('banner.index',['message'=>$message]);
 
     }
 
