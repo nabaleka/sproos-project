@@ -63,7 +63,6 @@ class BannerController extends Controller
             $message = $fail;
             return redirect()->route('banner.index',['message'=>$message]);
         }
-
         //Create the product
         $banner = new Banner;
         $banner->banner = $imageName;
