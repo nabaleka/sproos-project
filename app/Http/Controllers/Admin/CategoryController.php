@@ -7,6 +7,7 @@ use App\Model\Admin\subcategories;
 use App\Model\Admin\categories;
 use App\Model\Admin\products;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -40,11 +41,24 @@ class CategoryController extends Controller
     {
         $this->validate($request,[
             'title' => 'required',
-            'slug' => 'required',
+            'description' => 'required',
+            'image' => 'image|nullable|max:1999|required',
             ]);
+
+        if ($request->hasFile('image')) 
+        {
+            //Upload the image
+            $imageName = Storage::disk('uploads')->putFile('categories',$request->file('image'));
+        } else
+        {
+            return 'Please select a product image';
+        }
+
         $category = new categories;
         $category->title = $request->title;
+        $category->description = $request->description;
         $category->slug = $request->slug;
+        $category->image = $imageName;
         $category->save();
         return redirect(route('category.index'));
     }
@@ -83,10 +97,19 @@ class CategoryController extends Controller
     {
         $this->validate($request,[
             'title' => 'required',
-            'slug' => 'required',
+            'description' => 'required',
+            'image' => 'image|nullable|max:1999',
             ]);
+
         $category = categories::find($id);
+        if ($request->hasFile('image')) 
+        {
+            //Upload the image
+            $imageName = Storage::disk('uploads')->putFile('categories',$request->file('image'));
+            $category->image = $imageName;
+        }
         $category->title = $request->title;
+        $category->description = $request->description;
         $category->slug = $request->slug;
         $category->save();
         return redirect(route('category.index'));
@@ -100,7 +123,11 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        categories::where('id',$id)->delete();
+        $category = categories::findOrFail($id);
+        $imageName = $category->image; 
+        /* Delete the image from storage */
+        Storage::disk('uploads')->delete($imageName);
+        categories::where('id',$id)->delete();   
         return redirect()->back();
     }
 }

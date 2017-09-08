@@ -18,7 +18,7 @@
 	  <!-- Main content -->
 	  <section class="content">
 	    <div class="row">
-	      <div class="col-md-12">
+	      <div class="col-md-6">
 	        <!-- general form elements -->
 	        <div class="box box-primary">
 	          <div class="box-header with-border">
@@ -27,19 +27,28 @@
 	    		@include('includes.messages')      
 	          <!-- /.box-header -->
 	          <!-- form start -->
-	          <form role="form" action="{{ route('category.store') }}" method="post">
+	          <form role="form" action="{{ route('category.store') }}" method="post" enctype="multipart/form-data" >
 	          {{ csrf_field() }}
 	            <div class="box-body">
-	            <div class="col-lg-offset-3 col-lg-6">
+	            <div class="">
 	              <div class="form-group">
-	                <label for="name">Category title</label>
+	                <label for="name">Category Title</label>
+									<p>Category title will be shown in your home page.</p>
 	                <input type="text" class="form-control" id="name" name="title" placeholder="Category Title">
 	              </div>
 
-	              <div class="form-group">
-	                <label for="slug">Category Slug</label>
-	                <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
+								<div class="form-group">
+	                <label for="image">Image</label>
+									<p>Add a descriptive image for your category. Be creative!</p>
+	                <input type="file" class="btn btn-default" id="image" name="image" placeholder="Product Image">
 	              </div>
+
+	              <div class="form-group">
+	                <label for="slug">Description</label>
+	                <textarea class="form-control" id="description" name="description" placeholder="What is the category for?"></textarea>
+	              </div>
+
+								<input type="hidden" id='slug' name='slug' value=''>
 
 	            <div class="form-group">
 	              <button type="submit" class="btn btn-primary">Submit</button>

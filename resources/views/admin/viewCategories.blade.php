@@ -42,7 +42,7 @@
                         <tr>
                           <th>S.No</th>
                           <th>category Name</th>
-                          <th>Slug</th>
+                          <th>Description</th>
                           <th>Edit</th>
                           <th>Delete</th>
                         </tr>
@@ -52,7 +52,7 @@
                           <tr>
                             <td>{{ $loop->index + 1 }}</td>
                             <td>{{ $category->title }}</td>
-                            <td>{{ $category->slug }}</td>
+                            <td>{{ $category->description }}</td>
                               <td><a href="{{ route('category.edit',$category->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                               <td>
                                 <form id="delete-form-{{ $category->id }}" method="post" action="{{ route('category.destroy',$category->id) }}" style="display: none">

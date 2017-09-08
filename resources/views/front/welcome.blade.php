@@ -29,9 +29,9 @@ the first image
             <div class="card mb-30"><a class="card-img-tiles" href="/shop-grid">
                 <div class="inner">
                 </div></a>
-              <div class="card-block text-center">
+              <div class="card-block text-center" style="background-image:url({{ 'uploads/'.$category->image }});">
                 <h4 class="card-title">{{ $category->title }}</h4>
-                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-outline-primary btn-sm" href="/shop-grid">View Products</a>
+                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-outline-primary btn-sm" href="/shop-grid">Shop {{ $category->title }}</a>
               </div>
             </div>
           </div>
