@@ -36,7 +36,7 @@
               <tr>
                 <td>
                  
-                  <div class="product-item"><a class="product-thumb" href="/shop-single/{{$cartItem->id}}"><img src="{{Storage::url($cartItem->options->img) }}" height="100px" width="150px" /></a>
+                  <div class="product-item"><a class="product-thumb" href="/shop-single/{{$cartItem->id}}"><img src="{{ asset('uploads/'.$cartItem->options->img) }}" height="100px" width="150px" /></a>
                     <div class="product-info">
                       <h4 class="product-title"><a href="/shop-single/{{$cartItem->id}}">Ksh{{$cartItem->price}}</a></h4><span><em>Size:</em> -</span><span><em>Color:</em> Turquoise</span>
                     </div>
@@ -45,7 +45,10 @@
                 <td class="text-center">
                   <div class="count-input">
                     <select class="form-control" name="quantity">
-                      <option>{{$cartItem->qty}}</option>
+                    @for ($i = 0; $i < $cartItem->qty; $i++)
+                         <option value = "{{ $i+1 }}">{{ $i+1 }}</option>
+                    @endfor
+                      
 
                     </select>
                   </div>

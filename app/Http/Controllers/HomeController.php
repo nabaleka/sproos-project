@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use App\Products;
+use App\Banner;
 use App\Model\admin\categories;
 use Gloudemans\Shoppingcart\Facades\Cart; // for cart lib
 
@@ -27,9 +28,10 @@ class HomeController extends Controller
     public function index()
     {
         $categories = categories::all();
+        $banner = Banner::all();
         $cartItems = Cart::content();
         $products = Products::all();
-        return view('front/welcome',compact('products'),compact('cartItems'))->with('categories',$categories);
+        return view('front/welcome',compact('products','banner'),compact('cartItems'))->with('categories',$categories);
     }
 
 
@@ -71,6 +73,25 @@ class HomeController extends Controller
         $products = Products::all();
         $categories = categories::all();
         return view ('front.checkout.checkout-address', compact('cartItems','categories','products'));
+    }
+
+    public function showCategory($id){
+
+        //Get all categories
+        $categories = categories::all();
+
+        //Find the passed category.
+        $category_id = $id;
+        $onecategory = categories::findOrFail($category_id);
+
+        //Find products with $category id
+        //$products = DB::table('products')->where('category_id', '=', 100)->get();
+        $products = DB::table('products')->where('category_id', '=', $category_id)->paginate(12);
+
+
+        $cartItems = Cart::content();
+        //$products = Products::all();
+        return view('front.shop.shop-single-category', compact('cartItems','categories','products','onecategory'));
     }
 
     public function checkoutComplete(){
@@ -174,5 +195,6 @@ class HomeController extends Controller
         $Products = DB::table('products')->where('name', 'like', '%' . $search . '%');
         return view('front.shop.shop-list', ['msg' => 'Results: ' . $search], compact('products'));
     }
+    
 }
 }

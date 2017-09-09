@@ -127,6 +127,9 @@
 
     }
 
+  .cat:hover{
+    background-color:#fefefe;
+  }
     
 
     .toolbar .cart{
@@ -491,7 +494,7 @@ body{
       <nav class="offcanvas-menu">
         <ul class="menu">
         @foreach($categories as $category)
-         <li><span><a href="">{{ $category->title}}</a></span></li>
+         <li><span><a href="/shop/{{ $category->id }}/category">{{ $category->title}}</a></span></li>
         @endforeach
 
         </ul>
@@ -514,7 +517,7 @@ body{
 
             <ul class="offcanvas-submenu">
               @foreach($categories as $category)
-              <li><span><a href="/shop-list"><span>{{ $category->title}}</span></a><span></span></span></li>
+              <li><span><a href="/shop/{{ $category->id }}/category"><span>{{ $category->title}}</span></a><span></span></span></li>
               @endforeach
             </ul>
 

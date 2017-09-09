@@ -36,6 +36,7 @@ Route::get('/cart','CartController@cart');
 Route::get('/categories', 'HomeController@allCategories');
 Route::get('/add-to-cart/{id}', 'HomeController@add_cart');
 Route::get('/delete_cart/{id}', 'HomeController@destroy');
+Route::get('/shop/{id}/category','HomeController@showCategory');
 
 #checkout routes
 

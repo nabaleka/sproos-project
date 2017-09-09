@@ -88,17 +88,30 @@
 
     <form action="{{url('/seller-register')}}" method="post">
     {{ csrf_field() }}
-      <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} has-feedback">
-        <input type="text" class="form-control" placeholder="Full name" name="name" id="name">
-          @if ($errors->has('name'))
+    <!-- First Name-->
+      <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }} has-feedback">
+        <input type="text" class="form-control" placeholder="First name" name="first_name" id="first_name" required>
+          @if ($errors->has('first_name'))
               <span class="help-block">
-                  <strong>{{ $errors->first('name') }}</strong>
+                  <strong>{{ $errors->first('first_name') }}</strong>
               </span>
           @endif
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
+      <!--Last Name -->
+      <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }} has-feedback">
+        <input type="text" class="form-control" placeholder="Last Name" name="last_name" id="last_name" required>
+          @if ($errors->has('last_name'))
+              <span class="help-block">
+                  <strong>{{ $errors->first('last_name') }}</strong>
+              </span>
+          @endif
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+
+      <!-- Email -->
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+        <input type="email" class="form-control"  placeholder="Email" name="email" id="email" required>
         @if ($errors->has('email'))
             <span class="help-block">
                 <strong>{{ $errors->first('email') }}</strong>
@@ -106,6 +119,21 @@
         @endif
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
+      <!-- /. Email -->
+
+      <!-- Phone -->
+      <div class="form-group has-feedback">
+        <input type="tel" class="form-control" placeholder="Your Phone Number" required name="phonenumber" id="phonenumber">
+        @if ($errors->has('phonenumber'))
+            <span class="help-block">
+                <strong>{{ $errors->first('phonenumber') }}</strong>
+            </span>
+        @endif
+        <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+      </div>
+      <!-- /. Phone -->
+
+      <!-- Password-->
       <div class="form-group has-feedback">
         <input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
         @if ($errors->has('password'))
@@ -115,21 +143,28 @@
         @endif
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+      <!-- /. Password -->
+
+      <!-- Password confirm -->
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation" id="password-confirm">
-        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        <input type="password" class="form-control" required placeholder="Retype password" name="password_confirmation" id="password-confirm">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+      <!-- /. Password confirm -->
+
+
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> I agree to the <a href="#">terms</a>
-            </label>
+            <label> </label>
+              <input type="checkbox" id="seller_terms" checked> I agree to the <a href="#">terms</a>
+            
           </div>
         </div>
+
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register Me</button>
         </div>
         <!-- /.col -->
       </div>

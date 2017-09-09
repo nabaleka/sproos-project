@@ -10,7 +10,8 @@
 
           <div class="column">
 
-            <h1>Shop</h1>
+            <h1>Shop {{ $onecategory->title }}</h1>
+            <p>{{ $onecategory->description }}</p>
 
           </div>
 
@@ -118,9 +119,9 @@
 
          </div>
 
-     
+         {{ $products->links() }}
       </div>
 
-      {{ $products->links() }}
+      
 
 @endsection

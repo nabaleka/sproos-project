@@ -9,8 +9,15 @@ the first image
       <section class="hero-slider" style="min-height:100%;">
       <div>
       <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: false, &quot;autoplay&quot;: true, &quot;loop&quot;: true }">
+             @if(count($banner)>0)
+            @foreach($banner as $banners)
+            <img src="{{ asset('uploads/'.$banners->banner)}}" alt="Image">
+            @endforeach
+            @else
             <img src="{{ asset('uploads/banners/banner.jpg')}}" alt="Image">
-            <img src="{{ asset('uploads/banners/banner.jpg')}}" alt="Image">
+            @endif
+
+            
       </div>
       </div>
 
@@ -25,13 +32,13 @@ the first image
           <!-- Load categories dynamically-->
           @foreach($categories as $category)
 
-          <div class="col-md-4 col-sm-6">
-            <div class="card mb-30"><a class="card-img-tiles" href="/shop-grid">
+          <div class="col-md-4 col-sm-6" >
+            <div class="card  mb-30" style="background-color:#fff; background-image:url({{ 'uploads/'.$category->image }}); background-repeat: no-repeat; background-overlay:screen; background-size:cover; "><a class="card-img-tiles"  href="/shop-grid">
                 <div class="inner">
                 </div></a>
-              <div class="card-block text-center" style="background-image:url({{ 'uploads/'.$category->image }});">
+              <div class="card-block text-center cat"  >
                 <h4 class="card-title">{{ $category->title }}</h4>
-                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-outline-primary btn-sm" href="/shop-grid">Shop {{ $category->title }}</a>
+                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-outline-primary btn-sm"  href="/shop/{{ $category->id }}/category">Shop {{ $category->title }}</a>
               </div>
             </div>
           </div>
@@ -47,7 +54,7 @@ the first image
         @if(count($products) > 0)
            
       <!-- Featured Products Carousel-->
-      <section class="container padding-top-1x padding-bottom-2x col-md-8 col-offset-md-2">
+      <section class="container padding-top-1x padding-bottom-2x">
         <h3 class="text-center mb-30">Products</h3>
         <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;margin&quot;: 30, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;576&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;991&quot;:{&quot;items&quot;:4},&quot;1200&quot;:{&quot;items&quot;:4}} }">
       @foreach($products as $product)
@@ -55,7 +62,7 @@ the first image
     
           <div class="grid-item">
             <div class="product-card">
-              <div class="product-badge text-danger"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
+              <div class="product-badge text-danger">{{$product->stock }}  in stock.</div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
               <h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3>
               <h4 class="product-price">
                 Ksh. {{$product->price}}
