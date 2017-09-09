@@ -25,7 +25,7 @@
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Seller Products</h3>
+        <h3 class="box-title">Hi {{ Auth::guard('seller')->user()->first_name }} ,here are your products!</h3>
        
           <a class='col-lg-offset-5 btn btn-success' href="{{ route('products.create') }}">Add New</a>
      
@@ -49,8 +49,8 @@
                           <th>S.No</th>
                           <th>Image</th>
                           <th>Name</th>
-                           <th>Price</th>
-                           <th>Seller ID</th>
+                           <th>Unit Price</th>
+              
                            <th>In Sock</th>
                           <th>Description</th>
                           <th>Creatd At</th>
@@ -67,13 +67,13 @@
                         @foreach ($products as $product)
                           <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td><img src="{{asset('uploads/'.$product->image) }}" max-height="100px" width="100%" />
+                            <td><img src="{{asset('uploads/'.$product->image) }}" max-height="50px" width="50%" />
                             
                             </td>
                             <td>{{ $product->name }}</td>
                              <td>{{ $product->price }}</td>
-                              <td> Seller</td>
-                              <td>35 </td>
+                
+                              <td>{{ $product->stock}}</td>
                             <td>{{ $product->description }}</td>
                             <td>{{ $product->created_at }}</td>
 

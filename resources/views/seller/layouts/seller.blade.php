@@ -34,6 +34,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('bower_components/Ionicons/css/ionicons.min.css')}}">
 
   <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('adminscript/plugins/select2/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('adminscript/plugins/datatables/dataTables.bootstrap.css') }}">
 
 
   <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
@@ -322,7 +324,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   })
 
 </script>
-<link rel="stylesheet" href="{{ asset('adminscript/plugins/datatables/dataTables.bootstrap.css') }}">
+
 <script src="{{ asset('adminscript/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('adminscript/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 <script>

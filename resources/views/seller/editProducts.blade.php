@@ -5,229 +5,131 @@
 @endsection
 
 @section('content')
-
-<!-- Content Wrapper. Contains page content -->
-
-<div class="">
-
   <!-- Content Header (Page header) -->
-
   <section class="content-header">
-
     <h1>
-
-      Text Editors
-
-      <small>Advanced form element</small>
-
+      Update your product
     </h1>
-
     <ol class="breadcrumb">
-
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-
-      <li><a href="#">Forms</a></li>
-
-      <li class="active">Editors</li>
-
+      <li><a href="/seller/products">Products</a></li>
+      <li class="active">{{ $products->name }}</li>
     </ol>
-
   </section>
 
 
-
-  <!-- Main content -->
-
+    <!-- Main content -->
   <section class="content">
-
     <div class="row">
-
-      <div class="col-md-12">
-
+      <div class="col-md-10 col-md-offset-1">
         <!-- general form elements -->
-
-        <div class="box box-primary">
-
-          <div class="box-header with-border">
-
-            <h3 class="box-title">Titles</h3>
-
-          </div>
-
-          @include('includes.messages')
-
-          <!-- /.box-header -->
-
-          <!-- form start -->
-
-          <form role="form" action="{{ route('products.update',$products->id) }}" method="post" enctype="multipart/form-data">
-
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Update your product</h3>
+              <!--Errors-->
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+              <!-- ./ Errors-->
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" action="{{ route('products.update',$products->id)}}" enctype="multipart/form-data" method="post">
             {{ csrf_field() }}
-
-            {{ method_field('PUT') }}
-
-            <div class="box-body">
-
-              <div class="col-lg-6">
-
-                <div class="form-group">
-
-                  <label for="title">Product name</label>
-
-                  <input type="text" class="form-control" id="title" name="title" value="{{ $products->name }}" placeholder="Title">
-
-                </div>
-
-
-
-               
-
-                <div class="form-group">
-
-                  <label for="slug">Product Slug</label>
-
-                  <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug" value="{{ $products->slug }}">
-
-                </div>
-
-                
-
+              <div class="box-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6"><img src="{{ asset('uploads/'.$products->image)}}" height="100px;"></div>
+                <div class="col-md-3 col-sm-3 col-xs-6"><img src="{{ asset('uploads/'.$products->image2)}}" height="100px;"></div>
+                <div class="col-md-3 col-sm-3 col-xs-6"><img src="{{ asset('uploads/'.$products->image3)}}" height="100px;"></div>
+                <div class="col-md-3 col-sm-3 col-xs-6"><img src="{{ asset('uploads/'.$products->image4)}}" height="100px;"></div>
               </div>
+              <p class="text-info">Your product images. They will be changed once you click the upload button.</p>
+                <div class="form-group">
+                  <label for="name">Product Name</label>
+                  <input type="text" name="name" class="form-control" id="name" value="{{ $products->name }}" placeholder="Product Name">
+                  <input type="hidden" name="slug" value="-">
+                  <input type="hidden" name="seller_id" value="{{ Auth::guard('seller')->user()->id }}">
+                </div>
 
-              <div class="col-lg-6">
-
-                          <br>
-                              <div class="form-group">
-                                <div class="pull-right">
-                                  <label for="image">image three</label>
-                                  <input type="file" name="image3" id="image">
-                                </div>
-
-                               <div class="form-group">
-                                <div class="pull-right">
-                                  <label for="image">image one</label>
-                                  <input type="file" name="image" id="image">
-                                </div> 
-                               <br>
-                               <div class="form-group">
-                                <div class="pull-right">
-                                  <label for="image">image four</label>
-                                  <input type="file" name="image4" id="image">
-                                </div>
-                               
-                                 <br>
-                              </div>
-                               <div class="form-group">
-                                <div class="pull-right">
-                                  <label for="image">image two</label>
-                                  <input type="file" name="image2" id="image">
-                                </div>
-                              </div>
-                              <br>
-
-                              <div class="form-group" style="margin-top:18px;">
-
-                                <label>Category</label>
-
-                                <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="tags[]">
-
-                                @foreach ($categories as $category)
-
-                                  <option value="{{ $category->id }}">{{ $category->title }}</option>
-
-                                @endforeach
-
-                                </select>
-
-                              </div>
-
-                            </div>
-
-            </div>
-
-            <!-- /.box-body -->
-
-            
-
-            <div class="box">
-
-             <div class="box-header">
-
-               <h3 class="box-title">Product description
-
-                 <small>Simple and fast</small>
-
-               </h3>
-
-               <!-- tools box -->
-
-               <div class="pull-right box-tools">
-
-                 <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-
-                   <i class="fa fa-minus"></i></button>
-
-                 </div>
-
-                 <!-- /. tools -->
-
-               </div>
-
-               <!-- /.box-header -->
-
-               <div class="box-body pad">
-
-                 <textarea name="body" style="width: 100%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" id="editor1" value="{{ $products->description }}"></textarea>
-
-               </div>
-
-             </div>
+                <div class="form-group">
+                  <label for="description">Product Description</label>
+                  <textarea class="form-control" id="description" name="description" placeholder="Describe your product">{{ $products->description }}</textarea>
+                </div>
 
 
+                <div class="form-group">
+                  <label>Category</label>
+                  <select class="form-control" name="category">
+                    
+                  @foreach($categories as $category)
+                  <option value="{{$category->id }}" >{{ $category->title }}</option>
+                  @endforeach
 
-             <div class="box-footer">
+                  </select>
+                </div>
 
-              <input type="submit" class="btn btn-primary">
+              
+                <div class="form-group">
+                  <label for="exampleInputFile">Product Image</label><br>
+                  <p class="text-danger">* Select the images you want to replace</p>
+                <div class="row" style="overflow: hidden;">
+                  <div class="col-md-6">
+                    <label>First Image</label>
+                    <input type="file" name="image" id="image" class="btn btn-default" style="overflow:hidden;">
+                  </div>
 
-              <a href="{{ route('products.index') }}" class="btn btn-warning">Back</a>
+                  <div class="col-md-6">
+                    <label>Second Image</label>
+                    <input type="file" name="image2" id="image2" class="btn btn-default" style="text-overflow:ellipsis;">
+                  </div>
 
-            </div>
+                  <div class="col-md-6">
+                    <label>Third Image</label>
+                    <input type="file" name="image3" id="image3" class="btn btn-default" style="text-overflow:ellipsis;">
+                  </div>
 
-          </form>
+                  <div class="col-md-6">
+                    <label>Fourth Image</label> 
+                    <input type="file" name="image4" id="image4" class="btn btn-default" style="text-overflow:ellipsis;">
+                  </div>
+                </div>
 
-        </div>
+                  <p class="help-block"> Upload multiple images from your computer</p>
+                </div>
+      
+              <hr>
+                <div class="form-group col-md-6">
+                  <label for="price">Price Per Unit</label>
+                  <input type="text" value="{{ $products->price}}" name="price" class="form-control" id="price" placeholder="Unit price">
+                </div>
 
-        <!-- /.box -->
+                <div class="form-group col-md-6">
+                  <label for="stock">Quantity to upload</label>
+                  <input type="number" value="{{ $products->stock}}" name="stock" class="form-control" id="stock" placeholder="Quantity">
+                </div>
+              </div>
+              <!-- /.box-body -->
 
-
+              <div class="box-footer">
+                <a class="btn btn-warning" href="/seller/products">back</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
 
         
-
       </div>
-
       <!-- /.col-->
-
     </div>
-
     <!-- ./row -->
-
   </section>
-
   <!-- /.content -->
-
-</div>
-
-<!-- /.content-wrapper -->
-
-@endsection
-
-@section('footerSection')
-<script src="{{ asset('adminscript/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('adminscript/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable();
-  });
-</script>
 @endsection
 

@@ -46,12 +46,6 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    public function __construct()
-    {
-        $this->middleware('guest:seller');
-    }
-
-
 
     /**
 
@@ -63,7 +57,13 @@ class LoginController extends Controller
 
      */
 
+    
     protected $redirectTo = '/seller';
+
+    public function __construct()
+    {
+        $this->middleware('guest:seller',['except'=>['logout','logoutSeller']]);
+    }
 
 
 
@@ -83,7 +83,7 @@ class LoginController extends Controller
 
     {
 
-        return view('seller.login',['except'=>['logoutSeller']]);
+        return view('seller.login');
 
     }
 
