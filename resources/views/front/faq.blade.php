@@ -225,5 +225,5 @@ You can choose any of the refund methods below, depending on the payment method 
           </div>
         </div>
       </div>
-      @include('inc.footer')
+      
 @endsection

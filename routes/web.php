@@ -26,6 +26,8 @@ Route::get('/shop-list','HomeController@shopList');
 Route::get('/shop-grid','HomeController@shopGrid');
 Route::get('/cart','HomeController@cart');
 Route::get('/categories', 'HomeController@allCategories');
+Route::get('/add-to-cart/{id}', 'HomeController@add_cart');
+Route::get('/delete_cart/{id}', 'HomeController@destroy');
 
 #checkout routes
 Route::get('/checkout-address','HomeController@checkoutAddress');
@@ -33,6 +35,7 @@ Route::get('/checkout-shipping','HomeController@checkoutShipping');
 Route::get('/checkout-payment','HomeController@checkoutPayment');
 Route::get('/checkout-review','HomeController@checkoutReview');
 Route::get('/checkout-complete','HomeController@checkoutComplete');
+Route::get('/shop-single/{id}','HomeController@shopSingle');
 
 #sitepages
 Route::get('/about','HomeController@about');

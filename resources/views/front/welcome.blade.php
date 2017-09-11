@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
       <!-- Main Slider-->
-      <section class="hero-slider" style="background-image: url(img/hero-slider/main-bg.jpg);">
-        <div class="owl-carousel large-controls dots-inside" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000 }">
+      <section class="hero-slider" style="background-image: url(img/hero-slider/sproos-banner.png);">
+        <!--<div class="owl-carousel large-controls dots-inside" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000 }">
           <div class="item">
             <div class="container padding-top-3x">
               <div class="row align-items-center">
@@ -42,7 +42,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
       </section>
       <!-- Top Categories-->
       <section class="container padding-top-3x">
@@ -56,7 +56,7 @@
                 </div></a>
               <div class="card-block text-center">
                 <h4 class="card-title">Used</h4>
-                <p class="text-muted">Starting from $1.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
+                <p class="text-muted">Starting from Ksh 100.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@
                 </div></a>
               <div class="card-block text-center">
                 <h4 class="card-title">Brand New</h4>
-                <p class="text-muted">Starting from $56.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
+                <p class="text-muted">Starting from Ksh 956.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
                 </div></a>
               <div class="card-block text-center">
                 <h4 class="card-title">African</h4>
-                <p class="text-muted">Starting from $27.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
+                <p class="text-muted">Starting from Ksh 927.00</p><a class="btn btn-outline-primary btn-sm" href="shop-grid-ls.html">View Products</a>
               </div>
             </div>
           </div>
@@ -135,26 +135,27 @@
 
       <!-- Check if there is a product -->
         @if(count($products) > 0)
+           
       <!-- Featured Products Carousel-->
       <section class="container padding-top-3x padding-bottom-3x">
         <h3 class="text-center mb-30">Featured Products</h3>
         <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;margin&quot;: 30, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;576&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;991&quot;:{&quot;items&quot;:4},&quot;1200&quot;:{&quot;items&quot;:4}} }">
-
-        
+      @foreach($products as $product)
         <!-- Loop through -->
           <div class="grid-item">
             <div class="product-card">
-              <div class="product-badge text-danger">22% Off</div><a class="product-thumb" href="shop-single.html"></a>
-              <h3 class="product-title"><a href="shop-single/["></a></h3>
+              <div class="product-badge text-danger">22% Off</div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="/storage/products/{{$product->image}}" height="100px" width="150px" /></a>
+              <h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3>
               <h4 class="product-price">
-                <del>Ksh4445.95</del>
+                <del>Ksh 9999</del>Ksh. {{$product->price}}
               </h4>
               <div class="product-buttons">
                 <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-                <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
+                <a href="{{'/add-to-cart'}}/<?php echo $product->id?>" class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</a>
               </div>
             </div>
           </div>
+          @endforeach
 
           <!-- Product-->
           @endif
@@ -172,21 +173,21 @@
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/01.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Oakley Kickback</a></h4><span class="entry-meta">$155.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Oakley Kickback</a></h4><span class="entry-meta">Ksh 1,155.00</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/03.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Vented Straw Fedora</a></h4><span class="entry-meta">$49.50</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Vented Straw Fedora</a></h4><span class="entry-meta">Ksh 949.50</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/04.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Big Wordmark Tote</a></h4><span class="entry-meta">$29.99</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Big Wordmark Tote</a></h4><span class="entry-meta">Ksh 929.99</span>
                 </div>
               </div>
             </div>
@@ -198,21 +199,21 @@
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/05.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Union Park</a></h4><span class="entry-meta">$49.99</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Union Park</a></h4><span class="entry-meta">Ksh 949.99</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/06.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Cole Haan Crossbody</a></h4><span class="entry-meta">$200.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Cole Haan Crossbody</a></h4><span class="entry-meta">Ksh 2,200.00</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/07.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Skagen Holst Watch</a></h4><span class="entry-meta">$145.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Skagen Holst Watch</a></h4><span class="entry-meta">Ksh 1,145.00</span>
                 </div>
               </div>
             </div>
@@ -224,21 +225,21 @@
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/08.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Jordan's City Hoodie</a></h4><span class="entry-meta">$65.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Jordan's City Hoodie</a></h4><span class="entry-meta">Ksh 965.00</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/09.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Palace Shell Track Jacket</a></h4><span class="entry-meta">$36.99</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Palace Shell Track Jacket</a></h4><span class="entry-meta">Ksh 936.99</span>
                 </div>
               </div>
               <!-- Entry-->
               <div class="entry">
                 <div class="entry-thumb"><a href="shop-single.html"><img src="img/shop/widget/10.jpg" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="shop-single.html">Off the Shoulder Top</a></h4><span class="entry-meta">$128.00</span>
+                  <h4 class="entry-title"><a href="shop-single.html">Off the Shoulder Top</a></h4><span class="entry-meta">Ksh 1,128.00</span>
                 </div>
               </div>
             </div>
