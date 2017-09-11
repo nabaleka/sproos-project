@@ -33,12 +33,12 @@ the first image
           @foreach($categories as $category)
 
           <div class="col-md-4 col-sm-6" >
-            <div class="card  mb-30  cat" style="background-image:url({{ 'uploads/'.$category->image }}); "><a class="card-img-tiles"  href="/shop-grid">
+            <div class="card  mb-30" style="background-image:url({{ 'uploads/'.$category->image }}); "><a class="card-img-tiles"  href="/shop-grid">
                 <div class="inner">
                 </div></a>
-              <div class="card-block text-center " style ="background-color:rgba(255,255,255,.4);">
+              <div class="card-block text-center " style ="background-color:rgba(255,255,255,.8);">
                 <h4 class="card-title">{{ $category->title }}</h4>
-                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-outline-primary btn-sm"  href="/shop/{{ $category->id }}/category">Shop {{ $category->title }}</a>
+                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-primary btn-sm"  href="/shop/{{ $category->id }}/category">Shop {{ $category->title }}</a>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ the first image
           <div class="grid-item">
             <div class="product-card">
               <div class="product-badge">{{$product->stock }}  in stock.</div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
-              <h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3>
+              <!--h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3-->
               <h4 class="product-price">
                 Ksh. {{$product->price}}
               </h4>

@@ -21,7 +21,7 @@
 
       <!-- Search-->
       
-<form class="site-search" method="post" action="{{ route('search') }}" id="search">
+<form class="site-search" method="post" action="/search" id="search">
       {{ csrf_field() }}
         <input type="text" name="search_data" class="col-sm-8" placeholder="Type to search and press Enter">
         <div class="search-tools">
@@ -65,39 +65,6 @@
           <li><a href="/shop-grid"><span>SHOP NOW</span></a>
           </li>
 
-<!-- Mega Menu-->
-
-          <li class="has-megamenu"><a href="#"><span>Mega Menu</span></a>
-            <ul class="mega-menu">
-              <li><span class="mega-menu-title">Top Categories</span>
-                <ul class="sub-menu">
-                   @foreach($categories as $category)
-                  <li><a href="/shop/{{ $category->id }}/category">{{ $category->title}}</a></li>
-                  @endforeach
-                </ul>
-              </li>
-
-              <li>
-                <section class="promo-box" style="background-image: url(img/banners/02.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
-                  <div class="promo-box-content text-center padding-top-2x padding-bottom-2x">
-                    <h4 class="text-light text-thin text-shadow">New Collection of</h4>
-                    <h3 class="text-bold text-light text-shadow">Sunglasses</h3><a class="btn btn-sm btn-primary" href="#">Shop Now</a>
-                  </div>
-                </section>
-              </li>
-              <li>
-                <section class="promo-box" style="background-image: url(img/banners/03.jpg);">
-                  <!-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute.--><span class="overlay-light" style="opacity: .45;"></span>
-                  <div class="promo-box-content text-center padding-top-2x padding-bottom-2x">
-                    <h3 class="text-bold text-light text-shadow">Limited Offer</h3>
-                    <h4 class="text-light text-thin text-shadow">save up to 50%!</h4><a class="btn btn-sm btn-primary" href="#">Learn More</a>
-                  </div>
-                </section>
-              </li>
-            </ul>
-          </li>
-
-<!-- Mega Menu-->
 
           
           @if(!Auth::guard('buyer')->check())

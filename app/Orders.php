@@ -12,5 +12,8 @@ class Orders extends Model {
     public function user(){
         return $this->belongsTo('App\user');
     }
-   
+    public function order_details()
+    {
+        return $this->belongsTo('App\order_details');
+    }
 }

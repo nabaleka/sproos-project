@@ -31,4 +31,11 @@ class User extends Authenticatable
     {
         return $this->hasOne(SocialLoginProfile::class);
     }
+
+    public function orders(){
+        return $this->hasMany('App\Orders');
+    }
+    public function order_details(){
+        return $this->hasMany('App\order_details');
+    }
 }

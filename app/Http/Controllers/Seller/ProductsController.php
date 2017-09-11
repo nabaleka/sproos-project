@@ -265,4 +265,26 @@ if ($request->hasFile('image4'))
 
         return redirect(route('products.index'));
     }
+
+    public function seller_orders(){
+        $orders = DB::table('order_details')
+                  ->leftJoin('products', 'products.id', '=', 'order_details.product_id')
+                  ->leftJoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
+                 ->where('seller_id', '=', Auth::guard('seller')->user()->id)
+                  ->get();
+         return view('seller/seller-orders',compact('orders'));
+     
+        }
+     
+      public function seller_invoices(){
+         
+        }
+     public function order_details($id){
+          $details= DB::table('users')
+                 ->leftJoin('order_details', 'users.id', '=', 'order_details.user_id')
+                 ->get()->first();
+         return view('seller/seller-details',compact('details'));
+     
+         
+        }
 }
