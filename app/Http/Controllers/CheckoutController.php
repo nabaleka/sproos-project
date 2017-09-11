@@ -15,36 +15,6 @@ use DB;
 
 class CheckoutController extends Controller
 {
-     public function checkoutAddress(){
-     	
-        // check for user login
-       
-        $cartItems = Cart::content();
-        $orders = DB::table('orders')->where('user_id',Auth::user()->id)->get();
-        $products = products::all();
-        return view ('front.checkout.checkout-address', compact('cartItems','orders'));
-       
-    
-        
-    }
-      
-    public function checkoutComplete(){
-        $cartItems = Cart::content();
-        $products = products::all();
-        return view('front.checkout.checkout-complete',compact('cartItems'))->with('products', $products);
-    }
-
-    public function checkoutShipping(){
-        $cartItems = Cart::content();
-        $orders = DB::table('orders')->where('user_id',Auth::guard('buyer')->user()->id)->get();
-        return view ('front.checkout.checkout-shipping', compact('cartItems','orders'));
-    }
-
-    public function checkoutPayment(){
-        $cartItems = Cart::content();
-        $products = products::all();
-        return view ('front.checkout.checkout-payment',compact('cartItems'))->with('products', $products);
-    }
     public function store(Request $request){
         $cartItems = Cart::content();
         
@@ -90,5 +60,33 @@ class CheckoutController extends Controller
         $products = products::all();
         return view ('front.checkout.checkout-review',compact('cartItems'))->with('products', $products);
     }
+
+    public function checkoutAddress(){
+        
+          // check for user login
+         
+          $cartItems = Cart::content();
+          $orders = DB::table('orders')->where('user_id',Auth::user()->id)->first();
+          return view ('front.checkout.checkout-address', compact('cartItems','orders'));
+         
+      
+          
+      }
+     
+      public function checkoutComplete(){
+        Cart::destroy();
+          return view('front.checkout.checkout-complete',compact('cartItems'));
+      }
+   public function checkoutShipping(){
+          $cartItems = Cart::content();
+         $orders = DB::table('orders')->where('user_id',Auth::user()->id)->first();
+          return view ('front.checkout.checkout-shipping',compact('cartItems','orders'));
+      }
+  
+      public function checkoutPayment(){
+          $cartItems = Cart::content();
+           $orders = DB::table('orders')->where('user_id',Auth::user()->id)->first();
+          return view ('front.checkout.checkout-payment',compact('cartItems','orders'));
+      }
 
 }
