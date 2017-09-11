@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Products;
 use App\Banner;
 use App\Model\admin\categories;
@@ -40,15 +41,6 @@ class HomeController extends Controller
         $cartItems = Cart::content();
         $products = Products::all();
         return view('front.shop.shop-categories',compact('products','cartItems','categories'));
-    }
-
-    
-
-    public function accountProfile(){
-        $cartItems = Cart::content();
-        $categories = categories::all();
-        $products = Products::all();
-        return view ('front.accounts.account-profile',compact('cartItems','categories'))->with('products', $products);
     }
 
     public function shopGrid(){
@@ -121,18 +113,37 @@ class HomeController extends Controller
         return view ('front.checkout.checkout-review',compact('cartItems','categories'))->with('products', $products);
     }
 
-    public function accountAddress(){
+    public function accountProfile(){
         $cartItems = Cart::content();
-        $products = Products::all();
+        $Orders = Cart::content();
+           $count = DB::table('orders')
+            ->where('user_id', '=', Auth::guard('buyer')->user()->id)
+             ->count();
         $categories = categories::all();
-        return view ('front.accounts.account-address',compact('cartItems','categories'))->with('products', $products);
+        $products = Products::all();
+        return view ('front.accounts.account-profile',compact('cartItems','count','categories'))->with('products', $products);
     }
 
     public function accountOrders(){
         $cartItems = Cart::content();
         $products = Products::all();
+           $count = DB::table('orders')
+            ->where('user_id', '=', Auth::guard('buyer')->user()->id)
+             ->count();
+         $orders = DB::table('orders')
+            ->where('user_id', '=', Auth::guard('buyer')->user()->id)
+             ->get();
         $categories = categories::all();
-        return view ('front.accounts.account-orders',compact('cartItems','categories'))->with('products', $products);
+        return view ('front.accounts.account-orders',compact('cartItems','count','orders','categories'))->with('products', $products);
+    }
+    public function accountAddress(){
+        $cartItems = Cart::content();
+        $products = Products::all();
+         $count = DB::table('orders')
+            ->where('user_id', '=', Auth::guard('buyer')->user()->id)
+             ->count();
+        $categories = categories::all();
+        return view ('front.accounts.account-address',compact('cartItems','categories','count'))->with('products', $products);
     }
 
     public function faq(){
@@ -190,11 +201,13 @@ class HomeController extends Controller
    public function search(Request $request) {
     $search = $request->search_data;
     if ($search == '') {
-        return view('front.home');
+        return "Empty search";
     } else {
         $Products = DB::table('products')->where('name', 'like', '%' . $search . '%');
         return view('front.shop.shop-list', ['msg' => 'Results: ' . $search], compact('products'));
     }
     
 }
+
+
 }

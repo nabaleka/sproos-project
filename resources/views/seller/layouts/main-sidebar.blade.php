@@ -128,9 +128,8 @@
           </a>
           <ul class="treeview-menu">
 
-            <li><a href="#">Summary</a></li>
-
-            <li><a href="#">Sales</a></li>
+               <li><a href="/seller/seller-invoices"><i class="fa fa-dashboard"></i> <span>Orders</span></a></li>
+          <li><a href="/seller/seller-orders"><i class="fa fa-dashboard"></i> <span>Invoices</span></a></li>
 
           </ul>
 

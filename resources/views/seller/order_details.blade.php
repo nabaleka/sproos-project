@@ -1,7 +1,7 @@
 @extends('seller.layouts.seller')
 
 @section('style')
-<link rel="stylesheet" href="{{ asset('adminscript/plugins/datatables/dataTables.bootstrap.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/datatables/dataTables.bootstrap.css') }}">
 @endsection
 
 @section('content')
@@ -22,71 +22,10 @@
   <!-- Main content -->
   <section class="content">
 
-  <div>
-           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Product Details</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Products</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">{{ count($products) }}</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-  </div>
-
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Hi {{ Auth::guard('seller')->user()->first_name }} ,here are your products!</h3>
+        <h3 class="box-title">Seller Products</h3>
        
           <a class='col-lg-offset-5 btn btn-success' href="{{ route('products.create') }}">Add New</a>
      
@@ -98,7 +37,7 @@
         </div>
       </div>
       <div class="box-body">
-        <div class="box table-responsive">
+        <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
 
@@ -110,9 +49,10 @@
                           <th>S.No</th>
                           <th>Image</th>
                           <th>Name</th>
-                           <th>Unit Price</th>
-              
+                           <th>Price</th>
+                           <th>Seller ID</th>
                            <th>In Sock</th>
+                          <th>Description</th>
                           <th>Creatd At</th>
                         
                           <th>Edit</th>
@@ -127,14 +67,14 @@
                         @foreach ($products as $product)
                           <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td><img src="{{asset('uploads/'.$product->image) }}" height="30px" />
+                            <td><img src="{{ Storage::url($product->image) }}" height="100px" width="150px" />
                             
                             </td>
                             <td>{{ $product->name }}</td>
                              <td>{{ $product->price }}</td>
-                
-                              <td>{{ $product->stock}}</td>
-                            
+                              <td> Seller</td>
+                              <td>35 </td>
+                            <td>{{ $product->description }}</td>
                             <td>{{ $product->created_at }}</td>
 
                            
@@ -184,4 +124,13 @@
   <!-- /.content -->
 
 <!-- /.content-wrapper -->
+@endsection
+@section('footerSection')
+<script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+  });
+</script>
 @endsection

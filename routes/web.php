@@ -108,14 +108,23 @@ Route::group(['namespace' => 'Seller'],function(){
 	Route::get('seller-logout', 'Auth\LoginController@logoutSeller')->name('seller.logout');
 	Route::get('seller-register', 'Auth\SellerRegisterController@showRegistrationForm')->name('seller.register');
 	Route::post('seller-register', 'Auth\SellerRegisterController@register');
-	Route::get('seller-account', 'SellerController@account')->name('seller.account');
-	Route::resource('seller/products','ProductsController');
+	Route::get('seller-profile', 'SellerController@account')->name('seller.profile');
+	Route::resource('products','ProductsController');
+	Route::get('seller/seller-invoices','ProductsController@seller_invoices');
+	Route::get('seller/seller-orders','ProductsController@seller_orders');
+	Route::get('details/{id}','ProductsController@order_details');
 });
 
-Route::get('/search','SearchController@index')->name('search');
+Route::any('/search','HomeController@search');
 
 Route::get('login/{provider}', 'SocialAuthController@auth')->where(['provider' => 'facebook|google|twitter']);
 
 Route::get('login/{provider}/callback', 'SocialAuthController@login')->where(['provider' => 'facebook|google|twitter']);
 
-Route::post('/search', 'HomeController@search');
+
+Route::get('/show', function()
+{
+    $img = Image::make(asset('uploads/banners/banner-2.png'))->resize(300, 200);
+
+    return $img->response('jpg');
+});

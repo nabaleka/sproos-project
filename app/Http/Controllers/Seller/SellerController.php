@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Seller;
 use App\Model\admin\categories;
 use Illuminate\Http\Request;
 use App\Products;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -28,6 +29,7 @@ class SellerController extends Controller
     public function account()
     {
         //Show the account page
-        return view('seller.account');
+        $products = Products::all();
+        return view('seller/profile', compact('products'));
     }
 }

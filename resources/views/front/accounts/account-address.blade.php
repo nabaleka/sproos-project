@@ -30,7 +30,7 @@
               </div>
               <div class="user-info">
                 <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="img/account/user-ava.jpg" alt="User"></div>
-                <<div class="user-data">
+                <div class="user-data">
                 @if (Auth::guest())
                 <h4>Please login first</h4>
                 @else
@@ -39,7 +39,7 @@
                 </div>
               </div>
             </aside>
-<nav class="list-group"><a class="list-group-item justify-content-between" href="account-orders"><span><i class="icon-bag"></i>Orders</span><span class="badge badge-primary badge-pill">6</span></a><a class="list-group-item" href="account-profile"><i class="icon-head"></i>Profile</a><a class="list-group-item active" href="account-address"><i class="icon-map"></i>Addresses</a><a class="list-group-item justify-content-between" href=""><span><i class="icon-heart"></i>Wishlist</span><span class="badge badge-primary badge-pill">3</span></a></nav>
+<nav class="list-group"><a class="list-group-item justify-content-between" href="account-orders"><span><i class="icon-bag"></i>Orders</span><span class="badge badge-primary badge-pill">{{ $count}}</span></a><a class="list-group-item" href="account-profile"><i class="icon-head"></i>Profile</a><a class="list-group-item active" href="account-address"><i class="icon-map"></i>Addresses</a><a class="list-group-item justify-content-between" href=""><span><i class="icon-heart"></i>Wishlist</span><span class="badge badge-primary badge-pill">3</span></a></nav>
                 
           </div>
           <div class="col-lg-8">

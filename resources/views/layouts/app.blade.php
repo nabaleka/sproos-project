@@ -23,8 +23,6 @@
 
     <!-- CSRF Token -->
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
 
 
     <title>Sproos</title>
@@ -54,6 +52,7 @@
     <!-- Main Styles-->
 
     <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
+
 
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
 

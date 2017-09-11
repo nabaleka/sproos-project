@@ -136,7 +136,7 @@
                 <i class="fa fa-first-order"></i> Orders
               </a>
 
-              <a class="btn btn-app">
+              <a class="btn btn-app" href="{{ route('seller.profile')}}">
                 <i class="fa fa-user"></i> Account
               </a>
 
