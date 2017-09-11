@@ -169,7 +169,8 @@
         <!-- /.col -->
       </div>
     </form>
-    <a href="/seller-login" class="text-center">I already a seller?</a>
+    <a href="/seller-login" class="text-center">I'm already a seller?</a></br>
+    <a href="/welcome" class="btn btn primary" style="border-color : #ee2956;">Back to home</a>
   </div>
   <!-- /.form-box -->
 </div>
