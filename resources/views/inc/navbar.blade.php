@@ -1,20 +1,5 @@
     <!-- Navbar-->
-<style>
-       .site-search .search-tools{
-         top : 27px;
-       }
-       .custom-select{
-         border-radius : 22px;
-         border-color : #ee2956;
-       }
-       .clear-search {
-         border-radius: 22px;
-         border-color : #ee2956;
-         padding : 4px 15px;
-         color : #ee2956;
-       }
-      
-</style>
+
     <!-- Remove ".navbar-sticky" class to make navigation bar scrollable with the page.-->
 
     <header class="navbar navbar-sticky" style="margin-bottom:0;">
@@ -68,7 +53,13 @@
 
           
           @if(!Auth::guard('buyer')->check())
-          <li><a href="/register"><span>REGISTER</span></a></li>
+          <li><a href="/register"><span>REGISTER</span></a>
+          <ul class="sub-menu">
+                <li><a href="/seller-register">Seller</a></li>
+                <li><a href="/login">Buyer</a></li>
+
+            </ul>
+            </li>
           <li><a href=""><span>Login</span></a>
             <ul class="sub-menu">
                 <li><a href="/seller-login">Seller</a></li>

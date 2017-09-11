@@ -414,6 +414,20 @@
      }
 
 
+     .site-search .search-tools{
+         top : 27px;
+       }
+       .custom-select{
+         border-radius : 22px;
+         border-color : #ee2956;
+       }
+       .clear-search {
+         border-radius: 22px;
+         border-color : #ee2956;
+         padding : 4px 15px;
+         color : #ee2956;
+       }
+
 
      .shop-view > a span::before {
 
