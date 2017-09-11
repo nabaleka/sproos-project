@@ -1,4 +1,8 @@
 <style>
+
+.skin-red .wrapper{
+  background : #fff;
+}
  .skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a, .skin-red .sidebar-menu > li.menu-open > a{
 background : #ee2956;
 }
