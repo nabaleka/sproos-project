@@ -72,7 +72,7 @@
               </li>
               <li>
                 <section class="promo-box" style="background-image: url(img/banners/03.jpg);">
-                  <!-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute.--><span class="overlay-dark" style="opacity: .45;"></span>
+                  <!-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute.--><span class="overlay-light" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-2x padding-bottom-2x">
                     <h3 class="text-bold text-light text-shadow">Limited Offer</h3>
                     <h4 class="text-light text-thin text-shadow">save up to 50%!</h4><a class="btn btn-sm btn-primary" href="#">Learn More</a>

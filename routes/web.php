@@ -24,7 +24,7 @@ Route::get('/logout', 'Auth\BuyerLoginController@buyerLogout')->name('buyer.logo
 Route::post('/login', 'Auth\BuyerLoginController@login');
 Route::get('/account-profile', 'HomeController@accountProfile')->middleware('auth:buyer')->name('account');
 Route::get('/account-orders','HomeController@accountOrders')->middleware('auth:buyer')->name('orders');
-Route::get('/account-address','HomeController@accountAddress')->middleware('auth:buyer');;
+Route::get('/account-address','HomeController@accountAddress')->middleware('auth:buyer');
 Route::get('/faq','HomeController@faq');
 Route::get('/terms','HomeController@terms');
 Route::get('/home', 'HomeController@index')->name('home');
@@ -41,11 +41,11 @@ Route::get('/shop/{id}/category','HomeController@showCategory');
 #checkout routes
 
 #Route::get('/checkout-address','CheckoutController@checkoutAddress');
-Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth:buyer');;
-Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth:buyer');;
-Route::get('/checkout-complete','HomeController@checkoutComplete')->middleware('auth:buyer');;
+Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth:buyer');
+Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth:buyer');
+Route::get('/checkout-complete','HomeController@checkoutComplete')->middleware('auth:buyer');
 Route::get('/checkout-payment','PaymentsController@payment');
-Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');;
+Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 
@@ -114,10 +114,8 @@ Route::group(['namespace' => 'Seller'],function(){
 
 Route::get('/search','SearchController@index')->name('search');
 
-Route::get('login/{provider}', 'SocialAuthController@auth')
-->where(['provider' => 'facebook|google|twitter']);
+Route::get('login/{provider}', 'SocialAuthController@auth')->where(['provider' => 'facebook|google|twitter']);
 
-Route::get('login/{provider}/callback', 'SocialAuthController@login')
-->where(['provider' => 'facebook|google|twitter']);
+Route::get('login/{provider}/callback', 'SocialAuthController@login')->where(['provider' => 'facebook|google|twitter']);
 
 Route::post('/search', 'HomeController@search');

@@ -50,7 +50,7 @@ class BuyerLoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:buyer',['except'=>['logout','buyerLogout']]);
+        $this->middleware('guest:buyer',['except'=>['buyerLogout']]);
     }
 
 

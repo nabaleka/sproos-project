@@ -474,6 +474,10 @@ body{
   display:none;
 }
 
+.cat:hover{
+  background-color:#efefef;
+}
+
 
 
     </style>

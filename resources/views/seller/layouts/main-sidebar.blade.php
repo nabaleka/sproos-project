@@ -21,6 +21,8 @@
         <div class="pull-left info">
           <!-- Status -->
 
+          <p>{{ Auth::guard('seller')->user()->first_name." ".Auth::guard('seller')->user()->last_name}}</p>
+
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 
         </div>

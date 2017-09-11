@@ -4,338 +4,244 @@
 
 
 
-    <!-- Logo -->
+  	<!-- Logo -->
 
-    <a href="#" class="logo">
+  	<a href="#" class="logo">
 
-      <!-- mini logo for sidebar mini 50x50 pixels -->
+  		<!-- mini logo for sidebar mini 50x50 pixels -->
 
-      <span class="logo-mini"><b>Seller</span>
+  		<span class="logo-mini"><b>Seller</span>
 
-      <!-- logo for regular state and mobile devices -->
+  		<!-- logo for regular state and mobile devices -->
 
-      <span class="logo-lg"><b>Seller</b>Sproos</span>
+  		<span class="logo-lg"><b>Seller</b>Sproos</span>
 
-    </a>
+  	</a>
 
 
 
-    <!-- Header Navbar -->
+  	<!-- Header Navbar -->
 
-    <nav class="navbar navbar-static-top" role="navigation" style="background-color: #ee2956";>
+  	<nav class="navbar navbar-static-top" role="navigation" style="background-color: #ee2956";>
 
-      <!-- Sidebar toggle button-->
+  		<!-- Sidebar toggle button-->
 
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+  		<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
 
-        <span class="sr-only">Toggle navigation</span>
+  			<span class="sr-only">Toggle navigation</span>
 
-      </a>
+  		</a>
 
-      <!-- Navbar Right Menu -->
+  		<!-- Navbar Right Menu -->
 
-      <div class="navbar-custom-menu">
+  		<div class="navbar-custom-menu">
 
-        <ul class="nav navbar-nav">
+  			<ul class="nav navbar-nav">
 
-          <!-- Messages: style can be found in dropdown.less-->
+  				<!-- Messages: style can be found in dropdown.less-->
 
-          <li class="dropdown messages-menu">
+  				<li class="dropdown messages-menu">
 
-            <!-- Menu toggle button -->
+  					<!-- Menu toggle button -->
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-              <i class="fa fa-envelope-o"></i>
+  						<i class="fa fa-envelope-o"></i>
 
-              <!--span class="label label-success">4</span-->
+  						<!--span class="label label-success">4</span-->
 
-            </a>
+  					</a>
 
-            <ul class="dropdown-menu">
+  					<ul class="dropdown-menu">
 
-              <li class="header">You have 0 messages</li>
+  						<li class="header">You have 0 messages</li>
 
-              <li>
+  						<li>
 
-                <!-- inner menu: contains the messages -->
+  							<!-- inner menu: contains the messages -->
 
-                <ul class="menu">
+  							<ul class="menu">
 
-                  <li><!-- start message -->
+  								<li><!-- start message -->
 
-                    <a href="#">
+  									<a href="#">
 
-                      <div class="pull-left">
+  										<div class="pull-left">
 
-                        <!-- User Image -->
+  											<!-- User Image -->
 
-                        
 
-                      </div>
 
-                      <!-- Message title and timestamp -->
+  										</div>
 
-                      <h4>
+  										<!-- Message title and timestamp -->
 
-                        Sproos Admin
+  										<h4>
 
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+  											Sproos Admin
 
-                      </h4>
+  											<small><i class="fa fa-clock-o"></i> 5 mins</small>
 
-                      <!-- The message -->
+  										</h4>
 
-                      <p>Welcome!</p>
+  										<!-- The message -->
 
-                    </a>
+  										<p>Welcome!</p>
 
-                  </li>
+  									</a>
 
-                  <!-- end message -->
+  								</li>
 
-                </ul>
+  								<!-- end message -->
 
-                <!-- /.menu -->
+  							</ul>
 
-              </li>
+  							<!-- /.menu -->
 
-              <li class="footer"><a href="#">See All Messages</a></li>
+  						</li>
 
-            </ul>
+  						<li class="footer"><a href="#">See All Messages</a></li>
 
-          </li>
+  					</ul>
 
-          <!-- /.messages-menu -->
+  				</li>
 
+  				<!-- /.messages-menu -->
 
 
-          <!-- Notifications Menu -->
 
-          <li class="dropdown notifications-menu">
+  				<!-- Notifications Menu -->
 
-            <!-- Menu toggle button -->
+  				<li class="dropdown notifications-menu">
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  					<!-- Menu toggle button -->
 
-              <i class="fa fa-bell-o"></i>
+  					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-              <!--span class="label label-warning">10</span-->
+  						<i class="fa fa-bell-o"></i>
 
-            </a>
+  						<!--span class="label label-warning">10</span-->
 
-            <ul class="dropdown-menu">
+  					</a>
 
-              <li class="header">You have no notifications today</li>
+  					<ul class="dropdown-menu">
 
-              <li>
+  						<li class="header">You have no notifications today</li>
 
-                <!-- Inner Menu: contains the notifications -->
+  						<li>
 
-                <ul class="menu">
+  							<!-- Inner Menu: contains the notifications -->
 
-                  <li><!-- start notification -->
+  							<ul class="menu">
 
-                    <a href="#">
+  								<li><!-- start notification -->
 
-                      <i class="fa fa-users text-aqua"></i> No buyers
+  									<a href="#">
 
-                    </a>
+  										<i class="fa fa-users text-aqua"></i> No buyers
 
-                  </li>
+  									</a>
 
-                  <!-- end notification -->
+  								</li>
 
-                </ul>
+  								<!-- end notification -->
 
-              </li>
+  							</ul>
 
-              <li class="footer"><a href="#">View all</a></li>
+  						</li>
 
-            </ul>
+  						<li class="footer"><a href="#">View all</a></li>
 
-          </li>
+  					</ul>
 
-          <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
+  				</li>
 
-            <!-- Menu Toggle Button -->
+  				<!-- Tasks Menu -->
+  				<li class="dropdown tasks-menu">
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  					<!-- Menu Toggle Button -->
 
-              <i class="fa fa-flag-o"></i>
+  					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-              <span class="label label-danger">0</span>
+  						<i class="fa fa-flag-o"></i>
 
-            </a>
+  						<span class="label label-danger">0</span>
 
-            <ul class="dropdown-menu">
+  					</a>
 
-              <li class="header">You have no tasks</li>
+  					<ul class="dropdown-menu">
 
-              <li>
+  						<li class="header">You have no tasks</li>
 
-                <!-- Inner menu: contains the tasks -->
+  						<li>
 
-                <ul class="menu">
+  							<!-- Inner menu: contains the tasks -->
 
-                  <li><!-- Task item -->
+  							<ul class="menu">
 
-                    <a href="#">
+  								<li><!-- Task item -->
 
-                      <!-- Task title and progress text -->
+  									<a href="#">
 
-                      <h3>
+  										<!-- Task title and progress text -->
 
-                        Sell a product
+  										<h3>
 
-                        <small class="pull-right">20%</small>
+  											Sell a product
 
-                      </h3>
+  											<small class="pull-right">20%</small>
 
-                      <!-- The progress bar -->
+  										</h3>
 
-                      <div class="progress xs">
+  										<!-- The progress bar -->
 
-                        <!-- Change the css width attribute to simulate progress -->
+  										<div class="progress xs">
 
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+  											<!-- Change the css width attribute to simulate progress -->
 
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+  											<div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
 
-                          <span class="sr-only">20% Complete</span>
+  											aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
 
-                        </div>
+  											<span class="sr-only">20% Complete</span>
 
-                      </div>
+  										</div>
 
-                    </a>
+  									</div>
 
-                  </li>
+  								</a>
 
-                  <!-- end task item -->
+  							</li>
 
-                </ul>
+  							<!-- end task item -->
 
-              </li>
+  						</ul>
 
-              <li class="footer">
+  					</li>
 
-                <a href="#">View all tasks</a>
+  					<li class="footer">
 
-              </li>
+  						<a href="#">View all tasks</a>
 
-            </ul>
+  					</li>
 
-          </li>
+  				</ul>
 
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
+  			</li>
 
-            <!-- Menu Toggle Button -->
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  			<!-- Control Sidebar Toggle Button -->
 
-              <!-- The user image in the navbar-->
+  			<li>
+  				<a href="#" data-toggle="control-sidebar"><i class="fa fa-user"></i></a>
+  			</li>
 
-              <img src="{{ asset('uploads/profile/no-image.jpg') }}" class="user-image" alt="">
+  		</ul>
 
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+  	</li>
 
-              <span class="hidden-xs">
-                  @if(Auth::guard('seller'))
-                    {{ Auth::guard('seller')->user()->name }}
-                  @else
-                    Sproos Seller
-                  @endif
-              </span>
+  </div>
 
-            </a>
+</nav>
 
-            <ul class="dropdown-menu">
-
-              <!-- The user image in the menu -->
-
-              <li class="user-header">
-
-                <img src="{{ asset('uploads/profile/no-image.jpg') }}" class="img-circle" alt="User Image">
-
-
-
-                <p>
-
-                  @if(Auth::guard('seller'))
-                    <p>{{ Auth::guard('seller')->user()->first_name }}</p>
-                  @else
-                    <p>Seller</p>
-                  @endif
-                </p>
-
-              </li>
-
-              <!-- Menu Body -->
-
-              <li class="user-body">
-
-                <div class="row">
-
-                  <div class="col-xs-4 text-center">
-
-                    <a href="#">Followers</a>
-
-                  </div>
-
-                  <div class="col-xs-4 text-center">
-
-                    <a href="#">Sales</a>
-
-                  </div>
-
-                  <div class="col-xs-4 text-center">
-
-                    <a href="#">Friends</a>
-
-                  </div>
-
-                </div>
-
-                <!-- /.row -->
-
-              </li>
-
-              <!-- Menu Footer-->
-
-              <li class="user-footer">
-
-                <div class="pull-left">
-
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-
-                </div>
-
-                <div class="pull-right">
-
-                   <a href="{{ route('seller.logout') }}" class="btn btn-default btn-flat">Logout</a>
-                </div>
-
-              </li>
-
-            </ul>
-
-          </li>
-
-          <!-- Control Sidebar Toggle Button -->
-
-          <li>
-
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-
-          </li>
-
-        </ul>
-
-      </div>
-
-    </nav>
-
-  </header>
+</header>

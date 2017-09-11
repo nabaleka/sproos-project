@@ -15,6 +15,7 @@ class BannerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $message;
+    
     public function index()
     {
         //
