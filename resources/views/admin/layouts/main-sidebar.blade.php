@@ -64,7 +64,7 @@ background : #ee2956;
 
         <div class="pull-left image">
 
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{ asset('uploads/profile/no-image.jpg')}}" class="img-circle" alt="User Image">
 
         </div>
 

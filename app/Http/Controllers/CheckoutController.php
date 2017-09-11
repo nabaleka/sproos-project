@@ -74,6 +74,7 @@ class CheckoutController extends Controller
       }
      
       public function checkoutComplete(){
+       
         Cart::destroy();
           return view('front.checkout.checkout-complete',compact('cartItems'));
       }

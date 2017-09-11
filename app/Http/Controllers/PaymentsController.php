@@ -13,20 +13,40 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class PaymentsController extends Controller
 {
+    // generate a random string of a particular length
     public function payment(){
         //initiates payment
         $cartItems = Cart::content();
         //$total_price = DB::table('orders')->where('user_id',Auth::guard('web')->id())->value('total_price');
         //$orders  = Orders::all();
-        $orders = new Orders;
-        $orders ->transaction_id = Pesapal::random_reference();
-        $orders->status = 2;
 
-        $orders->price = 0;
+        //Generate random string
+        $string = "";
+        for ($i = 0; $i <= (10/32); $i++)
+        $string .= md5(time() + rand(0, 99));
+        $max_start_index = (32*$i)-10;
+        $random_string = substr($string, rand(0, $max_start_index), 10);
+
+
+        //end
+        $unique_id = $random_string;
+        $transaction = Pesapal::random_reference();
+
+
+        foreach($cartItems as $cartItem){
+            $orders = new Orders;
+            $orders ->transaction_id = $transaction;
+            $orders->status = 2;
+            $orders->unique_order_id = strtoupper($unique_id);
+            $orders->price = $cartItem->price;
+            $orders->total_quantity = $cartItem->qty;
+            //$orders->unique_order_id = md5(time().mt_rand(1,5));
+            $orders ->total_price = $cartItem->subtotal();//+$shipping_cost;
+            $orders -> save();
+        }
+
+
         
-        $orders->unique_order_id = md5(time().mt_rand(1,5));
-        $orders ->total_price = Cart::total();//+$shipping_cost;
-        $orders -> save();
 
         $details = array(
         'amount' =>Cart::total(),
