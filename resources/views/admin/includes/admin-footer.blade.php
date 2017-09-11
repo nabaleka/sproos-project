@@ -1,12 +1,6 @@
-  <footer class="main-footer">
+  <footer class="main-footer" style="background-color : #ee2956; color :#fff;">
 
     <!-- To the right -->
-
-    <div class="pull-right hidden-xs">
-
-      Manage your online bussiness here
-
-    </div>
 
     <!-- Default to the left -->
 

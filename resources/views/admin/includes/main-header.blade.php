@@ -1,3 +1,18 @@
+
+  <style>
+    body{
+      background : #ee2956;
+    }
+    
+    .skin-red .main-header .logo{
+      
+    }
+
+    .bg-choice{
+         background-color : #5d5d5d;
+    }
+</style>
+
   <!-- Main Header -->
 
   <header class="main-header">
@@ -6,7 +21,7 @@
 
     <!-- Logo -->
 
-    <a href="#" class="logo">
+    <a href="#" class="logo" style="background-color : #ee2956;">
 
       <!-- mini logo for sidebar mini 50x50 pixels -->
 
