@@ -108,14 +108,12 @@ Route::group(['namespace' => 'Seller'],function(){
 	Route::get('seller-logout', 'Auth\LoginController@logoutSeller')->name('seller.logout');
 	Route::get('seller-register', 'Auth\SellerRegisterController@showRegistrationForm')->name('seller.register');
 	Route::post('seller-register', 'Auth\SellerRegisterController@register');
-	Route::get('seller-account', 'SellerController@account')->name('seller.account');
+	Route::get('seller-profile', 'SellerController@account')->name('seller.profile');
 	Route::resource('seller/products','ProductsController');
 });
 
-Route::get('/search','SearchController@index')->name('search');
+Route::any('/search','HomeController@search');
 
 Route::get('login/{provider}', 'SocialAuthController@auth')->where(['provider' => 'facebook|google|twitter']);
 
 Route::get('login/{provider}/callback', 'SocialAuthController@login')->where(['provider' => 'facebook|google|twitter']);
-
-Route::post('/search', 'HomeController@search');

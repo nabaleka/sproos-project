@@ -230,7 +230,7 @@ if ($request->hasFile('image4'))
         $products->description = $request->description;
         $products->slug = $request->slug;
         $products->stock= $request->stock;
-        $products->categories()->sync($request->categories);
+        $products->category_id=$request->category;
         $products->save();
 
         return redirect(route('products.index'));

@@ -190,7 +190,7 @@ class HomeController extends Controller
    public function search(Request $request) {
     $search = $request->search_data;
     if ($search == '') {
-        return view('front.home');
+        return "Empty search";
     } else {
         $Products = DB::table('products')->where('name', 'like', '%' . $search . '%');
         return view('front.shop.shop-list', ['msg' => 'Results: ' . $search], compact('products'));
