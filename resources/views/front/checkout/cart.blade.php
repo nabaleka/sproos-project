@@ -43,17 +43,15 @@
                   </div>
                 </td>
                 <td class="text-center">
-                  <div class="count-input">
-                    <select class="form-control" name="quantity">
-                    @for ($i = 0; $i < $cartItem->qty; $i++)
-                         <option value = "{{ $i+1 }}">{{ $i+1 }}</option>
-                    @endfor
+                  
+                    {{$cartItem->qty}}
+                    
                       
 
                     </select>
                   </div>
                 </td>
-                <td class="text-center text-lg text-medium">Ksh{{Cart::subtotal()}}</td>
+                <td class="text-center text-lg text-medium">Ksh{{$cartItem->subtotal}}</td>
                 <td class="text-center">&mdash;</td>
                 <td class="text-center"><a class="remove-from-cart" href="{{'/delete_cart'}}/<?php echo $cartItem->rowId?>" data-toggle="tooltip" title="Remove item"><i class="icon-cross"></i></a></td>
               </tr>
