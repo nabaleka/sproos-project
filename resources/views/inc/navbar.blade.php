@@ -7,7 +7,7 @@
       <!-- Search-->
       
 <form class="site-search" method="post" action="/search" id="search">
-      {{ csrf_field() }}
+   
         <input type="text" name="search_data" class="col-sm-8" placeholder="Type to search and press Enter">
         <div class="search-tools">
        
