@@ -63,9 +63,111 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <![endif]-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
 <style>
+  a{
+  color : #5d5d5d;
+}
+ .skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a, .skin-red .sidebar-menu > li.menu-open > a{
+background : #ee2956;
+}
+
+.skin-red .wrapper, .skin-red .main-sidebar, .skin-red .left-side{
+  background : #5d5d5d;
+}
+.treeview-menu > li > a{
+  background : #cbcbcd;0 
+}
+
+.skin-red .sidebar-menu > li.header{
+  background : #ee2956;
+  color : #fff;
+}
+
+.skin-red .main-header .logo{
+  background : #ee2956;
+}
+
+.skin-red .sidebar a{
+  color : #fff;
+}
+
+.skin-red .sidebar-menu > li > .treeview-menu{
+  background : #eff0f0;
+}
+
+.skin-red .sidebar-form input[type="text"]{
+  background : #eff0f0;
+}
+.skin-red .sidebar-form .btn{
+  background : #eff0f0;
+}
+
+.box{
+  border-top: 3px solid #ee2956;
+}
+.box.box-primary{
+  border-top-color: #ee2956;
+}
+
+.box-title{
+  color : #5d5d5d;
+}
+
+.btn-app{
+  color: #fff;
+  border: 1px solid #ee2956;
+  background-color: #ee2956;
+}
+
+.bg-aqua{
+  background-color: #5d5d5d !important;
+}
+
+.bg-green{
+  background-color: #5d5d5d !important;
+}
+
+.bg-yellow{
+  background-color: #5d5d5d !important;
+}
+
+.bg-red{
+  background-color: #5d5d5d !important;
+}
+
+  
   .dropzone .dz-preview .dz-error-message {
       top: 150px!important;
   }
+
+  .btn-default{
+    background : #fff;
+    border-color: #ee2956;
+	  border-radius: 20px;
+	  margin-bottom: 10px;
+  }
+
+  .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #d2d6de;
+    border-radius: 10px;
+  }
+  .btn-primary {
+	background-color: #5d5d5d;
+	border-color: transparent;
+	border-radius: 20px;
+}
+.btn-warning {
+	background-color: #ee2956;
+	border-color: transparent;
+	border-radius: 20px;
+}
+
+.btn-success {
+	background-color: #ee2956;
+	border-color: transparent;
+	border-radius: 20px;
+}
 </style>
 
   <!-- Google Font -->
