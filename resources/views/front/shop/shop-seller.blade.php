@@ -10,7 +10,7 @@
 
           <div class="column">
 
-            <h1>Shop</h1>
+            <h1>Products by {{$seller_name->first_name}} {{$seller_name->last_name}} </h1>
 
           </div>
 
@@ -84,7 +84,7 @@
 
           <div class="grid-sizer"></div>
 
-           @foreach($products as $product)
+           @foreach($seller_products as $product)
 
           <!-- Product-->
 
@@ -118,7 +118,7 @@
 
          </div>
 
-     {{$products->links('vendor.pagination.bootstrap-4')}}
+     {{--$seller_products->links('vendor.pagination.bootstrap-4')--}}
       </div>         
 
 

@@ -48,6 +48,7 @@ Route::get('/checkout-payment','PaymentsController@payment');
 Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
+Route::get('/shop-seller/{id}','HomeController@shopSeller');
 
 #sitepages
 Route::get('/about','HomeController@about');

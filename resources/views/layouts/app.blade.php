@@ -62,6 +62,10 @@
 
     <style>
 
+    .cat:hover{
+      background-color:#ee2956;
+    }
+
 .row .product-card,
 .row .product-thumb {
   flex:1 0 auto;
