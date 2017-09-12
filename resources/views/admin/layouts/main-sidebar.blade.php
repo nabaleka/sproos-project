@@ -30,7 +30,12 @@ background : #ee2956;
   color : #fff;
 }
 .progress{
+  border-radius : 120px;
   background : #ee2956;
+}
+
+.progress > .progress-bar, .progress .progress-bar{
+  border-radius : 10px;
 }
 
 .progress-bar-aqua{
