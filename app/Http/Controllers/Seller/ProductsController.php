@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Seller;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Products;
+use Image;
 use Illuminate\Support\Facades\DB;
 use App\Model\Admin\subcategories;
 use App\Model\Admin\categories;
@@ -61,10 +63,10 @@ class ProductsController extends Controller
             'stock' => 'required',
             'category'=>'required',
             'slug'=>'nullable',
-            'image' => 'image|nullable|max:1999|required',
-            'image2' => 'image|nullable|max:1999|required',
-            'image3' => 'image|nullable|max:1999|required',
-            'image4' => 'image|nullable|max:1999|required',
+            'image' => 'image|nullable|max:2048|required',
+            'image2' => 'image|nullable|max:2048|required',
+            'image3' => 'image|nullable|max:2048|required',
+            'image4' => 'image|nullable|max:2048|required',
             ]);
 
            
@@ -76,7 +78,18 @@ class ProductsController extends Controller
         {
            //$imageName = $request->file('image')->store('public/products');
            //Upload a copy to another folder
-           $imageName = Storage::disk('uploads')->putFile('products',$request->file('image'));
+          // $imageName = Storage::disk('uploads')->putFile('products',$request->file('image'));
+          $product_image = $request->file('image');
+          //resize
+          $img = Image::make($product_image)->fit(400,null, function($constraint){
+              $constraint->upsize();
+          })->encode('jpg');
+          $image_name = "one_".time().'jpg';
+          $img->save('uploads/products/'.$image_name);
+          //Upload a copy to another folder
+          //$imageName = Storage::disk('uploads')->put('products',$img->save($image_name));
+          # Update the database
+          $imageName = 'products/'.$image_name;
            
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
@@ -89,7 +102,18 @@ if ($request->hasFile('image4'))
         {
            //$imageName4 = $request->file('image4')->store('public/products');
            //Upload a copy to another folder
-           $imageName4 = Storage::disk('uploads')->putFile('products',$request->file('image4'));
+           $product_image = $request->file('image4');
+           //resize
+           $img = Image::make($product_image)->fit(400,null, function($constraint){
+               $constraint->upsize();
+           })->encode('jpg');
+           $image_name = "four_".time().'jpg';
+           $img->save('uploads/products/'.$image_name);
+           //Upload a copy to another folder
+           //$imageName = Storage::disk('uploads')->put('products',$img->save($image_name));
+           # Update the database
+           $imageName4 = 'products/'.$image_name;
+           //$imageName4 = Storage::disk('uploads')->putFile('products',$request->file('image4'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
         else
@@ -100,7 +124,18 @@ if ($request->hasFile('image4'))
         {
            //$imageName2 = $request->file('image2')->store('public/products');
            //Upload a copy to another folder
-           $imageName2 = Storage::disk('uploads')->putFile('products',$request->file('image2'));
+           $product_image = $request->file('image2');
+           //resize
+           $img = Image::make($product_image)->fit(400,null, function($constraint){
+               $constraint->upsize();
+           })->encode('jpg');
+           $image_name = "two_".time().'jpg';
+           $img->save('uploads/products/'.$image_name);
+           //Upload a copy to another folder
+           //$imageName = Storage::disk('uploads')->put('products',$img->save($image_name));
+           # Update the database
+           $imageName2 = 'products/'.$image_name;
+          // $imageName2 = Storage::disk('uploads')->putFile('products',$request->file('image2'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
         else
@@ -111,7 +146,19 @@ if ($request->hasFile('image4'))
         {
            //$imageName3 = $request->file('image3')->store('public/products');
            //Upload a copy to another folder
-           $imageName3 = Storage::disk('uploads')->putFile('products',$request->file('image3'));
+           $product_image = $request->file('image3');
+           //resize
+           $img = Image::make($product_image)->fit(400,null, function($constraint){
+               $constraint->upsize();
+           })->encode('jpg');
+           $image_name = "three_".time().'jpg';
+           $img->save('uploads/products/'.$image_name);
+           //Upload a copy to another folder
+           //$imageName = Storage::disk('uploads')->put('products',$img->save($image_name));
+           # Update the database
+           $imageName3 = 'products/'.$image_name;
+           
+           //$imageName3 = Storage::disk('uploads')->putFile('products',$request->file('image3'));
            ##$url = Storage::disk('uploads')->url('file1.jpg');
         }
         else
@@ -190,37 +237,68 @@ if ($request->hasFile('image4'))
         if ($request->hasFile('image')) {
             //Delete previous image
             Storage::disk('uploads')->delete($imagetoDelete);
+
+            //Get the image from the request
+            $product_image = $request->file('image');
+            //resize
+            $img = Image::make($product_image)->fit(400,null, function($constraint){
+                $constraint->upsize();
+            })->encode('jpg');
+            $image_name = "one_".time().'jpg';
+            $img->save('uploads/products/'.$image_name);
             //Upload a copy to another folder
-            Storage::disk('uploads')->putFile('products',$request->file('image'));
+            //$imageName = Storage::disk('uploads')->put('products',$img->save($image_name));
             # Update the database
-            $products->image = $imageName;
+            $products->image = 'products/'.$image_name;
         }
 
         if ($request->hasFile('image2')) {
             //Delete previous image
+            //Get the image from the request
             Storage::disk('uploads')->delete($imagetoDelete2);
+            $product_image = $request->file('image2');
+            //resize
+            $img = Image::make($product_image)->fit(400,null, function($constraint){
+                $constraint->upsize();
+            })->encode('jpg');
+            $image_name = "two_".time().'jpg';
+            $img->save('uploads/products/'.$image_name);
             //Upload a copy to another folder
-            $imageName2 = Storage::disk('uploads')->putFile('products',$request->file('image2'));
-            $products->image2 = $imageName2;
+            //$imageName = Storage::disk('uploads')->put('products',$img->save($image_name));
+            # Update the database
+            $products->image2 = 'products/'.$image_name;
         }
 
         if ($request->hasFile('image3')) {
             //Delete previous image
             Storage::disk('uploads')->delete($imagetoDelete3);
+            $product_image = $request->file('image3');
+            //resize
+            $img = Image::make($product_image)->fit(400,null, function($constraint){
+                $constraint->upsize();
+            })->encode('jpg');
+            $image_name = 'three_'.time().'jpg';
+            $img->save('uploads/products/'.$image_name);
             //Upload a copy to another folder
-            $imageName3 = Storage::disk('uploads')->putFile('products',$request->file('image3'));
-            
-            //update the database
-            $products->image3 = $imageName3;
+            //$imageName = Storage::disk('uploads')->put('products',$img->save($image_name));
+            # Update the database
+            $products->image3 = 'products/'.$image_name;
         }
 
         if ($request->hasFile('image4')) {
             //Delete previous image
             Storage::disk('uploads')->delete($imagetoDelete4);
+            $product_image = $request->file('image4');
+            //resize
+            $img = Image::make($product_image)->fit(400,null, function($constraint){
+                $constraint->upsize();
+            })->encode('jpg');
+            $image_name = 'four_'.time().'jpg';
+            $img->save('uploads/products/'.$image_name);
             //Upload a copy to another folder
-            $imageName4 =Storage::disk('uploads')->putFile('products',$request->file('image4'));
-            ##$url = Storage::disk('uploads')->url('file1.jpg');
-            $products->image4 = $imageName4;
+            //$imageName = Storage::disk('uploads')->put('products',$img->save($image_name));
+            # Update the database
+            $products->image4 = 'products/'.$image_name;
         }      
         
         

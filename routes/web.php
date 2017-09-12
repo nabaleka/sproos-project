@@ -124,7 +124,25 @@ Route::get('login/{provider}/callback', 'SocialAuthController@login')->where(['p
 
 Route::get('/show', function()
 {
-    $img = Image::make(asset('uploads/banners/banner-2.png'))->resize(300, 200);
+	//$img = Image::canvas(600, 600, '#ff0000');
+	
+	//$exists = Storage::disk('uploads')->exists('banners/one.png');
+	$img = Image::make('uploads/banners/banner.jpg');
+	//$img->fit(600,360);
+	//$img->fit(600);
+	//$img->resize(600,null);
+	//$img->fit(800,600, function($constraint){
+	//	$constraint->upsize();
+	//});
 
-    return $img->response('jpg');
+	$img->fit(400,null, function($constraint){
+		$constraint->upsize();
+	});
+	
+	
+    return $img->response();
 });
+
+
+Route::get('resizeImage','ImageController@resizeImage');
+Route::post('resizeImagePost','ImageController@resizeImagePost')->name('resizeImagePost');
