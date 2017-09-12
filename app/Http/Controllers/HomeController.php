@@ -39,7 +39,7 @@ class HomeController extends Controller
     public function allCategories(){
         $categories = categories::all();
         $cartItems = Cart::content();
-        $products = Products::all();
+        $products = DB::table('products')->paginate(12);
         return view('front.shop.shop-categories',compact('products','cartItems','categories'));
     }
 
@@ -47,14 +47,14 @@ class HomeController extends Controller
         
         $cartItems = Cart::content();
         $categories = categories::all();
-        $products = DB::table('products')->paginate(3);
+        $products = DB::table('products')->paginate(12);
         return view ('front.shop.shop-grid',compact('cartItems'))->with('products', $products)->with('categories',$categories);
     }
 
     public function shopList(){
         $cartItems = Cart::content();
         $categories = categories::all();
-        $products = Products::all();
+        $products = DB::table('products')->paginate(12);
         return view ('front.shop.shop-list',compact('cartItems','categories'))->with('products', $products);
     }
 

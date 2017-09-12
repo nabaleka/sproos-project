@@ -118,9 +118,8 @@
 
          </div>
 
-     
-      </div>
+     {{$products->links('vendor.pagination.bootstrap-4')}}
+      </div>         
 
-      {{ $products->links() }}
 
 @endsection

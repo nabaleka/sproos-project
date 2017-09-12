@@ -36,9 +36,10 @@ the first image
             <div class="card  mb-30" style="background-image:url({{ 'uploads/'.$category->image }}); "><a class="card-img-tiles"  href="/shop-grid">
                 <div class="inner">
                 </div></a>
-              <div class="card-block text-center " style ="background-color:rgba(255,255,255,.8);">
-                <h4 class="card-title">{{ $category->title }}</h4>
-                <p class="text-muted">{{ $category->description }}</p><a class="btn btn-primary btn-sm"  href="/shop/{{ $category->id }}/category">Shop {{ $category->title }}</a>
+              <div class="card-block text-center ">
+                <h4 class="card-title" style="color:#ee2956;">{{ $category->title }}</h4>
+                <p class="text-muted" style="visibility:hidden;">{{ $category->description }}</p>
+                <a class="btn btn-primary " style="opacity:.8;"  href="/shop/{{ $category->id }}/category">{{ $category->title }}</a>
               </div>
             </div>
           </div>
@@ -48,6 +49,21 @@ the first image
         </div>
         <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/shop-grid">Shop Now</a></div>
       </section>
+
+     <section>
+        <h3 class="text-center mb-30">Fratured Products</h3>
+                  <div class="promo-box-content text-center padding-top-1x padding-bottom-3x">
+                    <div class="owl-carousel" style="z-index:0;" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;margin&quot;: 30, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;630&quot;:{&quot;items&quot;:2},&quot;991&quot;:{&quot;items&quot;:3},&quot;1200&quot;:{&quot;items&quot;:3}} }">
+                      <img src="../img/components/img04.jpg" alt="Image">
+                      <img src="../img/components/img05.jpg" alt="Image">
+                      <img src="../img/components/img06.jpg" alt="Image">
+                      <img src="../img/components/img10.jpg" alt="Image">
+                      <img src="../img/components/img11.jpg" alt="Image">
+                      <img src="../img/components/img12.jpg" alt="Image">                   
+                    </div>
+                   
+                  </div>
+          </section> 
 
 
       <!-- Check if there is a product -->
@@ -62,10 +78,10 @@ the first image
     
           <div class="grid-item">
             <div class="product-card">
-              <div class="product-badge">{{$product->stock }}  in stock.</div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
+              <div class="product-badge"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
               <!--h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3-->
               <h4 class="product-price">
-                Ksh. {{$product->price}}
+                Ksh. {{$product->price}} <br> <small>{{$product->stock }}  in stock.</small>
               </h4>
               <div class="product-buttons">
                 <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
@@ -82,19 +98,7 @@ the first image
         </div>
       </section>
 
-        <section>
-                  <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <div class="owl-carousel" style="z-index:0;" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;margin&quot;: 30, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;630&quot;:{&quot;items&quot;:2},&quot;991&quot;:{&quot;items&quot;:3},&quot;1200&quot;:{&quot;items&quot;:3}} }">
-                      <img src="../img/components/img04.jpg" alt="Image">
-                      <img src="../img/components/img05.jpg" alt="Image">
-                      <img src="../img/components/img06.jpg" alt="Image">
-                      <img src="../img/components/img10.jpg" alt="Image">
-                      <img src="../img/components/img11.jpg" alt="Image">
-                      <img src="../img/components/img12.jpg" alt="Image">                   
-                    </div>
-                   
-                  </div>
-          </section>
+        
 
         <!-- Product Widgets-->
     @include('inc.product-widget')     
