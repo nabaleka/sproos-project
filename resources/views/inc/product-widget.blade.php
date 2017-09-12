@@ -4,53 +4,30 @@
           <div class="col-md-4 col-sm-6">
             <div class="widget widget-featured-products">
               <h3 class="widget-title">Top Sellers This Week</h3>
+               @foreach( $best_sellers as $best)
               <!-- Entry-->
               <div class="entry">
-                <div class="entry-thumb"><a href="#"><img src="img/shop/widget/01.jpg" alt="Product"></a></div>
+                <div class="entry-thumb"><a href="/shop-single/{{$best->product_id}}"><img src="{{asset('uploads/'.$best->image) }}" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="#">Shades</a></h4><span class="entry-meta">From Ksh 1500.00</span>
+                  <h4 class="entry-title"><a href="/shop-single/{{$best->product_id}}">{{$best->name}}</a></h4><span class="entry-meta">From Ksh {{$best->price}}</span>
                 </div>
               </div>
-              <!-- Entry-->
-              <div class="entry">
-                <div class="entry-thumb"><a href="#"><img src="img/shop/widget/03.jpg" alt="Product"></a></div>
-                <div class="entry-content">
-                  <h4 class="entry-title"><a href="#">Women Hats</a></h4><span class="entry-meta">Froom Ksh 900.50</span>
-                </div>
-              </div>
-              <!-- Entry-->
-              <div class="entry">
-                <div class="entry-thumb"><a href="#"><img src="img/shop/widget/04.jpg" alt="Product"></a></div>
-                <div class="entry-content">
-                  <h4 class="entry-title"><a href="#">Women Handbags</a></h4><span class="entry-meta">From Ksh 929.99</span>
-                </div>
-              </div>
+               @endforeach
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
             <div class="widget widget-featured-products">
               <h3 class="widget-title">New Products</h3>
               <!-- Entry-->
+                @foreach($latest_products as $latest)
               <div class="entry">
-                <div class="entry-thumb"><a href="#"><img src="img/shop/widget/05.jpg" alt="Product"></a></div>
+                <div class="entry-thumb"><a href="/shop-single/{{$latest->product_id}}"><img src="{{asset('uploads/'.$latest->image) }}" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="#">Rubber Shoes</a></h4><span class="entry-meta">From Ksh 949.99</span>
+                  <h4 class="entry-title"><a href="/shop-single/{{$latest->product_id}}">{{$latest->name}}</a></h4><span class="entry-meta">Ksh. {{$latest->price}}</span>
                 </div>
               </div>
-              <!-- Entry-->
-              <div class="entry">
-                <div class="entry-thumb"><a href="#"><img src="img/shop/widget/06.jpg" alt="Product"></a></div>
-                <div class="entry-content">
-                  <h4 class="entry-title"><a href="#">Leather Handbags</a></h4><span class="entry-meta">From Ksh 2,200.00</span>
-                </div>
-              </div>
-              <!-- Entry-->
-              <div class="entry">
-                <div class="entry-thumb"><a href="#"><img src="img/shop/widget/07.jpg" alt="Product"></a></div>
-                <div class="entry-content">
-                  <h4 class="entry-title"><a href="#">Watches</a></h4><span class="entry-meta">From Ksh 1,145.00</span>
-                </div>
-              </div>
+              @endforeach
+             
             </div>
           </div>
           <div class="col-md-4 col-sm-6">

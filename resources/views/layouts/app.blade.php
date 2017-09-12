@@ -19,17 +19,21 @@
     <meta name="author" content="Nabaleka">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/logo/favicon.png') }}">
 
+<!-- CSRF Token -->
+   <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <!-- CSRF Token -->
-
-
+<script>
+    window.Laravel = <?php echo json_encode([
+        'csrfToken' => csrf_token(),
+    ]); ?>
+</script>
 
     <title>Sproos</title>
 
 
 
-    <!-- Styles -->
+  
 
      <!-- Favicon and Apple Icons-->
 
