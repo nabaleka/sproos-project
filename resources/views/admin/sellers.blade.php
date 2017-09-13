@@ -99,43 +99,32 @@
               </div>
             </div>
             <!-- /.box-header -->
+          
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
                   <th>Seller ID</th>
                   <th>Name </th>
-                  <th>Date</th>
-                  <th>Status</th>
+                  <th>Email</th>
+                  <th>phonenumber</th>
                   <th>About</th>
+                    <th>Date</th>
+                      <th>status</th>
                 </tr>
                 <tr>
-                  <td>183</td>
-                  <td>John Blake</td>
-                  <td>11-7-2014</td>
+                  @foreach($sellers as $seller)
+                  <td>{{$seller->id}}</td>
+                  <td>{{$seller->first_name}} {{$seller->last_name}}</td>
+                  <td>{{$seller->email}}</td>
+                  <td>{{$seller->phonenumber}}</td>
+                  <td>Accessories seller</td>
+                    <td>joined {{  \Carbon\Carbon::createFromTimeStamp(strtotime($seller->created_at))->diffForHumans() }}</td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Accessory seller</td>
+                  
                 </tr>
                 <tr>
-                  <td>219</td>
-                  <td>Alexander Matt</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-warning">Pending</span></td>
-                  <td>Fashion designer</td>
-                </tr>
-                <tr>
-                  <td>657</td>
-                  <td>Babby Joe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-primary">Approved</span></td>
-                  <td>Shoe seller</td>
-                </tr>
-                <tr>
-                  <td>175</td>
-                  <td>Mike Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-danger">Denied</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
+                @endforeach
+                 
               </table>
             </div>
             <!-- /.box-body -->
@@ -151,88 +140,7 @@
       <!--
       Charts
       -->
-<div class="row">
-        <div class="col-md-6">
-          <!-- Line chart -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <i class="fa fa-bar-chart-o"></i>
 
-              <h3 class="box-title">Line Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div id="line-chart" style="height: 300px;"></div>
-            </div>
-            <!-- /.box-body-->
-          </div>
-          <!-- /.box -->
-
-          <!-- Area chart -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <i class="fa fa-bar-chart-o"></i>
-
-              <h3 class="box-title">Full Width Area Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div id="area-chart" style="height: 338px;" class="full-width-chart"></div>
-            </div>
-            <!-- /.box-body-->
-          </div>
-          <!-- /.box -->
-
-        </div>
-        <!-- /.col -->
-
-        <div class="col-md-6">
-          <!-- Bar chart -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <i class="fa fa-bar-chart-o"></i>
-
-              <h3 class="box-title">Bar Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div id="bar-chart" style="height: 300px;"></div>
-            </div>
-            <!-- /.box-body-->
-          </div>
-          <!-- /.box -->
-
-          <!-- Donut chart -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <i class="fa fa-bar-chart-o"></i>
-
-              <h3 class="box-title">Donut Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div id="donut-chart" style="height: 300px;"></div>
-            </div>
             <!-- /.box-body-->
           </div>
           <!-- /.box -->

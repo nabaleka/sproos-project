@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\admin\categories;
+use App\Seller;
 
 class AdminController extends Controller
 {
@@ -32,7 +33,8 @@ class AdminController extends Controller
         #Manage site sellers
         #top sellers
         #All sellers
-        return view('admin/sellers');
+        $sellers=seller::all();
+        return view('admin/sellers',compact('sellers'));
     }
 
     public function revenue(){

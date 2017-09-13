@@ -116,8 +116,7 @@
         </li>
 
       <!-- Orders-->
-      <li><a href=""><i class="fa fa-dashboard"></i> <span>Orders</span></a></li>
-        <!-- Revenue -->
+     
         <li class="treeview">
 
           <a href="#"><i class="fa fa-bar-chart"></i> <span>Revenue</span>
@@ -128,8 +127,8 @@
           </a>
           <ul class="treeview-menu">
 
-               <li><a href="/seller/seller-invoices"><i class="fa fa-dashboard"></i> <span>Orders</span></a></li>
-          <li><a href="/seller/seller-orders"><i class="fa fa-dashboard"></i> <span>Invoices</span></a></li>
+               <li><a href="/seller/seller-orders"><i class="fa fa-dashboard"></i> <span>Orders</span></a></li>
+          <li><a href=""><i class="fa fa-dashboard"></i> <span>Invoices</span></a></li>
 
           </ul>
 
@@ -138,7 +137,7 @@
         <!-- Account -->
         <li><a href="/seller-account"><i class="fa fa-gear"></i> <span>Account</span></a></li>
 
-
+           <li><a href="{{route('seller.logout')}}"><i class="fa fa-gear"></i> <span>Logout</span></a></li>
       </ul>
 
       <!-- /.sidebar-menu -->

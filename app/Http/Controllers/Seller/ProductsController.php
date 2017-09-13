@@ -30,7 +30,9 @@ class ProductsController extends Controller
     public function index()
     {
         //show page
-        $products = Products::all();
+        $products = DB::table('products')
+       ->where('seller_id', '=', Auth::guard('seller')->user()->id)
+        ->get();
         return view('seller.viewProducts',compact('products'));
     }
 

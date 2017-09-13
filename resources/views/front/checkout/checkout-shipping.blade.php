@@ -83,15 +83,15 @@
             <td class="align-middle"><span class="text-medium">
         <script type="text/javascript" src="https://apibuttontest.sendyit.com/sendy_api_button_v1.js"
         data-logo = "https://api.sendyit.com/parcel/doc/photo/helment_head-2.png"
-        data-apikey="MjuhM2929292ds"
-        data-username="sstop"
-        data-from-name="Green House"
-        data-from-lat = "-1.300137"
-        data-from-long = "36.781712"
+        data-apikey="V5NMutKdAKcCR2AQNbmD"
+        data-username="luchetu"
+        data-from-name=""
+        data-from-lat = ""
+        data-from-long = ""
         data-recipient-name = "Sendy Test"
-        data-recipient-phone ="0712345678"
-        data-recipient-email = "chris@sendy.co.ke"
-        data-pickup-date ="2016-05-17 23:59:59"
+        data-recipient-phone ="0719654988"
+        data-recipient-email = "luchetu@gmail.com"
+        data-pickup-date ="2017-09-17 23:59:59"
         data-notes = "Call Jack 07** *** *** at the store"
         data-price-limit = 200
         data-show-price = 1
