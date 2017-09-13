@@ -71,7 +71,9 @@
               </div>
             </div>
             <div class="pt-1 mb-2"><span class="text-medium">{{ $products->name }}</span></div>
-            <a href="{{'/shop-seller/'.$products->seller_id}}">Seller's Products</a>
+            
+            <a href="{{'/shop-seller/'.$products->seller_id}}" class="btn btn-outline-primary btn-sm" >Seller Products</a>
+            
             <h3 style="color:#ee2956;">seller:{{$seller_name->first_name}} {{$seller_name->last_name}}</h3>
             <div class="padding-bottom-1x mb-2"><span class="text-medium">Categories:&nbsp;</span><a class="navi-link" href="#">Men’s shoes,</a><a class="navi-link" href="#"> Snickers,</a><a class="navi-link" href="#"> Sport shoes</a></div>
             <hr class="mb-3">
@@ -81,7 +83,10 @@
               </div>
               <div class="sp-buttons mt-2 mb-2">
                
+               
+               
                <a href="{{'/add-to-cart'}}/<?php echo $products->id?>" class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</a>
+               
               </div>
             </div>
           </div>
