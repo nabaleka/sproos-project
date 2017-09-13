@@ -85,6 +85,8 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::post('admin-login', 'Auth\LoginController@login');
 
 	Route::get('admin/sellers','AdminController@sellers');
+	Route::get('admin/customers','HomeController@customers');
+	Route::get('admin/customers/{id}','HomeController@customerDetails');
 
 	Route::get('admin/home-page','AdminController@homePage')->name('homepage-manager');
 

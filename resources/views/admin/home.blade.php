@@ -64,7 +64,7 @@
       <!-- /.row -->
 
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-8">
           <!-- LINE CHART -->
           <div class="box box-info">
             <div class="box-header with-border">
@@ -124,11 +124,46 @@ var myChart = new Chart(ctx, {
 </script>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-4">
+          <!-- Application buttons -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Admin Shortcuts</h3>
+            </div>
+            <div class="box-body">
+              <p>Manage your account here. Here are some shortcuts you can use.</p>
+              <a class="btn btn-app">
+                <span class="badge bg-yellow">0</span>
+                <i class="fa fa-bullhorn"></i> Notifications
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-green">{{ count($products)}}</span>
+                <i class="fa fa-barcode"></i> Products
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-purple">{{ count($users) }}</span>
+                <i class="fa fa-users"></i> Users
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-teal">{{ count($orders)}}</span>
+                <i class="fa fa-inbox"></i> Orders
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-aqua">12</span>
+                <i class="fa fa-envelope"></i> Inbox
+              </a>
+              <a class="btn btn-app">
+                <span class="badge bg-red">531</span>
+                <i class="fa fa-heart-o"></i> Likes
+              </a>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+</div>
+</div>
 
-hi
-</div>
-</div>
+
 
 
           

@@ -79,7 +79,7 @@
 
             <li><a href="">Sellers</a></li>
 
-            <li><a href="">Buyers</a></li>
+            <li><a href="/admin/customers">Customers</a></li>
 
           </ul>
         

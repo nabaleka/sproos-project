@@ -34,7 +34,23 @@ class HomeController extends Controller
     {
 		$products = products::all();
     	return view('admin/stats',compact('products'));
+	}
+	
+	public function customers()
+    {
+		$sellers = Seller::all();
+		$products = products::all();
+		$users = User::all();
+		$orders = Orders::all();
+		return view('admin/customers',compact('products','sellers','users','orders'));
     }
 
+	public function customerDetails($id)
+    {
+		
+		$user = User::findOrFail($id);
+		$orders = Orders::all();
+		return view('admin/customers-details',compact('products','sellers','user','orders'));
+    }
 
 }
