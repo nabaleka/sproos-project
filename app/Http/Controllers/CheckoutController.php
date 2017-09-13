@@ -66,7 +66,7 @@ class CheckoutController extends Controller
           // check for user login
          
           $cartItems = Cart::content();
-          $orders = DB::table('orders')->where('user_id',Auth::user()->id)->first();
+          $orders = DB::table('orders')->where('user_id',Auth::guard('buyer')->user()->id)->first();
           return view ('front.checkout.checkout-address', compact('cartItems','orders'));
          
       

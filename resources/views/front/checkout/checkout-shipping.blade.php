@@ -55,6 +55,29 @@
 
     <hr class="padding-bottom-1x">
 
+<<<<<<< HEAD
+    <form>
+    <div class="row">
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-fn">Label</label>
+            <input class="form-control" type="text" id="checkout-date" required="" name="deliveryDate"  placeholder="TODAY">
+        </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+        <label for="checkout-fn">Type of Location</label>
+        <div class="col-sm-6">
+        <label class="custom-control custom-checkbox">
+        <input class="custom-control-input" name="location" type="radio" checked><span class="custom-control-indicator"></span><span class="custom-control-description"><b>Residential</b></span>
+        </label>
+        </br>
+        <label class="custom-control custom-checkbox">
+        <input class="custom-control-input" name="location" type="radio" checked><span class="custom-control-indicator"></span><span class="custom-control-description"><b>Business</b></span>
+        </label></div>
+        </div>
+        </div>
+=======
     <div class="table-responsive">
 
         <table class="table">
@@ -143,15 +166,24 @@
 
         </table>
 
+>>>>>>> 0bce14981290e701b0dd50f8ceb91b94b0911c47
     </div>
-
-    <div class="checkout-footer margin-top-1x">
-
-        
-
-       <div class="column"><a href="/checkout-payment" class="btn btn-primary"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
-
+    <div class="row">
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-email">Estate/Building:</label>
+            <input class="form-control" type="text" id="checkout-instructions" required="" name="deliveryInstructions"  placeholder="e.g Call me when you arrive">
+        </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-phone">Room/House/Suite No:</label>
+            <input class="form-control" type="text" id="checkout-phone" required="" name="phoneNumber"  placeholder="0710000001">
+        </div>
+        </div>
     </div>
+    
+    </form>
 
     </div>
 
