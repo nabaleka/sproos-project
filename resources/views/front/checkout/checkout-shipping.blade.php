@@ -54,82 +54,44 @@
 
     <hr class="padding-bottom-1x">
 
-    <div class="table-responsive">
-
-        <table class="table">
-
-        <thead class="thead-default">
-
-            <tr>
-
-            <th>Shipping method</th>
-
-            <th>--</th>
-
-            <th>--</th>
-
-            <th></th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-           
-
-            <tr>
-
-            <td class="align-middle"><span class="text-medium">
-        <script type="text/javascript" src="https://apibuttontest.sendyit.com/sendy_api_button_v1.js"
-        data-logo = "https://api.sendyit.com/parcel/doc/photo/helment_head-2.png"
-        data-apikey="MjuhM2929292ds"
-        data-username="sstop"
-        data-from-name="Green House"
-        data-from-lat = "-1.300137"
-        data-from-long = "36.781712"
-        data-recipient-name = "Sendy Test"
-        data-recipient-phone ="0712345678"
-        data-recipient-email = "chris@sendy.co.ke"
-        data-pickup-date ="2016-05-17 23:59:59"
-        data-notes = "Call Jack 07** *** *** at the store"
-        data-price-limit = 200
-        data-show-price = 1
-        >
-    </script>
-            </span><br><span class="text-muted text-sm">East Africa Only!</span></td>
-
-            <td class="align-middle">&mdash;</td>
-
-            <td class="align-middle">&mdash;</td>
-
-            <td class="align-middle">
-
-                <label class="custom-control custom-radio">
-
-                <input class="custom-control-input" type="radio" name="shipping" value="2,400.00" ><span class="custom-control-indicator"></span>
-
-                </label>
-
-            </td>
-
-            </tr>
-
-            
-
-        </tbody>
-
-        </table>
-
+    <form>
+    <div class="row">
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-fn">Label</label>
+            <input class="form-control" type="text" id="checkout-date" required="" name="deliveryDate"  placeholder="TODAY">
+        </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+        <label for="checkout-fn">Type of Location</label>
+        <div class="col-sm-6">
+        <label class="custom-control custom-checkbox">
+        <input class="custom-control-input" name="location" type="radio" checked><span class="custom-control-indicator"></span><span class="custom-control-description"><b>Residential</b></span>
+        </label>
+        </br>
+        <label class="custom-control custom-checkbox">
+        <input class="custom-control-input" name="location" type="radio" checked><span class="custom-control-indicator"></span><span class="custom-control-description"><b>Business</b></span>
+        </label></div>
+        </div>
+        </div>
     </div>
-
-    <div class="checkout-footer margin-top-1x">
-
-        
-
-       <div class="column"><a href="/checkout-payment" class="btn btn-primary"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
-
+    <div class="row">
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-email">Estate/Building:</label>
+            <input class="form-control" type="text" id="checkout-instructions" required="" name="deliveryInstructions"  placeholder="e.g Call me when you arrive">
+        </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-phone">Room/House/Suite No:</label>
+            <input class="form-control" type="text" id="checkout-phone" required="" name="phoneNumber"  placeholder="0710000001">
+        </div>
+        </div>
     </div>
+    
+    </form>
 
     </div>
 
