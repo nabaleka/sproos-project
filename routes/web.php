@@ -143,7 +143,7 @@ Route::get('/show', function()
 	});
 	
 	
-    return $img->response();
+    return view('front.map');
 });
 
 
