@@ -1,62 +1,3 @@
-<style>
-
-.skin-red .wrapper{
-  background : #fff;
-}
- .skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a, .skin-red .sidebar-menu > li.menu-open > a{
-background : #ee2956;
-}
-
-.treeview-menu > li > a{
-  background : #cbcbcd;0 
-}
-
-.skin-red .sidebar-menu > li > .treeview-menu{
-  background : #eff0f0;
-}
-
-.skin-red .sidebar-form input[type="text"]{
-  background : #eff0f0;
-}
-.skin-red .sidebar-form .btn{
-  background : #eff0f0;
-}
-
-.box{
-  background : #5d5d5d;
-}
-
-.box-title{
-  color : #fff;
-}
-.progress{
-  border-radius : 120px;
-  background : #ee2956;
-}
-
-.progress > .progress-bar, .progress .progress-bar{
-  border-radius : 10px;
-}
-
-.progress-bar-aqua{
-  background : #eff0f0;
-}
-
-.progress-bar-green{
-  background : #fff;
-}
-
-.progress-bar-yellow{
-  background : #cbcbcd;
-}
-
-.progress-bar-red{
-  background : #e6e7e9;
-}
-
-
-</style>
-
 <aside class="main-sidebar" style="background : #5d5d5d;">
 
 
@@ -126,7 +67,7 @@ background : #ee2956;
         <li class="active" style="background:#cbcbcd;"><a href="/admin/home"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a></li>
 
-        <li class="treeview"><a href="/admin/stats"><i class="fa fa-area-chart"></i> <span>Stats</span>
+        <li class="treeview"><a href="/admin/stats"><i class="fa fa-users"></i> <span>Accounts</span>
                     <span class="pull-right-container">
 
                 <i class="fa fa-angle-left pull-right"></i>
@@ -136,11 +77,9 @@ background : #ee2956;
 
           <ul class="treeview-menu">
 
-            <li><a href="#">Sellers</a></li>
+            <li><a href="">Sellers</a></li>
 
-            <li><a href="#">Buyers</a></li>
-
-            <li><a href="#">Revenue</a></li>
+            <li><a href="">Buyers</a></li>
 
           </ul>
         

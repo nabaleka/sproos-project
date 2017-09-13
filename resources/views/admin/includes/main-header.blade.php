@@ -1,5 +1,6 @@
 
   <style>
+  /*
     body{
       background : #ee2956;
     }
@@ -10,7 +11,7 @@
 
     .bg-choice{
          background-color : #5d5d5d;
-    }
+    }*/
 </style>
 
   <!-- Main Header -->
