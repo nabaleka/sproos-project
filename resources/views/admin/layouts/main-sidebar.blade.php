@@ -77,7 +77,7 @@
 
           <ul class="treeview-menu">
 
-            <li><a href="">Sellers</a></li>
+            <li><a href="/admin/sellers">Sellers</a></li>
 
             <li><a href="/admin/customers">Customers</a></li>
 

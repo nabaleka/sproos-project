@@ -40,7 +40,7 @@ Route::get('/shop/{id}/category','HomeController@showCategory');
 
 #checkout routes
 
-#Route::get('/checkout-address','CheckoutController@checkoutAddress');
+Route::get('/checkout-address','CheckoutController@checkoutAddress');
 Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth:buyer');
 Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth:buyer');
 Route::get('/checkout-complete','CheckoutController@checkoutComplete')->middleware('auth:buyer');

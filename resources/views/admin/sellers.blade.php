@@ -28,7 +28,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Sellers</span>
-              <span class="info-box-number">90<small>%</small></span>
+              <span class="info-box-number">{{ count($sellers)}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -106,36 +106,19 @@
                   <th>Name </th>
                   <th>Date</th>
                   <th>Status</th>
-                  <th>About</th>
+                  <th>Action</th>
                 </tr>
+             
+              @foreach($sellers as $seller)
                 <tr>
-                  <td>183</td>
-                  <td>John Blake</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-success">Approved</span></td>
-                  <td>Accessory seller</td>
-                </tr>
-                <tr>
-                  <td>219</td>
-                  <td>Alexander Matt</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-warning">Pending</span></td>
-                  <td>Fashion designer</td>
-                </tr>
-                <tr>
-                  <td>657</td>
-                  <td>Babby Joe</td>
-                  <td>11-7-2014</td>
+                  <td>{{$seller->id}}</td>
+                  <td>{{ $seller->first_name." ".$seller->last_name}}</td>
+                  <td>{{$seller->created_at}}</td>
                   <td><span class="label label-primary">Approved</span></td>
-                  <td>Shoe seller</td>
+                  <td><a href="">View</a></td>
                 </tr>
-                <tr>
-                  <td>175</td>
-                  <td>Mike Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-danger">Denied</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
+              @endforeach 
+                
               </table>
             </div>
             <!-- /.box-body -->
