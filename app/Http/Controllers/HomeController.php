@@ -250,8 +250,10 @@ class HomeController extends Controller
 
     //Check if search string is empty or null
     if ($search == '') {
-        return "Empty search";
+
+        return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
     } else {
+        
         $products = DB::table('products')->where('name', 'like', '%' . $search . '%');
         return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
     }
