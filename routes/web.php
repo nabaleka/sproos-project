@@ -161,3 +161,6 @@ Route::post('/hi','HomeController@hi')->name('hi');
 
 //Test Theme
 Route::get('/theme', 'HomeController@theme');
+
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');

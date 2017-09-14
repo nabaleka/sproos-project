@@ -45,9 +45,10 @@
     <div class="col-xl-9 col-lg-8">
 
     <div class="checkout-steps">
-    <a class="active" href="#">3. Review</a>
-    <a class="completed" href="/checkout-payment"><span class="step-indicator icon-circle-check"></span><!--span class="angle"></span-->2. Payment</a>
-    <a class="completed" href="/checkout-shipping"><span class="step-indicator icon-circle-check"></span><!--span class="angle"></span-->1. Shipping</a>
+        <a href="/checkout-review">4. Payment</a>
+        <a href="/checkout-payment" class="active"><!--span class="angle"></span-->3. Review</a>
+        <a class="completed" href="/checkout-address"><span class="step-indicator icon-circle-check"></span>2. Shipping</a>
+        <a class="completed" href="/checkout-shipping"><span class="step-indicator icon-circle-check"></span>1. Address</a>
     </div>
 
     <h4>Review Your Order</h4>
@@ -128,25 +129,14 @@
 
         </div>
 
-        <div class="col-sm-6">
-
-        <h5>Payment method:</h5>
-
-        <ul class="list-unstyled">
-
-            <li><span class="text-muted">Chosen Payment method here.</li>
-
-        </ul>
-
-        </div>
 
     </div>
 
     <div class="checkout-footer margin-top-1x">
 
-        <div class="column hidden-xs-down"><a class="btn btn-outline-secondary" href="/checkout-payment"><i class="icon-arrow-left"></i>&nbsp;Back</a></div>
+        <div class="column hidden-xs-down"><a class="btn btn-outline-secondary" href="/checkout-address"><i class="icon-arrow-left"></i>&nbsp;Back</a></div>
 
-        <div class="column"><a class="btn btn-primary" href="/checkout-complete">Complete Order</a></div>
+        <div class="column"><a class="btn btn-primary" href="/checkout-payment">Continue to Payment</a></div>
 
     </div>
 
