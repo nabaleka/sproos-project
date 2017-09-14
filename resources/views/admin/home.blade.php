@@ -147,18 +147,24 @@ var myChart = new Chart(ctx, {
                 <span class="badge bg-yellow">0</span>
                 <i class="fa fa-bullhorn"></i> Notifications
               </a>
-              <a class="btn btn-app">
-                <span class="badge bg-green">{{ count($products)}}</span>
-                <i class="fa fa-barcode"></i> Products
+              <a class="btn btn-app" href="/admin/sellers">
+                <span class="badge bg-green">{{ count($seller)}}</span>
+                <i class="fa fa-barcode"></i> Sellers
               </a>
-              <a class="btn btn-app">
+              <a class="btn btn-app" href="/admin/customers">
                 <span class="badge bg-purple">{{ count($users) }}</span>
-                <i class="fa fa-users"></i> Users
+                <i class="fa fa-users"></i> Customers
               </a>
-              <a class="btn btn-app">
+              <a class="btn btn-app" href="/admin/orders">
                 <span class="badge bg-teal">{{ count($orders)}}</span>
                 <i class="fa fa-inbox"></i> Orders
               </a>
+
+              <a class="btn btn-app" href="/admin/reports">
+                <span class="badge bg-teal"></span>
+                <i class="fa fa-line-chart"></i> Reports
+              </a>
+
               <a class="btn btn-app">
                 <span class="badge bg-aqua">12</span>
                 <i class="fa fa-envelope"></i> Inbox
@@ -166,6 +172,11 @@ var myChart = new Chart(ctx, {
               <a class="btn btn-app">
                 <span class="badge bg-red">531</span>
                 <i class="fa fa-heart-o"></i> Likes
+              </a>
+
+              <a class="btn btn-app" href="admin/category">
+                <span class="badge bg-red">{{ count($categories) }}</span>
+                <i class="fa fa-heart-o"></i> Categories
               </a>
             </div>
             <!-- /.box-body -->
