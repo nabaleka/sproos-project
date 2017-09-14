@@ -5,7 +5,7 @@
     <section class="content-header">
       <h1>
         Orders<br>
-        <small>All Orders</small>
+        <small> Order Details</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="admin/home"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -20,39 +20,39 @@
                     <!-- /.box-header -->
                     <div class="box-body">
 
-                    @if(isset($orders) || (count(get_object_vars($orders)) > 0))
+                    @if(isset($details) || (count(get_object_vars($details)) > 0))
                                          
                       <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                          <th>Order_id</th>
-                          <th>Total_price</th>
+                          <th>id</th>
+                          <th>Customer</th>
                          
-                           <th>Status</th>
-                             <th>Payment Method</th>
-                           <th>Date</th>
-                          <th>Details</th>
+                           <th>Seller</th>
+                             <th>Product</th>
+                             <th>Seller email</th>
+                             <th>Customer email</th>
+                          
                          
                         </tr>
                         </thead>
                         <tbody>
-                        @if(isset($orders))
-                        @foreach ($orders as $order)
+                        @if(isset($details))
+                        @foreach ($derails as $detail)
                           <tr>
-                            <td>{{ $order->unique_order_id }}</td>
+                            <td>{{ $detail->unique_order_id }}</td>
                           
                             
                             </td>
                            
-                             <td>{{ $order->total_price }}</td>
+                             <td>{{ $detail->total_price }}</td>
                                 <td>Pending</td>
                               <td>Pesapal</td>
                          
-                            <td>{{  \Carbon\Carbon::createFromTimeStamp(strtotime($order->created_at))->diffForHumans() }}</td>
+                            <td></td>
 
                            
-                              <td><a href="/admin/order_details/{{$order->user_id}}">
-                             Details</a></td>
+                             
                            
 
                             
