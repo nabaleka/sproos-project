@@ -1,5 +1,20 @@
 
   <style>
+  .bg-yellow{
+    background-color: #ee2956 !important;
+  }
+  .bg-green{
+    background-color: #5d5d5d !important;
+  }
+  .bg-red{
+    background-color: #ee2956 !important;
+  }
+  .bg-aqua{
+    background-color: #5d5d5d !important;
+  }
+  .box.box-info{
+           border-top-color : #d2d6de;
+         }
   /*
     body{
       background : #ee2956;
