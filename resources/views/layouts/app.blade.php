@@ -56,8 +56,6 @@
 
     <!-- Main Styles-->
 
-    <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
-
 
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
 
@@ -478,7 +476,6 @@
 
 
 body{
-
   display:none;
 }
 
@@ -496,7 +493,7 @@ body{
     <!-- Styles -->
     <script>
         $( document ).ready(function() {
-            $("body").show('slow').fadeIn(10000).delay(3000);
+            $("body").show('slow').fadeIn(10000);
         });
     </script>
 
