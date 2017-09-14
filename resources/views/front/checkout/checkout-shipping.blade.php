@@ -57,14 +57,14 @@
 
     <form>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-6">
         <div><!---Map-->
      <div id="locationField">
       <input id="autocomplete" placeholder="Enter your address"
              onFocus="geolocate()" type="text"></input>
     </div>
 
-    <table id="address">
+    <table class="table-responsive" id="address">
       <tr>
         <td class="label">Street address</td>
         <td class="slimField"><input class="field" id="street_number"
