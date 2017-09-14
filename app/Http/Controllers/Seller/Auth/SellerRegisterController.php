@@ -37,9 +37,9 @@ class SellerRegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'phonenumber' => 'required|max:10',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'phonenumber' => 'required|min:10|max:15',
             'email' => 'required|email|max:255|unique:sellers',
             'password' => 'required|min:6|confirmed',
         ]);

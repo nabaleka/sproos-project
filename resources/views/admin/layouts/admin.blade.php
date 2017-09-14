@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-
-This is a starter template page. Use this page to start your new project from
-
-scratch. This page gets rid of all links and provides the needed markup only.
-
--->
-
 <html>
 
 <head>
@@ -32,6 +24,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Ionicons -->
 
   <link rel="stylesheet" href="{{ asset('bower_components/Ionicons/css/ionicons.min.css')}}">
+  <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('bower_components/chart.js/dist/Chart.bundle.js') }}"></script>
+  
 
   <!-- Theme style -->
 
@@ -60,10 +55,72 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <![endif]-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
+
 <style>
+
+.skin-red .wrapper{
+  background : #fff;
+}
+ .skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a, .skin-red .sidebar-menu > li.menu-open > a{
+background : #ee2956;
+}
+
   .dropzone .dz-preview .dz-error-message {
       top: 150px!important;
   }
+
+  .box-body{
+    background-color:#fff;
+  }
+
+.treeview-menu > li > a{
+  background : #cbcbcd;0 
+}
+
+.skin-red .sidebar-menu > li > .treeview-menu{
+  background : #eff0f0;
+}
+
+.skin-red .sidebar-form input[type="text"]{
+  background : #eff0f0;
+}
+.skin-red .sidebar-form .btn{
+  background : #eff0f0;
+}
+
+.box{
+  background : #5d5d5d;
+}
+
+.box-title{
+  color : #fff;
+}
+.progress{
+  border-radius : 120px;
+  background : #ee2956;
+}
+
+.progress > .progress-bar, .progress .progress-bar{
+  border-radius : 10px;
+}
+
+.progress-bar-aqua{
+  background : #eff0f0;
+}
+
+.progress-bar-green{
+  background : #fff;
+}
+
+.progress-bar-yellow{
+  background : #cbcbcd;
+}
+
+.progress-bar-red{
+  background : #e6e7e9;
+}
+
+
 </style>
 
   <!-- Google Font -->
@@ -276,7 +333,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED JS SCRIPTS -->
 <!-- jQuery 3 -->
 
-<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+
 
 <!-- Bootstrap 3.3.7 -->
 
@@ -288,8 +345,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- Chart JS -->
 
-<script src="{{ asset('bower_components/dist/Chart.js') }}"></script>
-
 
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
@@ -297,7 +352,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
      Both of these plugins are recommended to enhance the
 
      user experience. -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
+<script src=" {{ url('https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js') }}"></script>
 
 <script src="{{ asset('adminscript/plugins/select2/select2.full.min.js') }}"></script>
 

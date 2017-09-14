@@ -28,7 +28,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Sellers</span>
-              <span class="info-box-number">90<small>%</small></span>
+              <span class="info-box-number">{{ count($sellers)}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -119,7 +119,7 @@
                   <td>{{$seller->phonenumber}}</td>
                   <td>Accessories seller</td>
                     <td>joined {{  \Carbon\Carbon::createFromTimeStamp(strtotime($seller->created_at))->diffForHumans() }}</td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><a href="/admin/sellers/{{ $seller->id }}">View</a></td>
                   
                 </tr>
                 <tr>

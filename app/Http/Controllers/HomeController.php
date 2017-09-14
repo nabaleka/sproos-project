@@ -27,8 +27,8 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $latest_products = DB::table('order_details')
+    {   
+        $best_sellers = DB::table('order_details')
         ->leftjoin('products', 'products.id', '=', 'order_details.product_id')
         ->leftjoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
         ->select('order_details.product_id','products.price','products.name','products.image')
@@ -36,8 +36,8 @@ class HomeController extends Controller
         ->take(4)
         ->get();
        
-        $best_sellers = DB::table('products')
-        ->join('order_details', 'order_details.product_id', '=', 'products.id')
+        $latest_products = DB::table('products')
+        ->orderBy('updated_at','DESC')
         ->take(4)
         ->get();
      
@@ -206,10 +206,39 @@ class HomeController extends Controller
    public function shopSingle($id)
    {
    $cartItems = Cart::content();
+   $seller_id = DB::table('products')->where('id', $id)->value('seller_id');
+   $seller_products = DB::table('products')->where('seller_id', '=', $seller_id)->get();
+
+   $products = Products::find($id);
+   $product_seller = $products->seller_id;
+   $seller_name= DB::table('sellers')
+   ->leftJoin('products', 'sellers.id', '=', 'products.seller_id')
+   ->get()->first();
+   $allproducts = Products::all();
    $categories = categories::all();
-   $products = Products::find($id); // get prodcut by id
-       return view('front.shop.shop-single',compact('products','categories'),compact('cartItems'));
+    // get prodcut by id
+
+   //
+       return view('front.shop.shop-single',compact('products','seller_products','seller_name','categories','allproducts'),compact('cartItems'));
    }
+
+   public function shopSeller($id)
+   {
+   $cartItems = Cart::content();
+   $seller_id = DB::table('products')->where('id', $id)->value('seller_id');
+   $seller_products = DB::table('products')->where('seller_id', '=', $id)->get();
+   $seller_name= DB::table('sellers')
+   ->leftJoin('products', 'sellers.id', '=', 'products.seller_id')
+   ->get()->first();
+   $allproducts = Products::all();
+   $categories = categories::all();
+   //$products = Products::find($id); // get prodcut by id
+
+   //
+       return view('front.shop.shop-seller',compact('products','seller_products','seller_name','categories','allproducts'),compact('cartItems'));
+   }
+   
+
 
    public function search(Request $request) {
     $search = $request->search_data;

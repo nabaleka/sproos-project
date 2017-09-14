@@ -98,13 +98,13 @@
 
                 <h4 class="product-price">
 
-                  <del>Ksh. 9999.99</del> Ksh. {{$product->price}}
+                   Ksh. {{$product->price}}<br><small>In Stock: {{$product->stock}}</small>
 
                 </h4>
 
                 <div class="product-buttons">
 
-                <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
+                
                 <a href="{{'/add-to-cart'}}/<?php echo $product->id?>" class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</a>
 
 

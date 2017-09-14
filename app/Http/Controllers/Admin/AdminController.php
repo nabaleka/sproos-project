@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Seller;
 use App\Http\Controllers\Controller;
 use App\Model\admin\categories;
-use App\Seller;
+
 
 class AdminController extends Controller
 {

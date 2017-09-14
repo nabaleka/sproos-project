@@ -128,12 +128,12 @@
             </div>
             <div class="box-body">
               <p>Shortcuts to actions</p>
-              <a class="btn btn-app">
+              <a class="btn btn-app" href="{{ route('products.create') }}">
                 <i class="fa fa-plus"></i> New Product
               </a>
 
               <a class="btn btn-app">
-                <i class="fa fa-first-order"></i> Orders
+                <i class="fa fa-first-order" href="/seller/seller-orders"></i> Orders
               </a>
 
               <a class="btn btn-app" href="{{ route('seller.profile')}}">

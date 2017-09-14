@@ -21,6 +21,7 @@
 
 <!-- CSRF Token -->
    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 
 
 <script>
@@ -61,6 +62,10 @@
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
 
     <style>
+
+    .cat:hover{
+      background-color:#ee2956;
+    }
 
 .row .product-card,
 .row .product-thumb {

@@ -40,7 +40,7 @@ Route::get('/shop/{id}/category','HomeController@showCategory');
 
 #checkout routes
 
-#Route::get('/checkout-address','CheckoutController@checkoutAddress');
+Route::get('/checkout-address','CheckoutController@checkoutAddress');
 Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth:buyer');
 Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth:buyer');
 Route::get('/checkout-complete','CheckoutController@checkoutComplete')->middleware('auth:buyer');
@@ -48,6 +48,7 @@ Route::get('/checkout-payment','PaymentsController@payment');
 Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
+Route::get('/shop-seller/{id}','HomeController@shopSeller');
 
 #sitepages
 Route::get('/about','HomeController@about');
@@ -84,6 +85,9 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::post('admin-login', 'Auth\LoginController@login');
 
 	Route::get('admin/sellers','AdminController@sellers');
+	Route::get('admin/customers','HomeController@customers');
+	Route::get('admin/customers/{id}','HomeController@customerDetails');
+	Route::get('admin/sellers/{id}','HomeController@sellerDetails');
 
 	Route::get('admin/home-page','AdminController@homePage')->name('homepage-manager');
 
@@ -140,7 +144,7 @@ Route::get('/show', function()
 	});
 	
 	
-    return $img->response();
+    return view('front.map');
 });
 
 
