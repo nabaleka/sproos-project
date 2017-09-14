@@ -37,6 +37,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('adminscript/plugins/select2/select2.min.css') }}">
   <link rel="stylesheet" href="{{ asset('adminscript/plugins/datatables/dataTables.bootstrap.css') }}">
 
+  <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+
 
   <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
 
@@ -173,7 +178,17 @@ background : #ee2956;
 	border-color: transparent;
 	border-radius: 20px;
 }
+
+body{
+  display:none;
+}
 </style>
+      <script>
+        $( document ).ready(function() {
+            $("body").show('fast').fadeIn(1000);
+        });
+    </script>
+
 
   <!-- Google Font -->
 
@@ -383,11 +398,8 @@ background : #ee2956;
 <!-- REQUIRED JS SCRIPTS -->
 <!-- jQuery 3 -->
 
-<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
-
 <!-- Bootstrap 3.3.7 -->
 
-<script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
 <!-- AdminLTE App -->
 

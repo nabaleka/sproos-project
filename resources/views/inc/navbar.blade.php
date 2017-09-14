@@ -3,26 +3,7 @@
     <!-- Remove ".navbar-sticky" class to make navigation bar scrollable with the page.-->
 
     <header class="navbar navbar-sticky" style="margin-bottom:0;">
-
       <!-- Search-->
-      
-<form class="site-search" method="post" action="/search" id="search">
-   
-        <input type="text" name="search_data" class="col-sm-8" placeholder="Type to search and press Enter">
-        <div class="search-tools">
-       
-          <select class="form-control" style="display:inline; width:150px;">
-            @foreach($categories as $category)
-            <option value='{{ $category->id }}'>{{ $category->title}}</option>
-            @endforeach
-          </select>
-          <span class="clear-search"><button class="btn btn-primary">SEARCH </button></span>
-          <span class="close-search"><i class="icon-cross"></i></span>
-        </div>
-    
-
-      </form>
-
       <div class="site-branding">
 
         <div class="inner">
@@ -42,6 +23,7 @@
       <nav class="site-menu">
 
         <ul>
+        
 
           <li><a href="/"><span>Home</span></a>
 
@@ -69,20 +51,22 @@
 
           </li>
           @endif
+
+          <li style="display:flex-box; min-width:400px;"><form class="input-group form-group " style="margin-bottom:0;" method="post" action="/search"><span class="input-group-btn" >
+                {{ csrf_field()}}
+                    <button type="submit" class=" btn-primary" style="color:#ee2956;"><i class="icon-search"></i></button></span>
+                  <input class="form-control" style="border:unset; border-bottom:1px ;" type="search" name="search_data" placeholder="Search by Category, Name, Price">
+                </form></li>
         </ul>
 
       </nav>
-
       <!-- Toolbar-->
 
       <div class="toolbar">
 
         <div class="inner">
 
-          <div class="tools">
-
-            <div class="search"><i class="icon-search"></i></div>
-            
+          <div class="tools">           
 
             <div class="account"><a href="/account-orders"></a><i class="icon-head"></i>
             @if(!Auth::guard('buyer')->check())

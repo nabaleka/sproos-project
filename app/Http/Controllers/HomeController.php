@@ -232,6 +232,7 @@ class HomeController extends Controller
    ->get()->first();
    $allproducts = Products::all();
    $categories = categories::all();
+   $cartItems = Cart::content();
    //$products = Products::find($id); // get prodcut by id
 
    //
@@ -241,12 +242,18 @@ class HomeController extends Controller
 
 
    public function search(Request $request) {
+    $categories = categories::all();
+    $cartItems = Cart::content();
+
+    //Get the search term from the request.
     $search = $request->search_data;
+
+    //Check if search string is empty or null
     if ($search == '') {
         return "Empty search";
     } else {
-        $Products = DB::table('products')->where('name', 'like', '%' . $search . '%');
-        return view('front.shop.shop-list', ['msg' => 'Results: ' . $search], compact('products'));
+        $products = DB::table('products')->where('name', 'like', '%' . $search . '%');
+        return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
     }
     
 }

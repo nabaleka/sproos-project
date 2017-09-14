@@ -5,7 +5,9 @@
       <div class="page-title">
         <div class="container">
           <div class="column">
-            <h1>Search Results for: Lorem ipsum</h1>
+          @if($search)
+            <h1>Search Results for: {{$search}}</h1>
+          @endif
           </div>
           <div class="column">
           </div>
