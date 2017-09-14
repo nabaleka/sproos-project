@@ -494,7 +494,7 @@ body{
      <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
 
     <!-- Styles -->
-        <script>
+    <script>
         $( document ).ready(function() {
             $("body").show('slow').fadeIn(10000).delay(3000);
         });

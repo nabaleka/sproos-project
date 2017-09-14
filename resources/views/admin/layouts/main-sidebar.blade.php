@@ -64,8 +64,19 @@
 
         <!-- Optionally, you can add icons to the links -->
 
-        <li class="active" style="background:#cbcbcd;"><a href="/admin/home"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        <li><a href="/admin/home"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a></li>
+        <!-- Banners -->
+        <li><a href="/admin/banner"><i class="fa fa-desktop"></i> <span>Banner</span></a></li>
+
+        <li><a href=""><i class="fa fa-inbox"></i><span>Orders</span></a></li>
+
+
+        <li><a href="#"><i class="fa fa-line-chart"></i><span>Reports</span></a></li>
+
+        <li><a href="{{ route('homepage-manager') }}"><i class="fa fa-gears"></i><span>Manage</span></a></li>
+
+        <li><a href="/admin/category"><i class="fa fa-shopping-cart"></i><span>Categories</span></a></li>
 
         <li class="treeview"><a href="/admin/stats"><i class="fa fa-users"></i> <span>Accounts</span>
                     <span class="pull-right-container">
@@ -85,168 +96,16 @@
         
         </li>
 
-        <!-- Admin -->
-
-        <li class="treeview">
-
-          <a href="#"><i class="fa fa-desktop"></i> <span>Manage</span>
-
-            <span class="pull-right-container">
-
-                <i class="fa fa-angle-left pull-right"></i>
-
-              </span>
-
-          </a>
-
-          <ul class="treeview-menu">
-
-            <li><a href="#">Featured Products</a></li>
-
-            <li><a href="/admin/sellers">Sellers</a></li>
-
-            <li><a href="/admin/home-page">Home Page</a></li>
-
-            <li><a href="/admin/category">Categories</a></li>
-
-            <li><a href="#">Revenue</a></li>
-
-            <li><a href="#">Payment Methods</a></li>
-
-            <li><a href="/admin/roles">Roles</a></li>
-
-          </ul>
-
-        </li>
+        <li><a href="/admin/profile"><i class="fa fa-user"></i><span>Admin</span></a></li>
 
 
-        <!-- Shipping -->
-
-        <li class="treeview">
-
-          <a href="#"><i class="fa fa-truck"></i> <span>Shipping</span>
-
-            <span class="pull-right-container">
-
-                <i class="fa fa-angle-left pull-right"></i>
-
-              </span>
-
-          </a>
-
-          <ul class="treeview-menu">
-
-            <li><a href="#">Methods</a></li>
-
-            <li><a href="#">Geography</a></li>
-
-          </ul>
-
-        </li>
-
+     
 
 
       <!-- Orders-->
 
-        <li class="treeview">
-
-          <a href="/admin/orders"><i class="fa fa-money"></i> <span>Orders</span>
-
-            <span class="pull-right-container">
-
-                <i class="fa fa-angle-left pull-right"></i>
-
-              </span>
-
-          </a>
-
-          <ul class="treeview-menu">
-
-            <li><a href="admin/invoices">Invoices</a></li>
-
-            <li><a href="/admin/orders">View Orders</a></li>
-
-            <li><a href="#">Summary</a></li>
-
-          </ul>
-
-        </li>
-        <!-- Revenue -->
-
-        <li class="treeview">
-
-          <a href="#"><i class="fa fa-bar-chart"></i> <span>Revenue</span>
-
-            <span class="pull-right-container">
-
-                <i class="fa fa-angle-left pull-right"></i>
-
-              </span>
-
-          </a>
-
-          <ul class="treeview-menu">
-
-            <li><a href="#">Summary</a></li>
-
-            <li><a href="#">Sales</a></li>
-
-            <li><a href="#">Commission</a></li>
-
-          </ul>
-
-        </li>
-
-
-
-
-        <!-- Email -->
-
-        <li class="treeview">
-
-          <a href="#"><i class="fa fa-envelope-o"></i> <span>Messages</span>
-
-            <span class="pull-right-container">
-
-                <i class="fa fa-angle-left pull-right"></i>
-
-              </span>
-
-          </a>
-
-          <ul class="treeview-menu">
-
-            <li><a href="#">Inbox</a></li>
-
-            <li><a href="#">Templates</a></li>
-
-            <li><a href="#">Users</a></li>
-
-          </ul>
-
-        </li>
-
-      <!-- Products -->
-
-        <li class="treeview">
-
-          <a href="#"><i class="fa fa-circle"></i> <span>Products</span>
-
-            <span class="pull-right-container">
-
-                <i class="fa fa-angle-left pull-right"></i>
-
-              </span>
-
-          </a>
-
-          <ul class="treeview-menu">
-
-            <li><a href="/admin/products">View All</a></li>
-
-          </ul>
-
-        </li>
+        
+     
 
       </ul>
 

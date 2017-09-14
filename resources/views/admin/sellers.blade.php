@@ -136,18 +136,8 @@
       <!-- / Sellers table-->
 
 
-
-      <!--
-      Charts
-      -->
-
-            <!-- /.box-body-->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+</div>
+  <!-- /.row -->
 
       <!-- /. Charts -->
   <!-- /.content -->

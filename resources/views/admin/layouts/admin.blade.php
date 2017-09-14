@@ -9,23 +9,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Sproos | Administrator</title>
+  
 
   <!-- Tell the browser to be responsive to screen width -->
 
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
   <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
-
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/logo/favicon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/logo/favicon.png') }}">
   <!-- Font Awesome -->
-
   <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
-
   <!-- Ionicons -->
-
   <link rel="stylesheet" href="{{ asset('bower_components/Ionicons/css/ionicons.min.css')}}">
-  <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('bower_components/chart.js/dist/Chart.bundle.js') }}"></script>
+  <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js'></script>
+      <script>
+        $( document ).ready(function() {
+            $("body").show('fast').fadeIn(1000);
+        });
+    </script>
   
 
   <!-- Theme style -->
@@ -54,119 +58,94 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
   <![endif]-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
-
-<style>
-
-.skin-red .wrapper{
-  background : #fff;
-}
- .skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a, .skin-red .sidebar-menu > li.menu-open > a{
-background : #ee2956;
-}
-
-  .dropzone .dz-preview .dz-error-message {
-      top: 150px!important;
-  }
-
-  .box-body{
-    background-color:#fff;
-  }
-
-.treeview-menu > li > a{
-  background : #cbcbcd;0 
-}
-
-.skin-red .sidebar-menu > li > .treeview-menu{
-  background : #eff0f0;
-}
-
-.skin-red .sidebar-form input[type="text"]{
-  background : #eff0f0;
-}
-.skin-red .sidebar-form .btn{
-  background : #eff0f0;
-}
-
-.box{
-  background : #5d5d5d;
-}
-
-.box-title{
-  color : #fff;
-}
-.progress{
-  border-radius : 120px;
-  background : #ee2956;
-}
-
-.progress > .progress-bar, .progress .progress-bar{
-  border-radius : 10px;
-}
-
-.progress-bar-aqua{
-  background : #eff0f0;
-}
-
-.progress-bar-green{
-  background : #fff;
-}
-
-.progress-bar-yellow{
-  background : #cbcbcd;
-}
-
-.progress-bar-red{
-  background : #e6e7e9;
-}
-
-
-</style>
-
   <!-- Google Font -->
-
   <link rel="stylesheet" href="{{ asset('adminscript/plugins/select2/select2.min.css') }}">
   <link rel="stylesheet" href=" {{ url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic') }}">
+<style>
+  .skin-red .wrapper{
+    background : #fff;
+  }
 
+  body{
+
+  display:none;
+}
+  .skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a, .skin-red .sidebar-menu > li.menu-open > a{
+  background : #ee2956;
+  }
+
+    .dropzone .dz-preview .dz-error-message {
+        top: 150px!important;
+    }
+
+    .box-body{
+      background-color:#fff;
+    }
+
+  .treeview-menu > li > a{
+    background : #cbcbcd;0 
+  }
+
+  .skin-red .sidebar-menu > li > .treeview-menu{
+    background : #eff0f0;
+  }
+
+  .skin-red .sidebar-form input[type="text"]{
+    background : #eff0f0;
+  }
+  .skin-red .sidebar-form .btn{
+    background : #eff0f0;
+  }
+
+  .box{
+    background : #5d5d5d;
+  }
+
+  .box-title{
+    color : #fff;
+  }
+  .progress{
+    border-radius : 120px;
+    background : #ee2956;
+  }
+
+  .progress > .progress-bar, .progress .progress-bar{
+    border-radius : 10px;
+  }
+
+  .progress-bar-aqua{
+    background : #eff0f0;
+  }
+
+  .progress-bar-green{
+    background : #fff;
+  }
+
+  .progress-bar-yellow{
+    background : #cbcbcd;
+  }
+
+  .progress-bar-red{
+    background : #e6e7e9;
+  }
+</style>
 </head>
-
-
 <body class="hold-transition skin-red sidebar-mini ">
 
 <div class="wrapper">
-
-
-
   <!-- Main Header -->
   @include('admin.includes.main-header')
-
-  <!-- Left side column. contains the logo and sidebar -->
-
   @include('admin.layouts.main-sidebar')
-
-
 
   <!-- Content Wrapper. Contains page content -->
 
   <div class="content-wrapper">
-
-      <!-- Main content -->
-
-    <section class="content container-fluid">
-
+    <!-- Main content --> 
         @yield('content')
-
-    </section>
-
-
-
     <!-- /.content -->
-
   </div>
 
   <!-- /.content-wrapper -->
-
-
 
   <!-- Main Footer -->
 @include('admin.includes.admin-footer')
@@ -315,17 +294,8 @@ background : #ee2956;
     </div>
 
   </aside>
-
-  <!-- /.control-sidebar -->
-
-  <!-- Add the sidebar's background. This div must be placed
-
-  immediately after the control sidebar -->
-
   <div class="control-sidebar-bg"></div>
-
 </div>
-
 <!-- ./wrapper -->
 
 
@@ -333,8 +303,7 @@ background : #ee2956;
 <!-- REQUIRED JS SCRIPTS -->
 <!-- jQuery 3 -->
 
-
-
+<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap 3.3.7 -->
 
 <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
@@ -390,6 +359,33 @@ background : #ee2956;
 
 </script>
 
+<!-- Slimscroll -->
+<script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{asset('bower_components/fastclick/lib/fastclick.js')}}"></script>
+
+<!-- Morris.js charts -->
+<script src="{{ asset('bower_components/raphael/raphael.min.js') }}"></script>
+<script src="{{ asset('bower_components/morris.js/morris.min.js') }}"></script>
+<!-- Sparkline -->
+<script src="{{ asset('bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+
+<!-- jQuery Knob Chart -->
+<script src="{{ asset('bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
+<!-- daterangepicker -->
+<script src="{{ asset('bower_components/moment/min/moment.min.js') }}"></script>
+<script src="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+<!-- datepicker -->
+<script src="{{ asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
+
 </body>
 
 </html>
+
+<!-- jQuery UI 1.11.4 -->
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>

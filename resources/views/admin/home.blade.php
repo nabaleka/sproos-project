@@ -1,7 +1,18 @@
 @extends('admin.layouts.admin')
 
 @section('content')
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Full Control</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
 
+
+<section class="content">
       <!-- Info boxes -->
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -84,7 +95,7 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-
+<script src="{{ asset('bower_components/chart.js/dist/Chart.bundle.js') }}"></script>
           <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
@@ -162,7 +173,7 @@ var myChart = new Chart(ctx, {
           <!-- /.box -->
 </div>
 </div>
-
+</section>
 
 
 
