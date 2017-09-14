@@ -55,34 +55,11 @@
 
     <hr class="padding-bottom-1x">
 
-    <div class="table-responsive">
-
-        <table class="table">
-
-        <thead class="thead-default">
-
-            <tr>
-
-            <th>Shipping method</th>
-
-            <th>--</th>
-
-            <th>--</th>
-
-            <th></th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-           
-
-            <tr>
-
-            <td class="align-middle"><span class="text-medium">
-        <div id="locationField">
+    <form>
+    <div class="row">
+        <div class="col-md-12">
+        <div><!---Map-->
+     <div id="locationField">
       <input id="autocomplete" placeholder="Enter your address"
              onFocus="geolocate()" type="text"></input>
     </div>
@@ -119,39 +96,186 @@
       </tr>
     </table>
 
-            </span><br><span class="text-muted text-sm">East Africa Only!</span></td>
+    <script>
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
 
-            <td class="align-middle">&mdash;</td>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-            <td class="align-middle">&mdash;</td>
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
 
-            <td class="align-middle">
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['establishment']});
 
-                <label class="custom-control custom-radio">
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
 
-                <input class="custom-control-input" type="radio" name="shipping" value="2,400.00" ><span class="custom-control-indicator"></span>
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
 
-                </label>
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
 
-            </td>
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
 
-            </tr>
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+        </div>
 
-            
-
-        </tbody>
-
-        </table>
-
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-fn">Label</label>
+            <input class="form-control" type="text" id="checkout-date" required="" name="deliveryDate"  placeholder="TODAY">
+        </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+        <label for="checkout-fn">Type of Location</label>
+        <div class="col-sm-6">
+        <label class="custom-control custom-checkbox">
+        <input class="custom-control-input" name="location" type="radio" checked><span class="custom-control-indicator"></span><span class="custom-control-description"><b>Residential</b></span>
+        </label>
+        </br>
+        <label class="custom-control custom-checkbox">
+        <input class="custom-control-input" name="location" type="radio" checked><span class="custom-control-indicator"></span><span class="custom-control-description"><b>Business</b></span>
+        </label></div>
+        </div>
+        </div>
     </div>
-
-    <div class="checkout-footer margin-top-1x">
-
-        
-
-       <div class="column"><a href="/checkout-payment" class="btn btn-primary"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
-
+    <div class="row">
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-email">Estate/Building:</label>
+            <input class="form-control" type="text" id="checkout-instructions" required="" name="deliveryInstructions"  placeholder="e.g Call me when you arrive">
+        </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label for="checkout-phone">Room/House/Suite No:</label>
+            <input class="form-control" type="text" id="checkout-phone" required="" name="phoneNumber"  placeholder="0710000001">
+        </div>
+        </div>
     </div>
+    
+    </form>
+
+    <script>
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['establishment']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZSJPcHGJJY7d5oaxbq7FYvkjaBLBM-k4&libraries=places&callback=initAutocomplete"
+        async defer></script>
+
+    </div><!-- End map -->
+
 
     </div>
 

@@ -251,5 +251,16 @@ class HomeController extends Controller
     
 }
 
+public function hi(Request $request){
+
+    return 'Request Received';
+
+}
+
+public function theme(){
+    
+    return view('theme');
+}
+
 
 }

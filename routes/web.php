@@ -150,3 +150,8 @@ Route::get('/show', function()
 
 Route::get('resizeImage','ImageController@resizeImage');
 Route::post('resizeImagePost','ImageController@resizeImagePost')->name('resizeImagePost');
+
+Route::post('/hi','HomeController@hi')->name('hi');
+
+//Test Theme
+Route::get('/theme', 'HomeController@theme');
