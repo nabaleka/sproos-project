@@ -7,6 +7,7 @@ use App\Seller;
 use App\Http\Controllers\Controller;
 use App\Model\admin\categories;
 
+
 class AdminController extends Controller
 {
     /* Restricts access to only the admin */
@@ -33,8 +34,8 @@ class AdminController extends Controller
         #Manage site sellers
         #top sellers
         #All sellers
-        $sellers = Seller::all();
-        return view('admin/sellers', compact('sellers'));
+        $sellers=seller::all();
+        return view('admin/sellers',compact('sellers'));
     }
 
     public function revenue(){

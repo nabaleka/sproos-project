@@ -27,8 +27,8 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $latest_products = DB::table('order_details')
+    {   
+        $best_sellers = DB::table('order_details')
         ->leftjoin('products', 'products.id', '=', 'order_details.product_id')
         ->leftjoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
         ->select('order_details.product_id','products.price','products.name','products.image')
@@ -36,8 +36,8 @@ class HomeController extends Controller
         ->take(4)
         ->get();
        
-        $best_sellers = DB::table('products')
-        ->join('order_details', 'order_details.product_id', '=', 'products.id')
+        $latest_products = DB::table('products')
+        ->orderBy('updated_at','DESC')
         ->take(4)
         ->get();
      

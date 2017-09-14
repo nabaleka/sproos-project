@@ -87,6 +87,7 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::get('admin/sellers','AdminController@sellers');
 	Route::get('admin/customers','HomeController@customers');
 	Route::get('admin/customers/{id}','HomeController@customerDetails');
+	Route::get('admin/sellers/{id}','HomeController@sellerDetails');
 
 	Route::get('admin/seller/{id}','HomeController@sellerDetails');
 

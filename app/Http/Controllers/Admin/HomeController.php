@@ -7,6 +7,7 @@ use App\User;
 use App\Orders;
 use App\Model\admin\categories;
 use App\Http\Controllers\Controller;
+use DB;
 class HomeController extends Controller
 {
 	/**
@@ -43,8 +44,9 @@ class HomeController extends Controller
     {
 		$sellers = Seller::all();
 		$products = products::all();
+		
 		$users = User::all();
-		$orders = Orders::all();
+	
 		return view('admin/customers',compact('products','sellers','users','orders'));
     }
 
@@ -52,16 +54,23 @@ class HomeController extends Controller
     {
 		
 		$user = User::findOrFail($id);
-		$orders = Orders::all();
+		$orders = DB::table('order_details')
+		->leftJoin('products', 'products.id', '=', 'order_details.product_id')
+		->leftJoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
+	   ->where('order_details.user_id', '=', $id)
+		->get();
 		return view('admin/customers-details',compact('products','sellers','user','orders'));
 	}
-	
 	public function sellerDetails($id)
     {
 		
-		$seller = Seller::findOrFail($id);
-		$orders = Orders::all();
-		return view('admin/seller-details',compact('products','seller','orders'));
+		$user = User::findOrFail($id);
+		$orders = DB::table('order_details')
+		->leftJoin('products', 'products.id', '=', 'order_details.product_id')
+		->leftJoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
+	   ->where('products.seller_id', '=', $id)
+		->get();
+		return view('admin/sellers-details',compact('products','sellers','user','orders'));
     }
 
 }

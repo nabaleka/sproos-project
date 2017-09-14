@@ -21,9 +21,9 @@
               <!-- Entry-->
                 @foreach($latest_products as $latest)
               <div class="entry">
-                <div class="entry-thumb"><a href="/shop-single/{{$latest->product_id}}"><img src="{{asset('uploads/'.$latest->image) }}" alt="Product"></a></div>
+                <div class="entry-thumb"><a href="/shop-single/{{$latest->id}}"><img src="{{asset('uploads/'.$latest->image) }}" alt="Product"></a></div>
                 <div class="entry-content">
-                  <h4 class="entry-title"><a href="/shop-single/{{$latest->product_id}}">{{$latest->name}}</a></h4><span class="entry-meta">Ksh. {{$latest->price}}</span>
+                  <h4 class="entry-title"><a href="/shop-single/{{$latest->id}}">{{$latest->name}}</a></h4><span class="entry-meta">Ksh. {{$latest->price}}</span>
                 </div>
               </div>
               @endforeach

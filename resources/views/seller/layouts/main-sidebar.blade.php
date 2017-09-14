@@ -109,7 +109,7 @@
         <!-- Account -->
         <li><a href="{{route('seller.profile')}}"><i class="fa fa-gear"></i> <span>Account</span></a></li>
 
-
+           <li><a href="{{route('seller.logout')}}"><i class="fa fa-gear"></i> <span>Logout</span></a></li>
       </ul>
 
       <!-- /.sidebar-menu -->

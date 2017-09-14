@@ -99,26 +99,32 @@
               </div>
             </div>
             <!-- /.box-header -->
+          
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
                   <th>Seller ID</th>
                   <th>Name </th>
-                  <th>Date</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th>Email</th>
+                  <th>phonenumber</th>
+                  <th>About</th>
+                    <th>Date</th>
+                      <th>status</th>
                 </tr>
-             
-              @foreach($sellers as $seller)
                 <tr>
+                  @foreach($sellers as $seller)
                   <td>{{$seller->id}}</td>
-                  <td>{{ $seller->first_name." ".$seller->last_name}}</td>
-                  <td>{{$seller->created_at}}</td>
-                  <td><span class="label label-primary">Approved</span></td>
-                  <td><a href="/admin/seller/{{$seller->id}}">View</a></td>
+                  <td>{{$seller->first_name}} {{$seller->last_name}}</td>
+                  <td>{{$seller->email}}</td>
+                  <td>{{$seller->phonenumber}}</td>
+                  <td>Accessories seller</td>
+                    <td>joined {{  \Carbon\Carbon::createFromTimeStamp(strtotime($seller->created_at))->diffForHumans() }}</td>
+                  <td><a href="/admin/sellers/{{ $seller->id }}">View</a></td>
+                  
                 </tr>
-              @endforeach 
-                
+                <tr>
+                @endforeach
+                 
               </table>
             </div>
             <!-- /.box-body -->
