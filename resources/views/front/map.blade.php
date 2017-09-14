@@ -17,8 +17,6 @@
         padding: 0;
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtz-30-U_prFlr5ZHnAzjYR3_q3nizTaI&libraries=places&callback=initAutocomplete"
-        async defer></script>
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <style>
       #locationField, #controls {
@@ -123,7 +121,7 @@
         // location types.
         autocomplete = new google.maps.places.Autocomplete(
             /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
+            {types: ['establishment']});
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
@@ -168,5 +166,7 @@
         }
       }
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZSJPcHGJJY7d5oaxbq7FYvkjaBLBM-k4&libraries=places&callback=initAutocomplete"
+        async defer></script>
   </body>
 </html>
