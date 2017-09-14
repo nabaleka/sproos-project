@@ -88,6 +88,8 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::get('admin/customers','HomeController@customers');
 	Route::get('admin/customers/{id}','HomeController@customerDetails');
 
+	Route::get('admin/seller/{id}','HomeController@sellerDetails');
+
 	Route::get('admin/home-page','AdminController@homePage')->name('homepage-manager');
 
 	Route::get('admin/featured-products','AdminController@featuredProducts');

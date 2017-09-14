@@ -51,6 +51,14 @@ class HomeController extends Controller
 		$user = User::findOrFail($id);
 		$orders = Orders::all();
 		return view('admin/customers-details',compact('products','sellers','user','orders'));
+	}
+	
+	public function sellerDetails($id)
+    {
+		
+		$seller = Seller::findOrFail($id);
+		$orders = Orders::all();
+		return view('admin/seller-details',compact('products','seller','orders'));
     }
 
 }
