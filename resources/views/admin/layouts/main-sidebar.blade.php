@@ -69,10 +69,10 @@
         <!-- Banners -->
         <li><a href="/admin/banner"><i class="fa fa-desktop"></i> <span>Banner</span></a></li>
 
-        <li><a href=""><i class="fa fa-inbox"></i><span>Orders</span></a></li>
+        <li><a href="{{ route('admin.orders')}}"><i class="fa fa-inbox"></i><span>Orders</span></a></li>
 
 
-        <li><a href="#"><i class="fa fa-line-chart"></i><span>Reports</span></a></li>
+        <li><a href="{{ route('admin.reports')}}"><i class="fa fa-line-chart"></i><span>Reports</span></a></li>
 
         <li><a href="{{ route('homepage-manager') }}"><i class="fa fa-gears"></i><span>Manage</span></a></li>
 

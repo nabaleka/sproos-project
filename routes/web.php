@@ -96,6 +96,10 @@ Route::group(['namespace' => 'Admin'],function(){
 	
 	Route::resource('admin/banner','BannerController');
 
+	Route::get('admin/orders', 'OrdersController@showOrders')->name('admin.orders');
+
+	Route::get('admin/reports', 'ReportsController@showReports')->name('admin.reports');
+
 });
 
 
