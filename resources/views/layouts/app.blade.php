@@ -54,10 +54,6 @@
 
     <!-- Main Styles-->
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
 
     <style>
@@ -663,7 +659,7 @@ body{
 
     <!-- Scripts -->
     
-
+</div>
     
 
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
