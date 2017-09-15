@@ -350,7 +350,7 @@ if ($request->hasFile('image4'))
         $orders = DB::table('order_details')
                   ->leftJoin('products', 'products.id', '=', 'order_details.product_id')
                   ->leftJoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
-                 ->where('seller_id', '=', Auth::guard('seller')->user()->id)
+                 ->where('orders.seller_id', '=', Auth::guard('seller')->user()->id)
                   ->get();
          return view('seller/seller-orders',compact('orders'));
      

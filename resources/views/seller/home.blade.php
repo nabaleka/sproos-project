@@ -95,11 +95,15 @@
                 @foreach($orders as $order)
                 <!-- Loop through Orders -->
                 <tr>
-                  <td>-oo</td>
                   <td>--</td>
-                  <td>--</td>
-                  <td>--</td>
-                  <td>00</td>
+                  <td>
+                  @if($order->status == 2)
+                    <span>pending</span>
+                  @endif
+                  </td>
+                  <td>{{$order->unique_order_id}}</td>
+                  <td>{{$order->created_at}}</td>
+                  <td>{{$order->price}}</td>
                 </tr>
 
                 @endforeach
