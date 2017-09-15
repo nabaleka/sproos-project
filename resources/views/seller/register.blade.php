@@ -53,12 +53,11 @@
          b{
            color : #ee2956;
          }
-         
-         }
-         .form-control {
+        
+         .form-control{
 	          border-radius: 20px;
 	          box-shadow: none;
-	          border-color: #ee2956;
+	          border-color: #e6e7e9;
 
          }
 
@@ -225,8 +224,8 @@
         </div>
 
         <!-- /.col -->
-        <div class="col-xs-12">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register Me</button>
+        <div class="col-xs-6 badding-tp-2x">
+          <button type="submit" class="btn btn-primary btn-block btn-flat" style="border-radius:10px;">Register Me</button>
         </div>
         <!-- /.col -->
       </div>
@@ -236,7 +235,7 @@
     </form>
     <a href="/seller-login" class="text-center">I'm already a seller?</a></br>
     <div>
-    <a href="/" class="btn btn primary" style="border-color : #ee2956;">Buy on Sproos</a>
+    <a href="/" class="btn btn primary" style="background-color : #e6e7e9; border-radius:20px;">Buy on Sproos</a>
     </div>
   </div>
   <!-- /.form-box -->
