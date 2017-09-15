@@ -21,14 +21,11 @@
 
 <!-- CSRF Token -->
    <meta name="csrf-token" content="{{ csrf_token() }}">
+   <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
     
 
 
-<script>
-    window.Laravel = <?php echo json_encode([
-        'csrfToken' => csrf_token(),
-    ]); ?>
-</script>
+
 
     <title>Sproos</title>
 
@@ -53,38 +50,24 @@
     <!-- Vendor Styles including: Bootstrap, Font Icons, Plugins, etc.-->
 
     <link rel="stylesheet" media="screen" href="{{ asset('css/vendor.min.css') }}">
+    <link rel="stylesheet"  href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
 
     <!-- Main Styles-->
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
 
     <style>
 
-    .cat:hover{
-      background-color:#ee2956;
-    }
-
-.row .product-card,
-.row .product-thumb {
-  flex:1 0 auto;
-  flex-direction:column;
-}
-.product-text {
-  flex-grow:1
-}
-.flex-row img {
-  height:auto;
-  width:100%
-}
 .owl-carousel .owl-dots .owl-dot{
   background : #ee2659;
   
 }
 
-    img{
-      width : 100%;
-    }
+   
     .site-menu > ul > li > a {
       letter-spacing:3px;
     }
@@ -108,9 +91,7 @@
     
 
     .navbar{
-
         background-color : #ee2956;
-
     }
 
     
@@ -123,6 +104,10 @@
 
     }
 
+    .card-img-tiles{
+      border:0;
+    }
+
 
 
     .toolbar .account{
@@ -133,9 +118,10 @@
 
     }
 
-  .cat:hover{
-    background-color:#fefefe;
-  }
+    .toolbar .cart:hover, .toolbar .account:hover{
+      color:#ee2956;
+    }
+
     
 
     .toolbar .cart{
@@ -234,6 +220,12 @@
 
         color:#fff;
 
+      }
+
+      .categories:hover{
+        background-blend-mode: none !important;
+        background-color:transparent !important;
+        transition:1s;
       }
 
 
@@ -488,12 +480,16 @@ body{
     </style>
 
     <!-- Modernizr-->
-     <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+     
 
     <!-- Styles -->
     <script>
         $( document ).ready(function() {
+<<<<<<< HEAD
             $("body").show('slow').fadeIn(10000);
+=======
+            $("body").show('fast').fadeIn(5000);
+>>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
         });
     </script>
 
@@ -501,6 +497,7 @@ body{
     
 
 </head>
+
 
 <body>
 
@@ -517,7 +514,7 @@ body{
       <nav class="offcanvas-menu">
         <ul class="menu">
         @foreach($categories as $category)
-         <li><span><a href="/shop/{{ $category->id }}/category">{{ $category->title}}</a></span></li>
+         <li style=""><span><a href="/shop/{{ $category->id }}/category">{{ $category->title}}</a></span></li>
         @endforeach
 
         </ul>
@@ -533,10 +530,17 @@ body{
       <nav class="offcanvas-menu">
 
         <ul class="menu">
+        <li style="width:unset; padding:10px; background-color:#5d5d5d;">
+          <form class="input-group form-group " style="margin-bottom:-5px;" method="post" action="/hi"><span class="input-group-btn" >
+                {{ csrf_field()}}
+                    <button type="submit" class=" btn-primary" style="color:#ee2956;"><i class="icon-search"></i></button></span>
+                  <input class="form-control" style="border:unset; border-bottom:1px ;" type="search" placeholder="Search for anything">
+          </form></li>
 
-          <li class="active"><a href="/"><span>Home</span></a></li>
+         <li class="active"><a href="/"><span><i class="fa fa-home" style="font-size:150%;"></i> Home</span></a></li>
 
-          <li class="has-children"><span><a href="/shop-grid"><span>Categories</span></a><span class="sub-menu-toggle"></span></span>
+
+          <li class="has-children"><span><a href="/shop-grid"><span><i class="fa fa-navicon" style="font-size:150%; letter-spacing:8px;"></i>Categories</span></a><span class="sub-menu-toggle"></span></span>
 
             <ul class="offcanvas-submenu">
               @foreach($categories as $category)
@@ -546,9 +550,10 @@ body{
 
           </li>
 
-          <li><span><a href="/shop-grid">SHop Now</a></span></li>
+          
+          <li><span><a href="/shop-grid"><i class="fa fa-shopping-cart" style="font-size:150%; letter-spacing:8px;"></i> SHop Now</a></span></li>
 
-          <li class="has-children"><span><a href="/account-profile"><span>My Account</span></a><span class="sub-menu-toggle"></span></span>
+          <li class="has-children"><span><a href="/account-profile"><span><i class="fa fa-user" style="font-size:150%; letter-spacing:8px;"></i> My Account</span></a><span class="sub-menu-toggle"></span></span>
           
             <ul class="offcanvas-submenu">
                
@@ -563,7 +568,7 @@ body{
 
                 <li><a href="/account-profile">Profile Page</a></li>
 
-                <li><a href="/account-address">Contact / Shipping Address</a></li>
+                <li><a href="/account-address"><i class="fa fa-address-book" style="font-size:150%; letter-spacing:8px;"></i> Contact / Shipping Address</a></li>
 
                 @endif
 
@@ -571,15 +576,15 @@ body{
 
           </li>
           
-          <li><span><a href="/contact-us">Contact Us</a></span></li>
+          <li><span><a href="/contact-us"><i class="fa fa-address-book" style="font-size:150%; letter-spacing:8px;"></i>Contact Us</a></span></li>
 
-          <li></i><a href="#"><span>Seller Guide</span></a></li>
+          <li></i><a href="#"><span><i class="fa fa-book" style="font-size:150%; letter-spacing:8px;"></i>Seller Guide</span></a></li>
 
-          <li></i><a href="#"><span>Return Policy</span></a></li>
+          <li></i><a href="#"><span><i class="fa fa-reply" style="font-size:150%; letter-spacing:8px;"></i>Return Policy</span></a></li>
 
-          <li></i><a href="#"><span>Share App</span></a></li>
+          <li></i><a href="#"><span><i class="fa fa-users"></i> Share App</span></a></li>
 
-          <li></i><a href="/faq"><span>FAQ / Help</span></a></li>
+          <li></i><a href="/faq"><span><i class="fa fa-info-circle" style="font-size:150%; letter-spacing:8px;"></i>FAQ / Help</span></a></li>
           
 
         </ul>
@@ -617,25 +622,12 @@ body{
 
                 <option value="usd">KES </option>
 
-                <option value="usd">$ USD</option>
-
-                <option value="usd">â‚¬ EUR</option>
-
-                <option value="usd">Â£ UKP</option>
-
-                <option value="usd">Â¥ JPY</option>
-
               </select>
 
             </div>
 
             <a class="dropdown-item" href="#"><img src="{{ asset('img/flags/KE.png') }}" alt="English">English</a>
 
-            <a class="dropdown-item" href="#"><img src="{{ asset('img/flags/FR.png') }}" alt="FranÃ§ais">FranÃ§ais</a>
-
-            <a class="dropdown-item" href="#"><img src="{{ asset('img/flags/DE.png') }}" alt="Deutsch">Deutsch</a>
-
-            <a class="dropdown-item" href="#"><img src="{{ asset('img/flags/IT.png') }}" alt="Italiano">Italiano</a>
 
           </div>
 
@@ -647,6 +639,8 @@ body{
 
     @include('inc.navbar')
 
+  
+
     <!-- Off-Canvas Wrapper-->
 
     <div class="offcanvas-wrapper">
@@ -655,7 +649,7 @@ body{
 
     @yield('content')
 
-@include('inc.footer')
+    @include('inc.footer')
 
     </div>
 
@@ -678,7 +672,8 @@ body{
 
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
 
-    <script src="{{ asset('js/app.js') }}"></script>
+   
+  <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('js/modernizr.min.js') }}"></script>
     <script src="{{ asset('js/vendor.min.js') }}"></script>
     <script src="{{ asset('js/scripts.min.js') }}"></script>

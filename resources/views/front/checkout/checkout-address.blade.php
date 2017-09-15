@@ -28,10 +28,17 @@
     <div class="col-xl-9 col-lg-8">
 
     <div class="checkout-steps">
+<<<<<<< HEAD
        <a href="">4. Payment</a>
         <a href=""><!--span class="angle"></span-->3. Review</a>
         <a href="" class="active"><!--span class="angle"></span-->2. Address</a>
         <a class="completed" href=""><span class="step-indicator icon-circle-check"></span>1. Shipping</a>
+=======
+        <a href="/checkout-review">4. Payment</a>
+        <a href="/checkout-payment"><!--span class="angle"></span-->3. Review</a>
+        <a href="/checkout-shipping" class="active"><!--span class="angle"></span-->2. Address</a>
+        <a class="completed" href="checkout-address.html"><span class="step-indicator icon-circle-check"></span>1. Shipping</a>
+>>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
     </div>
 
 
@@ -204,12 +211,17 @@
      <!-- Sidebar          -->
             <aside class="sidebar">
               <div class="padding-top-2x hidden-lg-up"></div>
+<<<<<<< HEAD
                 <!-- Order Summary Widget-->
+=======
+              <!-- Order Summary Widget-->
+>>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
               <section class="widget widget-order-summary">
                 <h3 class="widget-title">Order Summary</h3>
                 <table class="table">
                   <tr>
                     <td>Cart Subtotal:</td>
+<<<<<<< HEAD
                     <td class="text-medium">{{Cart::subtotal()}}</td>
                   </tr>
                   <tr>
@@ -226,6 +238,25 @@
                   </tr>
                 </table>
               </section>
+=======
+                    <td class="text-medium">$289.68</td>
+                  </tr>
+                  <tr>
+                    <td>Shipping:</td>
+                    <td class="text-medium">$22.50</td>
+                  </tr>
+                  <tr>
+                    <td>Estimated tax:</td>
+                    <td class="text-medium">$3.42</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="text-lg text-medium">$315.60</td>
+                  </tr>
+                </table>
+              </section>
+              
+>>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
     </aside>
     </div>
 </div>

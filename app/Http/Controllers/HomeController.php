@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Products;
 use App\Banner;
+use App\Orders;
 use App\Model\admin\categories;
 use Gloudemans\Shoppingcart\Facades\Cart; // for cart lib
 
@@ -114,7 +115,9 @@ class HomeController extends Controller
 
     public function checkoutPayment(){
         $cartItems = Cart::content();
-        $products = Products::all();
+        $products = Products::all();       
+        
+        $orders = Orders::all();
         $categories = categories::all();
         return view ('front.checkout.checkout-payment',compact('cartItems','categories'))->with('products', $products);
     }
@@ -216,6 +219,7 @@ class HomeController extends Controller
    ->get()->first();
    $allproducts = Products::all();
    $categories = categories::all();
+   $cartItems = Cart::content();
    //$products = Products::find($id); // get prodcut by id
 
    //
@@ -225,12 +229,29 @@ class HomeController extends Controller
 
 
    public function search(Request $request) {
+    $categories = categories::all();
+    $cartItems = Cart::content();
+
+    //Get the search term from the request.
     $search = $request->search_data;
+
+    //Check if search string is empty or null
     if ($search == '') {
-        return "Empty search";
+        //Bring in all items
+        $products= DB::table('products')
+        ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+        ->select('products.*', 'categories.*')
+        ->get();
+        return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
     } else {
-        $Products = DB::table('products')->where('name', 'like', '%' . $search . '%');
-        return view('front.shop.shop-list', ['msg' => 'Results: ' . $search], compact('products'));
+
+        //Use the search term to find data
+        //$products = DB::table('products')->get();
+        $products= DB::table('products')
+        ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+        ->select('products.*', 'categories.*')
+        ->get();
+        return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
     }
     
 }
