@@ -42,6 +42,7 @@ class SellerRegisterController extends Controller
             'phonenumber' => 'required|min:10|max:15',
             'email' => 'required|email|max:255|unique:sellers',
             'password' => 'required|min:6|confirmed',
+            
         ]);
     }
 

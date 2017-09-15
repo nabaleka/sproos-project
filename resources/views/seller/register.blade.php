@@ -224,20 +224,37 @@
         </div>
 
         <!-- /.col -->
+<<<<<<< HEAD
         <div class="col-xs-6 badding-tp-2x">
           <button type="submit" class="btn btn-primary btn-block btn-flat" style="border-radius:10px;">Register Me</button>
         </div>
+=======
+        
+>>>>>>> 795068995fb16fdd52cd322e708844c0adc5bacd
         <!-- /.col -->
       </div>
   </div>
 
   </div><!-- Row-->
+<<<<<<< HEAD
     </form>
     <a href="/seller-login" class="text-center">I'm already a seller?</a></br>
     <div>
     <a href="/" class="btn btn primary" style="background-color : #e6e7e9; border-radius:20px;">Buy on Sproos</a>
     </div>
+=======
+    
+    
+>>>>>>> 795068995fb16fdd52cd322e708844c0adc5bacd
   </div>
+<div class="col-md-6 col-md-offset-6">
+          <button type="submit" class="btn btn-primary ">Register Me</button>
+        </div>
+  </form>
+  <p>
+  <a href="/seller-login" class="text-center">I'm already a seller?</a></br>
+  </p>
+
   <!-- /.form-box -->
 </div>
 <!-- /.register-box -->

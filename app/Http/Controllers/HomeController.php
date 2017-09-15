@@ -241,7 +241,7 @@ class HomeController extends Controller
         $products= DB::table('products')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
         ->select('products.*', 'categories.*')
-        ->get();
+        ->paginate(12);
         return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
     } else {
 
@@ -250,8 +250,24 @@ class HomeController extends Controller
         $products= DB::table('products')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
         ->select('products.*', 'categories.*')
-        ->get();
-        return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
+        ->where('products.price', 'like', '%'.$search.'%')
+        ->orWhere('products.name', 'like', '%'.$search)
+        ->orWhere('products.description', 'like', '%'.$search.'%')
+        ->orWhere('categories.title', 'like', '%'.$search)
+        ->paginate(12);
+        if(count($products)<= 0){
+            $products= DB::table('products')
+            ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+            ->select('products.*', 'categories.*')
+            ->paginate(12);            
+            return view('front.search', ['msg' => 'Results for : \'' . $search .'\' not found'], compact('products','categories','cartItems','search'));
+
+        }
+
+        else{
+            return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
+        }
+        
     }
     
 }
