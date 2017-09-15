@@ -29,20 +29,29 @@
 
           </li>
 
-          <li><a href="/shop-grid"><span>SHOP NOW</span></a>
+          <li><a href="/shop-grid"><span>DISCOVER</span></a>
           </li>
 
 
           
+          
+
+          <li style="display:flex-box; min-width:400px;"><form class="input-group form-group " style="margin-bottom:0;" method="post" action="/search"><span class="input-group-btn" >
+                {{ csrf_field()}}
+                    <button type="submit" class=" btn-primary" style="color:#ee2956;"><i class="icon-search"></i></button></span>
+                  <input class="form-control" style="border:unset; border-bottom:1px ;" type="search" name="search_data" placeholder="Search by Category, Name, Price">
+                </form></li>
+          
+
           @if(!Auth::guard('buyer')->check())
-          <li><a href="/register"><span>REGISTER</span></a>
+          <li><a href="/register"><span>SIGN UP</span></a>
           <ul class="sub-menu">
                 <li><a href="/seller-register">Seller</a></li>
                 <li><a href="/login">Buyer</a></li>
 
             </ul>
             </li>
-          <li><a href=""><span>Login</span></a>
+          <li><a href="#"><span>Sign in</span></a>
             <ul class="sub-menu">
                 <li><a href="/seller-login">Seller</a></li>
                 <li><a href="/login">Buyer</a></li>
@@ -50,13 +59,8 @@
             </ul>
 
           </li>
-          @endif
 
-          <li style="display:flex-box; min-width:400px;"><form class="input-group form-group " style="margin-bottom:0;" method="post" action="/search"><span class="input-group-btn" >
-                {{ csrf_field()}}
-                    <button type="submit" class=" btn-primary" style="color:#ee2956;"><i class="icon-search"></i></button></span>
-                  <input class="form-control" style="border:unset; border-bottom:1px ;" type="search" name="search_data" placeholder="Search by Category, Name, Price">
-                </form></li>
+          @endif
         </ul>
 
       </nav>
@@ -74,8 +78,9 @@
 
                 <li class="sub-menu-title"><span>Need an account?</span></li>
 
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Sign Up</a></li>
+                <li><a href="/register">Sign in</a></li>
+                <li><a href="/seller">Seller account?</a></li>
             </ul>
             @else
 
@@ -91,6 +96,7 @@
                 <li><a href="{{ route('buyer.logout') }}"> Logout</a></li>
               </ul>
               @endif
+
             </div>
         
 

@@ -1,6 +1,6 @@
 <!-- Site Footer-->
       <footer class="site-footer">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
             <div class="col-lg-3 col-md-6">
               <!-- Contact Info-->
@@ -29,8 +29,8 @@
                   <li><a href="/about">About Sproos</a></li>
                   <li><a href="/soon">Our Story</a></li>
                   <li><a href="/terms">Terms of use</a></li>
-                <li><a href="/contacts-us">Contacts</a></li>
-                <li><a href="/faq">Help / FAQ</a></li>
+                  <li><a href="/contacts-us">Contacts</a></li>
+                  <li><a href="/faq">Help / FAQ</a></li>
                 </ul>
               </section>
             </div>
@@ -48,9 +48,10 @@
               </section>
             </div>
           </div>
-          <hr class="hr-light mt-2 margin-bottom-2x">
-          <!--
-          <div class="row">
+          <hr class="hr-light">
+         
+          <div class="erow">
+           <!--
             <div class="col-md-7 padding-bottom-1x">
               <!-- Payment Methods-->
               <!--div class="margin-bottom-1x" style="max-width: 615px;"><img src="img/payment_methods.png" alt="Payment Methods">

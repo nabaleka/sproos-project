@@ -21,14 +21,11 @@
 
 <!-- CSRF Token -->
    <meta name="csrf-token" content="{{ csrf_token() }}">
+   <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
     
 
 
-<script>
-    window.Laravel = <?php echo json_encode([
-        'csrfToken' => csrf_token(),
-    ]); ?>
-</script>
+
 
     <title>Sproos</title>
 
@@ -57,35 +54,16 @@
 
     <!-- Main Styles-->
 
-
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
 
     <style>
 
-    .cat:hover{
-      background-color:#ee2956;
-    }
-
-.row .product-card,
-.row .product-thumb {
-  flex:1 0 auto;
-  flex-direction:column;
-}
-.product-text {
-  flex-grow:1
-}
-.flex-row img {
-  height:auto;
-  width:100%
-}
 .owl-carousel .owl-dots .owl-dot{
   background : #ee2659;
   
 }
 
-    img{
-      width : 100%;
-    }
+   
     .site-menu > ul > li > a {
       letter-spacing:3px;
     }
@@ -109,9 +87,7 @@
     
 
     .navbar{
-
         background-color : #ee2956;
-
     }
 
     
@@ -124,6 +100,10 @@
 
     }
 
+    .card-img-tiles{
+      border:0;
+    }
+
 
 
     .toolbar .account{
@@ -134,9 +114,10 @@
 
     }
 
-  .cat:hover{
-    background-color:#fefefe;
-  }
+    .toolbar .cart:hover, .toolbar .account:hover{
+      color:#ee2956;
+    }
+
     
 
     .toolbar .cart{
@@ -235,6 +216,12 @@
 
         color:#fff;
 
+      }
+
+      .categories:hover{
+        background-blend-mode: none !important;
+        background-color:transparent !important;
+        transition:1s;
       }
 
 
@@ -489,12 +476,12 @@ body{
     </style>
 
     <!-- Modernizr-->
-     <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+     
 
     <!-- Styles -->
     <script>
         $( document ).ready(function() {
-            $("body").show('slow').fadeIn(10000);
+            $("body").show('fast').fadeIn(5000);
         });
     </script>
 
@@ -502,6 +489,7 @@ body{
     
 
 </head>
+
 
 <body>
 
@@ -518,7 +506,7 @@ body{
       <nav class="offcanvas-menu">
         <ul class="menu">
         @foreach($categories as $category)
-         <li><span><a href="/shop/{{ $category->id }}/category">{{ $category->title}}</a></span></li>
+         <li style=""><span><a href="/shop/{{ $category->id }}/category">{{ $category->title}}</a></span></li>
         @endforeach
 
         </ul>
@@ -653,7 +641,7 @@ body{
 
     @yield('content')
 
-@include('inc.footer')
+    @include('inc.footer')
 
     </div>
 
@@ -677,6 +665,7 @@ body{
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
 
    
+  <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('js/modernizr.min.js') }}"></script>
     <script src="{{ asset('js/vendor.min.js') }}"></script>
     <script src="{{ asset('js/scripts.min.js') }}"></script>

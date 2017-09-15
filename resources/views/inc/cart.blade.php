@@ -29,5 +29,5 @@
 </div>
 @else
 
-
+<div class="cart"><a href="#"></a><i class="icon-bag"></i></div>
 @endif

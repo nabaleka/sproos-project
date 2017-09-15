@@ -6,7 +6,9 @@
         <div class="container">
           <div class="column">
           @if($search)
-            <h1>Search Results for: {{$search}}</h1>
+            <h1>{{$msg}}</h1>
+          @else
+            <h1>All Products</h1>
           @endif
           </div>
           <div class="column">
@@ -16,22 +18,35 @@
       <!-- Page Content-->
       <div class="container padding-bottom-3x mb-2">
         <div class="row">
+        <pre>
+        {{ var_dump($products)}}
+        </pre>
+        
           <!-- Results-->
           <div class="col-xl-9 col-lg-8">
+          @if(count($products) > 0)
+          @foreach($products as $product)
             <div class="card mb-4">
               <div class="card-header"><span class="badge badge-pill badge-primary">Product</span></div>
-              <div class="card-block">
-                <div class="d-flex"><a class="pr-4 hidden-xs-down" href="shop-single.html" style="max-width: 225px;"><img src="img/shop/products/01.jpg" alt="Product"></a>
-                  <div>
-                    <h5><a class="navi-link" href="shop-single.html">Unionbay Park </a></h5>
-                    <h6>
-                      <del class="text-muted">$99.99</del> $49.99
-                    </h6>
-                    <p>Consequatur omnis <span class='text-highlighted'>lorem ipsum</span> reprehenderit suscipit voluptatem blanditiis aliquid rerum animi aliquam, dicta quas nesciunt commodi sequi minima totam architecto.</p>
+                <div class="card-block">
+                  <div class="d-flex"><a class="pr-4 hidden-xs-down" href="shop-single.html" style="max-width: 225px;"><img src="{{ asset('uploads/'.$product->image ) }}" alt="Product"></a>
+                    <div>
+                      <h5><a class="navi-link" href="/shop-single/{{$product->id}}">{{$product->name}} </a></h5>
+                      <h6>
+                        Ksh .{{ $product->price}}<br>
+                        <small>{{$product->stock}} Available</small>
+                      </h6>
+                      <p>{{$product->title}}</p>
+                      <p>{{$product->description}}</p>
+                      <div><button class="btn btn-outline-primary">View</button></div>
+                    </div>
+                    
                   </div>
                 </div>
-              </div>
             </div>
+            @endforeach
+            
+          @endif
             <!-- Pagination-->
             <nav class="pagination">
               <div class="column">
