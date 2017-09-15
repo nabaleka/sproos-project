@@ -485,11 +485,7 @@ body{
     <!-- Styles -->
     <script>
         $( document ).ready(function() {
-<<<<<<< HEAD
-            $("body").show('slow').fadeIn(10000);
-=======
             $("body").show('fast').fadeIn(5000);
->>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
         });
     </script>
 

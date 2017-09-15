@@ -41,12 +41,6 @@
     <h4>Shipping Instructions</h4>
     @include('includes.messages')
     <hr class="padding-bottom-1x">
-<<<<<<< HEAD
-    <form action="/shipping" method="post">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-    <div class="row">
-=======
     <form action="/checkout-shipping" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -158,7 +152,6 @@
         }
       }
     </script>
->>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
 
         <div class="col-sm-6">
         <div class="form-group">
@@ -183,11 +176,7 @@
         <div class="col-sm-6">
         <div class="form-group">
             <label for="checkout-phone">Phone Number</label>
-<<<<<<< HEAD
         <input class="form-control" type="text" id="checkout-phone" required="" name="phoneNumber"  value="{{$phoneNumber}}" readOnly>
-=======
-            <input class="form-control" type="text" id="checkout-phone" required="" name="phoneNumber"  placeholder="0710000001">
->>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
         </div>
         </div>
     </div>
@@ -211,7 +200,6 @@
                 <table class="table">
                   <tr>
                     <td>Cart Subtotal:</td>
-<<<<<<< HEAD
                     <td class="text-medium">{{Cart::subtotal()}}</td>
                   </tr>
                   <tr>
@@ -225,21 +213,6 @@
                   <tr>
                     <td></td>
                     <td class="text-lg text-medium">{{Cart::total()}}</td>
-=======
-                    <td class="text-medium">$289.68</td>
-                  </tr>
-                  <tr>
-                    <td>Shipping:</td>
-                    <td class="text-medium">$22.50</td>
-                  </tr>
-                  <tr>
-                    <td>Estimated tax:</td>
-                    <td class="text-medium">$3.42</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="text-lg text-medium">$315.60</td>
->>>>>>> 8e3658b392682193ad9041fb71cdffea046619d9
                   </tr>
                 </table>
               </section>
