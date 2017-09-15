@@ -45,9 +45,10 @@
     <div class="col-xl-9 col-lg-8">
 
     <div class="checkout-steps">
-    <a href="#">3. Review</a>
-    <a class="active" href="/checkout-payment"><!--span class="angle"></span-->2. Payment</a>
-    <a class="completed" href="/checkout-shipping"><span class="step-indicator icon-circle-check"></span><!--span class="angle"></span-->1. Shipping</a>
+        <a href="/checkout-review" class="active">4. Payment</a>
+        <a class="completed" href="checkout-address.html"><span class="step-indicator icon-circle-check"></span>1. Review</a>
+        <a class="completed" href="checkout-address.html"><span class="step-indicator icon-circle-check"></span>1. Address</a>
+        <a class="completed" href="checkout-address.html"><span class="step-indicator icon-circle-check"></span>1. Shipping</a>
     </div>
 
     <h4>Choose Payment Method</h4>
@@ -183,36 +184,28 @@
 
         <div class="padding-top-2x hidden-lg-up"></div>
 
-        <!-- Order Summary Widget-->
-
-        <section class="widget widget-order-summary">
-
-        <h3 class="widget-title">Order Summary</h3>
-
-        <table class="table">
-
-            <tr>
-            <td>Cart Subtotal:</td>
-            <td class="text-medium">KShs. {{Cart::subtotal() }}</td>
-            </tr>
-            <tr>
-            <td>Shipping:</td>
-            <td class="text-medium">KShs. {{Cart::subtotal()}}</td>
-            </tr>
-            <tr>
-            <td>Estimated tax:</td>
-            <td class="text-medium">KShs. {{Cart::subtotal()}}</td>
-            </tr>
-            <tr>
-            <td></td>
-            <td class="text-lg text-medium">KShs. {{Cart::total()}} </td>
-            </tr>
-
-        </table>
-
-        </section>
-
-        <!-- Featured Products Widget-->
+       <!-- Order Summary Widget-->
+              <section class="widget widget-order-summary">
+                <h3 class="widget-title">Order Summary</h3>
+                <table class="table">
+                  <tr>
+                    <td>Cart Subtotal:</td>
+                    <td class="text-medium">{{Cart::subtotal()}}</td>
+                  </tr>
+                  <tr>
+                    <td>Shipping:</td>
+                    <td class="text-medium"></td>
+                  </tr>
+                  <tr>
+                    <td>Estimated tax:</td>
+                    <td class="text-medium">{{Cart::tax()}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td class="text-lg text-medium">{{Cart::total()}}</td>
+                  </tr>
+                </table>
+              </section>
 
         <section class="widget widget-featured-products">
 

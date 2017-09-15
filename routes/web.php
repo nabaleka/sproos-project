@@ -40,12 +40,12 @@ Route::get('/shop/{id}/category','HomeController@showCategory');
 
 #checkout routes
 
-Route::get('/checkout-address','CheckoutController@checkoutAddress');
-Route::get('/checkout-shipping','HomeController@checkoutShipping')->middleware('auth:buyer');
-Route::get('/checkout-payment','HomeController@checkoutPayment')->middleware('auth:buyer');
-Route::get('/checkout-complete','CheckoutController@checkoutComplete')->middleware('auth:buyer');
-Route::get('/checkout-payment','PaymentsController@payment');
-Route::get('/checkout-review','HomeController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
+Route::get('/checkout-address','CheckoutController@checkoutAddress')->middleware('auth:buyer');;
+Route::get('/checkout-shipping','CheckoutController@checkoutShipping')->middleware('auth:buyer');
+//Route::get('/checkout-payment','CheckoutController@checkoutPayment')->middleware('auth:buyer');
+Route::get('/checkout-complete','CheckoutController@checkoutComplete')->name('checkout-complete')->middleware('auth:buyer');
+Route::get('/checkout-payment','PaymentsController@payment')->middleware('auth:buyer');
+Route::get('/checkout-review','CheckoutController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 Route::get('/shop-seller/{id}','HomeController@shopSeller');
@@ -162,3 +162,6 @@ Route::post('/hi','HomeController@hi')->name('hi');
 
 //Test Theme
 Route::get('/theme', 'HomeController@theme');
+
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');

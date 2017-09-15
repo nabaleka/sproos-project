@@ -10,11 +10,13 @@ use App\Model\Admin\products;
 use Gloudemans\Shoppingcart\Facades\Cart;
 #use App\Model\order;
 use App\Orders;
-use App\Address; 
+use App\shipings;
+use App\users; 
 use DB;
 
 class CheckoutController extends Controller
 {
+   
     public function store(Request $request){
         $cartItems = Cart::content();
         
@@ -50,15 +52,27 @@ class CheckoutController extends Controller
     
      public function shipping(Request $request){
         $cartItems = Cart::content();
-       $shipping=$request->shipping;
-       Session::put('shipping_method', $shipping);
-      return redirect('checkout-review' ,compact('cartItems'))->with('products', $products);
+        $this->validate($request, [
+            'deliveryDate' => 'required',
+            'deliveryTime' => 'required',
+            'phoneNumber' => 'required|min:10|max:16',
+            'deliveryInstructions' => 'required|',
+            'phoneNumber' => 'required|min:5|max:25']);
+
+            $shiping=new Shipings;
+            $shiping->delivery_date= $request->deliveryDate;
+            $shiping->delivery_time= $request->deliveryTime;
+            $shiping->delivery_instructions= $request->deliveryDate;
+            $shiping->phone_number= $request->phoneNumber;
+            $shiping->save();
+
+      return redirect('checkout-address')->with('cartItems', $cartItems);
     }
 
     public function checkoutReview(){
         $cartItems = Cart::content();
-        $products = products::all();
-        return view ('front.checkout.checkout-review',compact('cartItems'))->with('products', $products);
+     
+        return view ('front.checkout.checkout-review',compact('cartItems'));
     }
 
     public function checkoutAddress(){
@@ -76,12 +90,12 @@ class CheckoutController extends Controller
       public function checkoutComplete(){
        
         Cart::destroy();
-          return view('front.checkout.checkout-complete',compact('cartItems'));
+          return view('front.checkout.checkout-complete');
       }
    public function checkoutShipping(){
-          $cartItems = Cart::content();
-         $orders = DB::table('orders')->where('user_id',Auth::user()->id)->first();
-          return view ('front.checkout.checkout-shipping',compact('cartItems','orders'));
+    
+        $phoneNumber = DB::table('users')->where('id',  Auth::guard('buyer')->user()->id)->value('phonenumber');
+          return view ('front.checkout.checkout-shipping',compact('cartItems','phoneNumber'));
       }
   
       public function checkoutPayment(){

@@ -104,6 +104,11 @@ background : #ee2956;
 .box{
   border-top: 3px solid #ee2956;
 }
+
+.box.box-info{
+  border-top: 3px solid #ee2956;
+}
+
 .box.box-primary{
   border-top-color: #ee2956;
 }

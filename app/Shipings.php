@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Model;
-
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Shipping extends Model
+class Shipings extends Model
 {
     //
 }

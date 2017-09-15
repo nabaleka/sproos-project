@@ -21,6 +21,10 @@ class CartController extends Controller
           
 
     }
+    public function destroy($id){
+      Cart::remove($id);
+      return back(); // will keep same page
+  }
 
  public function add_cart($id){
         $products = Products::find($id); // get prodcut by id
@@ -29,7 +33,8 @@ class CartController extends Controller
             'name' => $products->name,
             'qty' => 1,
             'price' => $products->price,
-            'options' => array('img' => $products->image),
+            'options' =>
+             array('seller_id'=>$products->seller_id,'img' => $products->image,),
             ));
        
          return back();

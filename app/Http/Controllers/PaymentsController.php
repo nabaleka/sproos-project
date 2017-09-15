@@ -7,12 +7,14 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use App\Payment;
 use App\Orders;
+use App\Order_details;
 use DB;
 use Pesapal;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class PaymentsController extends Controller
 {
+   
     // generate a random string of a particular length
     public function payment(){
         //initiates payment
@@ -32,19 +34,31 @@ class PaymentsController extends Controller
         $unique_id = $random_string;
         $transaction = Pesapal::random_reference();
 
-
+       
         foreach($cartItems as $cartItem){
             $orders = new Orders;
             $orders ->transaction_id = $transaction;
+            $orders ->total_price =Cart::subtotal();
+            $orders ->tax =Cart::tax();
             $orders->status = 2;
             $orders->unique_order_id = strtoupper($unique_id);
-            $orders->price = $cartItem->price;
             $orders->total_quantity = $cartItem->qty;
+            $orders->price = $cartItem->subtotal();
+            $orders->seller_id = $cartItem->options->seller_id;
+            $orders->product_id = $cartItem->id;
+            $orders ->user_id = Auth::user()->id;
             //$orders->unique_order_id = md5(time().mt_rand(1,5));
-            $orders ->total_price = $cartItem->subtotal();//+$shipping_cost;
             $orders -> save();
-        }
 
+            $order_details = new Order_details;
+            $order_details ->user_id = Auth::user()->id;
+            $order_details->unique_order_id = $orders->unique_order_id;
+            $order_details->product_id = $orders->product_id;
+            $order_details ->seller_id = $orders->seller_id ;
+            $order_details-> save();
+           
+        }
+             
 
         
 
@@ -56,7 +70,7 @@ class PaymentsController extends Controller
             'last_name' => 'shiyuli',
           'email' => 'jose@gmail.com',
             'phonenumber' => '0702092083',
-           'reference' => $orders->transaction_id,
+           'reference' => $transaction,
            'height'=>'400px',
             'currency' => 'KES'
        );
