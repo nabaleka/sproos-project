@@ -326,6 +326,10 @@ background-color:#ed2e56;
 
     }
 
+    body{
+        display:none;
+    }
+
 
 
     .btn-success {
@@ -419,7 +423,14 @@ background-color:#efefef;
 
 
 
+
+
 </style>
+<script>
+        $( document ).ready(function() {
+            $("body").show('fast').fadeIn(5000);
+        });
+    </script>
   </head>
   <!-- Body-->
   <body>

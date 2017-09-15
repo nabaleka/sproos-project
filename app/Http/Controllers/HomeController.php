@@ -284,6 +284,7 @@ public function theme(){
     ->leftjoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
     ->select('order_details.product_id','products.price','products.name','products.image')
     ->orderBy('products.updated_at','DESC')
+    ->groupBy('products.id')
     ->take(4)
     ->get();
    
