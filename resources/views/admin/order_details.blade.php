@@ -4,7 +4,7 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Orders<br>
+        Order Details<br>
         <small> Order Details</small>
       </h1>
       <ol class="breadcrumb">
@@ -20,7 +20,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
 
-                    @if(isset($details) || (count(get_object_vars($details)) > 0))
+                  @if(isset($details) || (count(get_object_vars($details)) > 0))
                                          
                       <table id="example1" class="table table-bordered table-striped">
                         <thead>
@@ -32,22 +32,25 @@
                              <th>Product</th>
                              <th>Seller email</th>
                              <th>Customer email</th>
+                              <th>Seller number</th>
+                              
                           
                          
                         </tr>
                         </thead>
                         <tbody>
                         @if(isset($details))
-                        @foreach ($derails as $detail)
+                        @foreach ($details as $detail)
                           <tr>
-                            <td>{{ $detail->unique_order_id }}</td>
-                          
-                            
+                            <td>{{ $detail->order_id}}</td>
+                            <td>{{ $detail->customer}}</td>
+                             <td>{{ $detail->seller}}</td>
                             </td>
-                           
-                             <td>{{ $detail->total_price }}</td>
-                                <td>Pending</td>
-                              <td>Pesapal</td>
+                               <td>{{ $detail->product}}</td>
+                                <td>{{ $detail->seller_email}}</td>
+                                <td>{{ $detail->customer_email}}</td>
+                                <td>{{ $detail->seller_number}}</td>
+
                          
                             <td></td>
 
