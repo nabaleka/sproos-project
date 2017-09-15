@@ -263,8 +263,24 @@ public function hi(Request $request){
 }
 
 public function theme(){
-    
-    return view('theme');
+    $best_sellers = DB::table('order_details')
+    ->leftjoin('products', 'products.id', '=', 'order_details.product_id')
+    ->leftjoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
+    ->select('order_details.product_id','products.price','products.name','products.image')
+    ->orderBy('products.updated_at','DESC')
+    ->take(4)
+    ->get();
+   
+    $latest_products = DB::table('products')
+    ->orderBy('updated_at','DESC')
+    ->take(4)
+    ->get();
+ 
+  $categories = categories::all();
+   $banner = Banner::all();
+  $cartItems = Cart::content();
+   $products = Products::all();
+  return view('layouts.theme',compact('products','banner'),compact('cartItems','latest_products','best_sellers'))->with('categories',$categories);
 }
 
 public function destroy($id){

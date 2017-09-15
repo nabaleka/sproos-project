@@ -522,7 +522,7 @@ body{
       <nav class="offcanvas-menu">
 
         <ul class="menu">
-        <li style="width:unset; padding:10px; background-color:#5d5d5d;">
+          <li style="padding:10px; background-color:#5d5d5d;">
           <form class="input-group form-group " style="margin-bottom:-5px;" method="post" action="/hi"><span class="input-group-btn" >
                 {{ csrf_field()}}
                     <button type="submit" class=" btn-primary" style="color:#ee2956;"><i class="icon-search"></i></button></span>

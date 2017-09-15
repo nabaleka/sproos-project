@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.theme')
 
 @section('content')
 
@@ -119,7 +119,10 @@
          </div>
 
      {{$products->links('vendor.pagination.bootstrap-4')}}
-      </div>         
+      </div>    
+
+
+      @include('inc.footer')     
 
 
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.theme')
 @section('content')
       <!-- Page Title-->
       <div class="page-title">
@@ -35,10 +35,10 @@
                 <div class="gallery-item"><a href="img/shop/single/05.jpg" data-hash="five" data-size="1000x667"></a></div>
               </div>
               <div class="product-carousel owl-carousel">
-                <div data-hash="one"><img src="{{asset('uploads/'.$products->image) }}" height="100px" width="150px" /></div>
-                <div data-hash="two"><img src="{{asset('uploads/'.$products->image2) }}" height="100px" width="150px" /></div>
-                <div data-hash="three"><img src="{{asset('uploads/'.$products->image3) }}" height="100px" width="150px" /></div>
-                <div data-hash="four"><img src="{{asset('uploads/'.$products->image4) }}" height="100px" width="150px" /></div>
+                <div data-hash="one"><img src="{{asset('uploads/'.$products->image) }}" height="auto"/></div>
+                <div data-hash="two"><img src="{{asset('uploads/'.$products->image2) }}" height="auto"/></div>
+                <div data-hash="three"><img src="{{asset('uploads/'.$products->image3) }}" height="auto"/></div>
+                <div data-hash="four"><img src="{{asset('uploads/'.$products->image4) }}" height="auto"/></div>
 
               </div>
               <ul class="product-thumbnails">

@@ -1,5 +1,5 @@
       <!-- Services-->
-      <section class=" padding-top-3x padding-bottom-2x">
+      <section class="container padding-top-3x padding-bottom-2x">
         <div class="row">
           <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="img/services/01.png" alt="Shipping">
             <h6>Shipping Tips</h6>
