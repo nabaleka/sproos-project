@@ -92,14 +92,17 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($orders as $order)
                 <!-- Loop through Orders -->
                 <tr>
-                  <td>--</td>
+                  <td>-oo</td>
                   <td>--</td>
                   <td>--</td>
                   <td>--</td>
                   <td>00</td>
                 </tr>
+
+                @endforeach
                 <!-- /.Loop through -->
                 </tbody>
                 <tfoot>

@@ -24,7 +24,7 @@
           @if(count($products) > 0)
           @foreach($products as $product)
             <div class="card mb-4">
-              <div class="card-header"><span class="badge badge-pill badge-primary">Product</span></div>
+              <div class="card-header"><span class="badge badge-pill badge-primary">Product</span> <span class="badge badge-pill badge-primary">{{$product->title}}</span></div>
                 <div class="card-block">
                   <div class="d-flex"><a class="pr-4 hidden-xs-down" href="shop-single.html" style="max-width: 225px;"><img src="{{ asset('uploads/'.$product->image2 ) }}" alt="Product"></a>
                     <div>

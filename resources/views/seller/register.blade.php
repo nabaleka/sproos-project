@@ -225,20 +225,23 @@
         </div>
 
         <!-- /.col -->
-        <div class="col-xs-12">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register Me</button>
-        </div>
+        
         <!-- /.col -->
       </div>
   </div>
 
   </div><!-- Row-->
-    </form>
-    <a href="/seller-login" class="text-center">I'm already a seller?</a></br>
-    <div>
-    <a href="/" class="btn btn primary" style="border-color : #ee2956;">Buy on Sproos</a>
-    </div>
+    
+    
   </div>
+<div class="col-md-6 col-md-offset-6">
+          <button type="submit" class="btn btn-primary ">Register Me</button>
+        </div>
+  </form>
+  <p>
+  <a href="/seller-login" class="text-center">I'm already a seller?</a></br>
+  </p>
+
   <!-- /.form-box -->
 </div>
 <!-- /.register-box -->

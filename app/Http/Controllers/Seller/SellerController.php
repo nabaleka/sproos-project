@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Seller;
 use App\Model\admin\categories;
 use Illuminate\Http\Request;
 use App\Products;
-
+use App\Orders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -22,8 +22,12 @@ class SellerController extends Controller
         $id = Auth::guard('seller')->id();
         //get products belonging to the seller
         $products = DB::table('products')->where('seller_id', '=', $id)->get();
+        $orders = $details= DB::table('order_details')
+        ->leftJoin('orders', 'order.unique_order_id', '=', 'order_details.details_id')
+        ->where('order_details.seller_id' , '=' ,$id)
+        ->get();
         $categories = Categories::all();
-        return view('seller.home', compact('categories','products'));
+        return view('seller.home', compact('categories','products','orders'));
     }
 
     public function account()
