@@ -437,11 +437,18 @@ background-color:#efefef;
         </nav>
     </div>
     <!-- Off-Canvas Mobile Menu-->
-    <div class="offcanvas-container" id="mobile-menu"><a class="account-link" href="account-orders.html"><i class="icon-head"></i><span>Hello</span>, John Doe</a>
+    <div class="offcanvas-container" id="mobile-menu"><a class="account-link" href="account-orders.html"><i class="icon-head"></i><span>Hello</span>
+    @if(Auth::guard('buyer')->check())
+        {{Auth::guard('buyer')->user()->first_name ." ".Auth::guard('buyer')->user()->last_name  }}
+    @else
+    There!
+
+    @endif
+    </a>
       <nav class="offcanvas-menu">
         <ul class="menu">
             <li style="padding:10px; background-color:#5d5d5d;">
-                <form class="input-group form-group " style="margin-bottom:-5px;" method="post" action="/hi"><span class="input-group-btn" >
+                <form class="input-group form-group " style="margin-bottom:-5px;" method="post" action="/search"><span class="input-group-btn" >
                 {{ csrf_field()}}
                     <button type="submit" class=" btn-primary" style="color:#ee2956;"><i class="icon-search"></i></button></span>
                     <input class="form-control" style="border:unset; border-bottom:1px ;" type="search" placeholder="Search for anything">
@@ -475,7 +482,9 @@ background-color:#efefef;
 
                 <li><a href="/account-profile">Profile Page</a></li>
 
-                <li><a href="/account-address"><i class="fa fa-address-book" style="font-size:150%; letter-spacing:8px;"></i> Contact / Shipping Address</a></li>
+                <li><a href="/account-address"><i class="fa fa-address-book" style="font-size:150%; letter-spacing:8px;"></i>Address</a></li>
+                
+                <li><a href="{{ route('buyer.logout') }}"> Logout</a></li>
 
                 @endif
 

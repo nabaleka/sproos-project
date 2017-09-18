@@ -107,6 +107,11 @@
       <div class="form-group has-feedback">
 
         <input type="email" class="form-control" name="email" placeholder="Email">
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
 
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 

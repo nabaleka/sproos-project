@@ -74,8 +74,6 @@
 
         <li><a href="{{ route('admin.reports')}}"><i class="fa fa-line-chart"></i><span>Reports</span></a></li>
 
-       
-
         <li><a href="/admin/category"><i class="fa fa-shopping-cart"></i><span>Categories</span></a></li>
 
         <li class="treeview"><a href="/admin/stats"><i class="fa fa-users"></i> <span>Accounts</span>
@@ -96,7 +94,7 @@
         
         </li>
 
-        <li><a href="/admin/profile"><i class="fa fa-user"></i><span>Admin</span></a></li>
+        <li><a href="#"><i class="fa fa-user"></i><span>Admin</span></a></li>
 
 
      
