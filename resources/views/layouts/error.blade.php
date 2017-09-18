@@ -669,7 +669,7 @@
 
     <div class="topbar">
 
-      <div class="topbar-column"><a class="hidden-md-down" href="mailto:sproosplace@gmail.com"><i class="icon-mail"></i>&nbsp;sproosplace@gmail.com</a><a class="hidden-md-down" href="tel:#"><i class="icon-bell"></i>&nbsp; (+254)715-725-418</a><a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a><a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a><a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a><a class="social-button sb-pinterest shape-none sb-dark" href="#" target="_blank"><i class="socicon-pinterest"></i></a>
+      <div class="topbar-column"><a class="hidden-md-down" href="mailto:sproosplace@gmail.com"><i class="icon-mail"></i>&nbsp;sproosplace@gmail.com</a><a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a><a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a><a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a><a class="social-button sb-pinterest shape-none sb-dark" href="#" target="_blank"><i class="socicon-pinterest"></i></a>
 
       </div>
 
