@@ -74,7 +74,7 @@
 
         <li><a href="{{ route('admin.reports')}}"><i class="fa fa-line-chart"></i><span>Reports</span></a></li>
 
-        <li><a href="{{ route('homepage-manager') }}"><i class="fa fa-gears"></i><span>Manage</span></a></li>
+       
 
         <li><a href="/admin/category"><i class="fa fa-shopping-cart"></i><span>Categories</span></a></li>
 
