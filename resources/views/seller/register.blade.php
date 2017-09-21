@@ -53,12 +53,11 @@
          b{
            color : #ee2956;
          }
-         
-         }
-         .form-control {
+        
+         .form-control{
 	          border-radius: 20px;
 	          box-shadow: none;
-	          border-color: #ee2956;
+	          border-color: #e6e7e9;
 
          }
 

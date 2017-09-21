@@ -36,9 +36,9 @@
                 <ul>
                   <li><a href="/about">About Sproos</a></li>
                   <li><a href="/soon">Our Story</a></li>
-                  <li><a href="/terms">Terms of use</a></li>
                   <li><a href="/contacts-us">Contacts</a></li>
                   <li><a href="/faq">Help / FAQ</a></li>
+                  <li><a href="/terms">Terms of use</a></li>
                 </ul>
             </section>
           </div>
@@ -85,6 +85,6 @@
     </div>
     </div-->
     <!-- Copyright-->
-    <p class="footer-copyright">© All rights reserved. &nbsp;<i class="icon-heart text-danger"></i><span> &nbsp;by sproos.co.ke</span></p>
+    <p class="footer-copyright">© All rights reserved. &nbsp;<i class="icon-heart text-danger"></i><a href="https://nabaleka.com/" target="_blank"> &nbsp;by:nabaleka.com</a></p>
     </div>
 </footer>

@@ -27,6 +27,6 @@
             </div>
           </div-->
           <!-- Copyright-->
-          <p class="footer-copyright">© All rights reserved. &nbsp;<i class="icon-heart text-danger"></i><a href="http://rokaux.com/" target="_blank"> &nbsp;by Sproos.co.ke</a></p>
+          <p class="footer-copyright">© All rights reserved. &nbsp;<i class="icon-heart text-danger"></i><a href="https://nabaleka.com/" target="_blank"> &nbsp;nabaleka.com</a></p>
         </div>
       </footer>

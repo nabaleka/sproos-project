@@ -522,7 +522,7 @@ background-color:#efefef;
 
       <div class="topbar-column">
       <a class="hidden-md-down" href="mailto:info@sproos.com"><i class="icon-mail"></i>&nbsp;info@sproos.com</a>
-      <a class="hidden-md-down" href="tel:#"><i class="icon-bell"></i>&nbsp; (+254)715-725-418</a>
+      
 
       <a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a>
       <a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a>
