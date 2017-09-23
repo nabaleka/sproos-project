@@ -40,7 +40,7 @@
     <h4>Shipping Address</h4>
     @include('includes.messages')
     <hr class="padding-bottom-1x">
-<form action="/checkout-review" method="post">
+<form action="/checkout-sendy" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
     <div class="row">
@@ -51,7 +51,7 @@
            <label for="checkout-ln">Address</label>
                 <div id="locationField">
       <input id="autocomplete" class="form-control" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
+             onFocus="geolocate()" type="text" name="address"></input>
     </div>
 
     <table id="address" style="display:none;">
@@ -170,24 +170,24 @@
         <div class="col-sm-12">
         <div class="form-group">
             <label for="checkout-phone">Estate / Building</label>
-            <input class="form-control" type="text" id="checkout-phone" required="" name="phoneNumber"  placeholder="eg. Posta House">
+            <input class="form-control" type="text" id="checkout-phone" required="" name="estate"  placeholder="eg. Posta House">
         </div>
         </div>
 
          <div class="col-sm-12">
         <div class="form-group">
             <label for="checkout-phone">Room / House / Suite No</label>
-            <input class="form-control" type="text" id="checkout-phone" required="" name="phoneNumber"  placeholder="eg. Room 13 / House No. 23 / Suite A6">
+            <input class="form-control" type="text" id="checkout-phone" required="" name="room"  placeholder="eg. Room 13 / House No. 23 / Suite A6">
         </div>
         </div>
 
         <div class="form-group">
             <label>Location type:</label>
               <label class="custom-control custom-radio">
-                <input class="custom-control-input" name="location-type" type="radio"><span class="custom-control-indicator"></span><span class="custom-control-description">Residential</span>
+                <input class="custom-control-input" name="location_type" type="radio" id="residential" value="residential"><span class="custom-control-indicator"></span><span class="custom-control-description">Residential</span>
               </label>
               <label class="custom-control custom-radio">
-                <input class="custom-control-input" name="location-type" checked="" type="radio"><span class="custom-control-indicator"></span><span class="custom-control-description">Business</span>
+                <input class="custom-control-input" name="location_type" value="business" type="radio" id="business" ><span class="custom-control-indicator"></span><span class="custom-control-description" >Business</span>
               </label>
             </div>
     </div>

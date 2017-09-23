@@ -13,7 +13,11 @@
     <h1>Checkout</h1>
 
     </div>
-
+     <div style="color: red">
+   @if (Session::has('message'))
+        <li>{!! session('message') !!}</li>
+   @endif
+   </div>
     <div class="column">
 
     <ul class="breadcrumbs">

@@ -16,6 +16,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('testing', 'checkoutController@newTest');
 #account routes
 Route::get('/register', 'Auth\BuyerRegisterController@showRegistrationForm')->name('register');
 Route::post('/register', 'Auth\BuyerRegisterController@register');
@@ -40,18 +41,30 @@ Route::get('/shop/{id}/category','HomeController@showCategory');
 
 #checkout routes
 
-Route::get('/checkout-address','CheckoutController@checkoutAddress')->middleware('auth:buyer');;
+Route::get('/checkout-address','CheckoutController@checkoutAddress')->middleware('auth:buyer');
+Route::post('/checkout-sendy','CheckoutController@sendy')->middleware('auth:buyer');
 Route::get('/checkout-shipping','CheckoutController@checkoutShipping')->middleware('auth:buyer');
+Route::get('/checkout-askSendy','CheckoutController@askSendy')->middleware('auth:buyer');
+
 //Route::get('/checkout-payment','CheckoutController@checkoutPayment')->middleware('auth:buyer');
-Route::get('/checkout-complete','CheckoutController@checkoutComplete')->name('checkout-complete')->middleware('auth:buyer');
+Route::get('/checkout-complete','PaymentsController@checkoutComplete')->name('checkout-complete')->middleware('auth:buyer');
 Route::get('/checkout-payment','PaymentsController@payment')->middleware('auth:buyer');
 Route::get('/checkout-review','CheckoutController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
+Route::get('/paymentconfirmation','PaymentsController@paymentconfirmation')->name('paymentconfirmation')->middleware('auth:buyer');
+//paypal
+   Route::get('/paypalconfirmation','paypalController@getCheckout')->name('getCheckout')->middleware('auth:buyer');
+   Route::get('/paypalconfirmation','paypalController@getCheckout')->name('getCheckout')->middleware('auth:buyer');
+  Route::get('/getDone','paypalController@getDone');
+  Route::get('/getCancel','paypalController@getCancel');
+
+
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 Route::get('/shop-seller/{id}','HomeController@shopSeller');
 
 #sitepages
 Route::get('/about','HomeController@about');
+Route::get('/getCheckout','paypalController@getCheckout');
 Route::get('/terms','HomeController@terms');
 
 #no available content
@@ -165,3 +178,8 @@ Route::get('/theme', 'HomeController@theme');
 
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('test', 'emailController@index');
+
+//send emails
+Route::get('send', 'emailController@sendMail');
+

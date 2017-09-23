@@ -54,6 +54,10 @@ return [
     ],
 
 
-    
+    'paypal' => [
+    'client_id' => 'AQo_LILG16aZ2QlFhP9YUcRTg5pBzWlNw1tTyH9WuBo9DLjtwn6a4-0OwnKIFFM5VbFe2nCP3r6DI0lR',
+    'secret' => 'EE8NhBsTEHAfvH7dZb2bTwZwW8WMTFAVdgBuN9nDBkR8W16G8O-YIe2htrHiHdpSMnu8QzYtRmsmv-2q'
+],
+
 
 ];

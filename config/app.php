@@ -169,6 +169,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Approached\LaravelDateInternational\ServiceProvider::class,
+        Snowfire\Beautymail\BeautymailServiceProvider::class,
+      
 
 
 
@@ -242,6 +244,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Dateintl'=> Approached\LaravelDateInternational\DateIntlFacade::class,
+        
+       
         
 
     ],

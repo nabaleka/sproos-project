@@ -17,6 +17,11 @@
         </div>
       </div>
       <!-- Page Content-->
+        <div style="color: green">
+   @if (Session::has('done'))
+        <li>{!! session('done') !!}</li>
+   @endif
+   </div>
       <div class="container padding-bottom-3x mb-2">
         <div class="card text-center">
           <div class="card-block padding-top-2x">

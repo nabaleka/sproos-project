@@ -7,6 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "approached/laravel-date-international": "^1.3",
+        "barryvdh/laravel-dompdf": "^0.8.1",
         "darryldecode/cart": "^3.0",
         "doctrine/dbal": "^2.5",
         "gloudemans/shoppingcart": "^2.3",
@@ -18,7 +19,9 @@
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
-        "netshell/paypal": "dev-master"
+        "netshell/paypal": "dev-master",
+        "snowfire/beautymail": "dev-master",
+        "srmklive/paypal": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

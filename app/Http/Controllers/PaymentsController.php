@@ -8,8 +8,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Payment;
 use App\Orders;
 use App\Order_details;
+use App\pesapals;
 use DB;
 use Pesapal;
+use PayPal;
+use Redirect;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class PaymentsController extends Controller
@@ -34,14 +37,56 @@ class PaymentsController extends Controller
         $unique_id = $random_string;
         $transaction = Pesapal::random_reference();
 
-       
+       //save to database
+        foreach($cartItems as $cartItem){
+            $pesa = new pesapals;
+            $pesa->pesapal_unique_id = $transaction;
+            $pesa->state= "new";
+            $pesa->order_id = strtoupper($unique_id);
+            $pesa->tracking_id = strtoupper($unique_id);
+            $pesa->save();
+           
+             
+   }
+        
+      //passing to the Api
+        $details = array(
+        'amount' =>Cart::total(),
+        'description' => 'Test Transaction',
+         'type' => 'MERCHANT',
+         'first_name' => 'joseph',//Auth::guard('buyer')->user()->first_name
+        'last_name' => 'shiyuli',//Auth::guard('buyer')->user()->last_name
+          'email' => 'jose@gmail.com',//Auth::guard('buyer')->user()->email
+            'phonenumber' => '0702092083',//Auth::guard('buyer')->user()->phonenumber
+           'reference' => $transaction,
+           'height'=>'400px',
+            'currency' => 'KES'
+       );
+       $iframe=Pesapal::makePayment($details);
+       $cartItems = Cart::content();
+       return view('front.checkout.checkout-payment', compact('iframe','orders','cartItems'));
+    }
+    public function checkoutComplete(Request $request)//just tells u payment has gone thru..but not confirmed
+    {
+
+        $tracking = $request->input('tracking_id');
+        $ref = $request->input('merchant_reference');
+ //UPDATE  pesapal table
+        $pesa = pesapals::where('pesapal_unique_id',$ref)->first();
+        $pesa->tracking_id = $tracking;
+        $pesa->state = "PENDING";
+        $pesa->save();
+        //save to orders table
+          $cartItems = Cart::content();
+        //$total_price = DB::table('orders')->where('user_id',Auth::guard('web')->id())->value('total_price');
         foreach($cartItems as $cartItem){
             $orders = new Orders;
-            $orders ->transaction_id = $transaction;
-            $orders ->total_price =Cart::subtotal();
+            $orders ->transaction_id =$pesa->tracking_id ;
+            $orders ->total_price =Cart::total();
             $orders ->tax =Cart::tax();
-            $orders->status = 2;
-            $orders->unique_order_id = strtoupper($unique_id);
+            $orders->status ='PENDING';
+            $orders->unique_order_id = $pesa->order_id;
+            $orders->payment_id = $pesa->pesapal_unique_id;
             $orders->total_quantity = $cartItem->qty;
             $orders->price = $cartItem->subtotal();
             $orders->seller_id = $cartItem->options->seller_id;
@@ -58,38 +103,10 @@ class PaymentsController extends Controller
             $order_details-> save();
            
         }
-             
-
-        
-
-        $details = array(
-        'amount' =>Cart::total(),
-        'description' => 'Test Transaction',
-         'type' => 'MERCHANT',
-         'first_name' => 'joseph',
-            'last_name' => 'shiyuli',
-          'email' => 'jose@gmail.com',
-            'phonenumber' => '0702092083',
-           'reference' => $transaction,
-           'height'=>'400px',
-            'currency' => 'KES'
-       );
-       $iframe=Pesapal::makePayment($details);
-       $cartItems = Cart::content();
-       return view('front.checkout.checkout-payment', compact('iframe','orders','cartItems'));
-    }
-    public function paymentsuccess(Request $request)//just tells u payment has gone thru..but not confirmed
-    {
-        $trackingid = $request->input('tracking_id');
-        $ref = $request->input('merchant_reference');
-
-        $payments = Payment::where('transactionid',$ref)->first();
-        $payments -> trackingid = $trackingid;
-        $payments -> status = 'PENDING';
-        $payments -> save();
-        //go back home
-        $payments=Payment::all();
-        return view('payments.business.home', compact('payments'));
+        $payments=pesapals::all();
+          Cart::destroy();
+           \Session::flash('done', 'Payments successfull!');
+        return view('front.checkout.checkout-complete', compact('payments'));
     }
     //This method just tells u that there is a change in pesapal for your transaction..
     //u need to now query status..retrieve the change...CANCELLED? CONFIRMED?
@@ -103,12 +120,19 @@ class PaymentsController extends Controller
         $this->checkpaymentstatus($trackingid,$merchant_reference,$pesapal_notification_type);
     }
     //Confirm status of transaction and update the DB
-    public function checkpaymentstatus($trackingid,$merchant_reference,$pesapal_notification_type){
+    public function checkpaymentstatus($trackingid,$merchant_reference,$pesapal_notification_type)
+    {
+        //query pesapal and update status
         $status=Pesapal::getMerchantStatus($merchant_reference);
-        $payments = Payment::where('trackingid',$trackingid)->first();
-        $payments -> status = $status;
-        $payments -> payment_method = "PESAPAL";//use the actual method though...
-        $payments -> save();
-        return "success";
+        $pesa=pesapals::where('pesapal_unique_id',$trackingid)->first();
+        $pesa->state = $status;
+        $pesa-> save();
+
+        $orders=orders::where('tracking_id',$trackingid)->first();
+        $orders->state = $status;
+        $orders->payment_method = "PESAPAL";
+        $orders-> save();
+        
     }
+    
 }
