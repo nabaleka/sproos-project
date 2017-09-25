@@ -2725,6 +2725,7 @@
                 "uuid"
             ],
             "time": "2017-09-22T20:46:04+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "sabberworm/php-css-parser",
@@ -2867,6 +2868,8 @@
                 "web service"
             ],
             "time": "2017-08-25T11:49:52+00:00"
+=======
+>>>>>>> 08d00ec08fc5b70229912da27cd390b875e1075c
         },
         {
             "name": "swiftmailer/swiftmailer",
