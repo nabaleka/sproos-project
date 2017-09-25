@@ -2,6 +2,7 @@
 
 @section('content')
 <!-- Page Title-->
+
 <div class="page-title">
 <div class="container">
     <div class="column">
@@ -46,14 +47,13 @@
 
     <div class="row">
         <div class="col-sm-6">
+        
         <div><!---Map-->
-   
-     
 
         <div class="col-sm-6">
         <div class="form-group">
             <label for="checkout-fn">Delivery Date</label>
-            <input class="form-control" type="text" id="checkout-date" required="" name="deliveryDate"  placeholder="TODAY">
+            <input class="form-control" type="text" id="datepicker" required="" name="deliveryDate"  placeholder="TODAY">
         </div>
         </div>
         <div class="col-sm-6">

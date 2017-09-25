@@ -47,7 +47,10 @@ Route::get('/checkout-shipping','CheckoutController@checkoutShipping')->middlewa
 Route::get('/checkout-askSendy','CheckoutController@askSendy')->middleware('auth:buyer');
 
 //Route::get('/checkout-payment','CheckoutController@checkoutPayment')->middleware('auth:buyer');
-Route::get('/checkout-complete','PaymentsController@checkoutComplete')->name('checkout-complete')->middleware('auth:buyer');
+Route::get('/checkout-complete','PaymentsController@completeCheckout')->name('checkout-complete')->middleware('auth:buyer');
+Route::get('/chelsea','CheckoutController@test');
+
+Route::get('/complete','CheckoutController@completeCheckout')->name('checkout-complete')->middleware('auth:buyer');
 Route::get('/checkout-payment','PaymentsController@payment')->middleware('auth:buyer');
 Route::get('/checkout-review','CheckoutController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
 Route::get('/paymentconfirmation','PaymentsController@paymentconfirmation')->name('paymentconfirmation')->middleware('auth:buyer');
@@ -114,6 +117,8 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::get('admin/order_details/{id}', 'OrdersController@showOrderDetails');
 
 	Route::get('admin/reports', 'ReportsController@showReports')->name('admin.reports');
+	Route::get('cancel_feature/{id}','AdminController@cancel_feature');
+	Route::get('confirm_feature/{id}','AdminController@confirm_feature');
 
 });
 
@@ -137,6 +142,8 @@ Route::group(['namespace' => 'Seller'],function(){
 	Route::get('seller/seller-invoices','ProductsController@seller_invoices');
 	Route::get('seller/seller-orders','ProductsController@seller_orders');
 	Route::get('details/{id}','ProductsController@order_details');
+	Route::get('apply_feature/{id}','ProductsController@apply_feature');
+
 });
 
 Route::any('/search','HomeController@search');

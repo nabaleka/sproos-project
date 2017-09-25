@@ -48,7 +48,8 @@ class PaymentsController extends Controller
            
              
    }
-        
+     
+      }  
       //passing to the Api
         $details = array(
         'amount' =>Cart::total(),

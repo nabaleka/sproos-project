@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
-
-use App\Model\Admin\products;
+use App\products;
 use Gloudemans\Shoppingcart\Facades\Cart;
 #use App\Model\order;
 use App\Orders;
 use App\shipings;
 use App\sellers;
-use App\users; 
-use App\sendy; 
+use App\User;
+use App\Users;
+use App\Seller;
+use App\sendy;  
 use DB;
 
 class CheckoutController extends Controller
@@ -66,16 +67,34 @@ class CheckoutController extends Controller
       //intergrating sendy API
 
            
-         
-           $shipings_details = DB::table('shipings')
-                  ->leftJoin('sellers', 'sellers.id', '=', 'shipings.seller_id')
-                  ->leftJoin('sendies', 'sendies.id', '=','shipings.user_id')
-                  ->leftJoin('users', 'users.id', '=','shipings.user_id')
-                  ->select('shipings.*', 'sellers.first_name as seller_name', 'sellers.phonenumber as seller_phonenumber', 'sellers.email as seller_email', 'users.first_name as customer_name', 'users.phonenumber as customer_phonenumber', 'users.email as customer_email', 'sellers.latitude as latitude', 'sellers.longitude as longitude', 'sellers.address as address', 'sendies.buyer_address as buyer_address', 'sendies.buyer_longitude as buyer_longitude', 'sendies.buyer_latitude as buyer_latitude')
-                 ->where('shipings.user_id', '=', Auth::guard('buyer')->user()->id)
-                  ->get();
- foreach ( $shipings_details as  $shipings_detail){
-    $data = json_encode(
+    $cart=Cart::Content();      
+      
+ foreach ($cart as $crt) {
+  // echo $crt->options->seller_id;
+  $productName = products::where('seller_id',$crt->options->seller_id)->first()->name;
+  $sellerName = Seller::where('id',$crt->options->seller_id)->first()->first_name." ". Seller::where('id',$crt->options->seller_id)->first()->last_name;
+$sellerLon = floatval(Seller::where('id',$crt->options->seller_id)->first()->longitude);
+$sellerLat = floatval(Seller::where('id',$crt->options->seller_id)->first()->latitude);
+$sellerAddress = Seller::where('id',$crt->options->seller_id)->first()->address;
+$sellerNumber = Seller::where('id',$crt->options->seller_id)->first()->phonenumber;
+$sellerEmail = Seller::where('id',$crt->options->seller_id)->first()->email;
+
+//fetch from users
+$buyerName = User::where('id',Auth::guard('buyer')->user()->id)->first()->first_name." ". User::where('id',Auth::guard('buyer')->user()->id)->first()->last_name;
+$buyerNumber = User::where('id',Auth::guard('buyer')->user()->id)->first()->phonenumber;
+$buyerEmail = User::where('id',Auth::guard('buyer')->user()->id)->first()->email;
+
+//fetch from sendies
+$buyerLon = floatval(sendy::where('user_id',Auth::guard('buyer')->user()->id)->first()->buyer_longitude);
+$buyerLat = floatval(sendy::where('user_id',Auth::guard('buyer')->user()->id)->first()->buyer_latitude);
+$buyerAddress = sendy::where('user_id',Auth::guard('buyer')->user()->id)->first()->buyer_address;
+
+
+//fetch from shippings
+$deliveryInstructions= Shipings::where('user_id',Auth::guard('buyer')->user()->id)->first()->delivery_instructions;
+$deliveryTime= Shipings::where('user_id',Auth::guard('buyer')->user()->id)->first()->delivery_time;
+$deliveryDate= Shipings::where('user_id',Auth::guard('buyer')->user()->id)->first()->delivery_date;
+ $data = json_encode(
       
     [
 
@@ -88,33 +107,33 @@ class CheckoutController extends Controller
    
      'from'=>
     [
-          'from_name'=> $shipings_detail->seller_name,
-          'from_lat'=>$shipings_detail->longitude,
-          'from_long'=>$shipings_detail->latitude,
-          'from_description'=>$shipings_detail->address,
+          'from_name'=>"KICC",
+          'from_lat'=>$sellerLat,
+          'from_long'=>$sellerLon,
+          'from_description'=>$sellerAddress,
     ],
   
     
      'to'=>
     [
-      'to_name'=>$shipings_detail->customer_name,
-      'to_lat'=>  $shipings_detail->buyer_latitude,
-      'to_long'=> $shipings_detail->buyer_longitude,
-      'to_description'=>$shipings_detail->buyer_address,
+      'to_name'=>"Green house",
+      'to_lat'=>  $buyerLat,
+      'to_long'=> $buyerLon,
+      'to_description'=>$buyerAddress
     ],
      'recepient'=>
     [
-          'recepient_name'=> $shipings_detail->customer_name,
-          'recepient_phone'=> $shipings_detail->customer_phonenumber,
-           'recepient_email'=>$shipings_detail->customer_email
+          'recepient_name'=> $buyerName,
+          'recepient_phone'=> $buyerNumber,
+           'recepient_email'=>$buyerEmail
     ],
      'delivery_details'=>
-      ['pick_up_date'=>$shipings_detail->delivery_date  ,
+      ['pick_up_date'=>$deliveryDate,
        'collect_payment'=>
         [
-         'status'=> 'false',
+         'status'=> false,
           'pay_method'=> 0,
-          'amount'=> 'art::subtotal()'
+          'amount'=> 10
         ],
           
          
@@ -135,33 +154,21 @@ class CheckoutController extends Controller
           'height'=> 10,
           'width'=>20,
           'length'=> 30,
-           'item_name'=>'cloth'
+           'item_name'=>$productName
     ],
     
 
 ]);
+
+ print_r($data);
+  exit();
+ // $this->callSendyAPI($data);
+
+}
+$this->callSendyAPI($data);
+    
     }
-          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, "https://private-anon-efb47e5b8a-sendypublicapi.apiary-mock.com/v1/#request");
           
-          curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-          
-          curl_setopt($ch, CURLOPT_POST, TRUE);
- 
-           curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  "Content-Type: application/json"
-));
-$response = curl_exec($ch);
-
-curl_close($ch);
-
-var_dump($response);
-
-              
-
-      }
     
      public function shipping(Request $request){
         $cartItems = Cart::content();
@@ -174,8 +181,8 @@ var_dump($response);
 
             $shiping=new Shipings;
             $shiping->delivery_date= $request->deliveryDate;
-            $shiping->delivery_time= $request->deliveryTime;
-            $shiping->delivery_instructions= $request->deliveryDate;
+            $shiping->delivery_time= STR_TO_Time($request->deliveryTime);
+            $shiping->delivery_instructions= STR_TO_DATE($request->deliveryDate);
             $shiping->phone_number= $request->phoneNumber;
              foreach($cartItems as $cartItem) {
             $shiping->seller_id= $cartItem->options->seller_id;
@@ -206,15 +213,34 @@ var_dump($response);
       }
 
       public function newTest(){
-           $shipings_details = DB::table('shipings')
-                  ->leftJoin('sellers', 'sellers.id', '=', 'shipings.seller_id')
-                  ->leftJoin('sendies', 'sendies.id', '=','shipings.user_id')
-                  ->leftJoin('users', 'users.id', '=','shipings.user_id')
-                  ->select('shipings.*', 'sellers.first_name as seller_name', 'sellers.phonenumber as seller_phonenumber', 'sellers.email as seller_email', 'users.first_name as customer_name', 'users.phonenumber as customer_phonenumber', 'users.email as customer_email', 'sellers.latitude as latitude', 'sellers.longitude as longitude', 'sellers.address as address', 'sendies.buyer_address as buyer_address', 'sendies.buyer_longitude as buyer_longitude', 'sendies.buyer_latitude as buyer_latitude')
-                 ->where('shipings.user_id', '=', Auth::guard('buyer')->user()->id)
-                  ->get();
- foreach ( $shipings_details as  $shipings_detail){
-    $data = json_encode(
+        $cart=Cart::Content();
+        // dd($cart;
+foreach ($cart as $crt) {
+  // echo $crt->options->seller_id;
+
+  $sellerName = Seller::where('id',$crt->options->seller_id)->first()->first_name." ". Seller::where('id',$crt->options->seller_id)->first()->last_name;
+$sellerLon = floatval(Seller::where('id',$crt->options->seller_id)->first()->longitude);
+$sellerLat = floatval(Seller::where('id',$crt->options->seller_id)->first()->latitude);
+$sellerAddress = Seller::where('id',$crt->options->seller_id)->first()->address;
+$sellerNumber = Seller::where('id',$crt->options->seller_id)->first()->phonenumber;
+$sellerEmail = Seller::where('id',$crt->options->seller_id)->first()->email;
+
+//fetch from users
+$buyerName = User::where('id',Auth::guard('buyer')->user()->id)->first()->first_name." ". User::where('id',Auth::guard('buyer')->user()->id)->first()->last_name;
+$buyerNumber = User::where('id',Auth::guard('buyer')->user()->id)->first()->phonenumber;
+$buyerEmail = User::where('id',Auth::guard('buyer')->user()->id)->first()->email;
+
+//fetch from sendies
+$buyerLon = floatval(sendy::where('user_id',Auth::guard('buyer')->user()->id)->first()->buyer_longitude);
+$buyerLat = floatval(sendy::where('user_id',Auth::guard('buyer')->user()->id)->first()->buyer_latitude);
+$buyerAddress = sendy::where('user_id',Auth::guard('buyer')->user()->id)->first()->buyer_address;
+
+
+//fetch from shippings
+$deliveryInstructions= Shipings::where('user_id',Auth::guard('buyer')->user()->id)->first()->delivery_instructions;
+$deliveryTime= Shipings::where('user_id',Auth::guard('buyer')->user()->id)->first()->delivery_time;
+$deliveryDate= Shipings::where('user_id',Auth::guard('buyer')->user()->id)->first()->delivery_date;
+ $data = json_encode(
       
     [
 
@@ -227,33 +253,33 @@ var_dump($response);
    
      'from'=>
     [
-          'from_name'=> $shipings_detail->seller_name,
-          'from_lat'=>$shipings_detail->longitude,
-          'from_long'=>$shipings_detail->latitude,
-          'from_description'=>$shipings_detail->address,
+          'from_name'=>"KICC",
+          'from_lat'=>$sellerLat,
+          'from_long'=>$sellerLon,
+          'from_description'=>$sellerAddress,
     ],
   
     
      'to'=>
     [
-      'to_name'=>$shipings_detail->customer_name,
-      'to_lat'=>  $shipings_detail->buyer_latitude,
-      'to_long'=> $shipings_detail->buyer_longitude,
-      'to_description'=>$shipings_detail->buyer_address,
+      'to_name'=>"Green house",
+      'to_lat'=>  $buyerLat,
+      'to_long'=> $buyerLon,
+      'to_description'=>$buyerAddress
     ],
      'recepient'=>
     [
-          'recepient_name'=> $shipings_detail->customer_name,
-          'recepient_phone'=> $shipings_detail->customer_phonenumber,
-           'recepient_email'=>$shipings_detail->customer_email
+          'recepient_name'=> $buyerName,
+          'recepient_phone'=> $buyerNumber,
+           'recepient_email'=>$buyerEmail
     ],
      'delivery_details'=>
-      ['pick_up_date'=>$shipings_detail->delivery_date  ,
+      ['pick_up_date'=>$deliveryDate,
        'collect_payment'=>
         [
-         'status'=> 'false',
+         'status'=> false,
           'pay_method'=> 0,
-          'amount'=> 'art::subtotal()'
+          'amount'=> 10
         ],
           
          
@@ -279,14 +305,48 @@ var_dump($response);
     
 
 ]);
+
+ print_r($data);
+  exit();
+ // $this->callSendyAPI($data);
+
+}
+$this->callSendyAPI($data);
     }
- return   $shipings_details;
+ public function test(){
+    $order_id = DB::table('orders')->where('user_id', Auth::guard('buyer')->user()->id)->value('unique_order_id');
+        $details= DB::table('orders')
+                 ->leftJoin('products', 'products.id', '=', 'orders.product_id')
+                 ->where('orders.user_id', '=', Auth::guard('buyer')->user()->id)
+                 ->where('orders.unique_order_id', '=', $order_id)
+                 ->leftJoin('users', 'users.id', '=', 'orders.user_id')  
+                 ->get();
+                 print_r($details);
+               }
+    public function callSendyAPI($data){
+      $ch = curl_init();
+         curl_setopt($ch, CURLOPT_URL, "https://apitest.sendyit.com/v1/#request");
+          
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+curl_setopt($ch, CURLOPT_POST, TRUE);
+ 
+           curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+  "Content-Type: application/json"
+));
+$response = curl_exec($ch);
+
+curl_close($ch);
+
+var_dump($response);
+
+
     }
-      public function checkoutComplete(){
-       
-        Cart::destroy();
-          return view('front.checkout.checkout-complete');
-      }
+
+     
    public function checkoutShipping(){
     
         $phoneNumber = DB::table('users')->where('id',  Auth::guard('buyer')->user()->id)->value('phonenumber');
@@ -298,5 +358,47 @@ var_dump($response);
            $orders = DB::table('orders')->where('user_id',Auth::user()->id)->first();
           return view ('front.checkout.checkout-payment',compact('cartItems','orders'));
       }
+       public function checkoutComplete(Request $request)//just tells u payment has gone thru..but not confirmed
+    {
+
+        $tracking = $request->input('tracking_id');
+        $ref = $request->input('merchant_reference');
+ //UPDATE  pesapal table
+        $pesa = pesapals::where('pesapal_unique_id',$ref)->first();
+        $pesa->tracking_id = $tracking;
+        $pesa->state = "PENDING";
+        $pesa->save();
+        //save to orders table
+          $cartItems = Cart::content();
+        //$total_price = DB::table('orders')->where('user_id',Auth::guard('web')->id())->value('total_price');
+        foreach($cartItems as $cartItem){
+            $orders = new Orders;
+            $orders ->transaction_id =$pesa->tracking_id ;
+            $orders ->total_price =Cart::total();
+            $orders ->tax =Cart::tax();
+            $orders->status ='PENDING';
+            $orders->unique_order_id = $pesa->order_id;
+            $orders->payment_id = $pesa->pesapal_unique_id;
+            $orders->total_quantity = $cartItem->qty;
+            $orders->price = $cartItem->subtotal();
+            $orders->seller_id = $cartItem->options->seller_id;
+            $orders->product_id = $cartItem->id;
+            $orders ->user_id = Auth::user()->id;
+            //$orders->unique_order_id = md5(time().mt_rand(1,5));
+            $orders -> save();
+
+            $order_details = new Order_details;
+            $order_details ->user_id = Auth::user()->id;
+            $order_details->unique_order_id = $orders->unique_order_id;
+            $order_details->product_id = $orders->product_id;
+            $order_details ->seller_id = $orders->seller_id ;
+            $order_details-> save();
+           
+        }
+        $payments=pesapals::all();
+          Cart::destroy();
+           \Session::flash('done', 'Payments successfull!');
+        return view('front.checkout.checkout-complete', compact('payments'));
+    }
 
 }

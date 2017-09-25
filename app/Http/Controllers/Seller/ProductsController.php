@@ -41,6 +41,16 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function apply_feature($id){
+    $feature = Products::find($id);
+    if($feature) {
+    $feature->featured= 1;
+    $feature->save();
+     }
+   return redirect('products');
+
+    }
+     
     public function create()
     {
         

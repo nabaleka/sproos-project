@@ -57,8 +57,8 @@ class SellerRegisterController extends Controller
        $url="http://maps.googleapis.com/maps/api/geocode/json?address=".urlencode( $address);
        $json = file_get_contents($url);
       $data2 = json_decode($json, TRUE);
-      $long=$data2['results'][0]['geometry']['location']['lat'];
-      $lat=$data2['results'][0]['geometry']['location']['lng'];
+      $lat=$data2['results'][0]['geometry']['location']['lat'];
+      $long=$data2['results'][0]['geometry']['location']['lng'];
 
       
         return Seller::create([

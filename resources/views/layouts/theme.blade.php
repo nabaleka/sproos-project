@@ -326,6 +326,10 @@ background-color:#ed2e56;
 
     }
 
+    body{
+        display:none;
+    }
+
 
 
     .btn-success {
@@ -419,7 +423,14 @@ background-color:#efefef;
 
 
 
+
+
 </style>
+<script>
+        $( document ).ready(function() {
+            $("body").show('fast').fadeIn(5000);
+        });
+    </script>
   </head>
   <!-- Body-->
   <body>
@@ -511,7 +522,7 @@ background-color:#efefef;
 
       <div class="topbar-column">
       <a class="hidden-md-down" href="mailto:info@sproos.com"><i class="icon-mail"></i>&nbsp;info@sproos.com</a>
-      <a class="hidden-md-down" href="tel:#"><i class="icon-bell"></i>&nbsp; (+254)715-725-418</a>
+      
 
       <a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a>
       <a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a>

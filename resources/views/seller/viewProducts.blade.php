@@ -113,7 +113,7 @@
                            <th>Unit Price</th>
               
                            <th>In Sock</th>
-                          <th>Creatd At</th>
+                          <th>Featured</th>
                         
                           <th>Edit</th>
                           
@@ -135,8 +135,14 @@
                 
                               <td>{{ $product->stock}}</td>
                             
-                            <td>{{ $product->created_at }}</td>
-
+                            <td>@if($product->featured==0)
+                              <a href="/apply_feature/{{$product->id}}" class="btn btn-danger">Apply feature</a>
+                              @elseif ($product->featured==1)
+                              <a href="" class="btn btn-primary">Feature Pending</a>
+                              @else
+                              <a href="" class="btn btn-success">Featured</a>
+                            </td>
+                             @endif
                            
                               <td><a href="{{ route('products.edit',$product->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                            

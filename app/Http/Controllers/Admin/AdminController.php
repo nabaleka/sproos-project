@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Seller;
+use App\Products;
 use App\Http\Controllers\Controller;
 use App\Model\admin\categories;
+use DB;
 
 
 class AdminController extends Controller
@@ -29,12 +31,30 @@ class AdminController extends Controller
         # - top sellers
         return('Manage your sites');
     }
+    public function cancel_feature($id){
+     $feature = Products::find($id);
+    if($feature) {
+    $feature->featured= 0;
+    $feature->save();
+}
+      return redirect('admin/sellers');
+    }
+     public function confirm_feature($id){
+     $feature = Products::find($id);
+    if($feature) {
+    $feature->featured= 2;
+    $feature->save();
+}
+      return redirect('admin/sellers');
+    }
 
     public function sellers(){
         #Manage site sellers
         #top sellers
         #All sellers
-        $sellers=seller::all();
+         $sellers = DB::table('Sellers')
+                  ->Join('products', 'sellers.id', '=', 'products.seller_id')
+                  ->get();
         return view('admin/sellers',compact('sellers'));
     }
 

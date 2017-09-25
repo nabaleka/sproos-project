@@ -1,48 +1,31 @@
-@extends('beautymail::templates.minty')
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My orders</title>
+</head>
+<body>
+	@foreach(details as detail)
+	 <table class="table">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>order id</th>
+                  <th>product image</th>
+                  <th>product name</th>
+                  <th>product price</th>
+                </tr>
+                <tr>
+                  <td>{{detail->unique_order_id}}</td>
+                  <td>{{detail->image}}</td>
+                  <td>
+                   {{detail->price}}
+                  </td>
+                 
+                </tr>
+               
+              </table>
 
-@section('content')
-
-	@include('beautymail::templates.minty.contentStart')
-		<tr>
-			<td class="title">
-				Welcome Steve
-			</td>
-		</tr>
-		<tr>
-			<td width="100%" height="10"></td>
-		</tr>
-		<tr>
-			<td class="paragraph">
-				This is a paragraph text
-			</td>
-		</tr>
-		<tr>
-			<td width="100%" height="25"></td>
-		</tr>
-		<tr>
-			<td class="title">
-				This is a heading
-			</td>
-		</tr>
-		<tr>
-			<td width="100%" height="10"></td>
-		</tr>
-		<tr>
-			<td class="paragraph">
-				More paragraph text.
-			</td>
-		</tr>
-		<tr>
-			<td width="100%" height="25"></td>
-		</tr>
-		<tr>
-			<td>
-				@include('beautymail::templates.minty.button', ['text' => 'Sign in', 'link' => '#'])
-			</td>
-		</tr>
-		<tr>
-			<td width="100%" height="25"></td>
-		</tr>
-	@include('beautymail::templates.minty.contentEnd')
-
-@stop
+@endforeach
+	
+</body>
+</html>
+		
