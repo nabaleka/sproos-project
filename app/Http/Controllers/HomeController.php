@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Products;
 use App\Banner;
 use App\Orders;
+use App\Seller;
 use App\Model\admin\categories;
 use Gloudemans\Shoppingcart\Facades\Cart; // for cart lib
 
@@ -198,20 +199,23 @@ class HomeController extends Controller
    public function shopSingle($id)
    {
    $cartItems = Cart::content();
+   
    $seller_id = DB::table('products')->where('id', $id)->value('seller_id');
    $seller_products = DB::table('products')->where('seller_id', '=', $seller_id)->get();
 
    $products = Products::find($id);
-   $product_seller = $products->seller_id;
-   $seller_name= DB::table('sellers')
-   ->leftJoin('products', 'sellers.id', '=', 'products.seller_id')
-   ->get()->first();
+   //Get the seller id from the products
+   //$seller_id = $products->seller_id;
+
+   //$product_seller = $products->seller_id;
+   $seller = Seller::find($seller_id);
+   $product_seller = $seller->first_name." ". $seller->last_name;
    $allproducts = Products::all();
    $categories = categories::all();
     // get prodcut by id
 
    //
-       return view('front.shop.shop-single',compact('products','seller_products','seller_name','categories','allproducts'),compact('cartItems'));
+       return view('front.shop.shop-single',compact('products','seller_id','product_seller','categories','allproducts'),compact('cartItems'));
    }
 
    public function shopSeller($id)
@@ -240,12 +244,13 @@ class HomeController extends Controller
     //Get the search term from the request.
     $search = $request->search_data;
 
+
     //Check if search string is empty or null
     if ($search == '') {
         //Bring in all items
         $products= DB::table('products')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
-        ->select('products.*', 'categories.*')
+        ->select('products.*', 'categories.id as category_id','categories.title')
         ->paginate(12);
         return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
     } else {
@@ -255,8 +260,8 @@ class HomeController extends Controller
         $products= DB::table('products')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
         ->select('products.*', 'categories.*')
-        ->where('products.price', 'like', '%'.$search.'%')
-        ->orWhere('products.name', 'like', '%'.$search)
+        //->where('products.price', 'like', '%'.$search.'%')
+        ->Where('products.name', 'like', '%'.$search)
         ->orWhere('products.description', 'like', '%'.$search.'%')
         ->orWhere('categories.title', 'like', '%'.$search)
         ->paginate(12);

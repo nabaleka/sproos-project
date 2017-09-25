@@ -74,7 +74,7 @@
             
             <a href="{{'/shop-seller/'.$products->seller_id}}" class="btn btn-outline-primary btn-sm" >Seller Products</a>
             
-            <h3 style="color:#ee2956;">seller:{{$seller_name->first_name}} {{$seller_name->last_name}}</h3>
+            <h3 style="color:#ee2956;">seller:{{$product_seller}}</h3>
             <div class="padding-bottom-1x mb-2"><span class="text-medium">Categories:&nbsp;</span><a class="navi-link" href="#">Men’s shoes,</a><a class="navi-link" href="#"> Snickers,</a><a class="navi-link" href="#"> Sport shoes</a></div>
             <hr class="mb-3">
             <div class="d-flex flex-wrap justify-content-between">

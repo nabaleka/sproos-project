@@ -36,10 +36,15 @@
           
           
 
-          <li style="display:flex-box; min-width:400px;"><form class="input-group form-group " style="margin-bottom:0;" method="post" action="/search"><span class="input-group-btn" >
+          <li style="display:flex-box; min-width:400px;"><form class="input-group form-group " style="margin-bottom:0;" method="post" action="/search">       
                 {{ csrf_field()}}
-                    <button type="submit" class=" btn-primary" style="color:#ee2956;"><i class="icon-search"></i></button></span>
+                <span class="input-group-btn" >
+          
+                    <button type="submit" class=" btn-primary" style="color:#ee2956;"><i class="icon-search"></i></button>
+                    </span>
+                   
                   <input class="form-control" style="border:unset; border-bottom:1px ;" type="search" name="search_data" placeholder="Search by Category, Name, Price">
+                  
                 </form></li>
           
 

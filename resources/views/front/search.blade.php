@@ -35,7 +35,7 @@
                       </h6>
                       <p>{{$product->title}}</p>
                       <p>{{$product->description}}</p>
-                      <div><button class="btn btn-outline-primary">View</button></div>
+                      <div><a href="/shop-single/{{$product->id}}" class="btn btn-outline-primary">View</a></div>
                     </div>
                     
                   </div>
@@ -45,19 +45,7 @@
             
           @endif
             <!-- Pagination-->
-            <nav class="pagination">
-              <div class="column">
-                <ul class="pages">
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li>...</li>
-                  <li><a href="#">12</a></li>
-                </ul>
-              </div>
-              <div class="column text-right hidden-xs-down"><a class="btn btn-outline-secondary btn-sm" href="#">Next&nbsp;<i class="icon-arrow-right"></i></a></div>
-            </nav>
+             {{$products->links('vendor.pagination.bootstrap-4')}}
           </div>
           <!-- Sidebar          -->
           <div class="col-xl-3 col-lg-4">
