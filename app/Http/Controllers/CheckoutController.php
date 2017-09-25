@@ -181,8 +181,8 @@ $this->callSendyAPI($data);
 
             $shiping=new Shipings;
             $shiping->delivery_date= $request->deliveryDate;
-            $shiping->delivery_time= STR_TO_Time($request->deliveryTime);
-            $shiping->delivery_instructions= STR_TO_DATE($request->deliveryDate);
+            $shiping->delivery_time= $request->deliveryTime;
+            $shiping->delivery_instructions= $request->deliveryDate;
             $shiping->phone_number= $request->phoneNumber;
              foreach($cartItems as $cartItem) {
             $shiping->seller_id= $cartItem->options->seller_id;
