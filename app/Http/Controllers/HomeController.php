@@ -437,5 +437,7 @@ public function add_cart($id){
                     return view ('front.shop.shop-list',compact('cartItems'))->with('products', $products)->with('categories',$categories);
                 }
             }
+    public function sortSearch(Request $request){
 
+    }
 }

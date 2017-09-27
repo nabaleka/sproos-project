@@ -17,11 +17,13 @@
       </div>
       <!-- Page Content-->
 
-      <div class="container padding-bottom-1x padding-top-1x mb-2">
+      <div class="container padding-bottom-1x mb-2">
       <!-- Create buttons to handle sorting -->
         <div class="column">
 
             <div class="shop-sorting">
+            <form method="post" action="/sortSearch">
+            {{ csrf_field() }}
 
               <label for="sorting">Sort by:</label>
 
@@ -37,49 +39,15 @@
 
                 <option value="ztoa" >Z - A Order</option>
 
-              </select><span class="text-muted">Showing:&nbsp;</span><span>1 - 12 items</span>
+              </select>
 
-            <script>  
-              $(document).ready(function(){
-                $('#sorting').chhange(function(){
-                  var x = document.getElementById('sorting').value;
-                  window.alert(x);
-                });
-              });
+              <label>Search by price</label>
+              <input type="text" name="minPrice" class="form-control " placeholder="Miminum" >
+              <input type="text" name="maxPrice" class="form-control " placeholder="Maximum" >
 
-              $(document).ready(function(){
-                  /*Add on or onchange events*/
+              <input type="submit" class="btn btn-primary" value="sort">
 
-                  $('#sorting').change(function(){
-                      var x = document.getElementById('sorting').value;
-                      /** Check to values of the select statement */
-                      if(x === 'lotohi' ){
-                          /** Sorting from highest to lowest price */
-                          /** Call url to sort from low to high */
-                          $.ajax({
-                            type: 'GET',
-                            url:'/search/sort',
-                            data:'',
-                            
-                          });
-
-                      }else if(x === 'hitolo' ){
-                          /** Sorting from lowest to highest price */
-                          
-
-                      }else if(x === 'atoz'){
-                          /** ascending order alphabetically */
-
-
-                      }else if(x === 'ztoa'){
-
-                      } else{
-                          /** descending order alphabetically */
-                      }
-                      
-                    });
-              });
-            </script>
+              </form>
 
             </div>
 

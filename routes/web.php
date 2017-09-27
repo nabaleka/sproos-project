@@ -169,3 +169,4 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 #routes for soring
 Route::post('/sort', 'HomeController@sort');
 Route::post('/sortList', 'HomeController@sortList');
+Route::post('/sortSearch', 'HomeController@sortSearch');
