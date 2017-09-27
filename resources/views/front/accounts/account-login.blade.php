@@ -32,6 +32,11 @@
               </div>
               <h4 class="margin-bottom-1x">Or using form below</h4>
               <div class="form-group input-group">
+                  @if ($errors->has('email'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                  @endif
                 <input class="form-control" type="email" placeholder="Email" required><span class="input-group-addon"><i class="icon-mail"></i></span>
               </div>
               <div class="form-group input-group">

@@ -165,3 +165,7 @@ Route::get('/theme', 'HomeController@theme');
 
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+#routes for soring
+Route::post('/sort', 'HomeController@sort');
+Route::post('/sortList', 'HomeController@sortList');

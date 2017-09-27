@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
 use App\Products;
 use App\Banner;
 use App\Orders;
@@ -63,6 +64,14 @@ class HomeController extends Controller
         $cartItems = Cart::content();
         $categories = categories::all();
         $products = DB::table('products')->paginate(12);
+        return view ('front.shop.shop-grid',compact('cartItems'))->with('products', $products)->with('categories',$categories);
+    }
+
+    public function shopGridAtoZ(){
+        
+        $cartItems = Cart::content();
+        $categories = categories::all();
+        $products = DB::table('products')->sortBy('price')->paginate(12);
         return view ('front.shop.shop-grid',compact('cartItems'))->with('products', $products)->with('categories',$categories);
     }
 
@@ -350,5 +359,80 @@ public function add_cart($id){
       // }
         //$carts = DB::table('shopping_carts')->where('user_id',Auth::user()->id)->get();
         return view  ('front.checkout.cart',compact('cartItems','carts','categories'));
- }
+    }
+
+    public function sort(Request $request){
+
+        //Get the request for sorting the data
+        $sortby = $request->sortBy;
+        $cartItems = Cart::content();
+        $categories = categories::all();
+       
+        
+        //check for how to sort
+
+        switch ($sortby) {
+            case "hitolo":
+                $sortMethod = "High to lowest price";
+                $products = DB::table('products')->orderBy('price','desc')->paginate(12);
+                return view ('front.shop.shop-grid',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
+                break;
+            case "lotohi":
+                $sortMethod = "Lowest to highest price";
+                $products = DB::table('products')->orderBy('price','asc')->paginate(12);
+                return view ('front.shop.shop-grid',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
+                break;
+            case "atoz":
+                $sortMethod = "A to Z";
+                $products = DB::table('products')->orderBy('name','asc')->paginate(12);
+                return view ('front.shop.shop-grid',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
+                break;
+            case "ztoa":
+                $sortMethod = "Z to A";
+                $products = DB::table('products')->orderBy('name','desc')->paginate(12);
+                return view ('front.shop.shop-grid',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
+                break;
+            default:
+            $products = DB::table('products')->paginate(12);
+            return view ('front.shop.shop-grid',compact('cartItems'))->with('products', $products)->with('categories',$categories);
+        }
+    }
+
+    public function sortList(Request $request){
+        
+                //Get the request for sorting the data
+                $sortby = $request->sortBy;
+                $cartItems = Cart::content();
+                $categories = categories::all();
+               
+                
+                //check for how to sort
+        
+                switch ($sortby) {
+                    case "hitolo":
+                        $sortMethod = "High to lowest price";
+                        $products = DB::table('products')->orderBy('price','desc')->paginate(12);
+                        return view ('front.shop.shop-list',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
+                        break;
+                    case "lotohi":
+                        $sortMethod = "Lowest to highest price";
+                        $products = DB::table('products')->orderBy('price','asc')->paginate(12);
+                        return view ('front.shop.shop-list',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
+                        break;
+                    case "atoz":
+                        $sortMethod = "A to Z";
+                        $products = DB::table('products')->orderBy('name','asc')->paginate(12);
+                        return view ('front.shop.shop-list',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
+                        break;
+                    case "ztoa":
+                        $sortMethod = "Z to A";
+                        $products = DB::table('products')->orderBy('name','desc')->paginate(12);
+                        return view ('front.shop.shop-list',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
+                        break;
+                    default:
+                    $products = DB::table('products')->paginate(12);
+                    return view ('front.shop.shop-list',compact('cartItems'))->with('products', $products)->with('categories',$categories);
+                }
+            }
+
 }

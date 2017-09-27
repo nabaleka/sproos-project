@@ -22,6 +22,7 @@
 <!-- CSRF Token -->
    <meta name="csrf-token" content="{{ csrf_token() }}">
    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+   
     
 
 
@@ -479,11 +480,6 @@ body{
      
 
     <!-- Styles -->
-    <script>
-        $( document ).ready(function() {
-            $("body").show('fast').fadeIn(5000);
-        });
-    </script>
 
 
     
@@ -665,10 +661,13 @@ body{
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
 
    
-  <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+    
     <script src="{{ asset('js/modernizr.min.js') }}"></script>
+    <script src="{{ asset('js/ajax-crud.js') }}"></script>
     <script src="{{ asset('js/vendor.min.js') }}"></script>
     <script src="{{ asset('js/scripts.min.js') }}"></script>
+    <script src="{{ asset('node_modules/list.js/dist/list.min.js') }}"></script>
+
 
 
 </body>

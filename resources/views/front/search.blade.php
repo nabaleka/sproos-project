@@ -16,6 +16,75 @@
         </div>
       </div>
       <!-- Page Content-->
+
+      <div class="container padding-bottom-1x padding-top-1x mb-2">
+      <!-- Create buttons to handle sorting -->
+        <div class="column">
+
+            <div class="shop-sorting">
+
+              <label for="sorting">Sort by:</label>
+
+              <select class="form-control" id="sorting">
+
+                <option value="search" >Search</option>
+
+                <option value="lotohi" >Low - High Price</option>
+
+                <option value="hitolo">High - Low Price</option>
+
+                <option value="atoz" >A - Z Order</option>
+
+                <option value="ztoa" >Z - A Order</option>
+
+              </select><span class="text-muted">Showing:&nbsp;</span><span>1 - 12 items</span>
+
+            <script>  
+              $(document).ready(function(){
+                $('#sorting').chhange(function(){
+                  var x = document.getElementById('sorting').value;
+                  window.alert(x);
+                });
+              });
+
+              $(document).ready(function(){
+                  /*Add on or onchange events*/
+
+                  $('#sorting').change(function(){
+                      var x = document.getElementById('sorting').value;
+                      /** Check to values of the select statement */
+                      if(x === 'lotohi' ){
+                          /** Sorting from highest to lowest price */
+                          /** Call url to sort from low to high */
+                          $.ajax({
+                            type: 'GET',
+                            url:'/search/sort',
+                            data:'',
+                            
+                          });
+
+                      }else if(x === 'hitolo' ){
+                          /** Sorting from lowest to highest price */
+                          
+
+                      }else if(x === 'atoz'){
+                          /** ascending order alphabetically */
+
+
+                      }else if(x === 'ztoa'){
+
+                      } else{
+                          /** descending order alphabetically */
+                      }
+                      
+                    });
+              });
+            </script>
+
+            </div>
+
+          </div>
+      </div>
       <div class="container padding-bottom-3x mb-2">
         <div class="row">
         

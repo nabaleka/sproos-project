@@ -45,24 +45,33 @@
           <div class="column">
 
             <div class="shop-sorting">
+            <form action="\sort" method="POST">
+            {{ csrf_field() }}
 
-              <label for="sorting">Sort by:</label>
+              <label for="sorting">Sort by: 
+              @if(isset($sortMethod))
+              <b>{{ $sortMethod}}</b>
+              @endif
+              </label>
 
-              <select class="form-control" id="sorting">
+              <select name="sortBy" class="form-control" id="sorting">
 
-                <option>Popularity</option>
+                <option value="normal">Choose</option>
 
-                <option>Low - High Price</option>
+                <option value="lotohi" >Low - High Price</option>
 
-                <option>High - Low Price</option>
+                <option value="hitolo">High - Low Price</option>
 
-                <option>Avarage Rating</option>
 
-                <option>A - Z Order</option>
+                <option value="atoz">A - Z Order</option>
 
-                <option>Z - A Order</option>
+                <option value="ztoa">Z - A Order</option>
 
               </select><span class="text-muted">Showing:&nbsp;</span><span>1 - 12 items</span>
+
+              <input type="submit" name="submit" class="btn btn-primary" value="Sort">
+
+              </form>
 
             </div>
 
