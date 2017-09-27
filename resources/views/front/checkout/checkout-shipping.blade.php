@@ -77,12 +77,12 @@
          </div>
         </div>
      </div>
-    <div class="col-sm-12">
+    
      <div class="checkout-footer">
         <div class="column"><a class="btn btn-outline-secondary" href="/cart"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back To Cart</span></a></div>
         <div class="column"><button type="submit" class="btn btn-primary"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></button></div>
      </div>
-     </div>
+    
 
     </form>
     <!-- Sidebar  
