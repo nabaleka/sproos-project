@@ -47,16 +47,17 @@ Route::get('/checkout-shipping','CheckoutController@checkoutShipping')->middlewa
 Route::get('/checkout-askSendy','CheckoutController@askSendy')->middleware('auth:buyer');
 
 //Route::get('/checkout-payment','CheckoutController@checkoutPayment')->middleware('auth:buyer');
-Route::get('/checkout-complete','PaymentsController@completeCheckout')->name('checkout-complete')->middleware('auth:buyer');
+Route::get('/checkout-complete','PaymentsController@checkoutComplete')->name('checkout-complete')->middleware('auth:buyer');
 Route::get('/chelsea','CheckoutController@test');
 
-Route::get('/complete','CheckoutController@completeCheckout')->name('checkout-complete')->middleware('auth:buyer');
-Route::get('/checkout-payment','PaymentsController@payment')->middleware('auth:buyer');
+Route::get('/checkout-payment','PaymentsController@payment')->name('checkout-payment')->middleware('auth:buyer');
+Route::get('/checkout-final','CheckoutController@final')->name('final')->middleware('auth:buyer');
+
 Route::get('/checkout-review','CheckoutController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
 Route::get('/paymentconfirmation','PaymentsController@paymentconfirmation')->name('paymentconfirmation')->middleware('auth:buyer');
 //paypal
    Route::get('/paypalconfirmation','paypalController@getCheckout')->name('getCheckout')->middleware('auth:buyer');
-   Route::get('/paypalconfirmation','paypalController@getCheckout')->name('getCheckout')->middleware('auth:buyer');
+   
   Route::get('/getDone','paypalController@getDone');
   Route::get('/getCancel','paypalController@getCancel');
 
@@ -67,7 +68,6 @@ Route::get('/shop-seller/{id}','HomeController@shopSeller');
 
 #sitepages
 Route::get('/about','HomeController@about');
-Route::get('/getCheckout','paypalController@getCheckout');
 Route::get('/terms','HomeController@terms');
 
 #no available content
