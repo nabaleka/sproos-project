@@ -130,9 +130,8 @@
         <div class="collapse" id="paypal" role="tabpanel">
 
             <div class="card-block">
-
-            <p>PayPal - the safer, easier way to pay</p>
-             @include('layouts.paypal')
+    <a href="/paypalconfirmation" class="btn btn-primary">PAYPAL </a>
+           
            
 
             </div>
@@ -198,7 +197,7 @@
                   </tr>
                   <tr>
                     <td>Shipping:</td>
-                    <td class="text-medium"></td>
+                    <td class="text-medium">{{session()->get('shipping')}}</td>
                   </tr>
                   <tr>
                     <td>Estimated tax:</td>
