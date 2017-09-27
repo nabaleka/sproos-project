@@ -176,15 +176,15 @@
            <p class="text-info"> <span style="color:red;">*</span>This will be used as a pick up location for your  products. </p>
               <div id="locationField">
               <input id="autocomplete" class="form-control" required placeholder="Start Typing to get Suggestions"
-             onFocus="geolocate()" type="text"></input>
+             onFocus="geolocate()" type="text" name="address"></input>
              <input class="field form-control" type="hidden" id="street_number"
-              disabled="true"></input>
+              disabled="true" name="street_number"></input>
               <input class="form-control" type="hidden" class="field" id="route"
-              disabled="true"></input>
+              disabled="true" name="route"></input>
               <input class="field form-control" type="hidden" id="locality"
-              disabled="true"></input>
+              disabled="true" name="locality"></input>
               <input class="field form-control" type="hidden" id="postal_code"
-              disabled="true"></input>
+              disabled="true" name="postal_code"></input>
            
               </div>
           </div>

@@ -45,12 +45,8 @@
         <h3 class="text-center mb-30">Featured Products</h3>
           <div class="promo-box-content text-center padding-top-1x padding-bottom-3x">
             <div class="owl-carousel" style="z-index:0;" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;margin&quot;: 30, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;630&quot;:{&quot;items&quot;:2},&quot;991&quot;:{&quot;items&quot;:3},&quot;1200&quot;:{&quot;items&quot;:3}} }">
-              <img src="../img/components/img04.jpg" alt="Image">
-              <img src="../img/components/img05.jpg" alt="Image">
-              <img src="../img/components/img06.jpg" alt="Image">
-              <img src="../img/components/img10.jpg" alt="Image">
-              <img src="../img/components/img11.jpg" alt="Image">
-              <img src="../img/components/img12.jpg" alt="Image">                   
+              @foreach($featured_products as $featured)
+             <a href="/shop-single/{{$featured->id}}"/><img src="{{asset('uploads/'.$featured->image) }}"/></a> @endforeach            
             </div>
           </div>
       </section>

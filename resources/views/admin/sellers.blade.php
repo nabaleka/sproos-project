@@ -108,7 +108,7 @@
                   <th>Email</th>
                   <th>phonenumber</th>
                   <th>About</th>
-                    <th>Date</th>
+                    <th>Featured</th>
                       <th>status</th>
                 </tr>
                 <tr>
@@ -118,7 +118,15 @@
                   <td>{{$seller->email}}</td>
                   <td>{{$seller->phonenumber}}</td>
                   <td>Accessories seller</td>
-                    <td>joined {{  \Carbon\Carbon::createFromTimeStamp(strtotime($seller->created_at))->diffForHumans() }}</td>
+                    <td> @if($seller->featured==0)
+                              <button class="btn btn-warning">Not featured</button >
+                              @elseif ($seller->featured==1)
+                              <a href="/confirm_feature/{{$seller->id}}" class="btn btn-primary">Pending</a>
+                               @elseif ($seller->featured==2)
+                              <a href="/cancel_feature/{{$seller->id}}" class="btn btn-success">Confirmed</a>
+                              @elseif ($seller->featured==3)
+                              <a href="/confirm_feature/{{$seller->id}}" class="btn btn-danger">Cancelled</a></td>
+                              @endif
                   <td><a href="/admin/sellers/{{ $seller->id }}">View</a></td>
                   
                 </tr>

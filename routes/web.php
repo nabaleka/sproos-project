@@ -16,6 +16,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('testing', 'checkoutController@newTest');
 #account routes
 Route::get('/register', 'Auth\BuyerRegisterController@showRegistrationForm')->name('register');
 Route::post('/register', 'Auth\BuyerRegisterController@register');
@@ -40,12 +41,27 @@ Route::get('/shop/{id}/category','HomeController@showCategory');
 
 #checkout routes
 
-Route::get('/checkout-address','CheckoutController@checkoutAddress')->middleware('auth:buyer');;
+Route::get('/checkout-address','CheckoutController@checkoutAddress')->middleware('auth:buyer');
+Route::post('/checkout-sendy','CheckoutController@sendy')->middleware('auth:buyer');
 Route::get('/checkout-shipping','CheckoutController@checkoutShipping')->middleware('auth:buyer');
+Route::get('/checkout-askSendy','CheckoutController@askSendy')->middleware('auth:buyer');
+
 //Route::get('/checkout-payment','CheckoutController@checkoutPayment')->middleware('auth:buyer');
-Route::get('/checkout-complete','CheckoutController@checkoutComplete')->name('checkout-complete')->middleware('auth:buyer');
-Route::get('/checkout-payment','PaymentsController@payment')->middleware('auth:buyer');
+Route::get('/checkout-complete','PaymentsController@checkoutComplete')->name('checkout-complete')->middleware('auth:buyer');
+Route::get('/chelsea','CheckoutController@test');
+
+Route::get('/checkout-payment','PaymentsController@payment')->name('checkout-payment')->middleware('auth:buyer');
+Route::get('/checkout-final','CheckoutController@final')->name('final')->middleware('auth:buyer');
+
 Route::get('/checkout-review','CheckoutController@checkoutReview')->name('checkout-review')->middleware('auth:buyer');
+Route::get('/paymentconfirmation','PaymentsController@paymentconfirmation')->name('paymentconfirmation')->middleware('auth:buyer');
+//paypal
+   Route::get('/paypalconfirmation','paypalController@getCheckout')->name('getCheckout')->middleware('auth:buyer');
+   
+  Route::get('/getDone','paypalController@getDone');
+  Route::get('/getCancel','paypalController@getCancel');
+
+
 
 Route::get('/shop-single/{id}','HomeController@shopSingle');
 Route::get('/shop-seller/{id}','HomeController@shopSeller');
@@ -101,6 +117,8 @@ Route::group(['namespace' => 'Admin'],function(){
 	Route::get('admin/order_details/{id}', 'OrdersController@showOrderDetails');
 
 	Route::get('admin/reports', 'ReportsController@showReports')->name('admin.reports');
+	Route::get('cancel_feature/{id}','AdminController@cancel_feature');
+	Route::get('confirm_feature/{id}','AdminController@confirm_feature');
 
 });
 
@@ -124,6 +142,8 @@ Route::group(['namespace' => 'Seller'],function(){
 	Route::get('seller/seller-invoices','ProductsController@seller_invoices');
 	Route::get('seller/seller-orders','ProductsController@seller_orders');
 	Route::get('details/{id}','ProductsController@order_details');
+	Route::get('apply_feature/{id}','ProductsController@apply_feature');
+
 });
 
 Route::any('/search','HomeController@search');
@@ -170,3 +190,8 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 Route::post('/sort', 'HomeController@sort');
 Route::post('/sortList', 'HomeController@sortList');
 Route::post('/sortSearch', 'HomeController@sortSearch');
+Route::get('test', 'emailController@index');
+
+//send emails
+Route::get('send', 'emailController@sendMail');
+

@@ -34,10 +34,11 @@ class HomeController extends Controller
     public function index()
     {   
         $best_sellers = DB::table('order_details')
-        ->leftjoin('products', 'products.id', '=', 'order_details.product_id')
+        ->leftjoin('products', 'order_details.product_id', '=', 'products.id')
         ->leftjoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
         ->select('order_details.product_id','products.price','products.name','products.image')
         ->orderBy('products.updated_at','DESC')
+        ->distinct()
         ->take(4)
         ->get();
        
@@ -45,12 +46,17 @@ class HomeController extends Controller
         ->orderBy('updated_at','DESC')
         ->take(4)
         ->get();
-     
+
+      $featured_products = DB::table('products')->where('featured',2)
+        ->orderBy('updated_at','DESC')
+        ->take(5)
+        ->get();
+
       $categories = categories::all();
        $banner = Banner::all();
       $cartItems = Cart::content();
        $products = Products::all();
-      return view('front/welcome',compact('products','banner'),compact('cartItems','latest_products','best_sellers'))->with('categories',$categories);
+      return view('front/welcome',compact('products','banner'),compact('cartItems','latest_products','best_sellers','featured_products'))->with('categories',$categories);
     }
 
 

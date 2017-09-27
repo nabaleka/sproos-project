@@ -13,7 +13,11 @@
     <h1>Checkout</h1>
 
     </div>
-
+     <div style="color: red">
+   @if (Session::has('message'))
+        <li>{!! session('message') !!}</li>
+   @endif
+   </div>
     <div class="column">
 
     <ul class="breadcrumbs">
@@ -45,10 +49,10 @@
     <div class="col-xl-9 col-lg-8">
 
     <div class="checkout-steps">
-        <a href="/checkout-review" class="active">4. Payment</a>
-        <a class="completed" href="checkout-address.html"><span class="step-indicator icon-circle-check"></span>1. Review</a>
-        <a class="completed" href="checkout-address.html"><span class="step-indicator icon-circle-check"></span>1. Address</a>
-        <a class="completed" href="checkout-address.html"><span class="step-indicator icon-circle-check"></span>1. Shipping</a>
+        <a href="" class="active">4. Payment</a>
+        <a class="completed" href=""><span class="step-indicator icon-circle-check"></span>1. Review</a>
+        <a class="completed" href=""><span class="step-indicator icon-circle-check"></span>1. Address</a>
+        <a class="completed" href=""><span class="step-indicator icon-circle-check"></span>1. Shipping</a>
     </div>
 
     <h4>Choose Payment Method</h4>
@@ -126,9 +130,8 @@
         <div class="collapse" id="paypal" role="tabpanel">
 
             <div class="card-block">
-
-            <p>PayPal - the safer, easier way to pay</p>
-             @include('layouts.paypal')
+    <a href="/paypalconfirmation" class="btn btn-primary">PAYPAL </a>
+           
            
 
             </div>
@@ -194,7 +197,7 @@
                   </tr>
                   <tr>
                     <td>Shipping:</td>
-                    <td class="text-medium"></td>
+                    <td class="text-medium">{{session()->get('shipping')}}</td>
                   </tr>
                   <tr>
                     <td>Estimated tax:</td>

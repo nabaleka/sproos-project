@@ -39,19 +39,34 @@ class SellerRegisterController extends Controller
         return Validator::make($data, [
             'first_name' => 'required',
             'last_name' => 'required',
+            'address' => 'required',
             'phonenumber' => 'required|min:10|max:15',
             'email' => 'required|email|max:255|unique:sellers',
             'password' => 'required|min:6|confirmed',
             
         ]);
+
+
     }
 
     //Create a new seller instance after a validation.
     protected function create(array $data)
     {
+
+         $address =$data['address'];
+       $url="http://maps.googleapis.com/maps/api/geocode/json?address=".urlencode( $address);
+       $json = file_get_contents($url);
+      $data2 = json_decode($json, TRUE);
+      $lat=$data2['results'][0]['geometry']['location']['lat'];
+      $long=$data2['results'][0]['geometry']['location']['lng'];
+
+      
         return Seller::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
+            'address' => $data['address'],
+            'latitude' =>  $lat,
+            'longitude' =>  $long,
             'phonenumber' => $data['phonenumber'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

@@ -12,7 +12,6 @@ use App\pesapals;
 use DB;
 use Pesapal;
 use PayPal;
-use Redirect;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class PaymentsController extends Controller
@@ -105,7 +104,9 @@ class PaymentsController extends Controller
            
         }
         $payments=pesapals::all();
-         return redirect()->route('final');
+          Cart::destroy();
+           \Session::flash('done', 'Payments successfull!');
+        return view('front.checkout.checkout-complete', compact('payments'));
     }
     //This method just tells u that there is a change in pesapal for your transaction..
     //u need to now query status..retrieve the change...CANCELLED? CONFIRMED?
