@@ -2,6 +2,18 @@
 
 @section('content')
 <!-- Page Title-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/base/jquery-ui.css" type="text/css" media="all">
+<script>
+$('#checkout-date').datepicker({
+    changeMonth: true,
+    changeYear: true,
+    showButtonPanel: true,
+    yearRange: "-100:+0",
+    dateFormat: 'dd/mm/yy'
+
+});
+  </script>
 <div class="page-title">
 <div class="container">
     <div class="column">
@@ -52,7 +64,7 @@
         <div class="col-sm-6">
         <div class="form-group">
             <label for="checkout-fn">Delivery Date</label>
-            <input class="form-control" type="text" id="checkout-date" required="" name="deliveryDate"  placeholder="TODAY">
+            <input class="form-control" type="text" id="checkout-date" required="" name="deliveryDate"  placeholder="Date">
         </div>
         </div>
         <div class="col-sm-6">

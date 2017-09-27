@@ -36,26 +36,14 @@
       <div class="widget widget-featured-products">
         <h3 class="widget-title">Best Rated</h3>
         <!-- Entry-->
+          @foreach($top_rated as $top)
         <div class="entry">
-          <div class="entry-thumb"><a href="#"><img src="img/shop/widget/08.jpg" alt="Product"></a></div>
+          <div class="entry-thumb"><a href="/shop-single/{{$top->id}}"><img src="{{asset('uploads/'.$top->image) }}" alt="Product"></a></div>
           <div class="entry-content">
-            <h4 class="entry-title"><a href="#">Hoodies</a></h4><span class="entry-meta">From Ksh 1965.00</span>
+            <h4 class="entry-title"><a href="/shop-single/{{$top->id}}">{{$top->name}}</a></h4><span class="entry-meta">Ksh. {{$top->price}}</span>
           </div>
         </div>
-        <!-- Entry-->
-        <div class="entry">
-          <div class="entry-thumb"><a href="#"><img src="img/shop/widget/09.jpg" alt="Product"></a></div>
-          <div class="entry-content">
-            <h4 class="entry-title"><a href="#">Jackets</a></h4><span class="entry-meta">From Ksh 3936.99</span>
-          </div>
-        </div>
-        <!-- Entry-->
-        <div class="entry">
-          <div class="entry-thumb"><a href="#"><img src="img/shop/widget/10.jpg" alt="Product"></a></div>
-          <div class="entry-content">
-            <h4 class="entry-title"><a href="#">Ladies Tops</a></h4><span class="entry-meta">From Ksh 1,128.00</span>
-          </div>
-        </div>
+       @endforeach
       </div>
     </div>
     

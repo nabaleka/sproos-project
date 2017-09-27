@@ -38,6 +38,15 @@ class HomeController extends Controller
         ->distinct()
         ->take(4)
         ->get();
+
+        $top_rated = DB::table('order_details')
+        ->leftjoin('products', 'order_details.product_id', '=', 'products.id')
+        ->leftjoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
+        ->select('order_details.product_id','products.price','products.name','products.image','products.id')
+        ->orderBy('products.id','DESC')
+        ->distinct()
+        ->take(4)
+        ->get();
        
         $latest_products = DB::table('products')
         ->orderBy('updated_at','DESC')
@@ -53,7 +62,7 @@ class HomeController extends Controller
        $banner = Banner::all();
       $cartItems = Cart::content();
        $products = Products::all();
-      return view('front/welcome',compact('products','banner'),compact('cartItems','latest_products','best_sellers','featured_products'))->with('categories',$categories);
+      return view('front/welcome',compact('products','banner'),compact('cartItems','latest_products',  'top_rated','best_sellers','featured_products'))->with('categories',$categories);
     }
 
 
