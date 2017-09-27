@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -417,6 +419,7 @@ public function add_cart($id){
                     case "lotohi":
                         $sortMethod = "Lowest to highest price";
                         $products = DB::table('products')->orderBy('price','asc')->paginate(12);
+                        //return Redirect::to('/shop-list')->with('sortMethod', $sortMethod)->with('cartItems', $cartItems)->with('products', $products)->with('categories',$categories);
                         return view ('front.shop.shop-list',compact('cartItems','sortMethod'))->with('products', $products)->with('categories',$categories);
                         break;
                     case "atoz":
