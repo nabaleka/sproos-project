@@ -36,7 +36,7 @@ class HomeController extends Controller
         $best_sellers = DB::table('order_details')
         ->leftjoin('products', 'order_details.product_id', '=', 'products.id')
         ->leftjoin('orders', 'orders.unique_order_id', '=', 'order_details.unique_order_id')
-        ->select('order_details.product_id','products.price','products.name','products.image')
+        ->select('order_details.product_id','products.price','products.name','products.image','products.updated_at')
         ->orderBy('products.updated_at','DESC')
         ->distinct()
         ->take(4)
