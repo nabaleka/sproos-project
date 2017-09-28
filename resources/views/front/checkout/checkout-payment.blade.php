@@ -197,7 +197,12 @@
                   </tr>
                   <tr>
                     <td>Shipping:</td>
-                    <td class="text-medium">{{session()->get('shipping')}}</td>
+                    <td class="text-medium"><?php
+                     $total_amount=str_replace(",", "", Cart::total());
+                     $total_cost= $total_amount+session()->get('shipping');
+                     $echo $total_cost;
+                     ?>
+       </td>
                   </tr>
                   <tr>
                     <td>Estimated tax:</td>
