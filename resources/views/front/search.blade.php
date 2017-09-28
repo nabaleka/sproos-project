@@ -21,13 +21,31 @@
       <!-- Create buttons to handle sorting -->
         <div class="column">
 
+        <script>
+          function validate() {
+              var x, y;
+
+              // Get the value of the input field with id="numb"
+              x = document.getElementById("maxPrice").value;
+              y = document.getElementById("minPrice").value;
+
+              // If x is Not a Number or less than one or greater than 10
+              if (isNaN(x) && isNaN(y)) {
+                  return true;
+              } else {
+                  return false;
+              }
+              //document.getElementById("demo").innerHTML = text;
+          }
+        </script>
+
             <div class="shop-sorting">
-            <form method="post" action="/sortSearch">
+            <form method="post" action="/sortSearch" onsubmit="validate()">
             {{ csrf_field() }}
 
               <label for="sorting">Sort by:</label>
 
-              <select class="form-control" id="sorting">
+              <select class="form-control" id="sorting" name="sortBy">
 
                 <option value="search" >Search</option>
 
@@ -42,8 +60,8 @@
               </select>
 
               <label>Search by price</label>
-              <input type="text" name="minPrice" class="form-control " placeholder="Miminum" >
-              <input type="text" name="maxPrice" class="form-control " placeholder="Maximum" >
+              <input type="number" id="minPrice" required="" name="minPrice" class="form-control " placeholder="Miminum" >
+              <input type="number" id="maxPrice" required="" name="maxPrice" class="form-control " placeholder="Maximum" >
 
               <input type="submit" class="btn btn-primary" value="sort">
 

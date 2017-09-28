@@ -188,8 +188,20 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 
 #routes for soring
 Route::post('/sort', 'HomeController@sort');
+Route::get('/sort', function(){
+
+	return redirect('/shop-grid');
+});
 Route::post('/sortList', 'HomeController@sortList');
+Route::get('/sortList', function(){
+	
+		return redirect('/shop-list');
+	});
 Route::post('/sortSearch', 'HomeController@sortSearch');
+Route::get('/sortSearch', function(){
+	
+		return redirect('/search');
+	});
 Route::get('test', 'emailController@index');
 
 //send emails

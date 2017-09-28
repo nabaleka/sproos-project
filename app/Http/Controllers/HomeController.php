@@ -221,6 +221,7 @@ class HomeController extends Controller
 
    //$product_seller = $products->seller_id;
    $seller = Seller::find($seller_id);
+   //$product_seller = "";
    $product_seller = $seller->first_name." ". $seller->last_name;
    $allproducts = Products::all();
    $categories = categories::all();
@@ -444,6 +445,43 @@ public function add_cart($id){
                 }
             }
     public function sortSearch(Request $request){
+        $sortby = $request->sortBy;
+        $min = $request->minPrice;
+        $max = $request->maxPrice;    
+        $categories = categories::all();
+        $cartItems = Cart::content();
+
+        $products= DB::table('products')
+        ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+        ->select('products.*', 'categories.*')
+        //->where('products.price', 'like', '%'.$search.'%')
+        ->whereBetween('price', [$min,$max])
+        ->paginate(12);
+
+
+
+        //$products = DB::table('products')->whereBetween('price', [$min,$max])->get();
+
+        $productsFound = count($products);
+        $search = "Search by price between $min - $max";
+
+        if($productsFound < 1){
+
+            $products= DB::table('products')
+            ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+            ->select('products.*', 'categories.id as category_id','categories.title')
+            ->paginate(12);
+            return view('front.search', ['msg' => 'Results: ' . $search], compact('products','categories','cartItems','search'));
+
+        }
+
+        else{
+
+            //echo $max." ".$min." ".$sortby.count($products);
+       return view('front.search', ['msg' => 'Results: ' . $productsFound . 'products found'], compact('products','categories','cartItems','search'));
+
+        }
 
     }
 }
+
