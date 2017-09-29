@@ -281,7 +281,7 @@ class HomeController extends Controller
         //$products = DB::table('products')->get();
         $products= DB::table('products')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
-        ->select('products.*', 'categories.*')
+        ->select('products.*', 'categories.id as category_id','categories.title')
         //->where('products.price', 'like', '%'.$search.'%')
         ->Where('products.name', 'like', '%'.$search)
         ->orWhere('products.description', 'like', '%'.$search.'%')
@@ -290,7 +290,7 @@ class HomeController extends Controller
         if(count($products)<= 0){
             $products= DB::table('products')
             ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
-            ->select('products.*', 'categories.*')
+            ->select('products.*', 'categories.id as category_id','categories.title')
             ->paginate(12);            
             return view('front.search', ['msg' => 'Results for : \'' . $search .'\' not found'], compact('products','categories','cartItems','search'));
 
@@ -462,7 +462,7 @@ public function add_cart($id){
 
         $products= DB::table('products')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
-        ->select('products.*', 'categories.*')
+        ->select('products.*', 'categories.id as category_id','categories.title')
         //->where('products.price', 'like', '%'.$search.'%')
         ->whereBetween('price', [$min,$max])
         ->paginate(12);

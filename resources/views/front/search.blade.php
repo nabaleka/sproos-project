@@ -90,7 +90,7 @@
                       </h6>
                       <p>{{$product->title}}</p>
                       <p>{{$product->description}}</p>
-                      <div><a href="/shop-single/{{$product->id}}" class="btn btn-outline-primary">View</a></div>
+                      <div><a href="/shop-single/{{ $product->id }}" class="btn btn-outline-primary">View</a></div>
                     </div>
                     
                   </div>
