@@ -34,6 +34,8 @@
 
   <link rel="stylesheet" href="{{asset('adminscript/plugins/iCheck/square/blue.css')}}">
 
+  <script src="{{ asset('adminscript/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -82,7 +84,7 @@
 
   <div class="login-logo">
 
-    <a href="../../index2.html"><b>Admin</b> Sproos</a>
+    <a href="/sproos/admin"><b>Admin</b> Sproos</a>
 
   </div>
 
@@ -107,6 +109,11 @@
         <input type="email" class="form-control" name="email" placeholder="Email">
 
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
 
       </div>
 
@@ -115,6 +122,11 @@
         <input type="password" class="form-control" name="password" placeholder="Password">
 
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        @if ($errors->has('password'))
+            <span class="help-block ">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+        @endif
 
       </div>
 
@@ -166,7 +178,7 @@
 
 <!-- jQuery 2.2.3 -->
 
-<script src="{{ asset('adminscript/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+
 
 <!-- Bootstrap 3.3.6 -->
 

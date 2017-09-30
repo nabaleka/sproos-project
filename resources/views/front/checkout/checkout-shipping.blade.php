@@ -44,7 +44,7 @@
     <form action="/shipping" method="post">
      <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-     <div class="row">
+     <div class="row" id="jqueryExample">
         <div class="col-sm-9">
         
         <div><!---Map-->
@@ -63,11 +63,13 @@
         </div>
      </div>
 
+   
+
      <div class="row">
       <div class="col-sm-9">
         <div class="form-group">
             <label for="checkout-email">Delivery Instructions</label>
-            <textarea class="form-control" type="text" id="checkout-instructions" required="" name="deliveryInstructions">e.g Call me when you arrive</textarea>
+            <textarea class="form-control" type="text" id="checkout-instructions" required="" name="deliveryInstructions" placeholder="e.g Call me when you arrive"></textarea>
         </div>
       </div>
         <div class="col-sm-9">
