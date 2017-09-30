@@ -29,5 +29,5 @@
 </div>
 @else
 
-<div class="cart"><a href="#"></a><i class="icon-bag"></i></div>
+<div class="cart" data-toast data-toast-position="bottomCenter" data-toast-type="info" data-toast-icon="icon-bell" data-toast-title="Empty Cart!" data-toast-message="Add atleast a product to the cart."><a href="#"></a><i class="icon-bag"></i></div>
 @endif
