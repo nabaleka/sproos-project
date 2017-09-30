@@ -48,24 +48,7 @@ class CartController extends Controller
     public function cart(){
         $cartItems = Cart::content();
        $categories = categories::all();
-
-
-        //foreach ($cartItems as $cartItem) {
-         // $userid = Auth::user()->id;
-        //  $cart=new shoppingCart;
-        //  $cart->user_id = $userid;
-        //  $cart->product_id = $cartItem->id;
-        //  $cart->cancelled= 0;
-        //  $cart->quantity = $cartItem->qty;
-        //  $cart->product_name=$cartItem->name;
-        //  $cart->price = $cartItem->price;
-         // $cart->total_price = Cart::total();
-         // $cart->product_image = $cartItem->options->img;
-         // $cart->save();
-          
-        // }
-          //$carts = DB::table('shopping_carts')->where('user_id',Auth::user()->id)->get();
-          return view  ('front.checkout.cart',compact('cartItems','carts','categories'));
+      return view('front.checkout.cart',compact('cartItems','carts','categories'));
    }
   
 }
