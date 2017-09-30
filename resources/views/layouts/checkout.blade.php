@@ -103,6 +103,10 @@
 
     }
 
+    git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch sproos-project.zip' \
+--prune-empty --tag-name-filter cat -- --all
+
     
 
     .toolbar .search{
