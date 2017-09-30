@@ -207,9 +207,15 @@ Route::get('test', 'emailController@index');
 //send emails
 Route::get('send', 'emailController@sendMail');
 
-//send contact email
+//send emails route
 Route::get('contact', 'emailController@create')->name('store');
 ;
 Route::post('contact_store', 'emailController@store')->name('contact_store');
 ;
 
+Route::post('contact_store', 'emailController@store')->name('contact_store');
+;
+Route::post('contact_store', 'emailController@store')->name('contact_store');
+;
+Route::post('contact_store', 'emailController@store')->name('contact_store');
+;
