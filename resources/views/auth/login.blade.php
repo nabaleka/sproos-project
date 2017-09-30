@@ -1,7 +1,7 @@
 @extends('layouts.checkout')
 @section('content')
  <!-- Page Title-->
-      <div class="page-title">
+      <!--div class="page-title">
         <div class="container">
           <div class="column">
             <h1>Log In</h1>
@@ -15,7 +15,7 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div-->
 
 <div class="container-fluid" style="max-width:500px; padding:10px;">
     <div class="row">
