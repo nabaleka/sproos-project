@@ -63,7 +63,7 @@
 
         // initialize input widgets first
         $('document').ready(function(){
-            window.alert('Im ready');
+           
             $('#jqueryExample #checkout-time').timepicker({
               'showDuration': true,
               'timeFormat': 'g:ia'
