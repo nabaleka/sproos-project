@@ -153,35 +153,9 @@ Route::get('login/{provider}', 'SocialAuthController@auth')->where(['provider' =
 Route::get('login/{provider}/callback', 'SocialAuthController@login')->where(['provider' => 'facebook|google|twitter']);
 
 
-Route::get('/show', function()
-{
-	//$img = Image::canvas(600, 600, '#ff0000');
-	
-	//$exists = Storage::disk('uploads')->exists('banners/one.png');
-	$img = Image::make('uploads/banners/banner.jpg');
-	//$img->fit(600,360);
-	//$img->fit(600);
-	//$img->resize(600,null);
-	//$img->fit(800,600, function($constraint){
-	//	$constraint->upsize();
-	//});
-
-	$img->fit(400,null, function($constraint){
-		$constraint->upsize();
-	});
-	
-	
-    return view('front.map');
-});
 
 
-Route::get('resizeImage','ImageController@resizeImage');
-Route::post('resizeImagePost','ImageController@resizeImagePost')->name('resizeImagePost');
 
-Route::post('/hi','HomeController@hi')->name('hi');
-
-//Test Theme
-Route::get('/theme', 'HomeController@theme');
 
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');

@@ -60,7 +60,7 @@
     <!-- Loop through -->
     <div class="grid-item">
       <div class="product-card">
-        <div class="product-badge"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
+        <div class="product-badge"></div><a class="product-thumb" href="/shop-single/{{$product->id}}"><img  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" title="{{ $product->name }}" data-content="{{ $product->description}}" href="/shop-single/{{$product->id}}" src="{{asset('uploads/'.$product->image) }}" height="100px" width="150px" /></a>
     <!--h3 class="product-title"><a href="/shop-single/{{$product->id}}">{{$product->name}}</a></h3-->
         <h4 class="product-price">
         Ksh. {{$product->price}} <br> <small class="label label-default">{{$product->stock }}  in stock.</small>

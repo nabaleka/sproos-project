@@ -468,7 +468,7 @@ body{
 
     <script>
         $( document ).ready(function() {
-            $("body").show(2000);
+            $("body").show(2000).fadeIn(2000);
         });
     </script>
 

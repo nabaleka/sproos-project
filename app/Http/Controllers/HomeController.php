@@ -205,7 +205,7 @@ class HomeController extends Controller
         $cartItems = Cart::content();
         $products = Products::all();
         $categories = categories::all();
-        return view ('pages.about',compact('cartItems','categories'))->with('products', $products);
+        return view ('front.about',compact('cartItems','categories'))->with('products', $products);
     }
     public function terms(){
         $cartItems = Cart::content();

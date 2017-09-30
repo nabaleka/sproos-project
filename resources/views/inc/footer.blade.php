@@ -5,11 +5,11 @@
           <div class="col-lg-3 col-md-6">
             <!-- Contact Info-->
             <section class="widget widget-light-skin">
-              <h3 class="widget-title">Get In Touch With Us</h3>
-              <p class="text-white">Phone: 000 000 000 </p>
+              <h3 class="widget-title">SUPPORT</h3>
+              
               <ul class="list-unstyled text-sm text-white">
-                <li><span class="opacity-50">Monday-Friday:</span>9.00 am - 8.00 pm</li>
-                <li><span class="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
+                <li><span class="opacity-50">Monday-Friday:</span>9.00 am - 5.00 pm</li>
+                <li><span class="opacity-50">Saturday:</span>10.00 am - 4.00 pm</li>
               </ul>
               <p><a class="navi-link-light" href="#">support@sproos.co.ke</a></p>
               
@@ -35,7 +35,7 @@
               <h3 class="widget-title">About Us</h3>
                 <ul>
                   <li><a href="/about">About Sproos</a></li>
-                  <li><a href="/soon">Our Story</a></li>
+                  <!--li><a href="/soon">Our Story</a></li-->
                   <li><a href="/contacts-us">Contacts</a></li>
                   <li><a href="/faq">Help / FAQ</a></li>
                   <li><a href="/terms">Terms of use</a></li>
