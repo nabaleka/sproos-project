@@ -55,6 +55,31 @@
     <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
 
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
+    <link rel="stylesheet" media="screen" href="{{ asset('css/jquery.timepicker.min.css') }}">
+    <script src="{{ url('https://code.jquery.com/jquery-1.12.4.js')}} "></script>
+    <script src="{{ url('https://code.jquery.com/ui/1.12.1/jquery-ui.js') }}"></script>
+
+ <script>
+
+        // initialize input widgets first
+        $('document').ready(function(){
+            window.alert('Im ready');
+            $('#jqueryExample #checkout-time').timepicker({
+              'showDuration': true,
+              'timeFormat': 'g:ia'
+          });
+
+          $('#jqueryExample #checkout-date').datepicker({
+              'format': 'm/d/yyyy',
+              'autoclose': true
+          });
+
+          // initialize datepair
+          $('#jqueryExample').datepair();
+
+        });
+        
+    </script>
 
     <style>
 
@@ -519,11 +544,14 @@
 
     <!-- Scripts -->
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!--script src="{{ asset('js/app.js') }}"></script-->
 
     <!-- JavaScript (jQuery) libraries, plugins and custom scripts-->
 
     <script src="{{ asset('js/vendor.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
+    <script src="{{ asset('js/Datepair.js') }}"></script>
+    <script src="{{ asset('js/jquery.datepair.js') }}"></script>
 
     <script src="{{ asset('js/scripts.min.js') }}"></script>
 

@@ -21,19 +21,7 @@
 
 <!-- CSRF Token -->
    <meta name="csrf-token" content="{{ csrf_token() }}">
-   <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
-   
-    
-
-
-
-
     <title>Sproos</title>
-
-
-
-  
-
      <!-- Favicon and Apple Icons-->
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -51,11 +39,13 @@
     <!-- Vendor Styles including: Bootstrap, Font Icons, Plugins, etc.-->
 
     <link rel="stylesheet" media="screen" href="{{ asset('css/vendor.min.css') }}">
+    <link rel="stylesheet" media="screen" href="{{ asset('css/jquery.timepicker.min.css') }}">
     <link rel="stylesheet"  href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
 
     <!-- Main Styles-->
 
     <link id="mainStyles" rel="stylesheet" media="screen" href="{{ asset('css/styles.min.css')}}">
+    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
 
     <style>
 
@@ -476,6 +466,12 @@ body{
 
     </style>
 
+    <script>
+        $( document ).ready(function() {
+            $("body").show(2000);
+        });
+    </script>
+
     <!-- Modernizr-->
      
 
@@ -663,6 +659,7 @@ body{
    
     
     <script src="{{ asset('js/modernizr.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
     <script src="{{ asset('js/ajax-crud.js') }}"></script>
     <script src="{{ asset('js/vendor.min.js') }}"></script>
     <script src="{{ asset('js/scripts.min.js') }}"></script>

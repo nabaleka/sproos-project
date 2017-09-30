@@ -44,7 +44,7 @@
     <form action="/shipping" method="post">
      <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-     <div class="row">
+     <div class="row" id="jqueryExample">
         <div class="col-sm-9">
         
         <div><!---Map-->
@@ -62,6 +62,8 @@
         </div>
         </div>
      </div>
+
+   
 
      <div class="row">
       <div class="col-sm-9">

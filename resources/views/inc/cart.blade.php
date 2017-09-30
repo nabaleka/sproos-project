@@ -5,14 +5,10 @@
     <div class="toolbar-dropdown">
     <!---->
     @foreach($cartItems as $cartItem)
-
-  
-    <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href=""><img src="{{asset('uploads/'.$cartItem->options->img) }}" height="100px" width="150px" />
-                </a></a>
-      <div class="dropdown-product-info"><a class="dropdown-product-title" href="{{ '/shop-single/'.$cartItem->id }}">{{$cartItem->name}}</a><span class="dropdown-product-details">Ksh{{$cartItem->price}}</span></div>
-    </div>
-
-  
+      <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href=""><img src="{{asset('uploads/'.$cartItem->options->img) }}" height="100px" width="150px" />
+                  </a></a>
+        <div class="dropdown-product-info"><a class="dropdown-product-title" href="{{ '/shop-single/'.$cartItem->id }}">{{$cartItem->name}}</a><span class="dropdown-product-details">Ksh{{$cartItem->price}}</span></div>
+      </div>
     @endforeach
     <!---->
     
@@ -29,5 +25,5 @@
 </div>
 @else
 
-<div class="cart"><a href="#"></a><i class="icon-bag"></i></div>
+<div class="cart"data-toast data-toast-position="topRight" data-toast-type="info" data-toast-icon="icon-basket" data-toast-title="Info" data-toast-message="Your cart is empty!"><a href="#"></a><i class="icon-bag"></i></div>
 @endif
