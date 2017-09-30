@@ -198,9 +198,8 @@
                   <tr>
                     <td>Shipping:</td>
                     <td class="text-medium"><?php
-                     $total_amount=str_replace(",", "", Cart::total());
-                     $total_cost= $total_amount+session()->get('shipping');
-                     $echo $total_cost;
+                     echo session()->get('shipping');
+                    
                      ?>
        </td>
                   </tr>
@@ -210,7 +209,11 @@
                   </tr>
                   <tr>
                     <td></td>
-                    <td class="text-lg text-medium">{{Cart::total()}}</td>
+                    <td class="text-lg text-medium"><?php
+                     $total_amount=str_replace(",", "", Cart::total());
+                     $total_cost= $total_amount+session()->get('shipping');
+                     echo $total_cost;
+                     ?></td>
                   </tr>
                 </table>
               </section>

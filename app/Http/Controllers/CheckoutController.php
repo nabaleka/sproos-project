@@ -221,6 +221,7 @@ $complete = json_encode(
   ]
 
 ]);
+
       return $this->completeSendyAPI($complete);
 
 

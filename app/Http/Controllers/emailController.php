@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail\OrderShipped;
-use Mail;
+use Mail\contact;
+use App\Http\Requests\ContactFormRequest;
 
-class SendMailController extends Controller
+class emailController extends Controller
 {
     /**
      * Show the application sendMail.
@@ -27,4 +28,27 @@ class SendMailController extends Controller
 
     	dd('mail send successfully');
     }
+    public function create()
+    {
+        return view('about.contact');
+    }
+     
+    public function store(ContactFormRequest $request)
+    {
+          \Mail::send('emails.contact',
+        array( 
+            'your_subject' => $request->get('your_subject'),
+            'your_category' => $request->get('your_category'),
+            'your_question' => $request->get('your_question'),
+            'your_email' => $request->get('your_email'),
+            'your_name' => $request->get('your_name')
+        ),
+   function($message)
+    {
+
+        $message->to('humluchetu@gmail.com')->subject('FAQs');
+    });
+
+  return \Redirect::route('store')->with('message', 'Thanks for contacting us!');
+}
 }

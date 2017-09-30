@@ -181,29 +181,31 @@ You can choose any of the refund methods below, depending on the payment method 
             </div>
             <h3 class="padding-top-2x">Haven't found the answer? Ask us.</h3>
             <p class="text-muted mb-30">We normally respond within 2 business days. Most popular questions will appear on this page.</p>
-            <form class="row" method="post">
+            <form class="row" method="post" action="{{route('contact_store')}}">
+              <input type="hidden" name="_token" value= "{{csrf_token()}}">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="help_name">Your Name</label>
-                  <input class="form-control form-control-rounded" type="text" id="help_name" required>
+                  <input class="form-control form-control-rounded" type="text" name="your_name" id="help_name" required>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="help_email">Your Email</label>
-                  <input class="form-control form-control-rounded" type="email" id="help_email" required>
+                  <input class="form-control form-control-rounded" name="your_email"
+                  type="email" id="help_email" required>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="help_subject">Subject</label>
-                  <input class="form-control form-control-rounded" type="text" id="help_subject" required>
+                  <input class="form-control form-control-rounded" name="your_subject" type="text" id="help_subject" required>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="help_category">Category</label>
-                  <select class="form-control form-control-rounded" id="help_category">
+                  <select class="form-control form-control-rounded" id="help_category" name="your_category">
                     <option>Account Management</option>
                     <option>Refund Policy</option>
                     <option>Payment Procedure</option>
@@ -215,7 +217,7 @@ You can choose any of the refund methods below, depending on the payment method 
               <div class="col-12">
                 <div class="form-group">
                   <label for="help_question">Question </label>
-                  <textarea class="form-control form-control-rounded" id="help_question" rows="8" required></textarea>
+                  <textarea class="form-control form-control-rounded" name="your_question" id="help_question" rows="8" required></textarea>
                 </div>
               </div>
               <div class="col-12 text-right">

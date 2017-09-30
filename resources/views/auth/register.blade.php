@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.checkout')
 
 @section('content')
 <div class="container-fluid" style="max-width:500px; padding:10px;">
