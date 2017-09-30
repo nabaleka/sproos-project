@@ -292,7 +292,7 @@ curl_close($ch);
 $rider_response = json_decode($rider_response, TRUE);
 $rider_phone =$rider_response['data']['rider_details']['rider_phone'];
   session()->put('phone', $rider_phone);
-  return redirect()->route('checkout-payment');
+  return redirect()->route('checkout-review');
 
 }
      public function shipping(Request $request){
