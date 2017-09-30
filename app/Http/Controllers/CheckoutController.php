@@ -16,12 +16,14 @@ use App\Users;
 use App\Seller;
 use App\sendy;  
 use DB;
+use curl;
 
 class CheckoutController extends Controller
 {
   public function __construct()
     {
         $sendy_seller_id="";
+
     }
    
     public function sendy(Request $request){
@@ -41,13 +43,15 @@ class CheckoutController extends Controller
    $url="http://maps.googleapis.com/maps/api/geocode/json?address=".urlencode( $address);
   $json = file_get_contents($url);
   $data = json_decode($json, TRUE);
-  $latitude = isset($data['results'][0]['geometry']['location']['lng']; ? $data['results'][0]['geometry']['location']['lng']; : false;
-if ($latitude){
+  $longlong=isset($data['results'][0]['geometry']['location']['lng']) ? $data['results'][0]['geometry']['location']['lng'] : false;
+   $latlat=isset($data['results'][0]['geometry']['location']['lat']) ? $data['results'][0]['geometry']['location']['lat'] : false;
+ if ($longlong) {
+     global $long;
      $long=$data['results'][0]['geometry']['location']['lng'];
 }
- $longitude = isset($data['results'][0]['geometry']['location']['lng']; ? $data['results'][0]['geometry']['location']['lng']; : false;
-if ($longitude){
-     $long=$data['results'][0]['geometry']['location']['lng'];
+ if ($latlat) {
+      global $lat;
+     $lat=$data['results'][0]['geometry']['location']['lat'];
 }
   //$long=$data['results'][0]['geometry']['location']['lng'];
   //$lat=$data['results'][0]['geometry']['location']['lat'];
@@ -165,8 +169,7 @@ $deliveryDate= Shipings::where('user_id',Auth::guard('buyer')->user()->id)->firs
     ], 
 
 ]);
-print_r($data);
-exit();
+
  return $this->callSendyAPI($data);
 
 }     
